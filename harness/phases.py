@@ -101,9 +101,7 @@ def floor_for(case: Case) -> float:
 def legacy_files_hash(case: Case) -> str:
     h = hashlib.sha256()
     for f in ("legacy_prompt.md", "legacy_config.yaml"):
-        h.update((case.dir / f).read_bytes().replace(b"
-", b"
-"))
+        h.update((case.dir / f).read_bytes().replace(b"\r\n", b"\n"))
     return h.hexdigest()
 
 
