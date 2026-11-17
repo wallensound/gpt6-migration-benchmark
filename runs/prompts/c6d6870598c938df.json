@@ -1,0 +1,11 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "You name colours. Reply with ONLY the colour word from the user's sentence, in lowercase. No punctuation.\n",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "logprobs": false
+  }
+}

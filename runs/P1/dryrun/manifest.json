@@ -1,0 +1,120 @@
+{
+  "run_id": "dryrun",
+  "phase": "P1",
+  "git_commit": "uncommitted",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T00:47:10",
+  "reference_date": "2026-11-17",
+  "case": "stub",
+  "kind": "dryrun",
+  "evals": [
+    {
+      "eval_id": "source",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 5
+      },
+      "prompt_hash": "b81b34e9fa01c146",
+      "repeat": 0,
+      "finished_at": "2026-11-18T00:47:12",
+      "summary": {
+        "n": 5,
+        "passed": 5,
+        "primary": 1.0,
+        "primary_ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "distractor": {
+            "n": 2,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 3,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.001196,
+        "cost_per_item": 0.00023920000000000001,
+        "cost_per_correct": 0.00023920000000000001,
+        "latency_p50_s": 1.194,
+        "latency_p95_s": 1.27818,
+        "tokens_in": 199,
+        "tokens_in_mean": 39.8,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20,
+        "tokens_out_mean": 4.0,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {}
+      }
+    },
+    {
+      "eval_id": "port-luna-low",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "logprobs": false
+      },
+      "prompt_hash": "c6d6870598c938df",
+      "repeat": 0,
+      "finished_at": "2026-11-18T00:47:12",
+      "summary": {
+        "n": 5,
+        "passed": 5,
+        "primary": 1.0,
+        "primary_ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "distractor": {
+            "n": 2,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 3,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 2.395e-05,
+        "cost_per_item": 4.79e-06,
+        "cost_per_correct": 4.79e-06,
+        "latency_p50_s": 0.5334,
+        "latency_p95_s": 0.65054,
+        "tokens_in": 199,
+        "tokens_in_mean": 39.8,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 56,
+        "tokens_out_mean": 11.2,
+        "tokens_reasoning": 27,
+        "tokens_reasoning_mean": 5.4,
+        "failure_categories": {},
+        "secondary": {}
+      }
+    }
+  ],
+  "finished": true
+}

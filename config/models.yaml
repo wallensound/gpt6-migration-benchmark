@@ -1,0 +1,224 @@
+reference_date: '2026-11-17'
+providers:
+  bedrock:
+    base_url: https://bedrock-runtime.eu-north-1.amazonaws.com/openai/v1
+    key_env: AWS_BEARER_TOKEN_BEDROCK
+    auth: bearer
+  azure:
+    base_url: https://your-azure-resource.openai.azure.com/openai/v1
+    key_env: AZURE_OPENAI_API_KEY
+    auth: api-key
+pricing:
+  cached_input_multiplier: 0.1
+  cache_write_multiplier: 1.25
+  note: Prices per 1M tokens from the brief's table (OpenAI list prices). Calls actually
+    run on AWS Bedrock and Azure OpenAI, whose billing may differ.
+models:
+  gpt-5.6-sol:
+    role: source
+    provider: azure
+    model_id: gpt-5.6
+    api: chat
+    efforts:
+    - none
+    price_in: 4.0
+    price_out: 20.0
+    tier: standard
+    concurrency: 20
+    probed:
+      checked_at: '2026-11-18T00:37:17'
+      supported_efforts:
+      - none
+      - low
+      - medium
+      - high
+      - xhigh
+      rejected_efforts:
+        minimal: 'Unsupported value: ''reasoning_effort'' does not support ''minimal''
+          with this model. Supported values are: ''none'', ''low'', ''medium'', ''high'',
+          and ''xhigh''.'
+        max: 'Unsupported value: ''reasoning_effort'' does not support ''max'' with
+          this model. Supported values are: ''none'', ''low'', ''medium'', ''high'',
+          and ''xhigh''.'
+      resolved_model: gpt-5.6-sol-2026-07-09
+      temperature_0: true
+      logprobs_returned: true
+      response_format_json_schema: true
+      brief_efforts_missing: []
+  gpt-6.2-astra:
+    role: target
+    provider: bedrock
+    model_id: global.openai.gpt-6.2-astra
+    api: responses
+    efforts:
+    - low
+    - medium
+    price_in: 8.0
+    price_out: 40.0
+    tier: standard
+    concurrency: 20
+    probed:
+      checked_at: '2026-11-18T00:37:20'
+      supported_efforts:
+      - low
+      - medium
+      - high
+      - xhigh
+      - max
+      rejected_efforts:
+        none: 'Unsupported value: ''none'' is not supported with the ''global.openai.gpt-6.2-astra''
+          model. Supported values are: ''low'', ''medium'', ''high'', ''xhigh'', and
+          ''max''.'
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.2-astra''
+          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
+          and '
+      resolved_model: global.openai.gpt-6.2-astra
+      temperature_0_at_lowest: false
+      errors:
+        temperature_0_at_lowest: 'Unsupported parameter: ''temperature'' is not supported
+          with this model.'
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
+          with this model.'
+        service_tier_flex: The server had an error while processing your request.
+          Sorry about that!
+        logprobs: logprobs are not supported with reasoning models.
+      temperature_0_at_low: false
+      text_format_json_schema: true
+      text_verbosity_low: true
+      prompt_cache_options: true
+      service_tier_flex: false
+      logprobs: false
+      brief_efforts_missing: []
+  gpt-6.2-sol:
+    role: target
+    provider: bedrock
+    model_id: global.openai.gpt-6.2-sol
+    api: responses
+    efforts:
+    - low
+    - medium
+    price_in: 2.0
+    price_out: 10.0
+    tier: standard
+    concurrency: 20
+    probed:
+      checked_at: '2026-11-18T00:41:20'
+      supported_efforts:
+      - low
+      - medium
+      - high
+      - xhigh
+      - max
+      rejected_efforts:
+        none: GPT-6.2 Sol does not support reasoning effort 'none'.
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.2-sol''
+          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
+          and ''m'
+      resolved_model: global.openai.gpt-6.2-sol
+      temperature_0_at_lowest: false
+      errors:
+        temperature_0_at_lowest: 'Unsupported parameter: ''temperature'' is not supported
+          with this model.'
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
+          with this model.'
+        service_tier_flex: The server had an error while processing your request.
+          Sorry about that!
+        logprobs: logprobs are not supported with reasoning models.
+      temperature_0_at_low: false
+      text_format_json_schema: true
+      text_verbosity_low: true
+      prompt_cache_options: true
+      service_tier_flex: false
+      logprobs: false
+      brief_efforts_missing: []
+  gpt-6.1-terra:
+    role: target
+    provider: bedrock
+    model_id: global.openai.gpt-6.1-terra
+    api: responses
+    efforts:
+    - none
+    - low
+    price_in: 0.5
+    price_out: 2.5
+    tier: flex
+    concurrency: 20
+    probed:
+      checked_at: '2026-11-18T00:45:07'
+      supported_efforts:
+      - none
+      - low
+      - medium
+      - high
+      - xhigh
+      - max
+      rejected_efforts:
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.1-terra''
+          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
+          and '
+      resolved_model: global.openai.gpt-6.1-terra
+      temperature_0_at_lowest: true
+      temperature_0_at_low: false
+      errors:
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
+          with this model.'
+        service_tier_flex: '''flex'' is not supported for ''service_tier'' on this
+          model'
+      text_format_json_schema: true
+      text_verbosity_low: true
+      prompt_cache_options: true
+      service_tier_flex: false
+      logprobs_returned: false
+      brief_efforts_missing: []
+  gpt-6-luna:
+    role: target
+    provider: bedrock
+    model_id: global.openai.gpt-6-luna
+    api: responses
+    efforts:
+    - none
+    - low
+    price_in: 0.05
+    price_out: 0.25
+    tier: flex
+    concurrency: 20
+    probed:
+      checked_at: '2026-11-18T00:45:09'
+      supported_efforts:
+      - none
+      - low
+      - medium
+      - high
+      - xhigh
+      - max
+      rejected_efforts:
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6-luna''
+          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
+          and ''ma'
+      resolved_model: global.openai.gpt-6-luna
+      temperature_0_at_lowest: true
+      temperature_0_at_low: false
+      errors:
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
+          with this model.'
+        service_tier_flex: '''flex'' is not supported for ''service_tier'' on this
+          model'
+      text_format_json_schema: true
+      text_verbosity_low: true
+      prompt_cache_options: true
+      service_tier_flex: false
+      logprobs_returned: false
+      brief_efforts_missing: []
+roles:
+  generator:
+    model: gpt-6.2-sol
+    effort: low
+  verifier:
+    model: gpt-6-luna
+    effort: low
+  labeller:
+    model: gpt-6-luna
+    effort: low
+  optimiser:
+    model: gpt-6.2-sol
+    effort: high

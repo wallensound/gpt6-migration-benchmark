@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-sol",
+  "api": "chat",
+  "effort": "none",
+  "prompt": "You name colours. Reply with ONLY the colour word from the user's sentence, in lowercase. No punctuation.\n",
+  "settings": {
+    "temperature": 0,
+    "max_output_tokens": 5
+  }
+}

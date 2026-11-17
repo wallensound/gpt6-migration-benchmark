@@ -1,0 +1,23 @@
+[project]
+name = "gpt6-migration-benchmark"
+version = "0.1.0"
+description = "Is prompt migration to GPT-6 reproducible? Eight synthetic legacy prompts, four GPT-6 models, three seeds."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "openai==3.45.0",
+    "numpy==2.3.5",
+    "scipy",
+    "pandas",
+    "duckdb",
+    "matplotlib",
+    "pytest",
+    "pyyaml",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "cases"]
+addopts = "-q"

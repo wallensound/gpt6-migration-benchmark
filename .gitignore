@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+runs/state.sqlite*
+runs/bench.duckdb
+.pytest_cache/
