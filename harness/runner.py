@@ -164,6 +164,8 @@ def classify(status: int | None, code: str | None, msg: str) -> str:
 
 # --------------------------------------------------------------------------- runner
 
+_SHARED_LIMITERS: dict = {}
+
 Transport = Callable[[str, str, str, dict], Awaitable[dict]]
 
 
@@ -265,8 +267,11 @@ class Runner:
         return resp.json()
 
     def _limiter(self, model: str) -> AdaptiveLimiter:
-        if model not in self._limiters:
-            self._limiters[model] = AdaptiveLimiter(config.model_cfg(model).get("concurrency", 20))
+        # one limiter per model per event loop, shared by every Runner in the process (parallel loop runs)
+        key = (id(asyncio.get_running_loop()), model)
+        if key not in _SHARED_LIMITERS:
+            _SHARED_LIMITERS[key] = AdaptiveLimiter(config.model_cfg(model).get("concurrency", 20))
+        self._limiters[model] = _SHARED_LIMITERS[key]
         return self._limiters[model]
 
     # ---- the call

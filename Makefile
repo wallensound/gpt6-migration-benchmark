@@ -60,3 +60,11 @@ status:           ## spend so far, phases done, runs in progress
 
 dryrun:           ## P1: five stub items end to end
 	$(PY) -m harness.dryrun
+
+sweeps:           ## P4 for every case (parallel)
+	$(PY) -m harness.batch sweeps --cases 01,03,06,02,05,07,04,08 --parallel 4
+
+loops:            ## P5: Luna and Terra on all cases x 3 seeds, Sol on 01/03/07, dataset v2 runs
+	$(PY) -m harness.batch loops --cases 01,03,06,02,05,07,04,08 --targets gpt-6-luna,gpt-6.1-terra --seeds 11,22,33 --parallel 12
+	$(PY) -m harness.batch loops --cases 01,03,07 --targets gpt-6.2-sol --seeds 11,22,33 --parallel 9
+	$(PY) -m harness.batch loops --cases 01,05 --targets gpt-6-luna --seeds 11 --version 2 --parallel 2
