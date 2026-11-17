@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.jsonl -text
+*.gz binary
+*.png binary
+*.sqlite binary
