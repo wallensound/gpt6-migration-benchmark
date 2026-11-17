@@ -66,6 +66,13 @@ def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def text_sha256(path: Path) -> str:
+    """SHA-256 of a text file with line endings normalised to LF (stable across Windows and a fresh clone)."""
+    return hashlib.sha256(path.read_bytes().replace(b"
+", b"
+")).hexdigest()
+
+
 def manifest_path(case_folder: str, version: int) -> Path:
     return config.DATA / "manifests" / f"{version_dir(case_folder, version)}.json"
 

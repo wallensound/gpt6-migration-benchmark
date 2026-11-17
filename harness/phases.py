@@ -101,7 +101,9 @@ def floor_for(case: Case) -> float:
 def legacy_files_hash(case: Case) -> str:
     h = hashlib.sha256()
     for f in ("legacy_prompt.md", "legacy_config.yaml"):
-        h.update((case.dir / f).read_bytes())
+        h.update((case.dir / f).read_bytes().replace(b"
+", b"
+"))
     return h.hexdigest()
 
 
@@ -184,7 +186,7 @@ def lock_protocol() -> dict:
     logged = subprocess.run(["git", "log", "--oneline", "--", "PROTOCOL.md"], cwd=config.ROOT, capture_output=True, text=True).stdout
     if st.strip() or not logged.strip():
         raise RuntimeError("PROTOCOL.md has uncommitted changes or was never committed")
-    h = data.sha256_file(p)
+    h = data.text_sha256(p)
     if PROTOCOL_LOCK.exists():
         lock = json.loads(PROTOCOL_LOCK.read_text(encoding="utf-8"))
         if lock["sha256"] != h:

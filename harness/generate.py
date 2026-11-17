@@ -283,7 +283,7 @@ async def build(case_id: str, version: int = 1, gen_seed: int | None = None, pha
            "verifier_model_id": config.model_cfg(config.role("verifier")["model"])["model_id"],
            "sdk_version": config.sdk_version(), "git_commit": config.git_commit(),
            "sizes": {s: len(parts[s]) for s in parts}, "sha256": hashes,
-           "frozen_files_sha256": {f: data.sha256_file(case.dir / f) for f in ("spec.md", "case.py")}}
+           "frozen_files_sha256": {f: data.text_sha256(case.dir / f) for f in ("spec.md", "case.py")}}
     mp = data.manifest_path(case.folder, version)
     mp.parent.mkdir(parents=True, exist_ok=True)
     mp.write_text(json.dumps(man, indent=2, ensure_ascii=False), encoding="utf-8")
