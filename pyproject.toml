@@ -20,4 +20,4 @@ package = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests", "cases"]
-addopts = "-q"
+addopts = "-q --import-mode=importlib"

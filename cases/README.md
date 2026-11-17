@@ -1,0 +1,115 @@
+# Writing a case
+
+Each case lives in `cases/<nn-name>/` and is self-contained. Read `PLAN.md` first: the section
+"Rules for every case", your case's section, and "Building the data". The brief is binding.
+
+## Files
+
+```text
+cases/<nn-name>/
+  spec.md               rules, output contract, every edge-case decision. Single source of truth.
+  legacy_prompt.md      the GPT-5.6-era prompt (system message), with the case's legacy markers
+  legacy_config.yaml    model / api / effort / settings of the legacy setup
+  case.py               the interface below
+  tests/test_case.py    >= 15 labeller + scorer fixtures covering every slice, plus a legacy-marker test
+```
+
+`legacy_config.yaml` looks like:
+
+```yaml
+model: gpt-5.6-sol        # the source model (Azure; Chat Completions)
+api: chat
+effort: none
+settings:
+  temperature: 0
+  max_output_tokens: null # e.g. 5 for case 3
+  structured_outputs: false   # true = response_format json_schema from case.schema(settings)
+  logprobs: false
+  # case-specific keys are allowed (e.g. flag_method, flag_threshold for case 2)
+```
+
+## The interface (`case.py`)
+
+See the docstring of `harness/cases.py` and the minimal example `tests/stub_case/case.py`.
+
+```text
+CASE_ID = "01"; NAME = "..."
+slices() -> list[str]                    main-set slices
+shift_slices() -> list[str]              optional; slices for the shift set (default: slices())
+slice_weights(variant) -> dict|None      optional; relative share of each slice (default: equal)
+plan(rng, slice, variant) -> dict        decide the answer and the surface forms first. variant is "main" or
+                                         "shift". JSON-serialisable. Use only `rng` (a seeded random.Random).
+generator_prompt(plan) -> str            instructions for gpt-6.2-sol (effort low) to write the input text
+make_input(plan, text) -> str            optional; post-process the generated text into the item input
+item_extras(plan) -> dict                optional; extra item fields, e.g. {"tools": [...]} or {"context": "..."}
+verify(plan, text) -> (ok, why)          code check: every planned string present verbatim, nothing extra
+verifier_brief(plan) -> str              tells gpt-6-luna what the answer is and what would change it
+label(plan) -> expected                  deterministic, from the plan only (never from the text)
+user_message(item, settings) -> str      optional; default: item["input"] (+ "\n\n" + item["context"])
+tools(item, settings) -> list|None       optional; neutral tool defs {name, description, parameters}
+schema(settings) -> dict|None            optional; JSON schema for Structured Outputs (root must be an object;
+                                         strict mode: every property required, additionalProperties false)
+SCHEMA_NAME = "..."                      optional
+parse(output, settings, item) -> parsed  output = {"text", "tool_calls":[{name, arguments}], "logprobs", "status",
+                                         "refusal"} (a list of these when settings["samples"] > 1).
+                                         Must never raise: return something the scorer marks invalid.
+score(expected, parsed) -> dict          {"passed": bool, "valid": bool (obeys the output contract),
+                                          "nonanswer": bool (clarifying question, refusal, empty),
+                                          "secondary": {numeric per-item values}, "categories": [taxonomy labels
+                                          for failures], "diff": "short code diff expected vs got"}
+aggregate(rows) -> dict                  optional; case-level secondary scores from the result rows
+                                         (each row has "passed", "valid", "nonanswer", "secondary", "slice", ...)
+failure_taxonomy() -> list[str]          categories the failure labeller may use
+settings_space() -> dict                 optional; settings the optimiser may change and their allowed values
+                                         (default: verbosity, and structured_outputs if schema() exists)
+port_settings(settings) -> dict          optional; extra forced changes in the mechanical port (case 2: logprob
+                                         flags cannot survive, so flag_method -> "none")
+answer_strings(expected) -> list[str]    optional; strings the optimiser must never put in a prompt
+legacy_markers() -> list[str]            regexes; every one must match legacy_prompt.md
+```
+
+Rules that apply to every case:
+
+- **Plan first.** The answer is decided in `plan` before any text exists; `label` reads only the plan.
+- **Reference date.** Anything needing "today" uses 17 November 2026 (a Tuesday) and the prompt says so.
+- **Invented entities.** Use `harness.entities`: `companies(pool="main")` (1,500), `companies(pool="shift")`
+  (500 unseen ones, for shift sets), `people()` (500), `products()` (300). Real cities and countries are fine.
+- **Languages.** Cases 1, 2, 3 and 6: about 20% Swedish and 10% German items (case 8: Swedish to English).
+- **Shift set.** `variant == "shift"` gives the distribution change listed in PLAN.md for the case.
+- **Generator prompts** must demand every planned string verbatim, forbid extra entities or values that would
+  change the answer, ask for plain output only, and vary style using the plan (seeded) so items are not
+  near-duplicates (character 5-gram Jaccard > 0.8 are dropped).
+- **Scorer robustness.** Normalise exactly as the spec says, nothing more. Markdown fences, prose around the
+  answer, clarifying questions and refusals are failures, classified via `valid` / `nonanswer` / categories.
+- **Legacy prompt.** Realistically old: it must contain the case's legacy patterns (all-caps NEVER/ALWAYS,
+  "be concise", embedded glossary, IMPORTANT block, etc., per PLAN.md) and still work well on gpt-5.6-sol.
+  Do not deliberately sabotage it for GPT-6; write it the way a 2025-2026 team would have.
+
+## Workflow and commands
+
+All commands run from the repo root in Git Bash. `make` lives at
+`$LOCALAPPDATA/Microsoft/WinGet/Packages/ezwinports.make_Microsoft.Winget.Source_8wekyb3d8bbwe/bin`
+(prepend it to PATH), or call `.venv/Scripts/python -m harness.cli <cmd>` directly.
+
+1. Write spec, case.py, tests. `.venv/Scripts/python -m pytest cases/<nn-name> -q` must pass (no API calls).
+2. **Pilot** (cheap, throwaway; never part of any split):
+   `.venv/Scripts/python -m harness.cli pilot <nn> --n 24` then read `data/pilot/<folder>/items.jsonl` and
+   `dropped.jsonl`. Check inputs look natural, contain the planned strings and labels are right.
+   `.venv/Scripts/python -m harness.cli pilot-eval <nn>` runs the legacy prompt on the pilot items.
+   Iterate on generator, verify, spec and scorer until the pilot drop rate is well under 20% and the legacy
+   prompt is near its floor. Repeat pilots are cheap (cached) only when nothing changed; keep it to a few.
+3. **Build and seal**: `.venv/Scripts/python -m harness.cli data <nn>`. After this, `spec.md`, `label`, `score`,
+   `parse` and their helpers are frozen (a fix means a new dataset version). It refuses if the drop rate > 20%.
+4. **Calibrate** on the source model, at most four tuning rounds on train:
+   `... calibrate <nn> --split train` -> read `runs/P3/<folder>/train-failures-<hash>.jsonl`, adjust
+   `legacy_prompt.md` (keep it legacy-style, keep the markers). Then `... calibrate <nn> --split dev` (scores
+   only) and, when dev >= floor (90%; 85% for cases 05 and 08), `... calibrate <nn> --freeze`.
+
+## Hard rules
+
+- Never read, open, print or summarise anything under `data/sealed/`. Never set BENCH_FINAL.
+- Do not edit anything under `harness/`, `config/`, `budget.json`, other cases' folders, or `PROTOCOL.md`.
+  If the harness blocks you, work around it inside your `case.py` and describe the problem in your report.
+- Do not commit; the coordinator commits.
+- Every model call goes through the harness commands above (no direct API calls).
+- Keep spend modest: data build ~ $8-15 per case, pilots and calibration a few dollars.

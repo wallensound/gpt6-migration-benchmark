@@ -150,11 +150,28 @@ async def _gen_one(runner: Runner, case: Case, plan: dict, idx: int) -> dict:
     return {"ok": True, "input": inp}
 
 
-def make_plans(case: Case, variant: str, n: int, base_seed: int) -> list[tuple[int, dict]]:
+def slice_sequence(case: Case, variant: str, n: int, seed: int) -> list[str]:
+    """Deterministic slice assignment: equal shares, or the case's slice_weights(variant) if defined."""
     slices = case.slices() if variant == "main" else case.shift_slices()
+    f = getattr(case.mod, "slice_weights", None)
+    w = f(variant) if f else None
+    if not w:
+        return [slices[i % len(slices)] for i in range(n)]
+    total = sum(w.get(s, 0) for s in slices)
+    counts = {s: int(n * w.get(s, 0) / total) for s in slices}
+    rest = n - sum(counts.values())
+    for s in sorted(slices, key=lambda s: -w.get(s, 0))[:rest]:
+        counts[s] += 1
+    seq = [s for s in slices for _ in range(counts[s])]
+    random.Random(seed).shuffle(seq)
+    return seq
+
+
+def make_plans(case: Case, variant: str, n: int, base_seed: int) -> list[tuple[int, dict]]:
+    seq = slice_sequence(case, variant, n, base_seed)
     plans = []
     for i in range(n):
-        sl = slices[i % len(slices)]
+        sl = seq[i]
         seed = base_seed + i
         plans.append((seed, {**case.plan(random.Random(seed), sl, variant), "slice": sl, "variant": variant}))
     return plans
