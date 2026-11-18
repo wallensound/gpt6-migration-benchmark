@@ -1,0 +1,10 @@
+{
+  "case": "01-entity-extraction",
+  "frozen_at": "2026-11-18T01:12:59",
+  "prompt_hash": "7b4c50e8226a4ca4",
+  "legacy_files_sha256": "49fc2fa0c0b1e19d4a698053bc2b5143e58bf6749be20f3f9fde6e49570400d4",
+  "dev_primary": 0.995,
+  "floor": 0.9,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

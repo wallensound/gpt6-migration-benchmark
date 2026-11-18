@@ -1,0 +1,112 @@
+{
+  "rounds": [
+    {
+      "at": "2026-11-18T01:12:29",
+      "split": "train",
+      "prompt_hash": "7b4c50e8226a4ca4",
+      "primary": 0.9916666666666667,
+      "validity": 0.9916666666666667,
+      "per_slice": {
+        "dense": {
+          "n": 8,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 9,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 10,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 11,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 12,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 10,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 9,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 9,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 9,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 9,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 24,
+          "primary": 0.9583333333333334
+        }
+      },
+      "markers_missing": []
+    },
+    {
+      "at": "2026-11-18T01:12:54",
+      "split": "dev",
+      "prompt_hash": "7b4c50e8226a4ca4",
+      "primary": 0.995,
+      "validity": 1.0,
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 0.975609756097561
+        }
+      },
+      "markers_missing": []
+    }
+  ]
+}

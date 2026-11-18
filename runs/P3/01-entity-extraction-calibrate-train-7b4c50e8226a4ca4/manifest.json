@@ -1,0 +1,113 @@
+{
+  "run_id": "01-entity-extraction-calibrate-train-7b4c50e8226a4ca4",
+  "phase": "P3",
+  "git_commit": "04de068",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:12:29",
+  "reference_date": "2026-11-17",
+  "case": "01-entity-extraction",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-train-7b4c50e8226a4ca4",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "7b4c50e8226a4ca4",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:12:29",
+      "summary": {
+        "n": 120,
+        "passed": 119,
+        "primary": 0.9916666666666667,
+        "primary_ci": [
+          0.9543037087549505,
+          0.998527444266658
+        ],
+        "validity": 0.9916666666666667,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.008333333333333333,
+        "per_slice": {
+          "dense": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 9,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 11,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 12,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 9,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 9,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 9,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 9,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 24,
+            "primary": 0.9583333333333334
+          }
+        },
+        "cost_usd": 0.32750999999999997,
+        "cost_per_item": 0.00272925,
+        "cost_per_correct": 0.0027521848739495798,
+        "latency_p50_s": 1.1891999999999998,
+        "latency_p95_s": 1.6720599999999999,
+        "tokens_in": 196906,
+        "tokens_in_mean": 1640.8833333333334,
+        "tokens_cached": 154905,
+        "tokens_cached_mean": 1290.875,
+        "tokens_cache_write": 41644,
+        "tokens_cache_write_mean": 347.03333333333336,
+        "tokens_out": 2795,
+        "tokens_out_mean": 23.291666666666668,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "api_error": 1
+        },
+        "secondary": {
+          "micro_precision": 1.0,
+          "micro_recall": 1.0,
+          "micro_f1": 1.0,
+          "format_validity": 0.9916666666666667,
+          "scored_items": 119
+        }
+      }
+    }
+  ]
+}

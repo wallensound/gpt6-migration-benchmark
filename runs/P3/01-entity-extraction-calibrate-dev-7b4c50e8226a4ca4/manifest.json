@@ -1,0 +1,113 @@
+{
+  "run_id": "01-entity-extraction-calibrate-dev-7b4c50e8226a4ca4",
+  "phase": "P3",
+  "git_commit": "6458e9e",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:12:54",
+  "reference_date": "2026-11-17",
+  "case": "01-entity-extraction",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-dev-7b4c50e8226a4ca4",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "7b4c50e8226a4ca4",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:12:54",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 0.975609756097561
+          }
+        },
+        "cost_usd": 0.5081249999999999,
+        "cost_per_item": 0.0025406249999999995,
+        "cost_per_correct": 0.0025533919597989945,
+        "latency_p50_s": 1.21225,
+        "latency_p95_s": 1.649084999999999,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 269400,
+        "tokens_cached_mean": 1347.0,
+        "tokens_cache_write": 60977,
+        "tokens_cache_write_mean": 304.885,
+        "tokens_out": 4654,
+        "tokens_out_mean": 23.27,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "possessive_kept": 1
+        },
+        "secondary": {
+          "micro_precision": 0.9987046632124352,
+          "micro_recall": 0.9987046632124352,
+          "micro_f1": 0.9987046632124352,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      }
+    }
+  ]
+}
