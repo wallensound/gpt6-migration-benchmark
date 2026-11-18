@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the output contract first and makes billing-currency evidence easy to find without expanding the supported code list.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Organizes extraction around invoice regions and checks the billed amount block for currency before assigning null.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'swedish' drops 2.4 points"
+  }
+]

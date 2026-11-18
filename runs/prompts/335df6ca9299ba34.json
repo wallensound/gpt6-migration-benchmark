@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Classify one customer message to a company's support desk. Identify the issues in the order they appear, using these labels:\n\nbilling — charges, payments, invoices, receipts, prices, payment methods, refunds of charges\ntechnical — help setting up, connecting, configuring or using the product, app or website when nothing is reported broken\naccount_access — logging in, passwords, two-factor codes, locked or blocked accounts\nshipping — order delivery, tracking, delays, delivery addresses, parcels that have not arrived\nreturns — sending a physical product back, return labels, exchanges, the return window\ncancellation — ending a subscription or plan, stopping automatic renewal\nfeature_request — asking for functionality the product does not have\nbug_report — product, app or website malfunctions, including crashes, error codes, freezes and features that stop working\nprivacy — personal data: what is stored, copies, deletion, sharing, GDPR requests\npartnership — business proposals such as reselling, co-marketing, integrations, sponsorship and volume deals\nfeedback — opinions, praise or complaints without a request for help or action\nother — anything unrelated to the company's products and services\n\nFor one issue, choose its label. For multiple issues, check these overrides before using issue order:\n- billing wins over technical or bug_report when a payment, charge or invoice is mentioned.\n- cancellation wins over billing or returns when the customer wants to end a subscription.\n- privacy wins over account_access or cancellation when the customer asks about or wants deletion of their personal data.\nIf no override decides, choose the label of the first issue mentioned.\n\nInterpret English, Swedish and German messages by meaning. Reply with exactly one label from the list, in lowercase with underscores as shown. Do not translate the label or add punctuation, quotes, explanations or questions.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

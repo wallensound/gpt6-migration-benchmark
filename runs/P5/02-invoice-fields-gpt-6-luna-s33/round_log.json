@@ -1,0 +1,329 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "b83a0e2539222e42",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "targeted_fix",
+      "settings_change",
+      "example_swap"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "missed_value": 1
+      },
+      "by_slice": {
+        "missing_field": 1
+      },
+      "patterns": [
+        {
+          "category": "missed_value",
+          "count": 1,
+          "sample_causes": [
+            "The model returned null for currency despite the invoice explicitly stating DKK."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the output contract first and makes billing-currency evidence easy to find without expanding the supported code list.",
+        "prompt_hash": "dc15bf65ce849610",
+        "prompt_chars": 2655,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Changes only the currency rule so a supported code beside a billed amount counts even without a dedicated currency label.",
+        "prompt_hash": "19db7632942740ce",
+        "prompt_chars": 3267,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enables two-run agreement to flag inconsistent fields for review without changing first-run extraction or adding output keys.",
+        "prompt_hash": "66b3cd85ea47a95e",
+        "prompt_chars": 3088,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "two_run_agreement",
+          "flag_threshold": -0.01,
+          "verbosity": null,
+          "samples": 2
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing that DKK attached to billed amounts is sufficient even when the due date is absent and an informational conversion is present.",
+        "prompt_hash": "3cdedb5c8232f8d8",
+        "prompt_chars": 3496,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "b83a0e2539222e42",
+    "dev_primary_after": 1.0,
+    "seconds": 171,
+    "spent_phase": 8.042621535
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "restructure",
+      "example_swap",
+      "rewrite",
+      "targeted_fix"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "missed_value": 1
+      },
+      "by_slice": {
+        "missing_field": 1
+      },
+      "patterns": [
+        {
+          "category": "missed_value",
+          "count": 1,
+          "sample_causes": [
+            "The model returned null for currency despite the invoice explicitly stating DKK."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Organizes extraction around invoice regions and checks the billed amount block for currency before assigning null.",
+        "prompt_hash": "1a9fe56d2e854890",
+        "prompt_chars": 2318,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'swedish' drops 2.4 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.024390243902439046,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing that a code beside the billing amounts establishes currency without a separate currency label.",
+        "prompt_hash": "adacf5a4bb65f083",
+        "prompt_chars": 2925,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separates evidence selection from normalization and uses review flags without replacing uncertain stated values with null.",
+        "prompt_hash": "02cbf4b1310dd6b1",
+        "prompt_chars": 2612,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "confidence_field",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Clarifies that an explicit supported currency code on the billed amounts counts without a standalone label.",
+        "prompt_hash": "c5b95a4cb9d0d62c",
+        "prompt_chars": 3415,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'swedish' drops 2.4 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.024390243902439046,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "b83a0e2539222e42",
+    "dev_primary_after": 1.0,
+    "seconds": 198,
+    "spent_phase": 18.696348125
+  }
+]
