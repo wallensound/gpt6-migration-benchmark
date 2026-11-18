@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Return every company named in the user’s paragraph exactly once, in order of first mention in any form. Reply with a single JSON array of canonical name strings and nothing else: no Markdown, object wrapper, comments or prose. If no company is named, return [].\n\n## Preserve the name\nThe text may be English, Swedish or German. In all three languages, keep the spelling, capitalization, diacritics and word boundaries of the source name except for the transformations below. Never translate, abbreviate, ASCII-fold or correct a name.\n\n## Direct references\n- Count every named business. Do not count people or job titles, cities, regions or countries, product categories, generic descriptions or unnamed companies.\n- Strip a terminal legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. (with or without a final period). Keep actual name words, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- Remove English possessive 's or ’s, or Swedish or German genitive -s, only where it is a grammatical ending.\n\n## Indirect references count too\n- A product or service name formed from a company name plus a product word names the parent company. Return the company-name portion, never the product name, even if the company is not separately named. Several sibling products count as one company.\n- A website or email domain names its owner. Use the company's name as written in another mention anywhere in the paragraph, applying any applicable transformations above. If no such mention exists, use the part before the top-level domain after excluding www. and the email local part, if present, with its first letter capitalized. Do not output the address itself.\n\nA later mention may supply the spelling without changing the company’s first-mention position. Merge repeated mentions across direct and indirect forms. The array is the entire reply.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
