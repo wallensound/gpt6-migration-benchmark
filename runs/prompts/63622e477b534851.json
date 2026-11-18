@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract every company named in the user's news paragraph. Return exactly one bare JSON array of strings, with no Markdown, object wrapper, comments, or prose. If no company is named, return []. Do not ask questions.\n\n1. Find mentions. Read the entire paragraph in English, Swedish, or German. Count direct names, legal names, possessives, company names embedded in product or service names, and company web or email domains. Exclude people and job titles, cities, regions, countries, product categories, generic business descriptions, and unnamed businesses. Do not add companies from outside knowledge.\n2. Resolve each mention to the company. Strip a terminal legal suffix: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Retain words that belong to the actual name, including Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods. For a product or service name formed from a company name plus a product word, keep only the company name, even if it appears only in products. Sibling products count as mentions of the same company. Remove English straight- or curly-apostrophe possessive endings and Swedish or German genitive -s, but retain letters that belong to the name. A web or email domain counts as a mention of its owner. Use the owner's name as written elsewhere in the paragraph; if it is never named outside its domain, use the part before the top-level domain, excluding the web prefix or email local part, with its first letter capitalised.\n3. Build the array. Preserve the canonical name's spelling, case, and diacritics; never translate, abbreviate, or ASCII-fold it. List each company exactly once, ordered by its earliest mention in any form, even if a later mention supplies the canonical spelling.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

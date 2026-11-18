@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Classify the user message as a customer support ticket. Read the whole message, whether in English, Swedish or German. Match the issues by meaning and keep their original mention order.\n\nRouting directory\nbilling — charges, payments, invoices, receipts, prices, payment methods and refunds of charges\ntechnical — help setting up, connecting, configuring or using a product, app or website that isn't reported broken\naccount_access — sign-in, passwords, two-factor codes, locked or blocked accounts\nshipping — order delivery, including tracking, delays, changing or checking the delivery address, or a missing parcel\nreturns — sending a physical item back, return labels, exchanges and the return window\ncancellation — ending a subscription or plan or stopping automatic renewal\nfeature_request — a request for functionality the product doesn't currently have\nbug_report — malfunction of the product, app or website: a crash, error code, freeze or feature that stopped working\nprivacy — what personal data is stored, obtaining a copy, deleting it, how it's shared or GDPR requests\npartnership — business proposals such as reselling, co-marketing, integrations, sponsorship or volume deals\nfeedback — praise, opinions or complaints that don't ask for help or action\nother — a message unrelated to the company's products and services\n\nFor a single issue, select its label. For multiple issues, use this lookup first; the pair can occur in either order:\n\nIssue pair | Condition | Winner\nbilling + technical | payment, charge or invoice mentioned | billing\nbilling + bug_report | payment, charge or invoice mentioned | billing\ncancellation + billing | wants to end a subscription | cancellation\ncancellation + returns | wants to end a subscription | cancellation\nprivacy + account_access | asks about or wants deletion of their personal data | privacy\nprivacy + cancellation | asks about or wants deletion of their personal data | privacy\n\nIf no row decides the result, select the label of the issue mentioned first. Return exactly one directory label, spelled as shown. Do not translate it or add quotes, punctuation, explanation or a question.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

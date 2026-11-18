@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract the header fields from the single invoice in the user message. Return exactly one JSON object with these eight keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Every value must be a string or null. No other keys, prose, or Markdown.\n\nUse only values stated on the invoice. Return null for a missing field. Normalize stated values, but never calculate or infer missing ones: do not derive a due date from terms, net from other amounts, or VAT from a rate. Read across broken lines and recognize OCR errors in labels and prose; the values themselves are intact.\n\nIdentify parties and references: vendor is the issuer (seller, supplier, or payee), copied as written with its full legal suffix, never the customer or bill-to party. invoice_number is the invoice's own identifier, copied without its label, never an order, PO, or customer number. issue_date is the invoice date, not an order or delivery date. due_date is the stated payment deadline date.\n\nIdentify the billed amounts and their currency: net is the stated taxable amount after discounts, not a pre-discount subtotal. Use a line-item amount only if the invoice labels it as the invoice net. vat is the stated tax amount, not the rate. total is the stated gross amount payable including tax. Read the billing currency from an explicit currency label or from the code or symbol attached to the billed amounts, including when it appears on a separate line. Ignore informational conversions and their currencies. Output currency as EUR, SEK, USD, GBP, CHF, NOK, or DKK. Map € to EUR, £ to GBP, $ to USD, and kr to SEK.\n\nNormalize dates to YYYY-MM-DD. Keep year-first ISO dates in ISO form; otherwise read numeric dates day-first even when both components are at most 12. Expand two-digit years to 20YY. Recognize month names and abbreviations in English, Swedish, and German, including ordinal day forms. Normalize amounts to strings with a decimal dot and exactly two decimal digits, preserving the sign and removing grouping separators and currency markings. A final comma or dot followed by two digits is the decimal separator.\n\nRecognize labels by meaning, not exact spelling. Swedish: Fakturanummer/Fakturanr (invoice_number), Fakturadatum (issue_date), Förfallodatum/Förfaller (due_date), Belopp exkl. moms (net), Moms (vat), Att betala (total), Valuta (currency). German: Rechnungsnummer/Rechnungs-Nr. (invoice_number), Rechnungsdatum (issue_date), Fällig am/Zahlbar bis (due_date), Nettobetrag (net), MwSt./USt. (vat), Gesamtbetrag/Zu zahlen (total), Währung (currency). Delsumma and Zwischensumme mean subtotal; Rabatt and Nachlass indicate discounts.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

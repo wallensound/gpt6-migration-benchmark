@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract every company named in the user's English, Swedish or German news paragraph. Output one bare JSON array of canonical name strings, with no Markdown, prose, comments or wrapper. If none are named, output [].\n\n## Find mentions\nScan the entire paragraph in reading order. Look for business names on their own, names with legal forms, possessives, company names embedded in product or service names, and business web or email domains. Each form counts, even if it is the company's only mention. Exclude people and job titles, cities, regions, countries, product categories, generic descriptions and unnamed companies. Do not add companies from outside knowledge.\n\n## Resolve mentions to canonical names\n- For a product or service name formed from a company name plus a product word, keep the company name and drop the product word. Never return the product name itself. Sibling products resolve to the same company.\n- Remove possessive 's or ’s and Swedish or German genitive -s when it is an ending, not part of the name.\n- Strip a trailing legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- For a web or email domain, use the owner's name as written elsewhere in the paragraph, after applying the other name rules. If the owner is named only by domain, ignore the email local part and any www. prefix, take the part before the top-level domain and capitalise its first letter.\n- Preserve the name's capitalisation and diacritics. Never translate, abbreviate or ASCII-fold names. Apply the same rules in all three languages.\n\n## Assemble the result\nMerge all mentions of the same company, retaining its earliest position even when a later mention supplies the spelling. Return exactly one string per company, sorted by those first-mention positions, in the bare JSON array.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Classify the customer message in English, Swedish or German. Identify the issues in the order they appear, not in order of importance. If there is one issue, use its label. If there are two, start with the first issue's label and use the winner below only if the two labels match a listed pair and the condition holds. The pair can appear in either order.\n\nIssue labels:\n- billing — charges, payments, invoices, receipts, prices, payment methods, refunds of charges\n- technical — help setting up, connecting, configuring or using the product, app or website when nothing is broken\n- account_access — logging in, passwords, two-factor codes, locked or blocked accounts\n- shipping — order delivery: tracking, delays, delivery addresses, missing parcels\n- returns — sending a physical product back, return labels, exchanges, return windows\n- cancellation — ending a subscription or plan, stopping automatic renewal\n- feature_request — asking for functionality the product lacks\n- bug_report — product, app or website malfunctions: crashes, error codes, freezes, features that stop working\n- privacy — personal data storage, copies, deletion, sharing, GDPR requests\n- partnership — business proposals: reselling, co-marketing, integrations, sponsorship, volume deals\n- feedback — opinions, praise or complaints without a request for help or action\n- other — unrelated to the company's products and services\n\nExact pair overrides:\n- billing + technical or billing + bug_report → billing when a payment, charge or invoice is mentioned.\n- cancellation + billing or cancellation + returns → cancellation when the customer wants to end a subscription.\n- privacy + account_access or privacy + cancellation → privacy when the customer asks about or wants deletion of their personal data.\n\nFor any combination not decided by these rules, keep the first issue's label, even if a later issue sounds more important. Always output exactly one label as written above. No explanation, questions, quotes, punctuation or other text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

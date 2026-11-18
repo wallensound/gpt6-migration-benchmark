@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read one invoice supplied as plain text. Return exactly one bare JSON object with these eight keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Each value must be a JSON string or null. No other keys, Markdown or prose.\n\nSELECT THE PRINTED VALUES\n- vendor: the issuer (seller, supplier or payee), never the customer or bill-to party. Preserve the legal name, including its suffix.\n- invoice_number: the invoice identifier as written, excluding the label; not an order, PO or customer number.\n- issue_date: the invoice date, not the order or delivery date. due_date: the payment due date only when explicitly stated as a date.\n- net: the stated taxable amount excluding VAT after discounts, not the pre-discount subtotal. A line-item amount is eligible only if labeled as net. vat: the stated VAT, moms, MwSt or sales-tax amount, not a rate. total: the gross amount payable including VAT.\n- currency: identify the currency of the billed net, vat and total from a currency label, code or symbol, including codes printed alongside amounts. Ignore informational conversions and their amounts.\n- For anything unstated, use null. Never compute a missing value from payment terms, rates or other amounts.\n\nREAD THE LABELS\nLabels can be English, Swedish or German. For example, Fakturanummer and Rechnungsnummer identify the invoice number; Fakturadatum and Rechnungsdatum identify the issue date; Förfallodatum, Fällig am and Zahlbar bis identify the due date; Nettobetrag identifies net; Moms and MwSt. identify tax; Att betala and Gesamtbetrag identify total. Read across broken lines and tolerate OCR errors in labels and prose; the values are intact.\n\nNORMALIZE\n- Dates: YYYY-MM-DD, including written month names and ordinal days. Keep year-first ISO dates; otherwise numeric dates are day-first even when ambiguous. Expand two-digit years to 20YY.\n- Amounts: the last comma or dot before the two fractional digits is the decimal separator. Remove grouping separators and currency notation; output a dot and exactly two decimals.\n- Currency: output EUR, SEK, USD, GBP, CHF, NOK or DKK. Map € to EUR, £ to GBP, $ to USD and kr to SEK.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

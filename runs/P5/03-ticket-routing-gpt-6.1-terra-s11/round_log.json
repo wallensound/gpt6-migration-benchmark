@@ -1,0 +1,286 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "9174ee512a6591d1",
+    "dev_primary": 0.995,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "example_swap",
+      "targeted_fix",
+      "rewrite"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the exact output contract first, then separates label identification from the tie-break decision.",
+        "prompt_hash": "487dedfa07d2088a",
+        "prompt_chars": 1947,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'long' drops 4.2 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.04166666666666663,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one invented Swedish example showing that a later billing issue can override an earlier malfunction.",
+        "prompt_hash": "36a73c0cbff13264",
+        "prompt_chars": 2101,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": false,
+          "ngram_hits": 2,
+          "answer_hits": 0
+        },
+        "status": "rejected: leakage"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures, makes one preventive clarification: check tie-breaks even when the winning issue appears later.",
+        "prompt_hash": "bc74ec108f0c5c74",
+        "prompt_chars": 2019,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses compact definitions and a direct decision procedure that applies across languages and product domains.",
+        "prompt_hash": "54c31869aed5cec4",
+        "prompt_chars": 2049,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'long' drops 4.2 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.04166666666666663,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "9174ee512a6591d1",
+    "dev_primary_after": 0.995,
+    "seconds": 42,
+    "spent_phase": 1.008635615
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "simplify",
+      "example_swap",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Shortens the routing instructions and consolidates the output constraints without changing the categories or priorities.",
+        "prompt_hash": "c46e8f39bcd26d1b",
+        "prompt_chars": 1677,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=3, p=0.250)",
+            "slice 'long' drops 12.5 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 3,
+            "p_value": 0.25
+          },
+          "worst_slice_drop": -0.125,
+          "validity": 1.0,
+          "dev_primary": 0.98,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one invented German example where the first issue wins because no tie-break applies.",
+        "prompt_hash": "adff0ce204b0db3c",
+        "prompt_chars": 2183,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Expresses the six tie-break pairs as a lookup table and distinguishes issue order from priority.",
+        "prompt_hash": "63b9a3f94152e551",
+        "prompt_chars": 2140,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity in isolation while preserving the prompt that passed all reported training items.",
+        "prompt_hash": "e20536009487c6ad",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=3, p=0.250)",
+        "slice 'long' drops 12.5 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 3,
+        "p_value": 0.25
+      },
+      "worst_slice_drop": -0.125,
+      "validity": 1.0,
+      "dev_primary": 0.98,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "9174ee512a6591d1",
+    "dev_primary_after": 0.995,
+    "seconds": 34,
+    "spent_phase": 2.5810552175
+  }
+]

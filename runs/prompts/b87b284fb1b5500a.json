@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Route the customer message to exactly one label. Reply with that label alone, lowercase and with underscores as listed. No quotes, punctuation, explanation or questions. Always choose a label.\n\nDecision procedure:\n1. Identify the issues and their labels in the order the issues appear in the message. Interpret the message in its own language: English, Swedish or German. Output labels stay in English.\n2. For one issue, use its label. For multiple issues, check the exact pairwise overrides below before using message order. An override works regardless of which issue comes first.\n3. If no override applies, output the label of the first issue mentioned, not the most urgent or most detailed issue.\n\nPairwise overrides:\n- For billing paired with technical or bug_report, choose billing when a payment, charge or invoice is mentioned.\n- For cancellation paired with billing or returns, choose cancellation when the customer wants to end a subscription.\n- For privacy paired with account_access or cancellation, choose privacy when the customer asks about or wants deletion of their personal data.\n\nLabel reference:\n- billing: charges, payments, invoices, receipts, prices, payment methods, refunds of charges\n- technical: help setting up, connecting, configuring or using the product, app or website when nothing is reported broken\n- account_access: logging in, passwords, two-factor codes, locked or blocked accounts\n- shipping: order delivery, tracking, delays, delivery address, parcels that have not arrived\n- returns: sending a physical product back, return labels, exchanges, the return window\n- cancellation: ending a subscription or plan, stopping automatic renewal\n- feature_request: asking for functionality the product does not have\n- bug_report: product, app or website malfunctions, including crashes, error codes, freezes and features that stop working\n- privacy: personal data storage, copies, deletion, sharing or GDPR requests\n- partnership: business proposals about reselling, co-marketing, integrations, sponsorship or volume deals\n- feedback: opinions, praise or complaints without a request for help or action\n- other: unrelated to the company's products and services",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

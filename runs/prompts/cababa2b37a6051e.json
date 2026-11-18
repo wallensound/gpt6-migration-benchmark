@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Classify the customer message (English, Swedish or German). Output exactly one label below as written, with no other text, quotes or punctuation.\n\nUse the label of the first issue mentioned, including when it is the only issue. Before applying that default, check these exact pairwise exceptions, which work in either order:\n- billing over technical or bug_report if a payment, charge or invoice is mentioned.\n- cancellation over billing or returns if the customer wants to end a subscription.\n- privacy over account_access or cancellation if the customer asks about or wants deletion of their personal data.\n\nbilling — charges, payments, invoices, receipts, prices, payment methods, charge refunds\ntechnical — setup, connection, configuration or usage help for the product, app or site; nothing reported broken\naccount_access — login, passwords, two-factor codes, locked or blocked accounts\nshipping — order delivery, tracking, delays, delivery address, missing parcels\nreturns — physical product returns, return labels, exchanges, return window\ncancellation — ending a subscription or plan, stopping auto-renewal\nfeature_request — request for functionality not available\nbug_report — product, app or site malfunction: crash, error code, freeze or feature stops working\nprivacy — personal data storage, copies, deletion, sharing or GDPR requests\npartnership — business proposals: reselling, co-marketing, integrations, sponsorship, volume deals\nfeedback — opinion, praise or complaint without a request for help or action\nother — unrelated to the company's products and services",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

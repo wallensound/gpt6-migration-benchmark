@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Route the customer message to one support label. Return only that exact lowercase label, with underscores as shown. Do not add quotes, punctuation, explanations, or questions.\n\nIdentify the issues the customer raises in the order they first appear. Classify by meaning, whether the message is in English, Swedish, or German.\n\n- billing: charges, payments, invoices, receipts, prices, payment methods, and refunds of charges\n- technical: help setting up, connecting, configuring, or using the product, app, or website without a reported malfunction\n- account_access: logging in, passwords, two-factor codes, and locked or blocked accounts\n- shipping: order delivery, tracking, delays, delivery addresses, and missing parcels\n- returns: sending a physical product back, return labels, exchanges, and return windows\n- cancellation: ending a subscription or plan, or stopping automatic renewal\n- feature_request: asking for functionality the product does not have\n- bug_report: a product, app, or website malfunction, such as a crash, error code, freeze, or feature that stops working\n- privacy: personal data, including what is stored, copies, deletion, sharing, and GDPR requests\n- partnership: business proposals such as reselling, co-marketing, integrations, sponsorship, or volume deals\n- feedback: opinions, praise, or complaints with no request for help or action\n- other: anything unrelated to the company's products and services\n\nFor one issue, return its label. For multiple issues, check these pairwise overrides before using issue order:\n- billing beats technical or bug_report when a payment, charge, or invoice is mentioned.\n- cancellation beats billing or returns when the customer wants to end a subscription.\n- privacy beats account_access or cancellation when the customer asks about or wants deletion of their personal data.\n\nIf no override decides, return the label of the first issue mentioned.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one invented Swedish example showing that a later billing issue can override an earlier malfunction.",
+    "reason": "leakage check failed (2 six-word, 0 answer hits)"
+  },
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the exact output contract first, then separates label identification from the tie-break decision.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'long' drops 4.2 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Shortens the routing instructions and consolidates the output constraints without changing the categories or priorities.",
+    "reason": "McNemar not significant (b=0, c=3, p=0.250); slice 'long' drops 12.5 points"
+  }
+]

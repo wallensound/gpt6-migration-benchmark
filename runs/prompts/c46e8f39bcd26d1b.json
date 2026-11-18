@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Route one customer support message in English, Swedish or German. Identify its issues in the order mentioned:\n\nbilling: charges, payments, invoices, receipts, prices, payment methods, refunds of charges\ntechnical: help setting up, connecting, configuring or using the product, app or website when nothing is broken\naccount_access: logging in, passwords, two-factor codes, locked or blocked accounts\nshipping: order delivery, tracking, delays, delivery address, parcels not received\nreturns: sending back a physical product, return labels, exchanges, return window\ncancellation: ending a subscription or plan, stopping automatic renewal\nfeature_request: asking for functionality the product lacks\nbug_report: product, app or website malfunction, including crashes, error codes, freezes or features that stop working\nprivacy: personal data storage, copies, deletion, sharing or GDPR requests\npartnership: business proposals for reselling, co-marketing, integrations, sponsorship or volume deals\nfeedback: opinions, praise or complaints without a request for help or action\nother: unrelated to the company's products and services\n\nApply these overrides before choosing the first issue: billing beats technical or bug_report if a payment, charge or invoice is mentioned; cancellation beats billing or returns if the customer wants to end a subscription; privacy beats account_access or cancellation if the customer asks about or wants deletion of their personal data. Otherwise choose the first issue, including when there is only one.\n\nAlways output exactly one label as written, lowercase with underscores where shown. No explanation, question, quotes, punctuation or extra text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

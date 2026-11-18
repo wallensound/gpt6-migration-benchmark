@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract every company named in the user's news paragraph. Return only one valid JSON array of strings, with no object wrapper, Markdown, comments or prose. If no company is named, return []. Apply the same rules to English, Swedish and German.\n\n1. Collect mentions in reading order. Look for businesses named directly or through a legal name, possessive, named product or service, website or email domain. Exclude people and their titles, cities, regions, countries, product categories, generic descriptions and unnamed businesses. Do not add companies from outside the paragraph.\n\n2. Resolve each mention to its company. Remove possessive endings (English straight or curly apostrophe plus s, or a Swedish or German genitive s) when they mark possession. Strip a terminal legal-form suffix: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep words that belong to the name itself, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods. If a product or service name is built from a company name plus a product word, keep only the company name, even if it appears only in the product name. Resolve sibling products to the same company; never return a product name.\n\n3. Resolve domains using the whole paragraph. A website or email domain counts as a mention of its owner. Ignore the email local part and any www. prefix. If the company is named elsewhere, use that name after canonicalisation. Otherwise take the part before the top-level domain and capitalise its first letter. Never return a website or email address itself.\n\n4. Emit one string per company, ordered by its earliest mention in any form. Preserve the source spelling, capitalisation and diacritics of the retained name, apart from the specified domain-only capitalisation. Do not translate, abbreviate or ASCII-fold names. Check that every company is present once and that the response contains only the array.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

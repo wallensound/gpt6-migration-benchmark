@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract the header of one invoice, which may use English, Swedish or German and contain broken lines or OCR errors in labels or prose. Values are intact.\n\nReturn only one JSON object with exactly these keys, all strings or null:\n- vendor: issuer's full legal name as written, never the customer or bill-to party.\n- invoice_number: invoice identifier as written without its label, not an order, PO or customer identifier.\n- issue_date: invoice date, not order or delivery date.\n- due_date: stated payment due date.\n- currency: billing currency (EUR, SEK, USD, GBP, CHF, NOK, DKK). Recognize codes alongside billing amounts and map € to EUR, £ to GBP, $ to USD, kr to SEK. Ignore informational conversions.\n- net: stated taxable amount after discounts, excluding VAT; not a pre-discount subtotal or a line item unless labeled as invoice net.\n- vat: stated VAT, moms, MwSt. or sales-tax amount, not the rate.\n- total: stated gross payable amount including tax.\n\nNormalize dates to YYYY-MM-DD: keep ISO dates year-first, interpret other numeric dates day-first, expand two-digit years to 20YY, and handle month names and ordinals. For amounts, the final dot or comma followed by two digits is the decimal separator; output a dot with exactly two decimals, removing grouping and currency text. Use null for unstated fields: never guess or derive amounts from other amounts or rates, or derive a date from payment terms. No Markdown, prose or extra keys.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}
