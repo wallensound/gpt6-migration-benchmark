@@ -1,0 +1,925 @@
+{
+  "run_id": "02-invoice-fields-sweep",
+  "phase": "P4",
+  "git_commit": "f90f7d0",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:09:09",
+  "reference_date": "2026-11-17",
+  "case": "02-invoice-fields",
+  "kind": "sweep",
+  "dataset_version": 1,
+  "evals": [
+    {
+      "eval_id": "source",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": true,
+        "flag_method": "logprob",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "96525dff10409f06",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:09:09",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.338838,
+        "cost_per_item": 0.00669419,
+        "cost_per_correct": 0.00669419,
+        "latency_p50_s": 1.4275,
+        "latency_p95_s": 1.7811449999999995,
+        "tokens_in": 216132,
+        "tokens_in_mean": 1080.66,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 203390,
+        "tokens_cache_write_mean": 1016.95,
+        "tokens_out": 13546,
+        "tokens_out_mean": 67.73,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": 0.0,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.000625,
+          "wrong_fields": 0,
+          "flagged_fields": 1,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "source"
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-low",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:09:27",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.59426,
+        "cost_per_item": 0.0079713,
+        "cost_per_correct": 0.0079713,
+        "latency_p50_s": 1.5075,
+        "latency_p95_s": 2.088845,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 139650,
+        "tokens_cached_mean": 698.25,
+        "tokens_cache_write": 75882,
+        "tokens_cache_write_mean": 379.41,
+        "tokens_out": 18093,
+        "tokens_out_mean": 90.465,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "logprobs are not supported with reasoning models."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-medium",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:09:44",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.6252464,
+        "cost_per_item": 0.008126232,
+        "cost_per_correct": 0.008126232,
+        "latency_p50_s": 1.51315,
+        "latency_p95_s": 2.12657,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 138608,
+        "tokens_cached_mean": 693.04,
+        "tokens_cache_write": 76924,
+        "tokens_cache_write_mean": 384.62,
+        "tokens_out": 18628,
+        "tokens_out_mean": 93.14,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "logprobs are not supported with reasoning models."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-low",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:09:56",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 0.9642857142857143
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.3787158,
+        "cost_per_item": 0.001893579,
+        "cost_per_correct": 0.001903094472361809,
+        "latency_p50_s": 0.8047000000000001,
+        "latency_p95_s": 1.3315299999999999,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 142954,
+        "tokens_cached_mean": 714.77,
+        "tokens_cache_write": 72578,
+        "tokens_cache_write_mean": 362.89,
+        "tokens_out": 16868,
+        "tokens_out_mean": 84.34,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "missed_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.999375,
+          "flag_precision": null,
+          "flag_recall": 0.0,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 1,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "logprobs are not supported with reasoning models."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-medium",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:10:05",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 0.9642857142857143
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.379186,
+        "cost_per_item": 0.00189593,
+        "cost_per_correct": 0.001905457286432161,
+        "latency_p50_s": 0.797,
+        "latency_p95_s": 1.2383,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 141880,
+        "tokens_cached_mean": 709.4,
+        "tokens_cache_write": 73652,
+        "tokens_cache_write_mean": 368.26,
+        "tokens_out": 16668,
+        "tokens_out_mean": 83.34,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "missed_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.999375,
+          "flag_precision": null,
+          "flag_recall": 0.0,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 1,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "logprobs are not supported with reasoning models."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-none",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:10:18",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.13389345,
+        "cost_per_item": 0.00066946725,
+        "cost_per_correct": 0.00066946725,
+        "latency_p50_s": 0.98695,
+        "latency_p95_s": 1.53415,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 58464,
+        "tokens_cached_mean": 292.32,
+        "tokens_cache_write": 144550,
+        "tokens_cache_write_mean": 722.75,
+        "tokens_out": 13747,
+        "tokens_out_mean": 68.735,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-low",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:10:31",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.13390495,
+        "cost_per_item": 0.0006695247499999999,
+        "cost_per_correct": 0.0006695247499999999,
+        "latency_p50_s": 0.9832000000000001,
+        "latency_p95_s": 1.4617999999999995,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 58444,
+        "tokens_cached_mean": 292.22,
+        "tokens_cache_write": 144570,
+        "tokens_cache_write_mean": 722.85,
+        "tokens_out": 13747,
+        "tokens_out_mean": 68.735,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "logprobs are not supported with reasoning models."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-none",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:10:38",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.014012185000000002,
+        "cost_per_item": 7.006092500000001e-05,
+        "cost_per_correct": 7.006092500000001e-05,
+        "latency_p50_s": 0.56745,
+        "latency_p95_s": 0.68195,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 47632,
+        "tokens_cached_mean": 238.16,
+        "tokens_cache_write": 155382,
+        "tokens_cache_write_mean": 776.91,
+        "tokens_out": 13747,
+        "tokens_out_mean": 68.735,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-low",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:10:44",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.014083390000000001,
+        "cost_per_item": 7.041695000000001e-05,
+        "cost_per_correct": 7.041695000000001e-05,
+        "latency_p50_s": 0.5667000000000001,
+        "latency_p95_s": 0.6908949999999997,
+        "tokens_in": 215532,
+        "tokens_in_mean": 1077.66,
+        "tokens_cached": 47598,
+        "tokens_cached_mean": 237.99,
+        "tokens_cache_write": 155416,
+        "tokens_cache_write_mean": 777.08,
+        "tokens_out": 14024,
+        "tokens_out_mean": 70.12,
+        "tokens_reasoning": 257,
+        "tokens_reasoning_mean": 1.285,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "logprobs are not supported with reasoning models."
+      }
+    }
+  ],
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "low",
+      "score_per_dollar": 125.4500520617716,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 125.4500520617716
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 123.05826365774445
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "low",
+      "score_per_dollar": 525.4599887303355,
+      "candidates": {
+        "low": {
+          "primary": 0.995,
+          "score_per_dollar": 525.4599887303355
+        },
+        "medium": {
+          "primary": 0.995,
+          "score_per_dollar": 524.8084053736161
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "none",
+      "score_per_dollar": 1493.7250477898658,
+      "candidates": {
+        "none": {
+          "primary": 1.0,
+          "score_per_dollar": 1493.7250477898658
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 1493.5967639732512
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "none",
+      "score_per_dollar": 14273.291424570827,
+      "candidates": {
+        "none": {
+          "primary": 1.0,
+          "score_per_dollar": 14273.291424570827
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 14201.126291326163
+        }
+      }
+    }
+  },
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "logprobs are not supported with reasoning models."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "logprobs are not supported with reasoning models."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "logprobs are not supported with reasoning models."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "logprobs are not supported with reasoning models."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "logprobs are not supported with reasoning models."
+    },
+    "gpt-6-luna/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "logprobs are not supported with reasoning models."
+    }
+  },
+  "finished": true
+}
