@@ -1,0 +1,849 @@
+{
+  "run_id": "06-grounded-abstention-sweep",
+  "phase": "P4",
+  "git_commit": "79d7dd5",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:20:10",
+  "reference_date": "2026-11-17",
+  "case": "06-grounded-abstention",
+  "kind": "sweep",
+  "dataset_version": 1,
+  "evals": [
+    {
+      "eval_id": "source",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "bc5d1392c1fcda7c",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:11",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.6488579999999999,
+        "cost_per_item": 0.0032442899999999995,
+        "cost_per_correct": 0.0032442899999999995,
+        "latency_p50_s": 1.1020999999999999,
+        "latency_p95_s": 1.4681699999999995,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 11834,
+        "tokens_cache_write_mean": 59.17,
+        "tokens_out": 1092,
+        "tokens_out_mean": 5.46,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "source"
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-low",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:21",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.448544,
+        "cost_per_item": 0.00724272,
+        "cost_per_correct": 0.00724272,
+        "latency_p50_s": 0.9106500000000001,
+        "latency_p95_s": 1.363425,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 83188,
+        "tokens_cache_write_mean": 415.94,
+        "tokens_out": 1295,
+        "tokens_out_mean": 6.475,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-medium",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:32",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.448304,
+        "cost_per_item": 0.00724152,
+        "cost_per_correct": 0.00724152,
+        "latency_p50_s": 0.8590999999999999,
+        "latency_p95_s": 1.5173299999999994,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 83188,
+        "tokens_cache_write_mean": 415.94,
+        "tokens_out": 1289,
+        "tokens_out_mean": 6.445,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-low",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:40",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.362016,
+        "cost_per_item": 0.00181008,
+        "cost_per_correct": 0.00181008,
+        "latency_p50_s": 0.5261500000000001,
+        "latency_p95_s": 1.0851049999999998,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 83188,
+        "tokens_cache_write_mean": 415.94,
+        "tokens_out": 1283,
+        "tokens_out_mean": 6.415,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-medium",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:47",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.362046,
+        "cost_per_item": 0.00181023,
+        "cost_per_correct": 0.00181023,
+        "latency_p50_s": 0.51115,
+        "latency_p95_s": 0.9424499999999999,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 83188,
+        "tokens_cache_write_mean": 415.94,
+        "tokens_out": 1286,
+        "tokens_out_mean": 6.43,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-none",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:55",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.081653625,
+        "cost_per_item": 0.000408268125,
+        "cost_per_correct": 0.000408268125,
+        "latency_p50_s": 0.61705,
+        "latency_p95_s": 1.2043049999999997,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 11845,
+        "tokens_cache_write_mean": 59.225,
+        "tokens_out": 1310,
+        "tokens_out_mean": 6.55,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-low",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:03",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.08176112499999999,
+        "cost_per_item": 0.00040880562499999993,
+        "cost_per_correct": 0.00040880562499999993,
+        "latency_p50_s": 0.59115,
+        "latency_p95_s": 1.1281149999999993,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 11845,
+        "tokens_cache_write_mean": 59.225,
+        "tokens_out": 1353,
+        "tokens_out_mean": 6.765,
+        "tokens_reasoning": 37,
+        "tokens_reasoning_mean": 0.185,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-none",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:08",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0081638625,
+        "cost_per_item": 4.08193125e-05,
+        "cost_per_correct": 4.08193125e-05,
+        "latency_p50_s": 0.37345,
+        "latency_p95_s": 0.53166,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 11845,
+        "tokens_cache_write_mean": 59.225,
+        "tokens_out": 1304,
+        "tokens_out_mean": 6.52,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-low",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:12",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.008287862500000001,
+        "cost_per_item": 4.1439312500000006e-05,
+        "cost_per_correct": 4.1439312500000006e-05,
+        "latency_p50_s": 0.3654,
+        "latency_p95_s": 0.536835,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 11845,
+        "tokens_cache_write_mean": 59.225,
+        "tokens_out": 1800,
+        "tokens_out_mean": 9.0,
+        "tokens_reasoning": 472,
+        "tokens_reasoning_mean": 2.36,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    }
+  ],
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "medium",
+      "score_per_dollar": 138.09255515416652,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 138.06967548103475
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 138.09255515416652
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "low",
+      "score_per_dollar": 552.4617696455406,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 552.4617696455406
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 552.4159913381172
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "none",
+      "score_per_dollar": 2449.3707413479806,
+      "candidates": {
+        "none": {
+          "primary": 1.0,
+          "score_per_dollar": 2449.3707413479806
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 2446.1502945317843
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "none",
+      "score_per_dollar": 24498.207802985413,
+      "candidates": {
+        "none": {
+          "primary": 1.0,
+          "score_per_dollar": 24498.207802985413
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 24131.674481809994
+        }
+      }
+    }
+  },
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6-luna/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    }
+  },
+  "finished": true
+}
