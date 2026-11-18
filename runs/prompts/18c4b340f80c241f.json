@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return only one bare JSON object with exactly name, phone, email, company, country, each a string or JSON null.\n\nUse only the embedded contact block's label/value lines (colon, equals or tab; labels and order vary), never notes, signatures, domains or suffixes as sources for missing fields. Trim and collapse whitespace. Absent, empty or case-insensitive placeholders (-, --, n/a, na, none, unknown, ?, null, TBD) are null except for the country fallback below.\n\nAssign email by @ and phone by content regardless of label: after stripping leading tel: and a trailing extension (ext. or ext plus digits, x or # plus digits, or extension plus digits), phone has at least seven digits and only digits, spaces and + - ( ) . /. Swap name and company if only the name-labeled value ends in a legal suffix. Match trailing suffixes case-insensitively: AB, GmbH, AG, Ltd, Ltd., PLC, Inc, Inc., LLC, Corp, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., S.p.A., Sp. z o.o., K.K., Pty Ltd, Ltda.\n\nCountry comes from its line: convert English, Swedish or German names, alpha-2/alpha-3 codes and common aliases, case-insensitively, to uppercase ISO 3166-1 alpha-2 (UK/Great Britain → GB, Holland → NL, USA/U.S.A. → US, Türkiye → TR, Czech Republic → CZ).\n\nPhone is E.164: + then calling code and national significant digits only. After stripping tel: and extension, ignore an opening parenthesis for prefix detection. For + or 00, remove (0) and all formatting (spaces, dashes, dots, slashes, parentheses), convert initial 00 to + and keep the original calling code even if the country line disagrees. Only if country is absent, empty or a placeholder, infer it from this international code if uniquely assigned; shared codes such as +1 and +7 leave null. Otherwise, for a national number, strip formatting, drop one leading trunk 0 and prepend + and the normalized country's calling code; without country return phone null.\n\nName: split at the first comma and reorder Last, First to First Last; remove leading Dr, Mr, Mrs, Ms, Mx, Prof (optional dot, any case); uppercase the first character and lowercase the rest of each space- or hyphen-separated part. Company: remove the trailing listed suffix and optional preceding comma; use the same casing per space-separated word. Email: strip mailto: and surrounding angle brackets, then lowercase. Preserve Unicode letters and diacritics without transliteration; comparison is under NFC. Never guess.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

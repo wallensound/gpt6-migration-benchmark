@@ -1,0 +1,38 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Separates mention collection from name resolution so indirect mentions are counted without losing their original position.",
+    "reason": "screening 93.1% vs current 98.3%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "settings_change",
+    "rationale": "Enables Structured Outputs to enforce the response shape while retaining the extraction rules.",
+    "reason": "screening 94.8% vs current 98.3%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "Adds a dedicated product-mention check to catch parents named only through a product or service.",
+    "reason": "McNemar not significant (b=3, c=3, p=1.000); slice 'dense' drops 7.1 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Frames extraction as exact copying with limited edits, explicitly protecting internal spaces and unusual spellings.",
+    "reason": "screening 93.1% vs current 98.3%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Replaces one worked example with a side-by-side case of exact parent spelling and a product-only company.",
+    "reason": "screening 94.8% vs current 98.3%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Tests low verbosity as the only change, keeping the current prompt and bare-array contract intact.",
+    "reason": "McNemar not significant (b=3, c=2, p=1.000); slice 'parent_absent' drops 6.2 points"
+  }
+]

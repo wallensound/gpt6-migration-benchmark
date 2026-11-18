@@ -1,0 +1,326 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "f038b0a89df341d6",
+    "dev_primary": 0.985,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "simplify",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "missing_company": 2
+      },
+      "by_slice": {
+        "dense": 1,
+        "swedish": 1
+      },
+      "patterns": [
+        {
+          "category": "missing_company",
+          "count": 2,
+          "sample_causes": [
+            "The output omitted Drëlskusmyn, a named company referenced through its Drëlskusmyn Hub product.",
+            "Omitted Vebria, the parent company named through its product Vebria Sense."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.9827586206896551,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds a dedicated product-mention check to catch parents named only through a product or service.",
+        "prompt_hash": "1eadcf57abcc07b5",
+        "prompt_chars": 2686,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=3, c=3, p=1.000)",
+            "slice 'dense' drops 7.1 points"
+          ],
+          "mcnemar": {
+            "b": 3,
+            "c": 3,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.0714285714285714,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 0.985
+        }
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Combines related rules into a short checklist without dropping any mention type or output constraint.",
+        "prompt_hash": "d757a9f93feeb3c7",
+        "prompt_chars": 1381,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9655172413793104,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separates mention collection from name resolution so indirect mentions are counted without losing their original position.",
+        "prompt_hash": "57221dc056598fdd",
+        "prompt_chars": 2016,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9310344827586207,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enables Structured Outputs to enforce the response shape while retaining the extraction rules.",
+        "prompt_hash": "a31fc73efaeb3e3e",
+        "prompt_chars": 2291,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9482758620689655,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "targeted_fix",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=3, c=3, p=1.000)",
+        "slice 'dense' drops 7.1 points"
+      ],
+      "mcnemar": {
+        "b": 3,
+        "c": 3,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.0714285714285714,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.985,
+    "seconds": 80,
+    "spent_phase": 4.564419395
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "rewrite",
+      "example_swap",
+      "simplify"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "other": 1,
+        "missing_company": 1
+      },
+      "by_slice": {
+        "parent_present": 1,
+        "dense": 1
+      },
+      "patterns": [
+        {
+          "category": "other",
+          "count": 1,
+          "sample_causes": [
+            "The model misspelled Ciramma as “Ciram ma,” so it did not return the canonical company name."
+          ],
+          "n_examples": 1
+        },
+        {
+          "category": "missing_company",
+          "count": 1,
+          "sample_causes": [
+            "Omitted Drëlskusmyn, which is named through its Hub smart-home controller."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.9827586206896551,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity as the only change, keeping the current prompt and bare-array contract intact.",
+        "prompt_hash": "74e7adc5498288b3",
+        "prompt_chars": 5331,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=3, c=2, p=1.000)",
+            "slice 'parent_absent' drops 6.2 points"
+          ],
+          "mcnemar": {
+            "b": 3,
+            "c": 2,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.0625,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 0.985
+        }
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Frames extraction as exact copying with limited edits, explicitly protecting internal spaces and unusual spellings.",
+        "prompt_hash": "35c1556da1c17f88",
+        "prompt_chars": 1612,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9310344827586207,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Replaces one worked example with a side-by-side case of exact parent spelling and a product-only company.",
+        "prompt_hash": "bf46e9e89c325abe",
+        "prompt_chars": 5299,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9482758620689655,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Removes repeated directives and examples while retaining all inclusion, canonicalisation and output requirements.",
+        "prompt_hash": "73219f6ec8a94dad",
+        "prompt_chars": 1327,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9655172413793104,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=3, c=2, p=1.000)",
+        "slice 'parent_absent' drops 6.2 points"
+      ],
+      "mcnemar": {
+        "b": 3,
+        "c": 2,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.0625,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.985,
+    "seconds": 102,
+    "spent_phase": 10.3329515575
+  }
+]
