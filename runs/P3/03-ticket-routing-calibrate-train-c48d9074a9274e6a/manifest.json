@@ -1,0 +1,100 @@
+{
+  "run_id": "03-ticket-routing-calibrate-train-c48d9074a9274e6a",
+  "phase": "P3",
+  "git_commit": "be231a1",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T00:59:11",
+  "reference_date": "2026-11-17",
+  "case": "03-ticket-routing",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-train-c48d9074a9274e6a",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 5,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "c48d9074a9274e6a",
+      "repeat": 0,
+      "finished_at": "2026-11-18T00:59:11",
+      "summary": {
+        "n": 120,
+        "passed": 115,
+        "primary": 0.9583333333333334,
+        "primary_ci": [
+          0.9061591476629647,
+          0.9820732831198906
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 12,
+            "primary": 0.9166666666666666
+          },
+          "long": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 14,
+            "primary": 0.7857142857142857
+          },
+          "off_topic": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 26,
+            "primary": 0.9615384615384616
+          },
+          "tie_break": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 11,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.2407,
+        "cost_per_item": 0.0020058333333333334,
+        "cost_per_correct": 0.0020930434782608694,
+        "latency_p50_s": 0.82635,
+        "latency_p95_s": 1.1468000000000003,
+        "tokens_in": 57580,
+        "tokens_in_mean": 479.8333333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 519,
+        "tokens_out_mean": 4.325,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 5
+        },
+        "secondary": {
+          "macro_f1": 0.9580759518259518,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 120
+        }
+      }
+    }
+  ]
+}

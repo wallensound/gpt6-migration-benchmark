@@ -24,3 +24,10 @@ Append-only log. Newest entries at the bottom.
 ### 2026-11-18 P1 Harness: done
 - Runner (cache, adaptive concurrency, retries, error-code branching, cost, budget guard, raw-first), requests (chat/responses, mechanical port), evaluate + run storage, stats (Wilson, bootstrap, McNemar, Holm, non-inferiority, flip rate), data gate, generate pipeline, entities.
 - 18 unit tests pass on recorded responses. Five-item dry run (stub case) works end to end: 5 generated, 0 dropped, source 5/5, Luna port 5/5, $0.002.
+
+### 2026-11-18 P2+P3 case 03 ticket routing: sealed and frozen
+- 1001 planned, 992 kept (drop 0.9%), splits 120/200/300/150, $2.22 data. 41 tests.
+- Calibration: one train round (95.8%), dev 94.5% (floor 90%), prompt hash c48d9074a9274e6a.
+- **D10 (case 03) shift.** The prompt is fixed, so "label definitions paraphrased" is realised as paraphrased cue wordings in the messages, plus a new product domain (e-bike subscription) and unseen brands.
+- **D11 (case 03)** a "first issue mentioned wins" fallback after the three tie-break rules gives multi-issue items a defined answer; `answer_strings` is empty (labels are part of the contract); the port raises a sub-16 output cap to 16 (Responses API minimum; only relevant at effort `none`).
+- **D12 Azure content filter.** Azure's content filter blocks a small share of source-model calls (2 of 200 case 03 dev items). They are scored as failures (`api_error`) of the source setup, as a production integration would experience them.

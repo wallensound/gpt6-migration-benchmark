@@ -1,0 +1,5 @@
+{"categories": ["wrong_label"], "diff": "expected 'shipping', got 'privacy'", "item_id": "03-v1-00064", "raw_output": "privacy", "slice": "multi_issue"}
+{"categories": ["wrong_label"], "diff": "expected 'technical', got 'cancellation'", "item_id": "03-v1-00279", "raw_output": "cancellation", "slice": "multi_issue"}
+{"categories": ["wrong_label"], "diff": "expected 'bug_report', got 'cancellation'", "item_id": "03-v1-00564", "raw_output": "cancellation", "slice": "multi_issue"}
+{"categories": ["wrong_label"], "diff": "expected 'technical', got 'privacy'", "item_id": "03-v1-00569", "raw_output": "privacy", "slice": "german"}
+{"categories": ["wrong_label"], "diff": "expected 'feature_request', got 'privacy'", "item_id": "03-v1-00714", "raw_output": "privacy", "slice": "swedish"}

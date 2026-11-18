@@ -1,0 +1,10 @@
+{
+  "case": "03-ticket-routing",
+  "frozen_at": "2026-11-18T00:59:38",
+  "prompt_hash": "c48d9074a9274e6a",
+  "legacy_files_sha256": "a42ace035fb319095fa810ee0ef43b6b0fda0faece4e86d2e4fd0602261c2e0a",
+  "dev_primary": 0.945,
+  "floor": 0.9,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

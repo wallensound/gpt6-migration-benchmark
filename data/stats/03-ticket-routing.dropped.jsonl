@@ -1,0 +1,9 @@
+{"plan_seed": 100300071, "slice": "tie_break", "stage": "llm_verify", "variant": "main", "why": "“I'm frustrated enough with it” adds an unplanned complaint that could count as feedback, making the intended two-issue resolution ambiguous."}
+{"plan_seed": 100300090, "slice": "german", "stage": "code_verify", "variant": "main", "why": "trigger word for unplanned cancellation: 'kündig'"}
+{"plan_seed": 100300115, "slice": "tie_break", "stage": "llm_verify", "variant": "main", "why": "The privacy tie-break only applies to deletion of personal data, not stopping third-party sharing, so the stated rules leave cancellation first and therefore favor cancellation."}
+{"plan_seed": 100300276, "slice": "tie_break", "stage": "llm_verify", "variant": "main", "why": "The privacy request is to stop sharing data, not to delete it, so the stated privacy-over-cancellation tie-break does not apply and cancellation wins by order."}
+{"plan_seed": 100300466, "slice": "swedish", "stage": "llm_verify", "variant": "main", "why": "The final sentence adds a separate feedback complaint, an unplanned third issue."}
+{"plan_seed": 100300501, "slice": "very_short", "stage": "code_verify", "variant": "main", "why": "very_short has 8 words"}
+{"plan_seed": 100300543, "slice": "long", "stage": "code_verify", "variant": "main", "why": "trigger word for unplanned billing: 'pay'"}
+{"plan_seed": 100300675, "slice": "very_short", "stage": "code_verify", "variant": "main", "why": "very_short has 8 words"}
+{"plan_seed": 100300681, "slice": "very_short", "stage": "code_verify", "variant": "main", "why": "very_short has 8 words"}

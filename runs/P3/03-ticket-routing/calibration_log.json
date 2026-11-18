@@ -1,0 +1,88 @@
+{
+  "rounds": [
+    {
+      "at": "2026-11-18T00:59:11",
+      "split": "train",
+      "prompt_hash": "c48d9074a9274e6a",
+      "primary": 0.9583333333333334,
+      "validity": 1.0,
+      "per_slice": {
+        "clear": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 12,
+          "primary": 0.9166666666666666
+        },
+        "long": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "multi_issue": {
+          "n": 14,
+          "primary": 0.7857142857142857
+        },
+        "off_topic": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 26,
+          "primary": 0.9615384615384616
+        },
+        "tie_break": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "very_short": {
+          "n": 11,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    },
+    {
+      "at": "2026-11-18T00:59:27",
+      "split": "dev",
+      "prompt_hash": "c48d9074a9274e6a",
+      "primary": 0.945,
+      "validity": 0.99,
+      "per_slice": {
+        "clear": {
+          "n": 24,
+          "primary": 0.9583333333333334
+        },
+        "german": {
+          "n": 21,
+          "primary": 0.9523809523809523
+        },
+        "long": {
+          "n": 24,
+          "primary": 1.0
+        },
+        "multi_issue": {
+          "n": 24,
+          "primary": 0.6666666666666666
+        },
+        "off_topic": {
+          "n": 24,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        },
+        "tie_break": {
+          "n": 23,
+          "primary": 0.9565217391304348
+        },
+        "very_short": {
+          "n": 19,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "case": "03-ticket-routing",
+  "dataset_version": 1,
+  "gen_seed": 1003,
+  "planned": 1001,
+  "kept": 992,
+  "dropped": 9,
+  "drop_rate": 0.008991008991008992,
+  "dropped_by_stage": {
+    "llm_verify": 4,
+    "code_verify": 5
+  },
+  "exact_duplicates": 13,
+  "near_duplicates": 6,
+  "items_per_split": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "items_per_slice_and_split": {
+    "test": {
+      "clear": 37,
+      "german": 30,
+      "long": 36,
+      "multi_issue": 36,
+      "off_topic": 36,
+      "swedish": 62,
+      "tie_break": 35,
+      "very_short": 28
+    },
+    "dev": {
+      "clear": 24,
+      "german": 21,
+      "long": 24,
+      "multi_issue": 24,
+      "off_topic": 24,
+      "swedish": 41,
+      "tie_break": 23,
+      "very_short": 19
+    },
+    "train": {
+      "clear": 14,
+      "german": 12,
+      "long": 14,
+      "multi_issue": 14,
+      "off_topic": 14,
+      "swedish": 26,
+      "tie_break": 15,
+      "very_short": 11
+    },
+    "shift": {
+      "clear": 19,
+      "german": 16,
+      "long": 17,
+      "multi_issue": 17,
+      "off_topic": 18,
+      "swedish": 31,
+      "tie_break": 17,
+      "very_short": 15
+    }
+  },
+  "avg_input_chars": {
+    "test": 344.5733333333333,
+    "dev": 347.42,
+    "train": 345.1666666666667,
+    "shift": 322.68
+  },
+  "avg_input_tokens_est": {
+    "test": 86.14333333333333,
+    "dev": 86.855,
+    "train": 86.29166666666667,
+    "shift": 80.67
+  },
+  "spent_usd_phase_total": 2.221197049999999,
+  "seconds": 63
+}

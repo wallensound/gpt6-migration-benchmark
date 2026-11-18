@@ -1,0 +1,8 @@
+model: gpt-5.6-sol
+api: chat
+effort: none
+settings:
+  temperature: 0
+  max_output_tokens: 5
+  structured_outputs: false
+  logprobs: false
