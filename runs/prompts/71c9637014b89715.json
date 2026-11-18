@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Route one customer message (English, Swedish or German) to one label:\n- billing: charges, payments, invoices, receipts, prices, payment methods, refunds of charges\n- technical: setup, connection, configuration or use of the product, app or website when nothing is broken\n- account_access: login, passwords, two-factor codes, locked or blocked accounts\n- shipping: order delivery, tracking, delays, delivery address, missing parcels\n- returns: sending a physical product back, return labels, exchanges, return window\n- cancellation: ending a subscription or plan, stopping automatic renewal\n- feature_request: asking for functionality the product lacks\n- bug_report: product, app or website malfunctions, including crashes, errors, freezes and features that stop working\n- privacy: personal data storage, copies, deletion, sharing or GDPR requests\n- partnership: business proposals for reselling, co-marketing, integrations, sponsorship or volume deals\n- feedback: opinions, praise or complaints without a request for help or action\n- other: unrelated to the company's products and services\n\nUse the first issue mentioned unless a listed pairwise rule decides:\n- billing beats technical or bug_report when a payment, charge or invoice is mentioned.\n- cancellation beats billing or returns when the customer wants to end a subscription.\n- privacy beats account_access or cancellation when the customer asks about or wants deletion of their personal data.\n\nOutput exactly one label as written, even if unclear. No explanation, question, punctuation, quotes or other text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

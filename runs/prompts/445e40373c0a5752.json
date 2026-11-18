@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Classify one customer support message. Return exactly one lowercase label from the list below, with underscores as written. No quotes, punctuation, or explanation.\n\nThe default is the label of the first issue raised in the message, not the last issue or the one that sounds most urgent. For a single issue, use its label. For multiple issues, depart from the first issue only if one of these tie-breaks decides the conflict. The tie-break winner may appear before or after the competing issue:\n- When a payment, charge, or invoice is mentioned, billing wins over technical or bug_report.\n- When the customer wants to end a subscription, cancellation wins over billing or returns.\n- When the customer asks about their personal data or wants it deleted, privacy wins over account_access or cancellation.\nThese are pair-specific exceptions, not a general priority ranking. If no exception decides the conflict, the first issue wins.\n\nLabels:\n- billing: charges, payments, invoices, receipts, prices, payment methods, or refunds of charges\n- technical: help setting up, connecting, configuring, or using the product, app, or website when nothing is reported broken\n- account_access: logging in, passwords, two-factor codes, or locked or blocked accounts\n- shipping: order delivery, including tracking, delays, delivery addresses, and missing parcels\n- returns: sending a physical product back, return labels, exchanges, or the return window\n- cancellation: ending a subscription or plan or stopping automatic renewal\n- feature_request: asking for functionality the product does not currently have\n- bug_report: a malfunction of the product, app, or website, such as a crash, error code, freeze, or feature that stops working\n- privacy: personal data, including what is stored, copies, deletion, sharing, and GDPR requests\n- partnership: business proposals such as reselling, co-marketing, integrations, sponsorship, or volume deals\n- feedback: an opinion, compliment, or complaint without a request for help or action\n- other: off-topic content unrelated to the company's products and services\n\nApply the same rules in English, Swedish, and German. Always emit the label as written above, never a translation or a clarifying question.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

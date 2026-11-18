@@ -1,0 +1,20 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "settings_change",
+    "rationale": "Tests low verbosity in isolation while preserving the production prompt verbatim.",
+    "reason": "screening 93.3% vs current 96.7%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Uses an ordered issue-selection procedure and lists all six override pairs explicitly to prevent unintended category priority.",
+    "reason": "McNemar not significant (b=10, c=4, p=0.180); slice 'tie_break' drops 4.3 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one Swedish example where a later privacy request does not override an earlier unrelated issue.",
+    "reason": "McNemar not significant (b=4, c=1, p=0.375)"
+  }
+]
