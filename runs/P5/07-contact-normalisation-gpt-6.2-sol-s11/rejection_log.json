@@ -1,0 +1,20 @@
+[
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Orders the rules by dependency so record isolation, content assignment, and phone classification happen before final field rendering.",
+    "reason": "screening 95.0% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Enables strict structured output to enforce the five required nullable-string fields without changing normalization behavior.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 3,
+    "edit_kind": "restructure",
+    "rationale": "Preserves the existing rule sequence while putting record scope and the output contract first and isolating the country fallback at the end.",
+    "reason": "McNemar not significant (b=0, c=4, p=0.125); slice 'precedence_conflict' drops 11.8 points"
+  }
+]

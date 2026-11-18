@@ -1,0 +1,477 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "94d21e2d9e5df067",
+    "dev_primary": 0.835,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "rewrite",
+      "simplify",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 0.9,
+    "failure_report": {
+      "counts": {
+        "dropped_value": 11,
+        "phone_wrong": 1
+      },
+      "by_slice": {
+        "international_phone": 2,
+        "unicode_names": 3,
+        "plain": 1,
+        "swapped_fields": 2,
+        "missing_fields": 2,
+        "precedence_conflict": 2
+      },
+      "patterns": [
+        {
+          "category": "dropped_value",
+          "count": 11,
+          "sample_causes": [
+            "The model omitted the company name “Galta” instead of normalizing “Galta, Corp.” to “Galta”.",
+            "It omitted the country and phone instead of normalizing Austria to AT and formatting the national number as +436641356605.",
+            "The model returned null for the name instead of preserving and normalizing “Viktor Vomcyn”.",
+            "The model returned null for the name instead of assigning the swapped company-line value, Anna Drilzexez, as the name.",
+            "The model returned null for the phone instead of normalizing the Irish national number to +353883428733."
+          ],
+          "n_examples": 0
+        },
+        {
+          "category": "phone_wrong",
+          "count": 1,
+          "sample_causes": [
+            "The model dropped the valid international phone number instead of normalizing it to +353837402047."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9,
+    "candidates": [
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separates field assignment from normalization and makes every null traceable to a missing value or an explicit rule.",
+        "prompt_hash": "df0bc0100f9d5038",
+        "prompt_chars": 3897,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Condenses repeated directives into a short workflow with a single, explicit country fallback.",
+        "prompt_hash": "67df4070b9b5b402",
+        "prompt_chars": 2662,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds a null check to the missing-value rule while retaining the original numbered workflow.",
+        "prompt_hash": "e4aa2ee7adf60666",
+        "prompt_chars": 3688,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "accepted",
+        "dev": {
+          "accept": true,
+          "reasons": [],
+          "mcnemar": {
+            "b": 33,
+            "c": 0,
+            "p_value": 2.3283064365386963e-10
+          },
+          "worst_slice_drop": 0.06060606060606055,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 0.835
+        }
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the strict output and source boundaries first, then orders transformations by dependency.",
+        "prompt_hash": "f768e0ec5cab04f2",
+        "prompt_chars": 3347,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "targeted_fix",
+      "accept": true,
+      "reasons": [],
+      "mcnemar": {
+        "b": 33,
+        "c": 0,
+        "p_value": 2.3283064365386963e-10
+      },
+      "worst_slice_drop": 0.06060606060606055,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 0.835
+    },
+    "accepted": true,
+    "prompt_hash_after": "e4aa2ee7adf60666",
+    "dev_primary_after": 1.0,
+    "seconds": 227,
+    "spent_phase": 11.4516702825
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "restructure",
+      "settings_change",
+      "targeted_fix"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "other": 1
+      },
+      "by_slice": {
+        "international_phone": 1
+      },
+      "patterns": [
+        {
+          "category": "other",
+          "count": 1,
+          "sample_causes": [
+            "The name contains an extra zero-width space character before the final letter."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing how to preserve a Unicode name while normalizing an international phone that disagrees with the country line.",
+        "prompt_hash": "d8b4b37e7a1f2b67",
+        "prompt_chars": 4011,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Orders the rules by dependency so record isolation, content assignment, and phone classification happen before final field rendering.",
+        "prompt_hash": "0ae866758b60a570",
+        "prompt_chars": 3368,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enables strict structured output to enforce the five required nullable-string fields without changing normalization behavior.",
+        "prompt_hash": "812eb637aad9cbd1",
+        "prompt_chars": 3688,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds a Unicode check that catches newly introduced zero-width spaces without adding a new source-character removal rule.",
+        "prompt_hash": "b49d4f06835754e8",
+        "prompt_chars": 3861,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "e4aa2ee7adf60666",
+    "dev_primary_after": 1.0,
+    "seconds": 164,
+    "spent_phase": 23.07915815
+  },
+  {
+    "round": 3,
+    "kinds": [
+      "rewrite",
+      "restructure",
+      "settings_change",
+      "example_swap"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "other": 1
+      },
+      "by_slice": {
+        "international_phone": 1
+      },
+      "patterns": [
+        {
+          "category": "other",
+          "count": 1,
+          "sample_causes": [
+            "The name contains an extra zero-width space character before the final letter."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Adds a targeted check for invisible characters introduced during rendering without stripping Unicode characters from source values.",
+        "prompt_hash": "8e5ab65885025a23",
+        "prompt_chars": 3621,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Preserves the existing rule sequence while putting record scope and the output contract first and isolating the country fallback at the end.",
+        "prompt_hash": "8e223b4a1cffe034",
+        "prompt_chars": 3398,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=4, p=0.125)",
+            "slice 'precedence_conflict' drops 11.8 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 4,
+            "p_value": 0.125
+          },
+          "worst_slice_drop": -0.11764705882352944,
+          "validity": 1.0,
+          "dev_primary": 0.98,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity as a settings-only change without repeating the rejected structured-output trial.",
+        "prompt_hash": "4274e16b8440bec3",
+        "prompt_chars": 3688,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one exact-output example combining Unicode name rendering with an international phone that disagrees with the country line.",
+        "prompt_hash": "1a1fee0006d2fa0e",
+        "prompt_chars": 4057,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=4, p=0.125)",
+        "slice 'precedence_conflict' drops 11.8 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 4,
+        "p_value": 0.125
+      },
+      "worst_slice_drop": -0.11764705882352944,
+      "validity": 1.0,
+      "dev_primary": 0.98,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "e4aa2ee7adf60666",
+    "dev_primary_after": 1.0,
+    "seconds": 64,
+    "spent_phase": 27.9443953875
+  }
+]
