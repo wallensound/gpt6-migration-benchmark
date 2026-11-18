@@ -1,0 +1,20 @@
+[
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one worked example combining swapped labels, Unicode casing and the missing-country exception.",
+    "reason": "leakage check failed (1 six-word, 0 answer hits)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Compresses the rules into field-level instructions while retaining routing, missingness and phone precedence.",
+    "reason": "McNemar not significant (b=3, c=0, p=0.250)"
+  },
+  {
+    "round": 3,
+    "edit_kind": "settings_change",
+    "rationale": "Keeps the perfect-training prompt unchanged and enables structured output to enforce the five required nullable string fields.",
+    "reason": "McNemar not significant (b=2, c=2, p=1.000); slice 'swapped_fields' drops 3.0 points"
+  }
+]

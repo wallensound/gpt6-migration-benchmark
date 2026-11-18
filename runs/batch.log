@@ -112,3 +112,5 @@
 2026-11-18T01:26:09 DONE loop 03 gpt-6.1-terra seed 33 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $34.45
 2026-11-18T01:26:41 DONE loop 02 gpt-6.1-terra seed 33 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $35.51
 2026-11-18T01:27:08 DONE loop 04 gpt-6.1-terra seed 33 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $36.44
+2026-11-18T01:27:28 START loop 01 gpt-6-luna seed 11 v2
+2026-11-18T01:27:33 DONE loop 07 gpt-6.1-terra seed 22 v1: port dev 0.555 -> final dev 0.985, accepted [1], 2 rounds in a row with nothing accepted, P5 spent $36.78

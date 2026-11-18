@@ -1,0 +1,460 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "94d21e2d9e5df067",
+    "dev_primary": 0.555,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "targeted_fix",
+      "simplify",
+      "rewrite"
+    ],
+    "train_primary": 0.5833333333333334,
+    "failure_report": {
+      "counts": {
+        "dropped_value": 46,
+        "phone_wrong": 2,
+        "email_wrong": 1,
+        "country_wrong": 1
+      },
+      "by_slice": {
+        "unicode_names": 11,
+        "swapped_fields": 7,
+        "international_phone": 7,
+        "missing_fields": 7,
+        "plain": 7,
+        "precedence_conflict": 11
+      },
+      "patterns": [
+        {
+          "category": "dropped_value",
+          "count": 46,
+          "sample_causes": [
+            "The model failed to normalize the country value “Norwegen” to NO and therefore also dropped the national phone instead of formatting it with Norway’s calling code.",
+            "The model returned null for the name instead of assigning the swapped company-line value, Anna Drilzexez, as the name.",
+            "The model dropped the provided phone number and company instead of normalizing them.",
+            "The model set country to null instead of normalizing Polen to PL.",
+            "The model omitted the name, returning null instead of normalizing “pigarson, johan” to “Johan Pigarson”."
+          ],
+          "n_examples": 0
+        },
+        {
+          "category": "phone_wrong",
+          "count": 2,
+          "sample_causes": [
+            "The model dropped the valid international phone number instead of normalizing it to +353837402047.",
+            "The model dropped the valid international phone number instead of normalizing it to +19058416468."
+          ],
+          "n_examples": 0
+        },
+        {
+          "category": "email_wrong",
+          "count": 1,
+          "sample_causes": [
+            "Inserted an extra space into the email address."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.5,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Separates extraction, assignment, and normalization so populated values survive label swaps and country-dependent phone processing.",
+        "prompt_hash": "c37568ab69cd8687",
+        "prompt_chars": 3534,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds a single omission check to the missing-value rule while retaining the existing numbered approach and settings.",
+        "prompt_hash": "c02c5e81c44cfc7f",
+        "prompt_chars": 3714,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Consolidates repeated constraints into a compact extraction and transformation checklist with one explicit country fallback.",
+        "prompt_hash": "2c75545003880e43",
+        "prompt_chars": 2531,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "accepted",
+        "dev": {
+          "accept": true,
+          "reasons": [],
+          "mcnemar": {
+            "b": 87,
+            "c": 1,
+            "p_value": 5.751490196657771e-25
+          },
+          "worst_slice_drop": 0.2727272727272727,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 0.555
+        }
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses a slot-filling procedure and explicit phone branches so nonmissing inputs stay accounted for through normalization.",
+        "prompt_hash": "d852f2b5aea225c3",
+        "prompt_chars": 3587,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": true,
+      "reasons": [],
+      "mcnemar": {
+        "b": 87,
+        "c": 1,
+        "p_value": 5.751490196657771e-25
+      },
+      "worst_slice_drop": 0.2727272727272727,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 0.555
+    },
+    "accepted": true,
+    "prompt_hash_after": "2c75545003880e43",
+    "dev_primary_after": 0.985,
+    "seconds": 189,
+    "spent_phase": 28.7600063125
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "restructure",
+      "simplify",
+      "settings_change",
+      "example_swap"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Orders extraction and normalization by dependency, with the phone-to-country exception handled explicitly at the end.",
+        "prompt_hash": "c5b4dce1c83628ab",
+        "prompt_chars": 2937,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Compresses the rules into field-level instructions while retaining routing, missingness and phone precedence.",
+        "prompt_hash": "a8173f4dba83c239",
+        "prompt_chars": 2496,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=3, c=0, p=0.250)"
+          ],
+          "mcnemar": {
+            "b": 3,
+            "c": 0,
+            "p_value": 0.25
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 0.985
+        }
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests schema enforcement independently of prompt wording, without changing normalization instructions.",
+        "prompt_hash": "fe237d94536c7699",
+        "prompt_chars": 2531,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example combining swapped labels, Unicode casing and the missing-country exception.",
+        "prompt_hash": "6660292ac76cec75",
+        "prompt_chars": 2926,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": false,
+          "ngram_hits": 1,
+          "answer_hits": 0
+        },
+        "status": "rejected: leakage"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=3, c=0, p=0.250)"
+      ],
+      "mcnemar": {
+        "b": 3,
+        "c": 0,
+        "p_value": 0.25
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "2c75545003880e43",
+    "dev_primary_after": 0.985,
+    "seconds": 159,
+    "spent_phase": 35.135058775
+  },
+  {
+    "round": 3,
+    "kinds": [
+      "restructure",
+      "rewrite",
+      "targeted_fix",
+      "settings_change"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Separates record extraction, field assignment, and formatting, and makes the country–phone dependency explicit before either field is finalized.",
+        "prompt_hash": "f677a12edd81bdf9",
+        "prompt_chars": 3255,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses an explicit null-initialized record and a routing pass so swapped values are classified before any text transformations.",
+        "prompt_hash": "d255c8f66e541d78",
+        "prompt_chars": 3532,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed training failures, makes one preventive clarification for the shift set: check the international prefix after opening parentheses, before deleting separators.",
+        "prompt_hash": "02a31c5bdbce8907",
+        "prompt_chars": 2644,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Keeps the perfect-training prompt unchanged and enables structured output to enforce the five required nullable string fields.",
+        "prompt_hash": "fe237d94536c7699",
+        "prompt_chars": 2531,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=2, c=2, p=1.000)",
+            "slice 'swapped_fields' drops 3.0 points"
+          ],
+          "mcnemar": {
+            "b": 2,
+            "c": 2,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.030303030303030276,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 0.985
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=2, c=2, p=1.000)",
+        "slice 'swapped_fields' drops 3.0 points"
+      ],
+      "mcnemar": {
+        "b": 2,
+        "c": 2,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.030303030303030276,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "2c75545003880e43",
+    "dev_primary_after": 0.985,
+    "seconds": 63,
+    "spent_phase": 36.781300725
+  }
+]
