@@ -1,0 +1,10 @@
+{
+  "case": "02-invoice-fields",
+  "frozen_at": "2026-11-18T01:08:25",
+  "prompt_hash": "96525dff10409f06",
+  "legacy_files_sha256": "cb4e5b12b629571a8abca7dee90d7272ed48564af6d9f38ed286f4d915cf234f",
+  "dev_primary": 1.0,
+  "floor": 0.9,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

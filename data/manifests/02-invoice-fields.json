@@ -1,0 +1,34 @@
+{
+  "case": "02-invoice-fields",
+  "dataset_version": 1,
+  "gen_seed": 1002,
+  "created_at": "2026-11-18T01:07:24",
+  "generator": {
+    "model": "gpt-6.2-sol",
+    "effort": "low"
+  },
+  "verifier": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "generator_model_id": "global.openai.gpt-6.2-sol",
+  "verifier_model_id": "global.openai.gpt-6-luna",
+  "sdk_version": "3.45.0",
+  "git_commit": "3364881",
+  "sizes": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "sha256": {
+    "train": "6048b21ec2995cb1e1232a3ca43f07da227b8a225f0df961d311c64b93a52104",
+    "dev": "65ff0fea9f0fcebb9ff0cff4e67d9448263b2005ddcb0eaf67e09ab15d808838",
+    "test": "c390587f6e478c2248fc4de4d2c4770c47665a66c1c2be8108f2fd848ff9cfde",
+    "shift": "c2d13ea0ff41e8f036dc941413948db74462b76c27a46fe0eb372ebf8e08d0da"
+  },
+  "frozen_files_sha256": {
+    "spec.md": "e1be8a2accac0f38bb9abeb3c35cee27244c5b48d360ae6848e8fc0d4b81f245",
+    "case.py": "b5896302b919a829ccf23423d984f6644b31e10a36e66a60e956bc3a23c13dc7"
+  }
+}

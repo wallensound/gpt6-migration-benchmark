@@ -1,0 +1,73 @@
+{
+  "case": "02-invoice-fields",
+  "dataset_version": 1,
+  "gen_seed": 1002,
+  "planned": 1001,
+  "kept": 997,
+  "dropped": 4,
+  "drop_rate": 0.003996003996003996,
+  "dropped_by_stage": {
+    "llm_verify": 3,
+    "code_verify": 1
+  },
+  "exact_duplicates": 0,
+  "near_duplicates": 0,
+  "items_per_split": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "items_per_slice_and_split": {
+    "test": {
+      "date_formats": 41,
+      "decimal_comma": 43,
+      "german": 29,
+      "missing_field": 42,
+      "mixed_currencies": 41,
+      "subtotal_vs_total": 43,
+      "swedish": 61
+    },
+    "dev": {
+      "date_formats": 28,
+      "decimal_comma": 28,
+      "german": 19,
+      "missing_field": 28,
+      "mixed_currencies": 27,
+      "subtotal_vs_total": 29,
+      "swedish": 41
+    },
+    "train": {
+      "date_formats": 16,
+      "decimal_comma": 19,
+      "german": 12,
+      "missing_field": 17,
+      "mixed_currencies": 16,
+      "subtotal_vs_total": 16,
+      "swedish": 24
+    },
+    "shift": {
+      "date_formats": 22,
+      "decimal_comma": 20,
+      "german": 15,
+      "missing_field": 20,
+      "mixed_currencies": 20,
+      "subtotal_vs_total": 21,
+      "swedish": 32
+    }
+  },
+  "avg_input_chars": {
+    "test": 483.37,
+    "dev": 475.615,
+    "train": 476.2083333333333,
+    "shift": 421.50666666666666
+  },
+  "avg_input_tokens_est": {
+    "test": 120.8425,
+    "dev": 118.90375,
+    "train": 119.05208333333333,
+    "shift": 105.37666666666667
+  },
+  "spent_usd_phase_total": 20.456707587500002,
+  "seconds": 174
+}

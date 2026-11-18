@@ -1,0 +1,4 @@
+{"plan_seed": 100200067, "slice": "subtotal_vs_total", "stage": "llm_verify", "variant": "main", "why": "The invoice does not state a currency for the total, and CHF appears only as the line-item amount heading, so the stated currency is not explicit for the invoice total."}
+{"plan_seed": 100200783, "slice": "date_formats", "stage": "code_verify", "variant": "main", "why": "missing line item amount (Marpera licence): '53.55'"}
+{"plan_seed": 100250053, "slice": "subtotal_vs_total", "stage": "llm_verify", "variant": "shift", "why": "The unplanned standalone text “Rerova” could be another entity or reference and makes the extraction ambiguous."}
+{"plan_seed": 100250110, "slice": "decimal_comma", "stage": "llm_verify", "variant": "shift", "why": "The text omits the currency from the net, VAT, and total amounts, so SEK is only explicitly attached to the amount payable."}

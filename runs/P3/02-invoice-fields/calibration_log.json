@@ -1,0 +1,80 @@
+{
+  "rounds": [
+    {
+      "at": "2026-11-18T01:07:45",
+      "split": "train",
+      "prompt_hash": "5d1dce81231e2340",
+      "primary": 1.0,
+      "validity": 1.0,
+      "per_slice": {
+        "date_formats": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "decimal_comma": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 12,
+          "primary": 1.0
+        },
+        "missing_field": {
+          "n": 17,
+          "primary": 1.0
+        },
+        "mixed_currencies": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "subtotal_vs_total": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 24,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    },
+    {
+      "at": "2026-11-18T01:08:20",
+      "split": "dev",
+      "prompt_hash": "96525dff10409f06",
+      "primary": 1.0,
+      "validity": 1.0,
+      "per_slice": {
+        "date_formats": {
+          "n": 28,
+          "primary": 1.0
+        },
+        "decimal_comma": {
+          "n": 28,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "missing_field": {
+          "n": 28,
+          "primary": 1.0
+        },
+        "mixed_currencies": {
+          "n": 27,
+          "primary": 1.0
+        },
+        "subtotal_vs_total": {
+          "n": 29,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    }
+  ]
+}

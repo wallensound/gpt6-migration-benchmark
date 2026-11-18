@@ -1,0 +1,10 @@
+model: gpt-5.6-sol        # the source model (Azure; Chat Completions)
+api: chat
+effort: none
+settings:
+  temperature: 0
+  max_output_tokens: null
+  structured_outputs: true    # response_format json_schema from case.schema(settings)
+  logprobs: true
+  flag_method: logprob        # review flags from the mean token log-probability of each value
+  flag_threshold: -0.01       # tuned on train round 1 (5d1dce81231e2340): 0 wrong fields, min field mean -0.0035; highest power-of-ten threshold with zero train flags

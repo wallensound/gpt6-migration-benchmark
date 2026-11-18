@@ -1,0 +1,100 @@
+{
+  "run_id": "02-invoice-fields-calibrate-dev-96525dff10409f06",
+  "phase": "P3",
+  "git_commit": "a3794d5",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:08:20",
+  "reference_date": "2026-11-17",
+  "case": "02-invoice-fields",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-dev-96525dff10409f06",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": true,
+        "flag_method": "logprob",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "96525dff10409f06",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:08:20",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 28,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.338838,
+        "cost_per_item": 0.00669419,
+        "cost_per_correct": 0.00669419,
+        "latency_p50_s": 1.4275,
+        "latency_p95_s": 1.7811449999999995,
+        "tokens_in": 216132,
+        "tokens_in_mean": 1080.66,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 203390,
+        "tokens_cache_write_mean": 1016.95,
+        "tokens_out": 13546,
+        "tokens_out_mean": 67.73,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": 0.0,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.000625,
+          "wrong_fields": 0,
+          "flagged_fields": 1,
+          "flag_true_positives": 0
+        }
+      }
+    }
+  ]
+}
