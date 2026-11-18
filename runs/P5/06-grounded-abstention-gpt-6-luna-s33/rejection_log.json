@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the output contract first, then separates finding a value from verifying its attribution.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Makes entity attribution the deciding test while explicitly allowing answers stated in a follow-up sentence.",
+    "reason": "McNemar not significant (b=0, c=2, p=0.500); slice 'lookalike_distractor' drops 7.7 points"
+  }
+]

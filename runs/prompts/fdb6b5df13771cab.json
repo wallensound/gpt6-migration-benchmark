@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "medium",
+  "prompt": "Use only the single contact block's label–value lines, in any order, separated by colon, equals sign, or tab. Ignore notes and signatures. Return only a bare JSON object with exactly name, phone, email, company, country, each a string or JSON null.\n\nTrim values and collapse whitespace runs. Absent, empty, or case-insensitive -, --, n/a, na, none, unknown, ?, null, TBD means null, except for the country fallback below. Reserve the country line for country. For other lines, route @ values to email; route values with at least seven digits and only digits, spaces or + - ( ) . / to phone after stripping leading tel: and any trailing extension (ext. 12, ext 12, x12, #12, extension 12). Swap name and company if the name-line value ends with a legal suffix below and the company-line value does not.\n\nName: Reorder Last, First at the first comma; drop leading Dr, Mr, Mrs, Ms, Mx, Prof (optional dot, any case). Uppercase the first character and lowercase the rest of every space- or hyphen-separated part. Preserve Unicode letters and diacritics without transliteration.\nCompany: Remove a trailing legal suffix and optional preceding comma, ignoring case: AB, GmbH, AG, Ltd, Ltd., PLC, Inc, Inc., LLC, Corp, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., S.p.A., Sp. z o.o., K.K., Pty Ltd, Ltda. Uppercase the first character and lowercase the rest of each space-separated word.\nEmail: Remove a mailto: prefix and wrapping angle brackets; lowercase the address.\nCountry: Normalize English, Swedish or German names, alpha-2 or alpha-3 codes, and common aliases, case-insensitively, to uppercase ISO 3166-1 alpha-2. UK/Great Britain → GB; Holland → NL; USA/U.S.A. → US; Türkiye → TR; Czech Republic → CZ.\nPhone: After dropping tel: and extensions, check for leading + or 00, ignoring an opening parenthesis. For these international numbers, replace initial 00 with +, remove (0), and strip spaces, dashes, dots, slashes and parentheses. Keep the written calling code even if the country line disagrees. For national numbers, strip formatting, remove one leading trunk 0 and prepend + and the normalized country's calling code; without country, return null. Output E.164 (+ then digits only).\n\nOnly if country is missing, fill it from an international phone's calling code if it identifies one country; shared codes such as +1 and +7 leave it null. Never infer values from any other source, including email domains or company suffixes. Leave final strings trimmed with single internal spaces.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

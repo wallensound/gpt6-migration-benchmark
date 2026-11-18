@@ -1,0 +1,1132 @@
+{
+  "run_id": "06-grounded-abstention-gpt-6-luna-s33",
+  "phase": "P5",
+  "git_commit": "72cdaf1",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:21:15",
+  "reference_date": "2026-11-17",
+  "case": "06-grounded-abstention",
+  "kind": "loop",
+  "target": "gpt-6-luna",
+  "effort": "none",
+  "seed": 33,
+  "dataset_version": 1,
+  "loop_params": {
+    "rounds": 5,
+    "candidates": 4,
+    "screen_items": 60,
+    "early_stop_empty_rounds": 2,
+    "screen_max_trail": 0.03,
+    "screen_min_validity": 0.98,
+    "accept_alpha": 0.05,
+    "accept_max_slice_drop": 0.02,
+    "accept_min_validity": 0.99,
+    "examples_per_pattern": 3,
+    "top_patterns": 3
+  },
+  "optimiser": {
+    "model": "gpt-6.2-sol",
+    "effort": "high"
+  },
+  "labeller": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "evals": [
+    {
+      "eval_id": "r0-dev",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:16",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0081638625,
+        "cost_per_item": 4.08193125e-05,
+        "cost_per_correct": 4.08193125e-05,
+        "latency_p50_s": 0.37345,
+        "latency_p95_s": 0.53166,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 11845,
+        "tokens_cache_write_mean": 59.225,
+        "tokens_out": 1304,
+        "tokens_out_mean": 6.52,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "round": 0,
+      "role": "port-dev"
+    },
+    {
+      "eval_id": "r1-train",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:24",
+      "summary": {
+        "n": 120,
+        "passed": 118,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.941264037027841,
+          0.9954174354340789
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 15,
+            "primary": 0.9333333333333333
+          },
+          "numeric_answer": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 43,
+            "primary": 0.9767441860465116
+          }
+        },
+        "cost_usd": 0.004591795000000001,
+        "cost_per_item": 3.826495833333334e-05,
+        "cost_per_correct": 3.891351694915255e-05,
+        "latency_p50_s": 0.36829999999999996,
+        "latency_p95_s": 0.54135,
+        "tokens_in": 90733,
+        "tokens_in_mean": 756.1083333333333,
+        "tokens_cached": 3119,
+        "tokens_cached_mean": 25.991666666666667,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 782,
+        "tokens_out_mean": 6.516666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "lookalike_confusion": 1,
+          "answered_unanswerable": 1
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9767441860465116,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 0.987012987012987,
+          "unanswerable_accuracy": 0.9767441860465116
+        }
+      },
+      "round": 1,
+      "role": "train"
+    },
+    {
+      "eval_id": "r1-screen-targeted_fix",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "c1c42d4698a5541d",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:36",
+      "summary": {
+        "n": 60,
+        "passed": 59,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.9114487027240993,
+          0.9970518402052136
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          }
+        },
+        "cost_usd": 0.0025082500000000005,
+        "cost_per_item": 4.1804166666666675e-05,
+        "cost_per_correct": 4.2512711864406786e-05,
+        "latency_p50_s": 0.40345,
+        "latency_p95_s": 0.5001299999999996,
+        "tokens_in": 47692,
+        "tokens_in_mean": 794.8666666666667,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 2112,
+        "tokens_cache_write_mean": 35.2,
+        "tokens_out": 389,
+        "tokens_out_mean": 6.483333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "answered_unanswerable": 1
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9523809523809523,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 0.9523809523809523
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "targeted_fix"
+    },
+    {
+      "eval_id": "r1-screen-restructure",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "3b9a168eadc5b568",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:40",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.00223235,
+        "cost_per_item": 3.7205833333333336e-05,
+        "cost_per_correct": 3.7205833333333336e-05,
+        "latency_p50_s": 0.37155,
+        "latency_p95_s": 0.47096,
+        "tokens_in": 42712,
+        "tokens_in_mean": 711.8666666666667,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 387,
+        "tokens_out_mean": 6.45,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r1-screen-simplify",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "5f57b5637437b5e5",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:44",
+      "summary": {
+        "n": 60,
+        "passed": 59,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.9114487027240993,
+          0.9970518402052136
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          }
+        },
+        "cost_usd": 0.0019486000000000002,
+        "cost_per_item": 3.247666666666667e-05,
+        "cost_per_correct": 3.30271186440678e-05,
+        "latency_p50_s": 0.40445000000000003,
+        "latency_p95_s": 0.545445,
+        "tokens_in": 37072,
+        "tokens_in_mean": 617.8666666666667,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 380,
+        "tokens_out_mean": 6.333333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "answered_unanswerable": 1
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9523809523809523,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 0.9523809523809523
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "simplify"
+    },
+    {
+      "eval_id": "r1-screen-example_swap",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "bd85c418f0892222",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:47",
+      "summary": {
+        "n": 60,
+        "passed": 59,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.9114487027240993,
+          0.9970518402052136
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          }
+        },
+        "cost_usd": 0.0025652,
+        "cost_per_item": 4.2753333333333336e-05,
+        "cost_per_correct": 4.347796610169492e-05,
+        "latency_p50_s": 0.3975,
+        "latency_p95_s": 0.48375499999999994,
+        "tokens_in": 48772,
+        "tokens_in_mean": 812.8666666666667,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 2148,
+        "tokens_cache_write_mean": 35.8,
+        "tokens_out": 399,
+        "tokens_out_mean": 6.65,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "answered_unanswerable": 1
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9523809523809523,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 0.9523809523809523
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r1-dev-restructure",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "3b9a168eadc5b568",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:57",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.007576337500000001,
+        "cost_per_item": 3.788168750000001e-05,
+        "cost_per_correct": 3.788168750000001e-05,
+        "latency_p50_s": 0.37675,
+        "latency_p95_s": 0.5930649999999998,
+        "tokens_in": 143996,
+        "tokens_in_mean": 719.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 4303,
+        "tokens_cache_write_mean": 21.515,
+        "tokens_out": 1291,
+        "tokens_out_mean": 6.455,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "dev-candidate",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r2-train",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "89ebdb6e859e7880",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:57",
+      "summary": {
+        "n": 120,
+        "passed": 118,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.941264037027841,
+          0.9954174354340789
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 15,
+            "primary": 0.9333333333333333
+          },
+          "numeric_answer": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 43,
+            "primary": 0.9767441860465116
+          }
+        },
+        "cost_usd": 0.004591795000000001,
+        "cost_per_item": 3.826495833333334e-05,
+        "cost_per_correct": 3.891351694915255e-05,
+        "latency_p50_s": 0.36829999999999996,
+        "latency_p95_s": 0.54135,
+        "tokens_in": 90733,
+        "tokens_in_mean": 756.1083333333333,
+        "tokens_cached": 3119,
+        "tokens_cached_mean": 25.991666666666667,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 782,
+        "tokens_out_mean": 6.516666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "lookalike_confusion": 1,
+          "answered_unanswerable": 1
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9767441860465116,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 0.987012987012987,
+          "unanswerable_accuracy": 0.9767441860465116
+        }
+      },
+      "round": 2,
+      "role": "train"
+    },
+    {
+      "eval_id": "r2-screen-example_swap",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "590d26f4901019ee",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:04",
+      "summary": {
+        "n": 60,
+        "passed": 59,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.9114487027240993,
+          0.9970518402052136
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          }
+        },
+        "cost_usd": 0.0026523500000000004,
+        "cost_per_item": 4.4205833333333336e-05,
+        "cost_per_correct": 4.495508474576272e-05,
+        "latency_p50_s": 0.37060000000000004,
+        "latency_p95_s": 0.47008,
+        "tokens_in": 49988,
+        "tokens_in_mean": 833.1333333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 4376,
+        "tokens_cache_write_mean": 72.93333333333334,
+        "tokens_out": 393,
+        "tokens_out_mean": 6.55,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "answered_unanswerable": 1
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9523809523809523,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 0.9523809523809523
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r2-screen-settings_change",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": "low"
+      },
+      "prompt_hash": "c6edf674543358a3",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:05",
+      "summary": {
+        "n": 60,
+        "passed": 58,
+        "primary": 0.9666666666666667,
+        "primary_ci": [
+          0.886362257256914,
+          0.9908106807438021
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 0.9047619047619048
+          }
+        },
+        "cost_usd": 0.0023944125000000004,
+        "cost_per_item": 3.990687500000001e-05,
+        "cost_per_correct": 4.128297413793104e-05,
+        "latency_p50_s": 0.3882,
+        "latency_p95_s": 0.505025,
+        "tokens_in": 45428,
+        "tokens_in_mean": 757.1333333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 2081,
+        "tokens_cache_write_mean": 34.68333333333333,
+        "tokens_out": 388,
+        "tokens_out_mean": 6.466666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "answered_unanswerable": 2
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9047619047619048,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 0.9047619047619048
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "settings_change"
+    },
+    {
+      "eval_id": "r2-screen-restructure",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "8a8b41d4f354def9",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:07",
+      "summary": {
+        "n": 60,
+        "passed": 58,
+        "primary": 0.9666666666666667,
+        "primary_ci": [
+          0.886362257256914,
+          0.9908106807438021
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 0.9047619047619048
+          }
+        },
+        "cost_usd": 0.0023921375000000005,
+        "cost_per_item": 3.986895833333334e-05,
+        "cost_per_correct": 4.124375000000001e-05,
+        "latency_p50_s": 0.3867,
+        "latency_p95_s": 0.475745,
+        "tokens_in": 45368,
+        "tokens_in_mean": 756.1333333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 2079,
+        "tokens_cache_write_mean": 34.65,
+        "tokens_out": 391,
+        "tokens_out_mean": 6.516666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "answered_unanswerable": 2
+        },
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 0.9047619047619048,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 0.9047619047619048
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r2-screen-rewrite",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "2a68e7f3ea2523f2",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:10",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 21,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0022799,
+        "cost_per_item": 3.799833333333333e-05,
+        "cost_per_correct": 3.799833333333333e-05,
+        "latency_p50_s": 0.3715,
+        "latency_p95_s": 0.48007,
+        "tokens_in": 43688,
+        "tokens_in_mean": 728.1333333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 382,
+        "tokens_out_mean": 6.366666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "rewrite"
+    },
+    {
+      "eval_id": "r2-dev-rewrite",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "2a68e7f3ea2523f2",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:19",
+      "summary": {
+        "n": 200,
+        "passed": 198,
+        "primary": 0.99,
+        "primary_ci": [
+          0.9642782382838231,
+          0.9972533418664555
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 0.9230769230769231
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.007824375000000001,
+        "cost_per_item": 3.912187500000001e-05,
+        "cost_per_correct": 3.951704545454546e-05,
+        "latency_p50_s": 0.3725,
+        "latency_p95_s": 0.5109349999999998,
+        "tokens_in": 147996,
+        "tokens_in_mean": 739.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 8526,
+        "tokens_cache_write_mean": 42.63,
+        "tokens_out": 1272,
+        "tokens_out_mean": 6.36,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "over_abstain": 1,
+          "lookalike_confusion": 1
+        },
+        "secondary": {
+          "abstention_precision": 0.9861111111111112,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.007751937984496124,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 0.9844961240310077,
+          "unanswerable_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "dev-candidate",
+      "edit_kind": "rewrite"
+    }
+  ],
+  "finished": true,
+  "stop_reason": "2 rounds in a row with nothing accepted",
+  "final_prompt_hash": "89ebdb6e859e7880",
+  "final_dev_primary": 1.0,
+  "port_dev_primary": 1.0,
+  "accepted_rounds": [],
+  "final_leak_check": {
+    "ok": true,
+    "ngram_hits": 0,
+    "answer_hits": 0
+  },
+  "finished_at": "2026-11-18T01:22:19",
+  "calls_made": 958,
+  "calls_cached": 372
+}
