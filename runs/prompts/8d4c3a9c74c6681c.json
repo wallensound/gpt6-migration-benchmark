@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return exactly one JSON object for the single invoice in the user message. The object must contain exactly vendor, invoice_number, issue_date, due_date, currency, net, vat, and total. Each value must be a string or null. Do not emit Markdown, commentary, or extra keys.\n\nChoose the source values:\n- vendor: the full legal name of the company issuing the invoice (seller, supplier, or payee), as written, including the legal suffix. Exclude customer and bill-to blocks.\n- invoice_number: the invoice's own identifier, exactly as written without the label. Reject order, PO, and customer identifiers.\n- issue_date: the issue date, not the delivery or order date. due_date: the stated payment due date.\n- currency: the currency in which the invoice is billed. Ignore any informational conversions, including their amounts.\n- net: the stated taxable amount excluding VAT after any discount. Reject a subtotal preceding a discount. A line amount is eligible only if the invoice labels it as the invoice net.\n- vat: the stated VAT or other sales-tax amount, not the rate. total: the stated gross amount payable, including VAT.\n\nIf a value is not stated, use null. Never guess or derive values: do not calculate net from gross and VAT, tax from a rate, or a due date from terms.\n\nNormalize the selected values:\n- Dates: YYYY-MM-DD for all written formats, including month names, abbreviations, and ordinal days. Keep ISO year-first dates; other numeric dates are day-first even when the day is at most 12. Two-digit years mean 20YY.\n- Amounts: strings with a dot and exactly two decimal digits, no grouping separators or currency. Use the final comma or dot followed by two digits as the decimal separator.\n- Currency: EUR, SEK, USD, GBP, CHF, NOK, or DKK. Map € to EUR, £ to GBP, $ to USD, and kr to SEK.\n\nRead English, Swedish, and German. Swedish cues: Fakturanummer/Fakturanr (invoice number), Fakturadatum (issue), Förfallodatum/Förfaller/Sista betalningsdag (due), Leveransdatum (delivery), Delsumma (subtotal), Rabatt (discount), Belopp exkl. moms/Netto/Summa exkl. moms (net), Moms (tax), Att betala/Summa att betala/Totalt inkl. moms (total), Valuta (currency). German cues: Rechnungsnummer/Rechnungs-Nr. (invoice number), Rechnungsdatum (issue), Fällig am/Zahlbar bis/Fälligkeitsdatum (due), Lieferdatum (delivery), Zwischensumme (subtotal), Rabatt/Nachlass (discount), Nettobetrag/Summe netto (net), MwSt./USt./Mehrwertsteuer (tax), Gesamtbetrag/Rechnungsbetrag/Bruttobetrag/Zu zahlen (total), Währung (currency). Recognize labels and prose despite broken lines or OCR typos; the value strings are intact.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

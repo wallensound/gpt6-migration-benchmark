@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Remove repetition and examples while retaining every inclusion, normalisation, ordering and output requirement.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Consolidate the overlapping rules into a collect–resolve–emit workflow that separates finding mentions from choosing exact output names.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]

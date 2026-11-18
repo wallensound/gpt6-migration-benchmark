@@ -1,0 +1,297 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "f038b0a89df341d6",
+    "dev_primary": 0.995,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "settings_change",
+      "restructure",
+      "simplify"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "No training failure was observed; the single behavioral change makes domain resolution explicitly paragraph-wide to guard against premature fallback spelling on longer inputs.",
+        "prompt_hash": "9b8cd4c2d4e177a8",
+        "prompt_chars": 2393,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enable Structured Outputs to enforce response shape; change the prompt's output instructions only as needed for the required wrapper.",
+        "prompt_hash": "d685a33e4d8bcb37",
+        "prompt_chars": 2322,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Organise extraction into detection, normalisation and reconciliation so indirect mentions are collected before names are deduplicated.",
+        "prompt_hash": "e8d4bac88c453377",
+        "prompt_chars": 1858,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Remove repetition and examples while retaining every inclusion, normalisation, ordering and output requirement.",
+        "prompt_hash": "b5da3e34ac6f07bb",
+        "prompt_chars": 1424,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 0.995
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.995,
+    "seconds": 134,
+    "spent_phase": 7.60271352
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "targeted_fix",
+      "example_swap",
+      "simplify"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "other": 1
+      },
+      "by_slice": {
+        "german": 1
+      },
+      "patterns": [
+        {
+          "category": "other",
+          "count": 1,
+          "sample_causes": [
+            "Misspelled “Kimgera” as “Kimg era,” causing the expected company to be missing and an extra name to appear."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.9827586206896551,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enable Structured Outputs to enforce the permitted response shape while leaving extraction and canonicalisation unchanged.",
+        "prompt_hash": "2ad68741d48e2c8b",
+        "prompt_chars": 2918,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Add an exact-copy check to the spelling rule to catch inserted spaces before returning the array.",
+        "prompt_hash": "f5cecd91fb01612e",
+        "prompt_chars": 3501,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Use one German worked example to demonstrate that unfamiliar names stay intact across mentions and that genuine multiword names retain their spaces.",
+        "prompt_hash": "26bd2bcff070c6b9",
+        "prompt_chars": 2801,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Consolidate the overlapping rules into a collect–resolve–emit workflow that separates finding mentions from choosing exact output names.",
+        "prompt_hash": "506240d9d70de878",
+        "prompt_chars": 1628,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 0.995
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.995,
+    "seconds": 190,
+    "spent_phase": 17.598167515
+  }
+]
