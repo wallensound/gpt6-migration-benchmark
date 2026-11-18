@@ -1,0 +1,314 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "ae9a36fb6855c190",
+    "dev_primary": 0.975,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "rewrite",
+      "example_swap",
+      "simplify"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "missing_term": 2
+      },
+      "by_slice": {
+        "plain": 1,
+        "inflected_forms": 1
+      },
+      "patterns": [
+        {
+          "category": "missing_term",
+          "count": 2,
+          "sample_causes": [
+            "The translation rendered “låg vikt” as “lightweight,” so it omitted the required glossary term “weight.”",
+            "The translation did not include the required glossary term “wireless.”"
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the output contract and literal terminology requirement first, then adds a final check for renderings lost during phrasing.",
+        "prompt_hash": "823d645b551ebd44",
+        "prompt_chars": 3184,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Makes glossary matching a source-first workflow so descriptive adjectives and nouns are tracked before English wording is chosen.",
+        "prompt_hash": "388fbd9f0c1875ef",
+        "prompt_chars": 3330,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one newly written example showing how to retain a mandatory noun, an inflected adjective and a repeated rendering in natural prose.",
+        "prompt_hash": "79ad8989f0a42a3a",
+        "prompt_chars": 3598,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Condenses the instructions into three short rules and a compact glossary without dropping the output or terminology constraints.",
+        "prompt_hash": "d458c2dd7be481a2",
+        "prompt_chars": 2559,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=4, c=1, p=0.375)"
+          ],
+          "mcnemar": {
+            "b": 4,
+            "c": 1,
+            "p_value": 0.375
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 0.975
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=4, c=1, p=0.375)"
+      ],
+      "mcnemar": {
+        "b": 4,
+        "c": 1,
+        "p_value": 0.375
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 0.975
+    },
+    "accepted": false,
+    "prompt_hash_after": "ae9a36fb6855c190",
+    "dev_primary_after": 0.975,
+    "seconds": 146,
+    "spent_phase": 23.5202692625
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "targeted_fix",
+      "simplify",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "missing_term": 2
+      },
+      "by_slice": {
+        "plain": 1,
+        "inflected_forms": 1
+      },
+      "patterns": [
+        {
+          "category": "missing_term",
+          "count": 2,
+          "sample_causes": [
+            "The translation rendered “låg vikt” as “lightweight,” so it omitted the required glossary term “weight.”",
+            "The translation did not include the required glossary term “wireless.”"
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds one explicit rule against paraphrases that preserve the meaning but omit the required English phrase.",
+        "prompt_hash": "5b97b54243e47f0d",
+        "prompt_chars": 3341,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=2, c=1, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 2,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.98,
+          "dev_primary_current": 0.975
+        }
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Keeps the existing glossary format and replaces overlapping instructions with a short input, terminology, and output workflow.",
+        "prompt_hash": "8ceec37f1c87a801",
+        "prompt_chars": 2908,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses a source scan and a final literal-term check to catch omitted renderings and repeated mentions without adding output framing.",
+        "prompt_hash": "2bdb8c8a7f8a0d61",
+        "prompt_chars": 3345,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether medium verbosity reduces over-compression while leaving terminology and output instructions untouched.",
+        "prompt_hash": "40b8b427f382b1f9",
+        "prompt_chars": 3143,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "medium"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "targeted_fix",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=2, c=1, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 2,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.98,
+      "dev_primary_current": 0.975
+    },
+    "accepted": false,
+    "prompt_hash_after": "ae9a36fb6855c190",
+    "dev_primary_after": 0.975,
+    "seconds": 135,
+    "spent_phase": 30.6013593375
+  }
+]

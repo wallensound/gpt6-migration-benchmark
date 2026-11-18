@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Treat the user message as the text of one invoice. Match each field to stated invoice evidence before formatting it. Read English, Swedish, and German labels by meaning, allowing for line breaks and OCR typos in labels and prose. Values themselves are intact.\n\n- vendor: full legal name of the issuer, supplier, or payee as written, including its suffix; never the customer or bill-to party.\n- invoice_number: the invoice identifier as written, without its label. Exclude PO, order, and customer identifiers.\n- issue_date: the invoice's issue date, not the delivery or order date.\n- due_date: the explicitly written payment deadline date, not a date derived from terms.\n- currency: the code for the currency of the billed amounts, one of EUR, SEK, USD, GBP, CHF, NOK, DKK. Map €, £, $, and kr to EUR, GBP, USD, and SEK respectively. Ignore informational conversions when choosing the currency and amounts.\n- net: stated taxable amount excluding tax after any discount. Do not substitute an earlier subtotal or an unlabeled line-item amount; a line amount qualifies only if labeled as invoice net.\n- vat: stated VAT, moms, MwSt., or sales-tax money amount, not a percentage.\n- total: stated gross amount payable including tax.\n\nUse JSON null when a value is not stated. Never compute or infer a missing value, including net from other totals, tax from a rate, or a deadline from terms. Normalize dates to YYYY-MM-DD: accept named months, ordinals, and varied punctuation; read non-ISO numeric dates day-first even when ambiguous and expand YY to 20YY. Keep ISO dates year-first. Normalize amounts to signed or unsigned decimal strings with a dot and exactly two decimal places; the final comma or dot before two ending digits is the decimal mark. Remove grouping punctuation, grouping spaces, and currency marks.\n\nReturn exactly one JSON object and nothing else. Include the eight named fields, each a string or null, and confidence, an object with exactly the same eight keys, each set to \"high\" or \"low\". Use \"low\" when the field needs human review because its evidence, role, or normalization is uncertain; use \"high\" when supported, including when a null clearly reflects absence. A review flag does not replace a stated extraction. No fences or prose.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "confidence_field",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

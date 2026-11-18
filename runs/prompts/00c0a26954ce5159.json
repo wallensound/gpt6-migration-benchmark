@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract one invoice from the user text. Return only one JSON object with exactly these keys and string or JSON null values:\n- vendor: issuer/seller/payee's full legal name as written, suffix included; never the bill-to customer.\n- invoice_number: invoice identifier exactly as written, minus label; not PO, order, or customer ID.\n- issue_date: invoice date, not delivery or order date.\n- due_date: stated payment deadline date only.\n- currency: billing code EUR, SEK, USD, GBP, CHF, NOK, or DKK (€→EUR, £→GBP, $→USD, kr→SEK); ignore informational conversions and their amounts.\n- net: stated post-discount taxable amount excluding VAT, not the pre-discount subtotal; use a line amount only if labeled as invoice net.\n- vat: stated VAT/sales-tax amount, not rate.\n- total: stated gross amount payable, including tax.\n\nEnglish / Swedish / German labels may be broken across lines or contain OCR typos; values are intact. Useful anchors: Fakturanummer / Rechnungsnummer, Fakturadatum / Rechnungsdatum, Förfallodatum / Fällig am / Zahlbar bis, Netto / Nettobetrag, Moms / MwSt., Att betala / Gesamtbetrag.\n\nUse null for unstated values, never guesses or calculations (including due dates from terms, net from other totals, and VAT from rates). Dates: YYYY-MM-DD; retain ISO year-first order, otherwise read numeric dates day-first even when ambiguous; expand YY to 20YY and recognize written months and ordinal days. Amounts: plain decimal strings, dot plus exactly two decimals; use the final comma or dot before the two fractional digits as the decimal mark, dropping grouping marks/spaces and currency. No extra keys, prose, or fences.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": "low"
+  }
+}

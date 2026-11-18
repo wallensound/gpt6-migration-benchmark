@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Condenses the instructions into three short rules and a compact glossary without dropping the output or terminology constraints.",
+    "reason": "McNemar not significant (b=4, c=1, p=0.375)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "targeted_fix",
+    "rationale": "Adds one explicit rule against paraphrases that preserve the meaning but omit the required English phrase.",
+    "reason": "McNemar not significant (b=2, c=1, p=1.000)"
+  }
+]
