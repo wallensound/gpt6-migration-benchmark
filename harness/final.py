@@ -190,7 +190,8 @@ def analyse() -> dict:
         # stability (three repeats on test)
         stab = {}
         for base in [e[:-len("|test|r0")] for e in meta if e.endswith("|test|r0")]:
-            reps = [_vec(rows, f"{base}|test|r{r}", ids) for r in range(3)]
+            bids = sorted(rows[f"{base}|test|r0"])  # dataset-v2 configs have their own item ids
+            reps = [_vec(rows, f"{base}|test|r{r}", bids) for r in range(3)]
             if all(r is not None for r in reps):
                 stab[base] = stats.flip_rate(np.vstack(reps))
         c["stability_flip_rate"] = stab

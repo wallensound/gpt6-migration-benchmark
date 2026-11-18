@@ -81,3 +81,9 @@ Append-only log. Newest entries at the bottom.
 - The loop accepted candidates only in case 07 (Terra 55.5% -> 98.5-99.0% dev on all seeds; Sol 83.5% -> 97.0-100%); everywhere else the port was already at the ceiling and the loop stopped after two empty rounds, as the acceptance rule intends.
 - Sealed-data access log before P6: 20 entries, all `write(generate)` from the data builds; no reads.
 - Spend so far $141 (P2 $36, P3 $10, P4 $44, P5 $51).
+
+### 2026-11-18 P6 Final: done
+- `make final` run once, as eight parallel per-case processes (`harness.cli final --case NN`, BENCH_FINAL=1); an initial single-process start was stopped after two evaluations and resumed (evaluations already stored are skipped, so nothing ran twice). 302 evaluations: source, 4 ports and every optimised prompt on test and shift, three test repeats for source, ports and seed-11 optimised prompts. Nothing skipped for budget; P6 spend $108.
+- Bug fixed in the analysis only (`final.analyse`): the stability calculation indexed dataset-v2 configurations with v1 item ids and crashed after all evaluations were stored; no evaluation was rerun.
+- **D22 Seed spread caveat.** Where the loop accepted nothing, all three seeds return the identical (ported) prompt; identical requests are served from the response cache, so their test results are identical and the seed spread is 0 by construction. Run-to-run variance of the models is measured separately by the three-repeat flip rate (stability), which the report shows next to the seed spread.
+- Headline: Partly reproducible (seed repeats pass 8/8 Luna, 7/8 Terra; data-version check passes; across-cases fails: Luna migrated in 4 of 8; main-tier fails on case 07; clean rerun pending).

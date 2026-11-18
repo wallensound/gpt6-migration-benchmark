@@ -1,0 +1,3340 @@
+{
+  "run_id": "02-invoice-fields-final",
+  "phase": "P6",
+  "git_commit": "7db7b20",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:49:22",
+  "reference_date": "2026-11-17",
+  "case": "02-invoice-fields",
+  "kind": "final",
+  "evals": [
+    {
+      "eval_id": "source|test|r0",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": true,
+        "flag_method": "logprob",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "96525dff10409f06",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:49:59",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 2.024729,
+        "cost_per_item": 0.006749096666666666,
+        "cost_per_correct": 0.006749096666666666,
+        "latency_p50_s": 1.4170999999999998,
+        "latency_p95_s": 2.1345200000000006,
+        "tokens_in": 324957,
+        "tokens_in_mean": 1083.19,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 319041,
+        "tokens_cache_write_mean": 1063.47,
+        "tokens_out": 20293,
+        "tokens_out_mean": 67.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": 0.0,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0004166666666666667,
+          "wrong_fields": 0,
+          "flagged_fields": 1,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "source",
+      "kind": "source",
+      "target": "gpt-5.6-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.2-astra|test|r0",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:09",
+      "summary": {
+        "n": 300,
+        "passed": 299,
+        "primary": 0.9966666666666667,
+        "primary_ci": [
+          0.9813633063054688,
+          0.9994113422781488
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 0.975609756097561
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 2.0034004000000003,
+        "cost_per_item": 0.006678001333333334,
+        "cost_per_correct": 0.006700335785953178,
+        "latency_p50_s": 1.58475,
+        "latency_p95_s": 2.2387200000000003,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 285388,
+        "tokens_cached_mean": 951.2933333333333,
+        "tokens_cache_write": 38669,
+        "tokens_cache_write_mean": 128.89666666666668,
+        "tokens_out": 34710,
+        "tokens_out_mean": 115.7,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "amount_format": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9995833333333334,
+          "flag_precision": null,
+          "flag_recall": 0.0,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 1,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-astra",
+      "kind": "port",
+      "target": "gpt-6.2-astra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.2-sol|test|r0",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:23",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.43302840000000004,
+        "cost_per_item": 0.001443428,
+        "cost_per_correct": 0.001443428,
+        "latency_p50_s": 0.78475,
+        "latency_p95_s": 1.315345,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 272167,
+        "tokens_cached_mean": 907.2233333333334,
+        "tokens_cache_write": 51890,
+        "tokens_cache_write_mean": 172.96666666666667,
+        "tokens_out": 24887,
+        "tokens_out_mean": 82.95666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-sol",
+      "kind": "port",
+      "target": "gpt-6.2-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.1-terra|test|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:39",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.17480275,
+        "cost_per_item": 0.0005826758333333334,
+        "cost_per_correct": 0.0005826758333333334,
+        "latency_p50_s": 0.94725,
+        "latency_p95_s": 1.4218000000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 136325,
+        "tokens_cached_mean": 454.4166666666667,
+        "tokens_cache_write": 181104,
+        "tokens_cache_write_mean": 603.68,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.1-terra",
+      "kind": "port",
+      "target": "gpt-6.1-terra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6-luna|test|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:56",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.019343505,
+        "cost_per_item": 6.447835e-05,
+        "cost_per_correct": 6.447835e-05,
+        "latency_p50_s": 0.57615,
+        "latency_p95_s": 0.7367550000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 103921,
+        "tokens_cached_mean": 346.4033333333333,
+        "tokens_cache_write": 213508,
+        "tokens_cache_write_mean": 711.6933333333334,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6-luna",
+      "kind": "port",
+      "target": "gpt-6-luna",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s11|test|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:56",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.019343505,
+        "cost_per_item": 6.447835e-05,
+        "cost_per_correct": 6.447835e-05,
+        "latency_p50_s": 0.57615,
+        "latency_p95_s": 0.7367550000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 103921,
+        "tokens_cached_mean": 346.4033333333333,
+        "tokens_cache_write": 213508,
+        "tokens_cache_write_mean": 711.6933333333334,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s11",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s22|test|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:57",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.019343505,
+        "cost_per_item": 6.447835e-05,
+        "cost_per_correct": 6.447835e-05,
+        "latency_p50_s": 0.57615,
+        "latency_p95_s": 0.7367550000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 103921,
+        "tokens_cached_mean": 346.4033333333333,
+        "tokens_cache_write": 213508,
+        "tokens_cache_write_mean": 711.6933333333334,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s22",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 22,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s33|test|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:57",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.019343505,
+        "cost_per_item": 6.447835e-05,
+        "cost_per_correct": 6.447835e-05,
+        "latency_p50_s": 0.57615,
+        "latency_p95_s": 0.7367550000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 103921,
+        "tokens_cached_mean": 346.4033333333333,
+        "tokens_cache_write": 213508,
+        "tokens_cache_write_mean": 711.6933333333334,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s33",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 33,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s11|test|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:57",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.17480275,
+        "cost_per_item": 0.0005826758333333334,
+        "cost_per_correct": 0.0005826758333333334,
+        "latency_p50_s": 0.94725,
+        "latency_p95_s": 1.4218000000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 136325,
+        "tokens_cached_mean": 454.4166666666667,
+        "tokens_cache_write": 181104,
+        "tokens_cache_write_mean": 603.68,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s11",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s22|test|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:57",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.17480275,
+        "cost_per_item": 0.0005826758333333334,
+        "cost_per_correct": 0.0005826758333333334,
+        "latency_p50_s": 0.94725,
+        "latency_p95_s": 1.4218000000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 136325,
+        "tokens_cached_mean": 454.4166666666667,
+        "tokens_cache_write": 181104,
+        "tokens_cache_write_mean": 603.68,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s22",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 22,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s33|test|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:51:57",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.17480275,
+        "cost_per_item": 0.0005826758333333334,
+        "cost_per_correct": 0.0005826758333333334,
+        "latency_p50_s": 0.94725,
+        "latency_p95_s": 1.4218000000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 136325,
+        "tokens_cached_mean": 454.4166666666667,
+        "tokens_cache_write": 181104,
+        "tokens_cache_write_mean": 603.68,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s33",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 33,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "source|shift|r0",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": true,
+        "flag_method": "logprob",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "96525dff10409f06",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:09",
+      "summary": {
+        "n": 150,
+        "passed": 149,
+        "primary": 0.9933333333333333,
+        "primary_ci": [
+          0.9632071602251817,
+          0.9988221986649826
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 0.96875
+          }
+        },
+        "cost_usd": 1.009458,
+        "cost_per_item": 0.00672972,
+        "cost_per_correct": 0.0067748859060402684,
+        "latency_p50_s": 1.4347999999999999,
+        "latency_p95_s": 1.93505,
+        "tokens_in": 162634,
+        "tokens_in_mean": 1084.2266666666667,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 155122,
+        "tokens_cache_write_mean": 1034.1466666666668,
+        "tokens_out": 10190,
+        "tokens_out_mean": 67.93333333333334,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_invoice_number": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9991666666666666,
+          "flag_precision": 1.0,
+          "flag_recall": 1.0,
+          "flag_f1": 1.0,
+          "flag_rate": 0.0008333333333333334,
+          "wrong_fields": 1,
+          "flagged_fields": 1,
+          "flag_true_positives": 1
+        }
+      },
+      "config_name": "source",
+      "kind": "source",
+      "target": "gpt-5.6-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "port:gpt-6.2-astra|shift|r0",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:23",
+      "summary": {
+        "n": 150,
+        "passed": 150,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9750297556319235,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.6694672,
+        "cost_per_item": 0.004463114666666667,
+        "cost_per_correct": 0.004463114666666667,
+        "latency_p50_s": 1.543,
+        "latency_p95_s": 2.121114999999999,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 162184,
+        "tokens_cached_mean": 1081.2266666666667,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 13493,
+        "tokens_out_mean": 89.95333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-astra",
+      "kind": "port",
+      "target": "gpt-6.2-astra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "port:gpt-6.2-sol|shift|r0",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:30",
+      "summary": {
+        "n": 150,
+        "passed": 150,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9750297556319235,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.15347680000000002,
+        "cost_per_item": 0.0010231786666666668,
+        "cost_per_correct": 0.0010231786666666668,
+        "latency_p50_s": 0.77625,
+        "latency_p95_s": 1.32543,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 162184,
+        "tokens_cached_mean": 1081.2266666666667,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 12104,
+        "tokens_out_mean": 80.69333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-sol",
+      "kind": "port",
+      "target": "gpt-6.2-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "port:gpt-6.1-terra|shift|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:38",
+      "summary": {
+        "n": 150,
+        "passed": 150,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9750297556319235,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.083446725,
+        "cost_per_item": 0.0005563115,
+        "cost_per_correct": 0.0005563115,
+        "latency_p50_s": 0.9057000000000001,
+        "latency_p95_s": 1.4147399999999992,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 74517,
+        "tokens_cached_mean": 496.78,
+        "tokens_cache_write": 80319,
+        "tokens_cache_write_mean": 535.46,
+        "tokens_out": 10339,
+        "tokens_out_mean": 68.92666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.1-terra",
+      "kind": "port",
+      "target": "gpt-6.1-terra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "port:gpt-6-luna|shift|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:43",
+      "summary": {
+        "n": 150,
+        "passed": 147,
+        "primary": 0.98,
+        "primary_ci": [
+          0.9428533167296139,
+          0.9931752486770326
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 0.9375
+          }
+        },
+        "cost_usd": 0.009462090000000001,
+        "cost_per_item": 6.308060000000001e-05,
+        "cost_per_correct": 6.436795918367348e-05,
+        "latency_p50_s": 0.58135,
+        "latency_p95_s": 0.7077099999999998,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 55088,
+        "tokens_cached_mean": 367.25333333333333,
+        "tokens_cache_write": 99748,
+        "tokens_cache_write_mean": 664.9866666666667,
+        "tokens_out": 10340,
+        "tokens_out_mean": 68.93333333333334,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_vendor": 2,
+          "missed_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9975,
+          "flag_precision": null,
+          "flag_recall": 0.0,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 3,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6-luna",
+      "kind": "port",
+      "target": "gpt-6-luna",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s11|shift|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:44",
+      "summary": {
+        "n": 150,
+        "passed": 147,
+        "primary": 0.98,
+        "primary_ci": [
+          0.9428533167296139,
+          0.9931752486770326
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 0.9375
+          }
+        },
+        "cost_usd": 0.009462090000000001,
+        "cost_per_item": 6.308060000000001e-05,
+        "cost_per_correct": 6.436795918367348e-05,
+        "latency_p50_s": 0.58135,
+        "latency_p95_s": 0.7077099999999998,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 55088,
+        "tokens_cached_mean": 367.25333333333333,
+        "tokens_cache_write": 99748,
+        "tokens_cache_write_mean": 664.9866666666667,
+        "tokens_out": 10340,
+        "tokens_out_mean": 68.93333333333334,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_vendor": 2,
+          "missed_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9975,
+          "flag_precision": null,
+          "flag_recall": 0.0,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 3,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s11",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s22|shift|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:44",
+      "summary": {
+        "n": 150,
+        "passed": 147,
+        "primary": 0.98,
+        "primary_ci": [
+          0.9428533167296139,
+          0.9931752486770326
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 0.9375
+          }
+        },
+        "cost_usd": 0.009462090000000001,
+        "cost_per_item": 6.308060000000001e-05,
+        "cost_per_correct": 6.436795918367348e-05,
+        "latency_p50_s": 0.58135,
+        "latency_p95_s": 0.7077099999999998,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 55088,
+        "tokens_cached_mean": 367.25333333333333,
+        "tokens_cache_write": 99748,
+        "tokens_cache_write_mean": 664.9866666666667,
+        "tokens_out": 10340,
+        "tokens_out_mean": 68.93333333333334,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_vendor": 2,
+          "missed_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9975,
+          "flag_precision": null,
+          "flag_recall": 0.0,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 3,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s22",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 22,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s33|shift|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:44",
+      "summary": {
+        "n": 150,
+        "passed": 147,
+        "primary": 0.98,
+        "primary_ci": [
+          0.9428533167296139,
+          0.9931752486770326
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 0.9375
+          }
+        },
+        "cost_usd": 0.009462090000000001,
+        "cost_per_item": 6.308060000000001e-05,
+        "cost_per_correct": 6.436795918367348e-05,
+        "latency_p50_s": 0.58135,
+        "latency_p95_s": 0.7077099999999998,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 55088,
+        "tokens_cached_mean": 367.25333333333333,
+        "tokens_cache_write": 99748,
+        "tokens_cache_write_mean": 664.9866666666667,
+        "tokens_out": 10340,
+        "tokens_out_mean": 68.93333333333334,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_vendor": 2,
+          "missed_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9975,
+          "flag_precision": null,
+          "flag_recall": 0.0,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 3,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s33",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 33,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s11|shift|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:44",
+      "summary": {
+        "n": 150,
+        "passed": 150,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9750297556319235,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.083446725,
+        "cost_per_item": 0.0005563115,
+        "cost_per_correct": 0.0005563115,
+        "latency_p50_s": 0.9057000000000001,
+        "latency_p95_s": 1.4147399999999992,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 74517,
+        "tokens_cached_mean": 496.78,
+        "tokens_cache_write": 80319,
+        "tokens_cache_write_mean": 535.46,
+        "tokens_out": 10339,
+        "tokens_out_mean": 68.92666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s11",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s22|shift|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:44",
+      "summary": {
+        "n": 150,
+        "passed": 150,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9750297556319235,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.083446725,
+        "cost_per_item": 0.0005563115,
+        "cost_per_correct": 0.0005563115,
+        "latency_p50_s": 0.9057000000000001,
+        "latency_p95_s": 1.4147399999999992,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 74517,
+        "tokens_cached_mean": 496.78,
+        "tokens_cache_write": 80319,
+        "tokens_cache_write_mean": 535.46,
+        "tokens_out": 10339,
+        "tokens_out_mean": 68.92666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s22",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 22,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s33|shift|r0",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:52:44",
+      "summary": {
+        "n": 150,
+        "passed": 150,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9750297556319235,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 22,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 32,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.083446725,
+        "cost_per_item": 0.0005563115,
+        "cost_per_correct": 0.0005563115,
+        "latency_p50_s": 0.9057000000000001,
+        "latency_p95_s": 1.4147399999999992,
+        "tokens_in": 162184,
+        "tokens_in_mean": 1081.2266666666667,
+        "tokens_cached": 74517,
+        "tokens_cached_mean": 496.78,
+        "tokens_cache_write": 80319,
+        "tokens_cache_write_mean": 535.46,
+        "tokens_out": 10339,
+        "tokens_out_mean": 68.92666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s33",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 33,
+      "dataset_version": 1,
+      "split": "shift"
+    },
+    {
+      "eval_id": "source|test|r1",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": true,
+        "flag_method": "logprob",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "96525dff10409f06",
+      "repeat": 1,
+      "finished_at": "2026-11-18T01:53:07",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.5571404000000001,
+        "cost_per_item": 0.001857134666666667,
+        "cost_per_correct": 0.001857134666666667,
+        "latency_p50_s": 1.4482000000000002,
+        "latency_p95_s": 1.7955600000000003,
+        "tokens_in": 324957,
+        "tokens_in_mean": 1083.19,
+        "tokens_cached": 319041,
+        "tokens_cached_mean": 1063.47,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20293,
+        "tokens_out_mean": 67.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": 0.0,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0004166666666666667,
+          "wrong_fields": 0,
+          "flagged_fields": 1,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "source",
+      "kind": "source",
+      "target": "gpt-5.6-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "source|test|r2",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": true,
+        "flag_method": "logprob",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "96525dff10409f06",
+      "repeat": 2,
+      "finished_at": "2026-11-18T01:53:32",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.5571404000000001,
+        "cost_per_item": 0.001857134666666667,
+        "cost_per_correct": 0.001857134666666667,
+        "latency_p50_s": 1.45455,
+        "latency_p95_s": 2.12956,
+        "tokens_in": 324957,
+        "tokens_in_mean": 1083.19,
+        "tokens_cached": 319041,
+        "tokens_cached_mean": 1063.47,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20293,
+        "tokens_out_mean": 67.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": 0.0,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0004166666666666667,
+          "wrong_fields": 0,
+          "flagged_fields": 1,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "source",
+      "kind": "source",
+      "target": "gpt-5.6-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.2-astra|test|r1",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 1,
+      "finished_at": "2026-11-18T01:53:57",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.3372056,
+        "cost_per_item": 0.004457352,
+        "cost_per_correct": 0.004457352,
+        "latency_p50_s": 1.4995,
+        "latency_p95_s": 2.2312849999999997,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 324057,
+        "tokens_cached_mean": 1080.19,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 26949,
+        "tokens_out_mean": 89.83,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-astra",
+      "kind": "port",
+      "target": "gpt-6.2-astra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.2-astra|test|r2",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 2,
+      "finished_at": "2026-11-18T01:54:23",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.3470056000000001,
+        "cost_per_item": 0.004490018666666667,
+        "cost_per_correct": 0.004490018666666667,
+        "latency_p50_s": 1.5234,
+        "latency_p95_s": 2.229835,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 324057,
+        "tokens_cached_mean": 1080.19,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 27194,
+        "tokens_out_mean": 90.64666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-astra",
+      "kind": "port",
+      "target": "gpt-6.2-astra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.2-sol|test|r1",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 1,
+      "finished_at": "2026-11-18T01:54:36",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.3192314,
+        "cost_per_item": 0.0010641046666666667,
+        "cost_per_correct": 0.0010641046666666667,
+        "latency_p50_s": 0.76755,
+        "latency_p95_s": 1.2420600000000002,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 324057,
+        "tokens_cached_mean": 1080.19,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 25442,
+        "tokens_out_mean": 84.80666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-sol",
+      "kind": "port",
+      "target": "gpt-6.2-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.2-sol|test|r2",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 2,
+      "finished_at": "2026-11-18T01:54:51",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.3164214,
+        "cost_per_item": 0.0010547380000000002,
+        "cost_per_correct": 0.0010547380000000002,
+        "latency_p50_s": 0.7696000000000001,
+        "latency_p95_s": 1.36115,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 324057,
+        "tokens_cached_mean": 1080.19,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 25161,
+        "tokens_out_mean": 83.87,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.2-sol",
+      "kind": "port",
+      "target": "gpt-6.2-sol",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.1-terra|test|r1",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 1,
+      "finished_at": "2026-11-18T01:55:14",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.07066795000000001,
+        "cost_per_item": 0.00023555983333333337,
+        "cost_per_correct": 0.00023555983333333337,
+        "latency_p50_s": 0.9373499999999999,
+        "latency_p95_s": 1.520485,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.1-terra",
+      "kind": "port",
+      "target": "gpt-6.1-terra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6.1-terra|test|r2",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 2,
+      "finished_at": "2026-11-18T01:55:33",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.07066795000000001,
+        "cost_per_item": 0.00023555983333333337,
+        "cost_per_correct": 0.00023555983333333337,
+        "latency_p50_s": 0.92875,
+        "latency_p95_s": 1.5352800000000004,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6.1-terra",
+      "kind": "port",
+      "target": "gpt-6.1-terra",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6-luna|test|r1",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 1,
+      "finished_at": "2026-11-18T01:55:42",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.007066795,
+        "cost_per_item": 2.3555983333333333e-05,
+        "cost_per_correct": 2.3555983333333333e-05,
+        "latency_p50_s": 0.5593499999999999,
+        "latency_p95_s": 0.7165750000000001,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6-luna",
+      "kind": "port",
+      "target": "gpt-6-luna",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "port:gpt-6-luna|test|r2",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 2,
+      "finished_at": "2026-11-18T01:55:52",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.007066795,
+        "cost_per_item": 2.3555983333333333e-05,
+        "cost_per_correct": 2.3555983333333333e-05,
+        "latency_p50_s": 0.5599,
+        "latency_p95_s": 0.7062,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "port:gpt-6-luna",
+      "kind": "port",
+      "target": "gpt-6-luna",
+      "seed": null,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s11|test|r1",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 1,
+      "finished_at": "2026-11-18T01:55:52",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.007066795,
+        "cost_per_item": 2.3555983333333333e-05,
+        "cost_per_correct": 2.3555983333333333e-05,
+        "latency_p50_s": 0.5593499999999999,
+        "latency_p95_s": 0.7165750000000001,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s11",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6-luna-s11|test|r2",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 2,
+      "finished_at": "2026-11-18T01:55:52",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.007066795,
+        "cost_per_item": 2.3555983333333333e-05,
+        "cost_per_correct": 2.3555983333333333e-05,
+        "latency_p50_s": 0.5599,
+        "latency_p95_s": 0.7062,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6-luna-s11",
+      "kind": "opt",
+      "target": "gpt-6-luna",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s11|test|r1",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 1,
+      "finished_at": "2026-11-18T01:55:52",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.07066795000000001,
+        "cost_per_item": 0.00023555983333333337,
+        "cost_per_correct": 0.00023555983333333337,
+        "latency_p50_s": 0.9373499999999999,
+        "latency_p95_s": 1.520485,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s11",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "test"
+    },
+    {
+      "eval_id": "opt:02-invoice-fields-gpt-6.1-terra-s11|test|r2",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "flag_method": "none",
+        "flag_threshold": -0.01
+      },
+      "prompt_hash": "b83a0e2539222e42",
+      "repeat": 2,
+      "finished_at": "2026-11-18T01:55:53",
+      "summary": {
+        "n": 300,
+        "passed": 300,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "date_formats": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "decimal_comma": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 29,
+            "primary": 1.0
+          },
+          "missing_field": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "mixed_currencies": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "subtotal_vs_total": {
+            "n": 43,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 61,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.07066795000000001,
+        "cost_per_item": 0.00023555983333333337,
+        "cost_per_correct": 0.00023555983333333337,
+        "latency_p50_s": 0.92875,
+        "latency_p95_s": 1.5352800000000004,
+        "tokens_in": 324057,
+        "tokens_in_mean": 1080.19,
+        "tokens_cached": 317429,
+        "tokens_cached_mean": 1058.0966666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 20593,
+        "tokens_out_mean": 68.64333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "flag_precision": null,
+          "flag_recall": null,
+          "flag_f1": null,
+          "flag_rate": 0.0,
+          "wrong_fields": 0,
+          "flagged_fields": 0,
+          "flag_true_positives": 0
+        }
+      },
+      "config_name": "opt:02-invoice-fields-gpt-6.1-terra-s11",
+      "kind": "opt",
+      "target": "gpt-6.1-terra",
+      "seed": 11,
+      "dataset_version": 1,
+      "split": "test"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+[
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "03-ticket-routing": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:03-ticket-routing-gpt-6-luna-s11",
+        "opt:03-ticket-routing-gpt-6-luna-s22",
+        "opt:03-ticket-routing-gpt-6-luna-s33",
+        "opt:03-ticket-routing-gpt-6.1-terra-s11",
+        "opt:03-ticket-routing-gpt-6.1-terra-s22",
+        "opt:03-ticket-routing-gpt-6.1-terra-s33",
+        "opt:03-ticket-routing-gpt-6.2-sol-s11",
+        "opt:03-ticket-routing-gpt-6.2-sol-s22",
+        "opt:03-ticket-routing-gpt-6.2-sol-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:53:11",
+    "spent_P6": 86.5223486
+  },
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "06-grounded-abstention": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:06-grounded-abstention-gpt-6-luna-s11",
+        "opt:06-grounded-abstention-gpt-6-luna-s22",
+        "opt:06-grounded-abstention-gpt-6-luna-s33",
+        "opt:06-grounded-abstention-gpt-6.1-terra-s11",
+        "opt:06-grounded-abstention-gpt-6.1-terra-s22",
+        "opt:06-grounded-abstention-gpt-6.1-terra-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:53:26",
+    "spent_P6": 88.4747427225
+  },
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "01-entity-extraction": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:01-entity-extraction-gpt-6-luna-s11",
+        "opt:01-entity-extraction-gpt-6-luna-s11-v2",
+        "opt:01-entity-extraction-gpt-6-luna-s22",
+        "opt:01-entity-extraction-gpt-6-luna-s33",
+        "opt:01-entity-extraction-gpt-6.1-terra-s11",
+        "opt:01-entity-extraction-gpt-6.1-terra-s22",
+        "opt:01-entity-extraction-gpt-6.1-terra-s33",
+        "opt:01-entity-extraction-gpt-6.2-sol-s11",
+        "opt:01-entity-extraction-gpt-6.2-sol-s22",
+        "opt:01-entity-extraction-gpt-6.2-sol-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:53:49",
+    "spent_P6": 91.9354897225
+  },
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "05-format-summary": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:05-format-summary-gpt-6-luna-s11",
+        "opt:05-format-summary-gpt-6-luna-s11-v2",
+        "opt:05-format-summary-gpt-6-luna-s22",
+        "opt:05-format-summary-gpt-6-luna-s33",
+        "opt:05-format-summary-gpt-6.1-terra-s11",
+        "opt:05-format-summary-gpt-6.1-terra-s22",
+        "opt:05-format-summary-gpt-6.1-terra-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:54:40",
+    "spent_P6": 98.0089876825
+  },
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "04-tool-selection": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:04-tool-selection-gpt-6-luna-s11",
+        "opt:04-tool-selection-gpt-6-luna-s22",
+        "opt:04-tool-selection-gpt-6-luna-s33",
+        "opt:04-tool-selection-gpt-6.1-terra-s11",
+        "opt:04-tool-selection-gpt-6.1-terra-s22",
+        "opt:04-tool-selection-gpt-6.1-terra-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:54:46",
+    "spent_P6": 98.8431915425
+  },
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "02-invoice-fields": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:02-invoice-fields-gpt-6-luna-s11",
+        "opt:02-invoice-fields-gpt-6-luna-s22",
+        "opt:02-invoice-fields-gpt-6-luna-s33",
+        "opt:02-invoice-fields-gpt-6.1-terra-s11",
+        "opt:02-invoice-fields-gpt-6.1-terra-s22",
+        "opt:02-invoice-fields-gpt-6.1-terra-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:55:53",
+    "spent_P6": 105.7920936325
+  },
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "07-contact-normalisation": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:07-contact-normalisation-gpt-6-luna-s11",
+        "opt:07-contact-normalisation-gpt-6-luna-s22",
+        "opt:07-contact-normalisation-gpt-6-luna-s33",
+        "opt:07-contact-normalisation-gpt-6.1-terra-s11",
+        "opt:07-contact-normalisation-gpt-6.1-terra-s22",
+        "opt:07-contact-normalisation-gpt-6.1-terra-s33",
+        "opt:07-contact-normalisation-gpt-6.2-sol-s11",
+        "opt:07-contact-normalisation-gpt-6.2-sol-s22",
+        "opt:07-contact-normalisation-gpt-6.2-sol-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:57:25",
+    "spent_P6": 108.2497435325
+  },
+  {
+    "started_at": "2026-11-18T01:49:34",
+    "cases": {
+      "08-glossary-translation": [
+        "source",
+        "port:gpt-6.2-astra",
+        "port:gpt-6.2-sol",
+        "port:gpt-6.1-terra",
+        "port:gpt-6-luna",
+        "opt:08-glossary-translation-gpt-6-luna-s11",
+        "opt:08-glossary-translation-gpt-6-luna-s22",
+        "opt:08-glossary-translation-gpt-6-luna-s33",
+        "opt:08-glossary-translation-gpt-6.1-terra-s11",
+        "opt:08-glossary-translation-gpt-6.1-terra-s22",
+        "opt:08-glossary-translation-gpt-6.1-terra-s33"
+      ]
+    },
+    "skipped": [],
+    "finished_at": "2026-11-18T01:58:21",
+    "spent_P6": 108.4137736425
+  }
+]

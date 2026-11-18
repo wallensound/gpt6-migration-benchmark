@@ -1,0 +1,2505 @@
+{
+  "cases": {
+    "01-entity-extraction": {
+      "status": "evaluated",
+      "source": {
+        "test": 1.0,
+        "test_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "cost_per_correct": 0.002488184,
+        "shift": 1.0
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "low",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.017431833333333334,
+          "cost_per_item": 0.017431833333333334,
+          "shift": 1.0,
+          "latency_p50_s": 1.0897000000000001,
+          "latency_p95_s": 1.649865,
+          "failure_categories": {}
+        },
+        "gpt-6.2-sol": {
+          "effort": "low",
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "zero_shot_drop": -0.0033333333333332993,
+          "drop_ci": [
+            -0.01,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.004370593645484949,
+          "cost_per_item": 0.0043560249999999995,
+          "shift": 1.0,
+          "latency_p50_s": 0.6031,
+          "latency_p95_s": 1.18421,
+          "failure_categories": {
+            "extra_company": 1,
+            "missing_company": 1
+          }
+        },
+        "gpt-6.1-terra": {
+          "effort": "low",
+          "test": 0.99,
+          "test_ci": [
+            0.9710165066376601,
+            0.9965933815622847
+          ],
+          "zero_shot_drop": -0.010000000000000009,
+          "drop_ci": [
+            -0.023333333333333334,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.0011048884680134679,
+          "cost_per_item": 0.0010938395833333333,
+          "shift": 0.9933333333333333,
+          "latency_p50_s": 0.68145,
+          "latency_p95_s": 1.248305,
+          "failure_categories": {
+            "extra_company": 3,
+            "missing_company": 3
+          }
+        },
+        "gpt-6-luna": {
+          "effort": "none",
+          "test": 0.9666666666666667,
+          "test_ci": [
+            0.9397381741959452,
+            0.9817950526611452
+          ],
+          "zero_shot_drop": -0.033333333333333326,
+          "drop_ci": [
+            -0.05333333333333334,
+            -0.016666666666666666
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.00011329806034482759,
+          "cost_per_item": 0.00010952145833333333,
+          "shift": 0.9733333333333334,
+          "latency_p50_s": 0.44415,
+          "latency_p95_s": 0.680555,
+          "failure_categories": {
+            "missing_company": 9,
+            "extra_company": 3,
+            "duplicate": 1
+          }
+        }
+      },
+      "opt": {
+        "01-entity-extraction-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 0.9666666666666667,
+          "test_ci": [
+            0.9397381741959452,
+            0.9817950526611452
+          ],
+          "recovery": -0.033333333333333326,
+          "ni_lower_bound": -0.05,
+          "ni_p": 0.6761619190404797,
+          "ni_p_holm": 1.0,
+          "migrated": false,
+          "shift": 0.9733333333333334,
+          "shift_gap": -0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00011329806034482759,
+          "cost_per_item": 0.00010952145833333333,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 0.9666666666666667,
+          "test_ci": [
+            0.9397381741959452,
+            0.9817950526611452
+          ],
+          "recovery": -0.033333333333333326,
+          "ni_lower_bound": -0.05,
+          "ni_p": 0.6761619190404797,
+          "ni_p_holm": 1.0,
+          "migrated": false,
+          "shift": 0.9733333333333334,
+          "shift_gap": -0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00011329806034482759,
+          "cost_per_item": 0.00010952145833333333,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 0.9666666666666667,
+          "test_ci": [
+            0.9397381741959452,
+            0.9817950526611452
+          ],
+          "recovery": -0.033333333333333326,
+          "ni_lower_bound": -0.05,
+          "ni_p": 0.6761619190404797,
+          "ni_p_holm": 1.0,
+          "migrated": false,
+          "shift": 0.9733333333333334,
+          "shift_gap": -0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00011329806034482759,
+          "cost_per_item": 0.00010952145833333333,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 0.99,
+          "test_ci": [
+            0.9710165066376601,
+            0.9965933815622847
+          ],
+          "recovery": -0.010000000000000009,
+          "ni_lower_bound": -0.02,
+          "ni_p": 0.0029985007496251873,
+          "ni_p_holm": 0.017991004497751123,
+          "migrated": true,
+          "shift": 0.9933333333333333,
+          "shift_gap": -0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0011048884680134679,
+          "cost_per_item": 0.0010938395833333333,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 0.99,
+          "test_ci": [
+            0.9710165066376601,
+            0.9965933815622847
+          ],
+          "recovery": -0.010000000000000009,
+          "ni_lower_bound": -0.02,
+          "ni_p": 0.0029985007496251873,
+          "ni_p_holm": 0.017991004497751123,
+          "migrated": true,
+          "shift": 0.9933333333333333,
+          "shift_gap": -0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0011048884680134679,
+          "cost_per_item": 0.0010938395833333333,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 0.99,
+          "test_ci": [
+            0.9710165066376601,
+            0.9965933815622847
+          ],
+          "recovery": -0.010000000000000009,
+          "ni_lower_bound": -0.02,
+          "ni_p": 0.0029985007496251873,
+          "ni_p_holm": 0.017991004497751123,
+          "migrated": true,
+          "shift": 0.9933333333333333,
+          "shift_gap": -0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0011048884680134679,
+          "cost_per_item": 0.0010938395833333333,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6.2-sol-s11": {
+          "target": "gpt-6.2-sol",
+          "seed": 11,
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "recovery": -0.0033333333333332993,
+          "ni_lower_bound": -0.01,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.004370593645484949,
+          "cost_per_item": 0.0043560249999999995,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6.2-sol-s22": {
+          "target": "gpt-6.2-sol",
+          "seed": 22,
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "recovery": -0.0033333333333332993,
+          "ni_lower_bound": -0.01,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.004370593645484949,
+          "cost_per_item": 0.0043560249999999995,
+          "validity": 1.0
+        },
+        "01-entity-extraction-gpt-6.2-sol-s33": {
+          "target": "gpt-6.2-sol",
+          "seed": 33,
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "recovery": -0.0033333333333332993,
+          "ni_lower_bound": -0.01,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.004370593645484949,
+          "cost_per_item": 0.0043560249999999995,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9666666666666667,
+          "mean_recovery": -0.033333333333333326,
+          "recovery_range": [
+            -0.033333333333333326,
+            -0.033333333333333326
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 0,
+          "case_migrated": false,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9899999999999999,
+          "mean_recovery": -0.010000000000000009,
+          "recovery_range": [
+            -0.010000000000000009,
+            -0.010000000000000009
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.2-sol": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9966666666666667,
+          "mean_recovery": -0.0033333333333332993,
+          "recovery_range": [
+            -0.0033333333333332993,
+            -0.0033333333333332993
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.0,
+        "port:gpt-6.2-astra": 0.0,
+        "port:gpt-6.2-sol": 0.0033333333333333335,
+        "port:gpt-6.1-terra": 0.006666666666666667,
+        "port:gpt-6-luna": 0.04,
+        "opt:01-entity-extraction-gpt-6-luna-s11": 0.04,
+        "opt:01-entity-extraction-gpt-6.1-terra-s11": 0.006666666666666667,
+        "opt:01-entity-extraction-gpt-6.2-sol-s11": 0.0033333333333333335
+      },
+      "v2": {
+        "01-entity-extraction-gpt-6-luna-s11-v2": {
+          "test": 0.9766666666666667,
+          "target": "gpt-6-luna",
+          "seed": 11
+        }
+      }
+    },
+    "02-invoice-fields": {
+      "status": "evaluated",
+      "source": {
+        "test": 1.0,
+        "test_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "cost_per_correct": 0.006749096666666666,
+        "shift": 0.9933333333333333
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "low",
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "zero_shot_drop": -0.0033333333333332993,
+          "drop_ci": [
+            -0.01,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.006700335785953178,
+          "cost_per_item": 0.006678001333333334,
+          "shift": 1.0,
+          "latency_p50_s": 1.58475,
+          "latency_p95_s": 2.2387200000000003,
+          "failure_categories": {
+            "amount_format": 1
+          }
+        },
+        "gpt-6.2-sol": {
+          "effort": "low",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.001443428,
+          "cost_per_item": 0.001443428,
+          "shift": 1.0,
+          "latency_p50_s": 0.78475,
+          "latency_p95_s": 1.315345,
+          "failure_categories": {}
+        },
+        "gpt-6.1-terra": {
+          "effort": "none",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.0005826758333333334,
+          "cost_per_item": 0.0005826758333333334,
+          "shift": 1.0,
+          "latency_p50_s": 0.94725,
+          "latency_p95_s": 1.4218000000000002,
+          "failure_categories": {}
+        },
+        "gpt-6-luna": {
+          "effort": "none",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 6.447835e-05,
+          "cost_per_item": 6.447835e-05,
+          "shift": 0.98,
+          "latency_p50_s": 0.57615,
+          "latency_p95_s": 0.7367550000000002,
+          "failure_categories": {}
+        }
+      },
+      "opt": {
+        "02-invoice-fields-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.98,
+          "shift_gap": 0.020000000000000018,
+          "overfit_flag": false,
+          "cost_per_correct": 6.447835e-05,
+          "cost_per_item": 6.447835e-05,
+          "validity": 1.0
+        },
+        "02-invoice-fields-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.98,
+          "shift_gap": 0.020000000000000018,
+          "overfit_flag": false,
+          "cost_per_correct": 6.447835e-05,
+          "cost_per_item": 6.447835e-05,
+          "validity": 1.0
+        },
+        "02-invoice-fields-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.98,
+          "shift_gap": 0.020000000000000018,
+          "overfit_flag": false,
+          "cost_per_correct": 6.447835e-05,
+          "cost_per_item": 6.447835e-05,
+          "validity": 1.0
+        },
+        "02-invoice-fields-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0005826758333333334,
+          "cost_per_item": 0.0005826758333333334,
+          "validity": 1.0
+        },
+        "02-invoice-fields-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0005826758333333334,
+          "cost_per_item": 0.0005826758333333334,
+          "validity": 1.0
+        },
+        "02-invoice-fields-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0005826758333333334,
+          "cost_per_item": 0.0005826758333333334,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 1.0,
+          "mean_recovery": 0.0,
+          "recovery_range": [
+            0.0,
+            0.0
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 1.0,
+          "mean_recovery": 0.0,
+          "recovery_range": [
+            0.0,
+            0.0
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.0,
+        "port:gpt-6.2-astra": 0.0033333333333333335,
+        "port:gpt-6.2-sol": 0.0,
+        "port:gpt-6.1-terra": 0.0,
+        "port:gpt-6-luna": 0.0,
+        "opt:02-invoice-fields-gpt-6-luna-s11": 0.0,
+        "opt:02-invoice-fields-gpt-6.1-terra-s11": 0.0
+      },
+      "v2": {}
+    },
+    "03-ticket-routing": {
+      "status": "evaluated",
+      "source": {
+        "test": 0.9633333333333334,
+        "test_ci": [
+          0.9355461518281071,
+          0.979404694837147
+        ],
+        "cost_per_correct": 0.0020757093425605535,
+        "shift": 0.96
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "low",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.036666666666666625,
+          "drop_ci": [
+            0.016666666666666666,
+            0.06
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.004082293333333333,
+          "cost_per_item": 0.004082293333333333,
+          "shift": 0.9933333333333333,
+          "latency_p50_s": 1.01865,
+          "latency_p95_s": 1.5402500000000001,
+          "failure_categories": {}
+        },
+        "gpt-6.2-sol": {
+          "effort": "low",
+          "test": 0.9933333333333333,
+          "test_ci": [
+            0.9760224167496929,
+            0.998169851642088
+          ],
+          "zero_shot_drop": 0.029999999999999916,
+          "drop_ci": [
+            0.006666666666666667,
+            0.05333333333333334
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.001020006711409396,
+          "cost_per_item": 0.0010132066666666668,
+          "shift": 1.0,
+          "latency_p50_s": 0.5465,
+          "latency_p95_s": 1.19314,
+          "failure_categories": {
+            "wrong_label": 2
+          }
+        },
+        "gpt-6.1-terra": {
+          "effort": "none",
+          "test": 0.9766666666666667,
+          "test_ci": [
+            0.9526280277317246,
+            0.9886523397008747
+          ],
+          "zero_shot_drop": 0.013333333333333308,
+          "drop_ci": [
+            -0.013333333333333334,
+            0.04
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.0002593959044368601,
+          "cost_per_item": 0.0002533433333333333,
+          "shift": 0.96,
+          "latency_p50_s": 0.58815,
+          "latency_p95_s": 1.138425,
+          "failure_categories": {
+            "wrong_label": 7
+          }
+        },
+        "gpt-6-luna": {
+          "effort": "none",
+          "test": 0.9466666666666667,
+          "test_ci": [
+            0.9151308582251686,
+            0.9669080874809034
+          ],
+          "zero_shot_drop": -0.01666666666666672,
+          "drop_ci": [
+            -0.03666666666666667,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 2.6751936619718312e-05,
+          "cost_per_item": 2.532516666666667e-05,
+          "shift": 0.94,
+          "latency_p50_s": 0.392,
+          "latency_p95_s": 0.62148,
+          "failure_categories": {
+            "wrong_label": 16
+          }
+        }
+      },
+      "opt": {
+        "03-ticket-routing-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 0.9466666666666667,
+          "test_ci": [
+            0.9151308582251686,
+            0.9669080874809034
+          ],
+          "recovery": -0.01666666666666672,
+          "ni_lower_bound": -0.03333333333333333,
+          "ni_p": 0.11894052973513243,
+          "ni_p_holm": 0.3568215892053973,
+          "migrated": false,
+          "shift": 0.94,
+          "shift_gap": 0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 2.6751936619718312e-05,
+          "cost_per_item": 2.532516666666667e-05,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 0.9466666666666667,
+          "test_ci": [
+            0.9151308582251686,
+            0.9669080874809034
+          ],
+          "recovery": -0.01666666666666672,
+          "ni_lower_bound": -0.03333333333333333,
+          "ni_p": 0.11894052973513243,
+          "ni_p_holm": 0.3568215892053973,
+          "migrated": false,
+          "shift": 0.94,
+          "shift_gap": 0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 2.6751936619718312e-05,
+          "cost_per_item": 2.532516666666667e-05,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 0.9466666666666667,
+          "test_ci": [
+            0.9151308582251686,
+            0.9669080874809034
+          ],
+          "recovery": -0.01666666666666672,
+          "ni_lower_bound": -0.03333333333333333,
+          "ni_p": 0.11894052973513243,
+          "ni_p_holm": 0.3568215892053973,
+          "migrated": false,
+          "shift": 0.94,
+          "shift_gap": 0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 2.6751936619718312e-05,
+          "cost_per_item": 2.532516666666667e-05,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 0.9766666666666667,
+          "test_ci": [
+            0.9526280277317246,
+            0.9886523397008747
+          ],
+          "recovery": 0.013333333333333308,
+          "ni_lower_bound": -0.01,
+          "ni_p": 0.0014992503748125937,
+          "ni_p_holm": 0.008995502248875561,
+          "migrated": true,
+          "shift": 0.96,
+          "shift_gap": 0.01666666666666672,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0002593959044368601,
+          "cost_per_item": 0.0002533433333333333,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 0.9766666666666667,
+          "test_ci": [
+            0.9526280277317246,
+            0.9886523397008747
+          ],
+          "recovery": 0.013333333333333308,
+          "ni_lower_bound": -0.01,
+          "ni_p": 0.0014992503748125937,
+          "ni_p_holm": 0.008995502248875561,
+          "migrated": true,
+          "shift": 0.96,
+          "shift_gap": 0.01666666666666672,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0002593959044368601,
+          "cost_per_item": 0.0002533433333333333,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 0.9766666666666667,
+          "test_ci": [
+            0.9526280277317246,
+            0.9886523397008747
+          ],
+          "recovery": 0.013333333333333308,
+          "ni_lower_bound": -0.01,
+          "ni_p": 0.0014992503748125937,
+          "ni_p_holm": 0.008995502248875561,
+          "migrated": true,
+          "shift": 0.96,
+          "shift_gap": 0.01666666666666672,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0002593959044368601,
+          "cost_per_item": 0.0002533433333333333,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6.2-sol-s11": {
+          "target": "gpt-6.2-sol",
+          "seed": 11,
+          "test": 0.9933333333333333,
+          "test_ci": [
+            0.9760224167496929,
+            0.998169851642088
+          ],
+          "recovery": 0.029999999999999916,
+          "ni_lower_bound": 0.01,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.001020006711409396,
+          "cost_per_item": 0.0010132066666666668,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6.2-sol-s22": {
+          "target": "gpt-6.2-sol",
+          "seed": 22,
+          "test": 0.9933333333333333,
+          "test_ci": [
+            0.9760224167496929,
+            0.998169851642088
+          ],
+          "recovery": 0.029999999999999916,
+          "ni_lower_bound": 0.01,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.001020006711409396,
+          "cost_per_item": 0.0010132066666666668,
+          "validity": 1.0
+        },
+        "03-ticket-routing-gpt-6.2-sol-s33": {
+          "target": "gpt-6.2-sol",
+          "seed": 33,
+          "test": 0.9933333333333333,
+          "test_ci": [
+            0.9760224167496929,
+            0.998169851642088
+          ],
+          "recovery": 0.029999999999999916,
+          "ni_lower_bound": 0.01,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.001020006711409396,
+          "cost_per_item": 0.0010132066666666668,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9466666666666667,
+          "mean_recovery": -0.01666666666666672,
+          "recovery_range": [
+            -0.01666666666666672,
+            -0.01666666666666672
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 0,
+          "case_migrated": false,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9766666666666667,
+          "mean_recovery": 0.013333333333333308,
+          "recovery_range": [
+            0.013333333333333308,
+            0.013333333333333308
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.2-sol": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9933333333333333,
+          "mean_recovery": 0.029999999999999916,
+          "recovery_range": [
+            0.029999999999999916,
+            0.029999999999999916
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.006666666666666667,
+        "port:gpt-6.2-astra": 0.006666666666666667,
+        "port:gpt-6.2-sol": 0.01,
+        "port:gpt-6.1-terra": 0.01,
+        "port:gpt-6-luna": 0.006666666666666667,
+        "opt:03-ticket-routing-gpt-6-luna-s11": 0.006666666666666667,
+        "opt:03-ticket-routing-gpt-6.1-terra-s11": 0.01,
+        "opt:03-ticket-routing-gpt-6.2-sol-s11": 0.01
+      },
+      "v2": {}
+    },
+    "04-tool-selection": {
+      "status": "evaluated",
+      "source": {
+        "test": 0.99,
+        "test_ci": [
+          0.9710165066376601,
+          0.9965933815622847
+        ],
+        "cost_per_correct": 0.0017739063973063974,
+        "shift": 0.98
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "medium",
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "zero_shot_drop": 0.00666666666666671,
+          "drop_ci": [
+            -0.006666666666666667,
+            0.02
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.005801957190635451,
+          "cost_per_item": 0.0057826173333333335,
+          "shift": 1.0,
+          "latency_p50_s": 1.1482,
+          "latency_p95_s": 2.7232700000000007,
+          "failure_categories": {
+            "wrong_value": 1
+          }
+        },
+        "gpt-6.2-sol": {
+          "effort": "medium",
+          "test": 0.9933333333333333,
+          "test_ci": [
+            0.9760224167496929,
+            0.998169851642088
+          ],
+          "zero_shot_drop": 0.0033333333333332993,
+          "drop_ci": [
+            -0.01,
+            0.016666666666666666
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0033333333333333335,
+          "cost_per_correct": 0.0013818989932885906,
+          "cost_per_item": 0.0013726863333333333,
+          "shift": 1.0,
+          "latency_p50_s": 0.63515,
+          "latency_p95_s": 1.455455,
+          "failure_categories": {
+            "missed_call": 1,
+            "nonanswer": 1
+          }
+        },
+        "gpt-6.1-terra": {
+          "effort": "none",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.010000000000000009,
+          "drop_ci": [
+            0.0,
+            0.023333333333333334
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.00034444641666666665,
+          "cost_per_item": 0.00034444641666666665,
+          "shift": 1.0,
+          "latency_p50_s": 0.7936,
+          "latency_p95_s": 1.54258,
+          "failure_categories": {}
+        },
+        "gpt-6-luna": {
+          "effort": "none",
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "zero_shot_drop": 0.00666666666666671,
+          "drop_ci": [
+            -0.006666666666666667,
+            0.02
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 3.418933110367893e-05,
+          "cost_per_item": 3.407536666666667e-05,
+          "shift": 0.9666666666666667,
+          "latency_p50_s": 0.48164999999999997,
+          "latency_p95_s": 1.1248200000000008,
+          "failure_categories": {
+            "date_resolution": 1
+          }
+        }
+      },
+      "opt": {
+        "04-tool-selection-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "recovery": 0.00666666666666671,
+          "ni_lower_bound": -0.0033333333333333335,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.9666666666666667,
+          "shift_gap": 0.030000000000000027,
+          "overfit_flag": false,
+          "cost_per_correct": 3.418933110367893e-05,
+          "cost_per_item": 3.407536666666667e-05,
+          "validity": 1.0
+        },
+        "04-tool-selection-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "recovery": 0.00666666666666671,
+          "ni_lower_bound": -0.0033333333333333335,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.9666666666666667,
+          "shift_gap": 0.030000000000000027,
+          "overfit_flag": false,
+          "cost_per_correct": 3.418933110367893e-05,
+          "cost_per_item": 3.407536666666667e-05,
+          "validity": 1.0
+        },
+        "04-tool-selection-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 0.9966666666666667,
+          "test_ci": [
+            0.9813633063054688,
+            0.9994113422781488
+          ],
+          "recovery": 0.00666666666666671,
+          "ni_lower_bound": -0.0033333333333333335,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.9666666666666667,
+          "shift_gap": 0.030000000000000027,
+          "overfit_flag": false,
+          "cost_per_correct": 3.418933110367893e-05,
+          "cost_per_item": 3.407536666666667e-05,
+          "validity": 1.0
+        },
+        "04-tool-selection-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.010000000000000009,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00034444641666666665,
+          "cost_per_item": 0.00034444641666666665,
+          "validity": 1.0
+        },
+        "04-tool-selection-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.010000000000000009,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00034444641666666665,
+          "cost_per_item": 0.00034444641666666665,
+          "validity": 1.0
+        },
+        "04-tool-selection-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.010000000000000009,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00034444641666666665,
+          "cost_per_item": 0.00034444641666666665,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9966666666666667,
+          "mean_recovery": 0.00666666666666671,
+          "recovery_range": [
+            0.00666666666666671,
+            0.00666666666666671
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 1.0,
+          "mean_recovery": 0.010000000000000009,
+          "recovery_range": [
+            0.010000000000000009,
+            0.010000000000000009
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.0,
+        "port:gpt-6.2-astra": 0.0033333333333333335,
+        "port:gpt-6.2-sol": 0.013333333333333334,
+        "port:gpt-6.1-terra": 0.0,
+        "port:gpt-6-luna": 0.0033333333333333335,
+        "opt:04-tool-selection-gpt-6-luna-s11": 0.0033333333333333335,
+        "opt:04-tool-selection-gpt-6.1-terra-s11": 0.0
+      },
+      "v2": {}
+    },
+    "05-format-summary": {
+      "status": "evaluated",
+      "source": {
+        "test": 1.0,
+        "test_ci": [
+          0.9873570287754538,
+          0.9999999999999998
+        ],
+        "cost_per_correct": 0.0055203733333333335,
+        "shift": 1.0
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "low",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.011955733333333333,
+          "cost_per_item": 0.011955733333333333,
+          "shift": 1.0,
+          "latency_p50_s": 1.24725,
+          "latency_p95_s": 1.8728500000000001,
+          "failure_categories": {}
+        },
+        "gpt-6.2-sol": {
+          "effort": "medium",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.002973733333333333,
+          "cost_per_item": 0.002973733333333333,
+          "shift": 1.0,
+          "latency_p50_s": 0.6938499999999999,
+          "latency_p95_s": 1.23273,
+          "failure_categories": {}
+        },
+        "gpt-6.1-terra": {
+          "effort": "none",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.00068460375,
+          "cost_per_item": 0.00068460375,
+          "shift": 1.0,
+          "latency_p50_s": 0.9046000000000001,
+          "latency_p95_s": 1.4663550000000003,
+          "failure_categories": {}
+        },
+        "gpt-6-luna": {
+          "effort": "none",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            0.0,
+            0.0
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 6.876454166666667e-05,
+          "cost_per_item": 6.876454166666667e-05,
+          "shift": 0.98,
+          "latency_p50_s": 0.5440499999999999,
+          "latency_p95_s": 0.78304,
+          "failure_categories": {}
+        }
+      },
+      "opt": {
+        "05-format-summary-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.98,
+          "shift_gap": 0.020000000000000018,
+          "overfit_flag": false,
+          "cost_per_correct": 6.876454166666667e-05,
+          "cost_per_item": 6.876454166666667e-05,
+          "validity": 1.0
+        },
+        "05-format-summary-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.98,
+          "shift_gap": 0.020000000000000018,
+          "overfit_flag": false,
+          "cost_per_correct": 6.876454166666667e-05,
+          "cost_per_item": 6.876454166666667e-05,
+          "validity": 1.0
+        },
+        "05-format-summary-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.98,
+          "shift_gap": 0.020000000000000018,
+          "overfit_flag": false,
+          "cost_per_correct": 6.876454166666667e-05,
+          "cost_per_item": 6.876454166666667e-05,
+          "validity": 1.0
+        },
+        "05-format-summary-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00068460375,
+          "cost_per_item": 0.00068460375,
+          "validity": 1.0
+        },
+        "05-format-summary-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00068460375,
+          "cost_per_item": 0.00068460375,
+          "validity": 1.0
+        },
+        "05-format-summary-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00068460375,
+          "cost_per_item": 0.00068460375,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 1.0,
+          "mean_recovery": 0.0,
+          "recovery_range": [
+            0.0,
+            0.0
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 1.0,
+          "mean_recovery": 0.0,
+          "recovery_range": [
+            0.0,
+            0.0
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.0,
+        "port:gpt-6.2-astra": 0.0,
+        "port:gpt-6.2-sol": 0.0,
+        "port:gpt-6.1-terra": 0.0,
+        "port:gpt-6-luna": 0.01,
+        "opt:05-format-summary-gpt-6-luna-s11": 0.01,
+        "opt:05-format-summary-gpt-6.1-terra-s11": 0.0
+      },
+      "v2": {
+        "05-format-summary-gpt-6-luna-s11-v2": {
+          "test": 0.9966666666666667,
+          "target": "gpt-6-luna",
+          "seed": 11
+        }
+      }
+    },
+    "06-grounded-abstention": {
+      "status": "evaluated",
+      "source": {
+        "test": 0.9966666666666667,
+        "test_ci": [
+          0.9813633063054688,
+          0.9994113422781488
+        ],
+        "cost_per_correct": 0.003175030100334448,
+        "shift": 1.0
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "medium",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0033333333333332993,
+          "drop_ci": [
+            0.0,
+            0.01
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.006990366666666666,
+          "cost_per_item": 0.006990366666666666,
+          "shift": 0.9866666666666667,
+          "latency_p50_s": 0.9401499999999999,
+          "latency_p95_s": 1.47866,
+          "failure_categories": {}
+        },
+        "gpt-6.2-sol": {
+          "effort": "low",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0033333333333332993,
+          "drop_ci": [
+            0.0,
+            0.01
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.0017473916666666666,
+          "cost_per_item": 0.0017473916666666666,
+          "shift": 1.0,
+          "latency_p50_s": 0.545,
+          "latency_p95_s": 1.15445,
+          "failure_categories": {}
+        },
+        "gpt-6.1-terra": {
+          "effort": "none",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.0033333333333332993,
+          "drop_ci": [
+            0.0,
+            0.01
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.00039816,
+          "cost_per_item": 0.00039816,
+          "shift": 0.9933333333333333,
+          "latency_p50_s": 0.64295,
+          "latency_p95_s": 1.2489100000000004,
+          "failure_categories": {}
+        },
+        "gpt-6-luna": {
+          "effort": "none",
+          "test": 0.9833333333333333,
+          "test_ci": [
+            0.9615846051669054,
+            0.9928605226493666
+          ],
+          "zero_shot_drop": -0.01333333333333342,
+          "drop_ci": [
+            -0.02666666666666667,
+            -0.0033333333333333335
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 4.050271186440678e-05,
+          "cost_per_item": 3.982766666666667e-05,
+          "shift": 0.9666666666666667,
+          "latency_p50_s": 0.37605,
+          "latency_p95_s": 0.5659050000000001,
+          "failure_categories": {
+            "answered_unanswerable": 2,
+            "over_abstain": 1,
+            "lookalike_confusion": 1,
+            "wrong_value": 1
+          }
+        }
+      },
+      "opt": {
+        "06-grounded-abstention-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 0.9833333333333333,
+          "test_ci": [
+            0.9615846051669054,
+            0.9928605226493666
+          ],
+          "recovery": -0.01333333333333342,
+          "ni_lower_bound": -0.023333333333333334,
+          "ni_p": 0.015492253873063468,
+          "ni_p_holm": 0.046476761619190406,
+          "migrated": true,
+          "shift": 0.9666666666666667,
+          "shift_gap": 0.016666666666666607,
+          "overfit_flag": false,
+          "cost_per_correct": 4.050271186440678e-05,
+          "cost_per_item": 3.982766666666667e-05,
+          "validity": 1.0
+        },
+        "06-grounded-abstention-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 0.9833333333333333,
+          "test_ci": [
+            0.9615846051669054,
+            0.9928605226493666
+          ],
+          "recovery": -0.01333333333333342,
+          "ni_lower_bound": -0.023333333333333334,
+          "ni_p": 0.015492253873063468,
+          "ni_p_holm": 0.046476761619190406,
+          "migrated": true,
+          "shift": 0.9666666666666667,
+          "shift_gap": 0.016666666666666607,
+          "overfit_flag": false,
+          "cost_per_correct": 4.050271186440678e-05,
+          "cost_per_item": 3.982766666666667e-05,
+          "validity": 1.0
+        },
+        "06-grounded-abstention-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 0.9833333333333333,
+          "test_ci": [
+            0.9615846051669054,
+            0.9928605226493666
+          ],
+          "recovery": -0.01333333333333342,
+          "ni_lower_bound": -0.023333333333333334,
+          "ni_p": 0.015492253873063468,
+          "ni_p_holm": 0.046476761619190406,
+          "migrated": true,
+          "shift": 0.9666666666666667,
+          "shift_gap": 0.016666666666666607,
+          "overfit_flag": false,
+          "cost_per_correct": 4.050271186440678e-05,
+          "cost_per_item": 3.982766666666667e-05,
+          "validity": 1.0
+        },
+        "06-grounded-abstention-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0033333333333332993,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.9933333333333333,
+          "shift_gap": 0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00039816,
+          "cost_per_item": 0.00039816,
+          "validity": 1.0
+        },
+        "06-grounded-abstention-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0033333333333332993,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.9933333333333333,
+          "shift_gap": 0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00039816,
+          "cost_per_item": 0.00039816,
+          "validity": 1.0
+        },
+        "06-grounded-abstention-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "recovery": 0.0033333333333332993,
+          "ni_lower_bound": 0.0,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 0.9933333333333333,
+          "shift_gap": 0.00666666666666671,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00039816,
+          "cost_per_item": 0.00039816,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9833333333333333,
+          "mean_recovery": -0.01333333333333342,
+          "recovery_range": [
+            -0.01333333333333342,
+            -0.01333333333333342
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 1.0,
+          "mean_recovery": 0.0033333333333332993,
+          "recovery_range": [
+            0.0033333333333332993,
+            0.0033333333333332993
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.0,
+        "port:gpt-6.2-astra": 0.0,
+        "port:gpt-6.2-sol": 0.0,
+        "port:gpt-6.1-terra": 0.0,
+        "port:gpt-6-luna": 0.0033333333333333335,
+        "opt:06-grounded-abstention-gpt-6-luna-s11": 0.0033333333333333335,
+        "opt:06-grounded-abstention-gpt-6.1-terra-s11": 0.0
+      },
+      "v2": {}
+    },
+    "07-contact-normalisation": {
+      "status": "evaluated",
+      "source": {
+        "test": 0.9933333333333333,
+        "test_ci": [
+          0.9760224167496929,
+          0.998169851642088
+        ],
+        "cost_per_correct": 0.0019751885906040267,
+        "shift": 0.9733333333333334
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "low",
+          "test": 0.9933333333333333,
+          "test_ci": [
+            0.9760224167496929,
+            0.998169851642088
+          ],
+          "zero_shot_drop": 0.0,
+          "drop_ci": [
+            -0.013333333333333334,
+            0.013333333333333334
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.005247904697986578,
+          "cost_per_item": 0.005212918666666667,
+          "shift": 1.0,
+          "latency_p50_s": 1.1541,
+          "latency_p95_s": 1.7999850000000002,
+          "failure_categories": {
+            "dropped_value": 1,
+            "name_wrong": 1
+          }
+        },
+        "gpt-6.2-sol": {
+          "effort": "medium",
+          "test": 0.8833333333333333,
+          "test_ci": [
+            0.8420668566758442,
+            0.9149068653853369
+          ],
+          "zero_shot_drop": -0.10999999999999999,
+          "drop_ci": [
+            -0.15,
+            -0.07333333333333333
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.001013737358490566,
+          "cost_per_item": 0.000895468,
+          "shift": 0.8466666666666667,
+          "latency_p50_s": 0.6517999999999999,
+          "latency_p95_s": 1.21152,
+          "failure_categories": {
+            "dropped_value": 33,
+            "name_wrong": 1,
+            "phone_wrong": 1
+          }
+        },
+        "gpt-6.1-terra": {
+          "effort": "none",
+          "test": 0.57,
+          "test_ci": [
+            0.513441160762328,
+            0.6247888232662354
+          ],
+          "zero_shot_drop": -0.42333333333333334,
+          "drop_ci": [
+            -0.4766666666666667,
+            -0.3699166666666671
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.00044384210526315796,
+          "cost_per_item": 0.00025299000000000003,
+          "shift": 0.6066666666666667,
+          "latency_p50_s": 0.85945,
+          "latency_p95_s": 1.43568,
+          "failure_categories": {
+            "dropped_value": 126,
+            "name_wrong": 3,
+            "email_wrong": 2,
+            "company_wrong": 1
+          }
+        },
+        "gpt-6-luna": {
+          "effort": "low",
+          "test": 0.9733333333333334,
+          "test_ci": [
+            0.9482710570494102,
+            0.9864269301913529
+          ],
+          "zero_shot_drop": -0.019999999999999907,
+          "drop_ci": [
+            -0.04,
+            -0.0033333333333333335
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 5.0590847602739726e-05,
+          "cost_per_item": 4.9241758333333335e-05,
+          "shift": 0.96,
+          "latency_p50_s": 0.80595,
+          "latency_p95_s": 1.107395,
+          "failure_categories": {
+            "phone_wrong": 3,
+            "email_wrong": 3,
+            "company_wrong": 2,
+            "name_wrong": 1
+          }
+        }
+      },
+      "opt": {
+        "07-contact-normalisation-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 0.9733333333333334,
+          "test_ci": [
+            0.9482710570494102,
+            0.9864269301913529
+          ],
+          "recovery": -0.019999999999999907,
+          "ni_lower_bound": -0.03666666666666667,
+          "ni_p": 0.17991004497751126,
+          "ni_p_holm": 0.5397301349325337,
+          "migrated": false,
+          "shift": 0.96,
+          "shift_gap": 0.01333333333333342,
+          "overfit_flag": false,
+          "cost_per_correct": 5.0590847602739726e-05,
+          "cost_per_item": 4.9241758333333335e-05,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 0.9733333333333334,
+          "test_ci": [
+            0.9482710570494102,
+            0.9864269301913529
+          ],
+          "recovery": -0.019999999999999907,
+          "ni_lower_bound": -0.03666666666666667,
+          "ni_p": 0.17991004497751126,
+          "ni_p_holm": 0.5397301349325337,
+          "migrated": false,
+          "shift": 0.96,
+          "shift_gap": 0.01333333333333342,
+          "overfit_flag": false,
+          "cost_per_correct": 5.0590847602739726e-05,
+          "cost_per_item": 4.9241758333333335e-05,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 0.9733333333333334,
+          "test_ci": [
+            0.9482710570494102,
+            0.9864269301913529
+          ],
+          "recovery": -0.019999999999999907,
+          "ni_lower_bound": -0.03666666666666667,
+          "ni_p": 0.17991004497751126,
+          "ni_p_holm": 0.5397301349325337,
+          "migrated": false,
+          "shift": 0.96,
+          "shift_gap": 0.01333333333333342,
+          "overfit_flag": false,
+          "cost_per_correct": 5.0590847602739726e-05,
+          "cost_per_item": 4.9241758333333335e-05,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 0.9766666666666667,
+          "test_ci": [
+            0.9526280277317246,
+            0.9886523397008747
+          ],
+          "recovery": -0.016666666666666607,
+          "ni_lower_bound": -0.03333333333333333,
+          "ni_p": 0.12893553223388307,
+          "ni_p_holm": 0.5157421289355323,
+          "migrated": false,
+          "shift": 0.9866666666666667,
+          "shift_gap": -0.010000000000000009,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0005703327645051195,
+          "cost_per_item": 0.000557025,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 0.9833333333333333,
+          "test_ci": [
+            0.9615846051669054,
+            0.9928605226493666
+          ],
+          "recovery": -0.010000000000000009,
+          "ni_lower_bound": -0.02666666666666667,
+          "ni_p": 0.028985507246376812,
+          "ni_p_holm": 0.1469265367316342,
+          "migrated": false,
+          "shift": 0.9933333333333333,
+          "shift_gap": -0.010000000000000009,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0004743728813559322,
+          "cost_per_item": 0.0004664666666666667,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 0.99,
+          "test_ci": [
+            0.9710165066376601,
+            0.9965933815622847
+          ],
+          "recovery": -0.0033333333333332993,
+          "ni_lower_bound": -0.013333333333333334,
+          "ni_p": 0.0009995002498750624,
+          "ni_p_holm": 0.0069965017491254375,
+          "migrated": true,
+          "shift": 0.9866666666666667,
+          "shift_gap": 0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0005757323232323232,
+          "cost_per_item": 0.000569975,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6.2-sol-s11": {
+          "target": "gpt-6.2-sol",
+          "seed": 11,
+          "test": 0.9933333333333333,
+          "test_ci": [
+            0.9760224167496929,
+            0.998169851642088
+          ],
+          "recovery": 0.0,
+          "ni_lower_bound": -0.01,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 0.9933333333333333,
+          "shift_gap": 0.0,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0009048872483221477,
+          "cost_per_item": 0.0008988546666666667,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6.2-sol-s22": {
+          "target": "gpt-6.2-sol",
+          "seed": 22,
+          "test": 0.9833333333333333,
+          "test_ci": [
+            0.9615846051669054,
+            0.9928605226493666
+          ],
+          "recovery": -0.010000000000000009,
+          "ni_lower_bound": -0.023333333333333334,
+          "ni_p": 0.02448775612193903,
+          "ni_p_holm": 0.1469265367316342,
+          "migrated": false,
+          "shift": 0.9933333333333333,
+          "shift_gap": -0.010000000000000009,
+          "overfit_flag": false,
+          "cost_per_correct": 0.001715057288135593,
+          "cost_per_item": 0.0016864729999999997,
+          "validity": 1.0
+        },
+        "07-contact-normalisation-gpt-6.2-sol-s33": {
+          "target": "gpt-6.2-sol",
+          "seed": 33,
+          "test": 0.99,
+          "test_ci": [
+            0.9710165066376601,
+            0.9965933815622847
+          ],
+          "recovery": -0.0033333333333332993,
+          "ni_lower_bound": -0.016666666666666666,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.004497751124437781,
+          "migrated": true,
+          "shift": 0.9866666666666667,
+          "shift_gap": 0.0033333333333332993,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0018167693602693603,
+          "cost_per_item": 0.0017986016666666667,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9733333333333333,
+          "mean_recovery": -0.019999999999999907,
+          "recovery_range": [
+            -0.019999999999999907,
+            -0.019999999999999907
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 0,
+          "case_migrated": false,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9833333333333334,
+          "mean_recovery": -0.009999999999999972,
+          "recovery_range": [
+            -0.016666666666666607,
+            -0.0033333333333332993
+          ],
+          "seed_spread": 0.013333333333333308,
+          "verdict_agreement": false,
+          "migrated_seeds": 1,
+          "case_migrated": false,
+          "seed_repeat_pass": false
+        },
+        "gpt-6.2-sol": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9888888888888889,
+          "mean_recovery": -0.004444444444444436,
+          "recovery_range": [
+            -0.010000000000000009,
+            0.0
+          ],
+          "seed_spread": 0.010000000000000009,
+          "verdict_agreement": false,
+          "migrated_seeds": 2,
+          "case_migrated": true,
+          "seed_repeat_pass": false
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.006666666666666667,
+        "port:gpt-6.2-astra": 0.006666666666666667,
+        "port:gpt-6.2-sol": 0.14333333333333334,
+        "port:gpt-6.1-terra": 0.12,
+        "port:gpt-6-luna": 0.04666666666666667,
+        "opt:07-contact-normalisation-gpt-6-luna-s11": 0.04666666666666667,
+        "opt:07-contact-normalisation-gpt-6.1-terra-s11": 0.03,
+        "opt:07-contact-normalisation-gpt-6.2-sol-s11": 0.0033333333333333335
+      },
+      "v2": {}
+    },
+    "08-glossary-translation": {
+      "status": "evaluated",
+      "source": {
+        "test": 0.9666666666666667,
+        "test_ci": [
+          0.9397381741959452,
+          0.9817950526611452
+        ],
+        "cost_per_correct": 0.00910968620689655,
+        "shift": 0.98
+      },
+      "ports": {
+        "gpt-6.2-astra": {
+          "effort": "low",
+          "test": 1.0,
+          "test_ci": [
+            0.9873570287754538,
+            0.9999999999999998
+          ],
+          "zero_shot_drop": 0.033333333333333326,
+          "drop_ci": [
+            0.013333333333333334,
+            0.05333333333333334
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.018559966666666667,
+          "cost_per_item": 0.018559966666666667,
+          "shift": 1.0,
+          "latency_p50_s": 2.2685500000000003,
+          "latency_p95_s": 3.188395,
+          "failure_categories": {}
+        },
+        "gpt-6.2-sol": {
+          "effort": "low",
+          "test": 0.98,
+          "test_ci": [
+            0.9570603791821394,
+            0.9908023684422963
+          ],
+          "zero_shot_drop": 0.013333333333333308,
+          "drop_ci": [
+            -0.01,
+            0.03666666666666667
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.004305344557823129,
+          "cost_per_item": 0.004219237666666666,
+          "shift": 0.9933333333333333,
+          "latency_p50_s": 1.31405,
+          "latency_p95_s": 2.0349150000000003,
+          "failure_categories": {
+            "missing_term": 4,
+            "repeat_not_kept": 2
+          }
+        },
+        "gpt-6.1-terra": {
+          "effort": "none",
+          "test": 0.97,
+          "test_ci": [
+            0.9439774608583589,
+            0.9841381461905676
+          ],
+          "zero_shot_drop": 0.0033333333333332993,
+          "drop_ci": [
+            -0.01,
+            0.016666666666666666
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.0011370463917525775,
+          "cost_per_item": 0.001102935,
+          "shift": 1.0,
+          "latency_p50_s": 2.0302000000000002,
+          "latency_p95_s": 2.7148250000000003,
+          "failure_categories": {
+            "repeat_not_kept": 5,
+            "missing_term": 3,
+            "forbidden_term": 1
+          }
+        },
+        "gpt-6-luna": {
+          "effort": "none",
+          "test": 0.94,
+          "test_ci": [
+            0.9071605548470915,
+            0.9617136304753079
+          ],
+          "zero_shot_drop": -0.026666666666666727,
+          "drop_ci": [
+            -0.05,
+            -0.0033333333333333335
+          ],
+          "validity": 1.0,
+          "nonanswer_rate": 0.0,
+          "cost_per_correct": 0.00011768014184397164,
+          "cost_per_item": 0.00011061933333333334,
+          "shift": 0.9866666666666667,
+          "latency_p50_s": 1.032,
+          "latency_p95_s": 1.3337500000000002,
+          "failure_categories": {
+            "missing_term": 11,
+            "repeat_not_kept": 5,
+            "forbidden_term": 4
+          }
+        }
+      },
+      "opt": {
+        "08-glossary-translation-gpt-6-luna-s11": {
+          "target": "gpt-6-luna",
+          "seed": 11,
+          "test": 0.94,
+          "test_ci": [
+            0.9071605548470915,
+            0.9617136304753079
+          ],
+          "recovery": -0.026666666666666727,
+          "ni_lower_bound": -0.04666666666666667,
+          "ni_p": 0.4177911044477761,
+          "ni_p_holm": 1.0,
+          "migrated": false,
+          "shift": 0.9866666666666667,
+          "shift_gap": -0.046666666666666745,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00011768014184397164,
+          "cost_per_item": 0.00011061933333333334,
+          "validity": 1.0
+        },
+        "08-glossary-translation-gpt-6-luna-s22": {
+          "target": "gpt-6-luna",
+          "seed": 22,
+          "test": 0.94,
+          "test_ci": [
+            0.9071605548470915,
+            0.9617136304753079
+          ],
+          "recovery": -0.026666666666666727,
+          "ni_lower_bound": -0.04666666666666667,
+          "ni_p": 0.4177911044477761,
+          "ni_p_holm": 1.0,
+          "migrated": false,
+          "shift": 0.9866666666666667,
+          "shift_gap": -0.046666666666666745,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00011768014184397164,
+          "cost_per_item": 0.00011061933333333334,
+          "validity": 1.0
+        },
+        "08-glossary-translation-gpt-6-luna-s33": {
+          "target": "gpt-6-luna",
+          "seed": 33,
+          "test": 0.94,
+          "test_ci": [
+            0.9071605548470915,
+            0.9617136304753079
+          ],
+          "recovery": -0.026666666666666727,
+          "ni_lower_bound": -0.04666666666666667,
+          "ni_p": 0.4177911044477761,
+          "ni_p_holm": 1.0,
+          "migrated": false,
+          "shift": 0.9866666666666667,
+          "shift_gap": -0.046666666666666745,
+          "overfit_flag": false,
+          "cost_per_correct": 0.00011768014184397164,
+          "cost_per_item": 0.00011061933333333334,
+          "validity": 1.0
+        },
+        "08-glossary-translation-gpt-6.1-terra-s11": {
+          "target": "gpt-6.1-terra",
+          "seed": 11,
+          "test": 0.97,
+          "test_ci": [
+            0.9439774608583589,
+            0.9841381461905676
+          ],
+          "recovery": 0.0033333333333332993,
+          "ni_lower_bound": -0.006833333333333324,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.030000000000000027,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0011370463917525775,
+          "cost_per_item": 0.001102935,
+          "validity": 1.0
+        },
+        "08-glossary-translation-gpt-6.1-terra-s22": {
+          "target": "gpt-6.1-terra",
+          "seed": 22,
+          "test": 0.97,
+          "test_ci": [
+            0.9439774608583589,
+            0.9841381461905676
+          ],
+          "recovery": 0.0033333333333332993,
+          "ni_lower_bound": -0.006833333333333324,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.030000000000000027,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0011370463917525775,
+          "cost_per_item": 0.001102935,
+          "validity": 1.0
+        },
+        "08-glossary-translation-gpt-6.1-terra-s33": {
+          "target": "gpt-6.1-terra",
+          "seed": 33,
+          "test": 0.97,
+          "test_ci": [
+            0.9439774608583589,
+            0.9841381461905676
+          ],
+          "recovery": 0.0033333333333332993,
+          "ni_lower_bound": -0.006833333333333324,
+          "ni_p": 0.0004997501249375312,
+          "ni_p_holm": 0.0029985007496251873,
+          "migrated": true,
+          "shift": 1.0,
+          "shift_gap": -0.030000000000000027,
+          "overfit_flag": false,
+          "cost_per_correct": 0.0011370463917525775,
+          "cost_per_item": 0.001102935,
+          "validity": 1.0
+        }
+      },
+      "targets": {
+        "gpt-6-luna": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.94,
+          "mean_recovery": -0.026666666666666727,
+          "recovery_range": [
+            -0.026666666666666727,
+            -0.026666666666666727
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 0,
+          "case_migrated": false,
+          "seed_repeat_pass": true
+        },
+        "gpt-6.1-terra": {
+          "seeds": [
+            11,
+            22,
+            33
+          ],
+          "mean_test": 0.9700000000000001,
+          "mean_recovery": 0.0033333333333332993,
+          "recovery_range": [
+            0.0033333333333332993,
+            0.0033333333333332993
+          ],
+          "seed_spread": 0.0,
+          "verdict_agreement": true,
+          "migrated_seeds": 3,
+          "case_migrated": true,
+          "seed_repeat_pass": true
+        }
+      },
+      "stability_flip_rate": {
+        "source": 0.0033333333333333335,
+        "port:gpt-6.2-astra": 0.0,
+        "port:gpt-6.2-sol": 0.023333333333333334,
+        "port:gpt-6.1-terra": 0.02,
+        "port:gpt-6-luna": 0.02666666666666667,
+        "opt:08-glossary-translation-gpt-6-luna-s11": 0.02666666666666667,
+        "opt:08-glossary-translation-gpt-6.1-terra-s11": 0.02
+      },
+      "v2": {}
+    }
+  },
+  "generated_at": "2026-11-18T01:58:54",
+  "overall": {
+    "n_cases": 8,
+    "seed_repeat_pass_gpt-6-luna": 8,
+    "migrated_cases_gpt-6-luna": 4,
+    "seed_repeat_pass_gpt-6.1-terra": 7,
+    "migrated_cases_gpt-6.1-terra": 7,
+    "across_cases_pass": false,
+    "main_tier": {
+      "01-entity-extraction": {
+        "sol_case_migrated": true,
+        "terra_case_migrated": true,
+        "sol_seed_spread": 0.0,
+        "pass": true
+      },
+      "03-ticket-routing": {
+        "sol_case_migrated": true,
+        "terra_case_migrated": true,
+        "sol_seed_spread": 0.0,
+        "pass": true
+      },
+      "07-contact-normalisation": {
+        "sol_case_migrated": true,
+        "terra_case_migrated": false,
+        "sol_seed_spread": 0.010000000000000009,
+        "pass": false
+      }
+    },
+    "main_tier_pass": false,
+    "data_version": {
+      "01-entity-extraction": {
+        "v2_test": 0.9766666666666667,
+        "v1_seed_mean": 0.9666666666666667,
+        "diff": 0.010000000000000009,
+        "pass": true
+      },
+      "05-format-summary": {
+        "v2_test": 0.9966666666666667,
+        "v1_seed_mean": 1.0,
+        "diff": -0.0033333333333332993,
+        "pass": true
+      }
+    },
+    "data_version_pass": true,
+    "shift_flags": [],
+    "shift_pass": true,
+    "clean_rerun_pass": null,
+    "verdict": "Partly reproducible",
+    "seed_repeat_pass_min": 7
+  }
+}

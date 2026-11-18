@@ -18,3 +18,43 @@
 2026-11-18T01:28:03	write(generate)	05-format-summary/shift	pid=10768	cmd=cli.py data 05	BENCH_FINAL=0
 2026-11-18T01:41:40	write(generate)	05-format-summary-v2/test	pid=20396	cmd=cli.py data 05 --version	BENCH_FINAL=0
 2026-11-18T01:41:40	write(generate)	05-format-summary-v2/shift	pid=20396	cmd=cli.py data 05 --version	BENCH_FINAL=0
+2026-11-18T01:49:21	read	01-entity-extraction/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:21	read	01-entity-extraction/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:21	read	01-entity-extraction-v2/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:21	read	01-entity-extraction-v2/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	02-invoice-fields/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	02-invoice-fields/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	03-ticket-routing/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	03-ticket-routing/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	04-tool-selection/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	04-tool-selection/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	05-format-summary/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	05-format-summary/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	05-format-summary-v2/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	05-format-summary-v2/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	06-grounded-abstention/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	06-grounded-abstention/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	07-contact-normalisation/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	07-contact-normalisation/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:22	read	08-glossary-translation/test	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:23	read	08-glossary-translation/shift	pid=27064	cmd=cli.py final	BENCH_FINAL=1
+2026-11-18T01:49:34	read	01-entity-extraction/test	pid=17024	cmd=cli.py final --case 01	BENCH_FINAL=1
+2026-11-18T01:49:34	read	01-entity-extraction/shift	pid=17024	cmd=cli.py final --case 01	BENCH_FINAL=1
+2026-11-18T01:49:34	read	01-entity-extraction-v2/test	pid=17024	cmd=cli.py final --case 01	BENCH_FINAL=1
+2026-11-18T01:49:34	read	01-entity-extraction-v2/shift	pid=17024	cmd=cli.py final --case 01	BENCH_FINAL=1
+2026-11-18T01:49:34	read	02-invoice-fields/test	pid=5900	cmd=cli.py final --case 02	BENCH_FINAL=1
+2026-11-18T01:49:34	read	02-invoice-fields/shift	pid=5900	cmd=cli.py final --case 02	BENCH_FINAL=1
+2026-11-18T01:49:34	read	04-tool-selection/test	pid=9148	cmd=cli.py final --case 04	BENCH_FINAL=1
+2026-11-18T01:49:34	read	04-tool-selection/shift	pid=9148	cmd=cli.py final --case 04	BENCH_FINAL=1
+2026-11-18T01:49:34	read	03-ticket-routing/test	pid=25560	cmd=cli.py final --case 03	BENCH_FINAL=1
+2026-11-18T01:49:34	read	03-ticket-routing/shift	pid=25560	cmd=cli.py final --case 03	BENCH_FINAL=1
+2026-11-18T01:49:34	read	05-format-summary/test	pid=24228	cmd=cli.py final --case 05	BENCH_FINAL=1
+2026-11-18T01:49:34	read	06-grounded-abstention/test	pid=14688	cmd=cli.py final --case 06	BENCH_FINAL=1
+2026-11-18T01:49:34	read	06-grounded-abstention/shift	pid=14688	cmd=cli.py final --case 06	BENCH_FINAL=1
+2026-11-18T01:49:34	read	05-format-summary/shift	pid=24228	cmd=cli.py final --case 05	BENCH_FINAL=1
+2026-11-18T01:49:34	read	05-format-summary-v2/test	pid=24228	cmd=cli.py final --case 05	BENCH_FINAL=1
+2026-11-18T01:49:34	read	07-contact-normalisation/test	pid=692	cmd=cli.py final --case 07	BENCH_FINAL=1
+2026-11-18T01:49:34	read	05-format-summary-v2/shift	pid=24228	cmd=cli.py final --case 05	BENCH_FINAL=1
+2026-11-18T01:49:34	read	07-contact-normalisation/shift	pid=692	cmd=cli.py final --case 07	BENCH_FINAL=1
+2026-11-18T01:49:34	read	08-glossary-translation/test	pid=9960	cmd=cli.py final --case 08	BENCH_FINAL=1
+2026-11-18T01:49:34	read	08-glossary-translation/shift	pid=9960	cmd=cli.py final --case 08	BENCH_FINAL=1

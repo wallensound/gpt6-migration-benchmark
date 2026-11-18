@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\ganth\work\gpt6-migration-benchmark\harness\cli.py", line 139, in <module>
+    main()
+  File "C:\Users\ganth\work\gpt6-migration-benchmark\harness\cli.py", line 135, in main
+    a.f(a)
+  File "C:\Users\ganth\work\gpt6-migration-benchmark\harness\cli.py", line 96, in cmd_final
+    _print(asyncio.run(run_final(cases=a.case, only=a.only)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganth\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ganth\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganth\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ganth\work\gpt6-migration-benchmark\harness\final.py", line 97, in run_final
+    res = analyse()
+          ^^^^^^^^^
+  File "C:\Users\ganth\work\gpt6-migration-benchmark\harness\final.py", line 193, in analyse
+    reps = [_vec(rows, f"{base}|test|r{r}", ids) for r in range(3)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganth\work\gpt6-migration-benchmark\harness\final.py", line 119, in _vec
+    return np.array([m[i] for i in ids], dtype=bool)
+                     ~^^^
+KeyError: '01-v1-00000'
