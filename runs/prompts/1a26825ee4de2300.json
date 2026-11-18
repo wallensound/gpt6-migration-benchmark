@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract the header of the single invoice in the user message. Return only one JSON object with exactly these keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Every value is a string or null. No Markdown, prose, or extra keys.\n\n- vendor: full legal name of the issuer (seller, supplier, or payee), as written, including its legal suffix. Never use the customer or bill-to party.\n- invoice_number: the invoice's own identifier exactly as written, without its label. Exclude order, PO, and customer numbers.\n- issue_date: the date of issue, not a delivery or order date. due_date: the payment due date, only if stated as a date. Convert all written date forms to YYYY-MM-DD. Preserve ISO year-first dates; otherwise read numeric dates day-first, even when ambiguous. Expand two-digit years to 20YY.\n- currency: billing currency, one of EUR, SEK, USD, GBP, CHF, NOK, DKK. Map € to EUR, £ to GBP, $ to USD, and kr to SEK. Ignore informational conversions and their amounts.\n- net: stated taxable amount excluding VAT, after discounts. Do not use a pre-discount subtotal or a line-item amount unless explicitly labeled as the invoice net. vat: stated tax amount, not the rate. total: stated gross amount payable, including VAT. Write each amount as a decimal string with a dot and exactly two decimals, without grouping separators or currency. The final comma or dot before the two decimal digits is the decimal separator.\n\nUse null for unstated fields. Do not guess, calculate amounts, or derive a due date from payment terms. Recognize English, Swedish, and German labels, including labels split by line breaks or misspelled by OCR; the value strings are intact.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

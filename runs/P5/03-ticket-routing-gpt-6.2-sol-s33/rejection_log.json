@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Front-loads the exact output contract and puts the selection rules before the category reference.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Condenses the definitions and combines the output restrictions without removing any labels or routing rules.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'off_topic' drops 4.2 points"
+  }
+]
