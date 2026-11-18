@@ -1,0 +1,340 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "ae9a36fb6855c190",
+    "dev_primary": 0.955,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "simplify",
+      "settings_change",
+      "example_swap",
+      "targeted_fix"
+    ],
+    "train_primary": 0.9666666666666667,
+    "failure_report": {
+      "counts": {
+        "missing_term": 2,
+        "forbidden_term": 2
+      },
+      "by_slice": {
+        "plain": 1,
+        "terms_in_lists": 1,
+        "inflected_forms": 2
+      },
+      "patterns": [
+        {
+          "category": "missing_term",
+          "count": 2,
+          "sample_causes": [
+            "The translation omitted the required glossary term “weight” for Swedish “vikt,” rendering it as “lightweight” instead.",
+            "Used “wirelessly” instead of the required glossary rendering “wireless.”"
+          ],
+          "n_examples": 0
+        },
+        {
+          "category": "forbidden_term",
+          "count": 2,
+          "sample_causes": [
+            "Used the forbidden alternative “package” instead of the required rendering “packaging” for förpackning.",
+            "Rendered the required term “förpackning” as “package” instead of the required “packaging,” using a forbidden alternative."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.95,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Consolidates the instructions and uses compact glossary rows while preserving every required and forbidden mapping.",
+        "prompt_hash": "3abedcfe8eeb10d9",
+        "prompt_chars": 2599,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether explicitly setting medium verbosity improves retention of glossary-bearing details without changing the prompt.",
+        "prompt_hash": "40b8b427f382b1f9",
+        "prompt_chars": 3143,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "medium"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one invented example showing how to preserve required words when translating inflected forms and how to keep a repeated mention explicit.",
+        "prompt_hash": "d09eefefb9e8d19f",
+        "prompt_chars": 3496,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=3, p=0.625)",
+            "slice 'terms_in_lists' drops 2.5 points"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 3,
+            "p_value": 0.625
+          },
+          "worst_slice_drop": -0.025000000000000022,
+          "validity": 1.0,
+          "dev_primary": 0.945,
+          "dev_primary_current": 0.955
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Changes only the rendering rule to prevent required words from disappearing into English derivatives or closed compounds.",
+        "prompt_hash": "f7e36a094bf70617",
+        "prompt_chars": 3314,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "example_swap",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=3, p=0.625)",
+        "slice 'terms_in_lists' drops 2.5 points"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 3,
+        "p_value": 0.625
+      },
+      "worst_slice_drop": -0.025000000000000022,
+      "validity": 1.0,
+      "dev_primary": 0.945,
+      "dev_primary_current": 0.955
+    },
+    "accepted": false,
+    "prompt_hash_after": "ae9a36fb6855c190",
+    "dev_primary_after": 0.955,
+    "seconds": 134,
+    "spent_phase": 7.6986928575
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "targeted_fix",
+      "example_swap",
+      "restructure",
+      "settings_change"
+    ],
+    "train_primary": 0.9666666666666667,
+    "failure_report": {
+      "counts": {
+        "missing_term": 2,
+        "forbidden_term": 2
+      },
+      "by_slice": {
+        "plain": 1,
+        "terms_in_lists": 1,
+        "inflected_forms": 2
+      },
+      "patterns": [
+        {
+          "category": "missing_term",
+          "count": 2,
+          "sample_causes": [
+            "The translation omitted the required glossary term “weight” for Swedish “vikt,” rendering it as “lightweight” instead.",
+            "Used “wirelessly” instead of the required glossary rendering “wireless.”"
+          ],
+          "n_examples": 0
+        },
+        {
+          "category": "forbidden_term",
+          "count": 2,
+          "sample_causes": [
+            "Used the forbidden alternative “package” instead of the required rendering “packaging” for förpackning.",
+            "Rendered the required term “förpackning” as “package” instead of the required “packaging,” using a forbidden alternative."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.95,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Makes the required rendering a standalone English word or phrase so that paraphrases and derivations cannot silently replace it.",
+        "prompt_hash": "a15ef2442484ad68",
+        "prompt_chars": 3397,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds a single worked example that shows how to enforce an unfamiliar item's glossary without translating the glossary block.",
+        "prompt_hash": "d9d1dd46d1f71b6e",
+        "prompt_chars": 3447,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the output contract first, then groups input handling and terminology rules before the unchanged glossary.",
+        "prompt_hash": "cc59bd589ed9fbe8",
+        "prompt_chars": 3225,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether explicit high verbosity preserves source details and glossary mentions more reliably, with the prompt unchanged.",
+        "prompt_hash": "ee149ea9934476ef",
+        "prompt_chars": 3143,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "high"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=1, p=1.000)",
+            "slice 'terms_used_twice' drops 2.4 points"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.024390243902439046,
+          "validity": 1.0,
+          "dev_primary": 0.955,
+          "dev_primary_current": 0.955
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=1, p=1.000)",
+        "slice 'terms_used_twice' drops 2.4 points"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.024390243902439046,
+      "validity": 1.0,
+      "dev_primary": 0.955,
+      "dev_primary_current": 0.955
+    },
+    "accepted": false,
+    "prompt_hash_after": "ae9a36fb6855c190",
+    "dev_primary_after": 0.955,
+    "seconds": 185,
+    "spent_phase": 17.2366613025
+  }
+]

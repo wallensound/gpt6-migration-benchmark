@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one invented example showing how to preserve required words when translating inflected forms and how to keep a repeated mention explicit.",
+    "reason": "McNemar not significant (b=1, c=3, p=0.625); slice 'terms_in_lists' drops 2.5 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Tests whether explicit high verbosity preserves source details and glossary mentions more reliably, with the prompt unchanged.",
+    "reason": "McNemar not significant (b=1, c=1, p=1.000); slice 'terms_used_twice' drops 2.4 points"
+  }
+]
