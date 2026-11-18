@@ -1,0 +1,11 @@
+{"plan_seed": 200100140, "slice": "parent_present", "stage": "code_verify", "variant": "main", "why": "planned string missing: Krarjomkora's"}
+{"plan_seed": 200100147, "slice": "parent_present", "stage": "llm_verify", "variant": "main", "why": "“Wi-Fi” names an additional brand beyond the four intended companies."}
+{"plan_seed": 200100271, "slice": "no_companies", "stage": "llm_verify", "variant": "main", "why": "The text mentions London, an actual city that is not among the stated people, places, or generic product categories."}
+{"plan_seed": 200100529, "slice": "domain_forms", "stage": "llm_verify", "variant": "main", "why": "The text introduces an additional, unnamed U.S. gaming company, making the intended company list incomplete or ambiguous."}
+{"plan_seed": 200100561, "slice": "swedish", "stage": "code_verify", "variant": "main", "why": "unplanned company Hündra"}
+{"plan_seed": 200100654, "slice": "parent_absent", "stage": "llm_verify", "variant": "main", "why": "The text names Manchester and Denver as places and refers to budget airlines as a generic category, so no unplanned company or organization is introduced."}
+{"plan_seed": 200100752, "slice": "german", "stage": "llm_verify", "variant": "main", "why": "The text names the unplanned organisation “the two German insurers” as distinct providers without identifying them as Glengavik and Plovarzix."}
+{"plan_seed": 200150058, "slice": "swedish", "stage": "llm_verify", "variant": "shift", "why": "The text names other organizations, including the news outlet implied by “redaktionen bakom info@dajyn.se” and an unnamed competing supplier, so the specified company list is not exhaustive."}
+{"plan_seed": 200150103, "slice": "german", "stage": "llm_verify", "variant": "shift", "why": "The text names Frankfurt and Berlin, which are places rather than companies, but Hugo Pefentez is described as a Vertriebsleiterin, introducing an additional person only; however, no extra company is named."}
+{"plan_seed": 200150128, "slice": "dense", "stage": "code_verify", "variant": "shift", "why": "planned string missing: Jemkrik Oy"}
+{"plan_seed": 200150161, "slice": "parent_present", "stage": "llm_verify", "variant": "shift", "why": "The text describes Juflordryn as an insurer and refers to its customers and insurance policies, making it a company beyond the planned product mentions."}

@@ -1,0 +1,34 @@
+{
+  "case": "01-entity-extraction",
+  "dataset_version": 2,
+  "gen_seed": 2001,
+  "created_at": "2026-11-18T01:27:26",
+  "generator": {
+    "model": "gpt-6.2-sol",
+    "effort": "low"
+  },
+  "verifier": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "generator_model_id": "global.openai.gpt-6.2-sol",
+  "verifier_model_id": "global.openai.gpt-6-luna",
+  "sdk_version": "3.45.0",
+  "git_commit": "8dd64ff",
+  "sizes": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "sha256": {
+    "train": "e4db318961b7e10225e3aea0066e52366e5cb26b9a6e7b693ce7ba222900ba1f",
+    "dev": "07e43dc44dbae8130640395ac239c8a71dfaa33ec08b5626b6f19197d92b69ac",
+    "test": "eb877f2cd2bf75465e078091b601e02f2ac7aab8e56042de977769eaf09b3829",
+    "shift": "759a8210aeb1b66d10661dedda69cb37373bb5d2982664a26f108256cd251516"
+  },
+  "frozen_files_sha256": {
+    "spec.md": "30b0397863632c54dca5847975039d9978dfd4d100d1a448f94d44656f05062e",
+    "case.py": "f9ac9f6d1efb43955964723381eed0aea19cde490c19eaa5c9b33c005f92c598"
+  }
+}
