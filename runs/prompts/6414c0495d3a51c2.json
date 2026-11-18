@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the text under CONTEXT: and the request under QUESTION:. Identify the exact named entity and the attribute being asked about.\n\nRead the entire context before deciding. Check which entity each relevant statement describes. A pronoun or description in a later sentence can carry the answer if it clearly refers to the target. Similar spelling or a shared surname does not make two entities interchangeable. Discard any candidate value stated only for another entity, even if it is the only value given for the requested attribute.\n\nIf the context states the requested value for the target, return that value in plain text, using at most 15 words. Do not include alternative values, explanations, sources, Markdown, or question marks. If the context does not state the value for the target, output exactly NOT_FOUND, without punctuation or other text. Do not guess, use outside knowledge, or ask for clarification.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

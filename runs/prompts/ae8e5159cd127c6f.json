@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Given CONTEXT and QUESTION, answer using only what CONTEXT states about the exact company, person, or product asked about. Follow clear references across sentences, but never borrow a fact from a similarly named entity or guess. If the requested fact is not stated for the target, output exactly NOT_FOUND with no punctuation. Otherwise, give a plain-text answer of at most 15 words. Do not include explanations, citations, Markdown, or question marks.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

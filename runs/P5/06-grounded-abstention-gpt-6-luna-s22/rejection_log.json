@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the output contract first and makes entity attribution the decisive check before answering.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "An attribute-first lookup separates finding relevant passages from resolving who or what each passage describes.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000)"
+  }
+]

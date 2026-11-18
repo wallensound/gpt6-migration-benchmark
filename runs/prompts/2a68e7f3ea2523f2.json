@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the QUESTION to identify the full name of the target and the one attribute being asked about. Use only the CONTEXT.\n\nRead the entire CONTEXT, including the final sentence. Treat similar names as different entities, even if they differ by just one vowel or share a surname. A value qualifies only if the text states the requested attribute for the exact target. The target need not be named in the same sentence as the value: a pronoun or description such as “the company” counts if it clearly refers to that target. A nearby value, a different attribute of the target, or the requested attribute of another entity does not qualify. Do not guess or use outside knowledge.\n\nIf the context states the value for the target, return only that value in plain text, at most 15 words. Preserve names and use digits for numbers; units are optional. Do not include other entities' values, explanations, citations, Markdown, or question marks. If the context does not state the value for the target, return exactly NOT_FOUND with no punctuation or other text. Never ask for clarification.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

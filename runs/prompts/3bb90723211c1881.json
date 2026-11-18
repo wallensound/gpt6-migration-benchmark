@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the CONTEXT and QUESTION in the user message. Use only the CONTEXT to answer the QUESTION about the named company, person or product.\n\nLookup procedure (do not output these steps):\n1. Identify the requested attribute. Read the entire CONTEXT, including the last sentence, for statements of that attribute.\n2. For each relevant statement, resolve which entity it describes. A pronoun or description can refer back to an entity named in an earlier sentence. Keep only statements that clearly describe the exact entity in the QUESTION; similar names are not interchangeable.\n3. If a retained statement gives the requested value, return only that value as written. Otherwise return exactly NOT_FOUND. Do not guess or supplement the text with outside knowledge.\n\nOutput: Plain text, at most 15 words. No Markdown, citations, explanations or question marks. When abstaining, output NOT_FOUND alone, with no punctuation.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Answer the QUESTION with only the requested value stated in the CONTEXT for the exact entity named. Follow clear references across sentences, but never borrow a fact from a similarly named entity or fill a gap with guesses or outside knowledge. If the value is not stated for the target, output exactly NOT_FOUND, without punctuation. Otherwise use plain text, at most 15 words, with no Markdown or question marks.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
