@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Route the customer message, whether in English, Swedish or German. Always output exactly one label below, as written, with no other text.\n\n- billing: charges, payments, invoices, receipts, prices, payment methods, refunds of charges. Beats technical or bug_report if a payment, charge or invoice is mentioned.\n- technical: help setting up, connecting, configuring or using the product, app or website when nothing is reported broken.\n- account_access: logging in, passwords, two-factor codes, locked or blocked accounts.\n- shipping: order tracking, delivery delays or address, parcels not received.\n- returns: sending a physical product back, return labels, exchanges, return windows.\n- cancellation: ending a subscription or plan, stopping auto-renewal. Beats billing or returns if the customer wants to end a subscription.\n- feature_request: asking for functionality the product lacks.\n- bug_report: product, app or website malfunction, including crashes, error codes, freezes or features that stop working.\n- privacy: personal data storage, copies, deletion, sharing or GDPR requests. Beats account_access or cancellation if the customer asks about or wants deletion of their personal data.\n- partnership: business proposals for reselling, co-marketing, integrations, sponsorship or volume deals.\n- feedback: opinions, praise or complaints without a request for help or action.\n- other: unrelated to the company's products and services.\n\nFor multiple issues, apply the overrides above first; otherwise choose the first issue mentioned.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

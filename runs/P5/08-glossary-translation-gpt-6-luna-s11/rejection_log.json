@@ -1,0 +1,26 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Removes role framing and redundant rules while keeping the locks on inflected, compound, and repeated terms explicit.",
+    "reason": "McNemar not significant (b=2, c=0, p=0.500)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Compresses the rules into a translation contract and a final check for exact terminology, repetition, and forbidden wording.",
+    "reason": "screening 93.3% vs current 96.7%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Uses a terms-first workflow that treats each required rendering as fixed wording and builds English sentences around it.",
+    "reason": "screening 93.3% vs current 96.7%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "targeted_fix",
+    "rationale": "Changes only the forbidden-alternative rule to require a whole-output scan and explicitly lock the rendering implicated in both forbidden-term failures.",
+    "reason": "McNemar not significant (b=1, c=2, p=1.000); slice 'terms_used_twice' drops 4.9 points"
+  }
+]
