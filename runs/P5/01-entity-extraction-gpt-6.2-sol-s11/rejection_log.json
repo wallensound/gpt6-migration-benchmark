@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Uses a compact company-by-company workflow and a structured wrapper to enforce the response shape.",
+    "reason": "McNemar not significant (b=1, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Merges overlapping rules and removes examples and repeated warnings while preserving all extraction and formatting requirements.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
