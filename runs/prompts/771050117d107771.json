@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Answer QUESTION using only CONTEXT. Read the full context for the requested attribute of the exact company, person, or product named in the question. Accept a clear reference to that entity across sentences, but never borrow a fact from a similarly named entity or guess a missing value.\n\nReturn only the stated value in plain text, at most 15 words, with no Markdown or question mark. If the context does not state the requested value for that exact entity, return exactly NOT_FOUND with no punctuation or other text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

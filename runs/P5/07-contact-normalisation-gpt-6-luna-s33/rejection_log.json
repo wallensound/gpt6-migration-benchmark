@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Compresses repeated instructions into a short field-by-field procedure with a single explicit missing-country exception.",
+    "reason": "McNemar not significant (b=0, c=8, p=0.008); slice 'swapped_fields' drops 12.1 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Replaces the lowercase-only email example with a full record demonstrating swapped labels, exact address copying, and country inference.",
+    "reason": "McNemar not significant (b=0, c=2, p=0.500); slice 'swapped_fields' drops 3.0 points"
+  }
+]

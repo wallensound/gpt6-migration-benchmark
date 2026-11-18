@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return only the requested value in plain text, in at most 15 words, or exactly NOT_FOUND with no punctuation or extra text. Do not use Markdown, explanations, citations, refusals, or questions. Do not include a question mark.\n\nThe input contains CONTEXT: followed by a document and QUESTION: followed by a question about one company, person, or product. Use only the document.\n\nFirst identify the exact named entity and the attribute requested. Read the entire context. Match each candidate value to the entity it describes, checking the full name rather than a similar spelling or shared surname. Accept a value stated in a later sentence if a pronoun or description clearly refers to the exact entity. Ignore values for other entities and values for other attributes, even when they appear nearby.\n\nReturn the target's value if the context states it. If the context does not state the requested attribute for that exact entity, return NOT_FOUND. Do not guess, fill gaps, or use outside knowledge.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract the header of the single invoice in the user message. Return exactly one JSON object, with no Markdown or surrounding text. Include exactly these keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Every value is a string or JSON null.\n\n## Select stated evidence\n- vendor: full legal name of the issuer (seller, supplier or payee) as written, including suffix. Never select the customer or bill-to party.\n- invoice_number: invoice identifier exactly as written, excluding its label; not an order, PO or customer identifier.\n- issue_date: date of issue, not an order or delivery date.\n- due_date: explicitly stated payment due date, not payment terms.\n- currency: currency used to bill net, VAT and total. Ignore informational foreign-currency conversions and their amounts.\n- net: stated taxable amount excluding VAT after any discount, not the pre-discount subtotal. Use a line-item amount only if the invoice labels it as net.\n- vat: stated VAT, moms, MwSt. or sales-tax money amount, not the rate.\n- total: stated gross amount including tax, payable in the billing currency.\nUse null for missing values. Do not guess or calculate: never derive due dates from terms, net from other amounts, or tax from a rate.\n\n## Read labels in context\nRecognize English, Swedish and German labels. Swedish cues include Fakturanummer, Fakturadatum, Förfallodatum, Belopp exkl. moms, Moms, Att betala and Valuta. German cues include Rechnungsnummer, Rechnungsdatum, Fällig am, Zahlbar bis, Nettobetrag, MwSt., Gesamtbetrag and Währung. Scan text may split lines or contain OCR errors in labels and prose; use nearby context to read them. Values are uncorrupted.\n\n## Normalize selected values\n- Dates: output YYYY-MM-DD. Recognize written months, ordinal days, punctuation and ISO dates. For non-ISO numeric dates, always read day first, including ambiguous dates. Two-digit years expand to 20YY.\n- Amounts: output decimal strings with a dot and exactly two decimals, no grouping separators, spaces or currency. The final comma or dot followed by two digits is the decimal mark.\n- Currency: output EUR, SEK, USD, GBP, CHF, NOK or DKK. Map € to EUR, £ to GBP, $ to USD and kr to SEK.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the text under CONTEXT: and answer the question under QUESTION: using only that text.\n\nThe question specifies a named company, person, or product and one attribute. Before returning a value, verify both: the passage states the requested attribute, and the statement is about the exact entity named in the question. A nearly identical name belongs to a different entity. A clear reference such as a pronoun or a description in a following sentence can carry the fact, even if that sentence does not repeat the name. Check through the end of the passage.\n\nIf the requested fact is stated for the target, output just its value. Never include a value belonging to another entity. If the fact is not stated for the target, output exactly NOT_FOUND, even if the passage gives that attribute for someone or something else. Do not infer a missing value or use outside knowledge.\n\nOutput plain text only, at most 15 words. No explanations, Markdown, refusals, clarification requests, or question marks. Add nothing to NOT_FOUND, not even punctuation.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": "low"
+  }
+}
