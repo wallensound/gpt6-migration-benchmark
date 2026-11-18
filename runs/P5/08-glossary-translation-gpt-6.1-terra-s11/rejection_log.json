@@ -1,0 +1,20 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Combines input handling, terminology constraints, and output requirements into three short instructions.",
+    "reason": "McNemar not significant (b=3, c=1, p=0.625)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one worked example showing how to preserve an inflected adjective and a glossary noun that could otherwise disappear into a paraphrase.",
+    "reason": "leakage check failed (2 six-word, 0 answer hits)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Replaces repetitive per-row warnings with a compact schema and makes explicit lexical coverage the central instruction.",
+    "reason": "McNemar not significant (b=4, c=0, p=0.125)"
+  }
+]
