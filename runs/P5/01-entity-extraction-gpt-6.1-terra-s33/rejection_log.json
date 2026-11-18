@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Separates mention detection from canonicalization so indirect mentions are not lost during a long scan.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'german' drops 5.0 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "A compact decision guide puts the output contract first and distinguishes full business names from product forms without adding a separate detection pass.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
