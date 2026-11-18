@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Uses a compact field-by-field specification and adds independent agreement checks without changing the JSON payload.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Combines field selection and normalization rules into a shorter prompt while preserving the output contract and baseline settings.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
