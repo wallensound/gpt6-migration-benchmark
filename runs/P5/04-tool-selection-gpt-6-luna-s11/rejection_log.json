@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Uses the supplied schemas for field definitions and consolidates routing, argument selection, and date rules.",
+    "reason": "McNemar not significant (b=1, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Sets verbosity to low to keep plain-text replies brief without changing routing instructions.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
