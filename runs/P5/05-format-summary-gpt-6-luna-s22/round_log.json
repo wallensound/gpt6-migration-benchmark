@@ -1,0 +1,288 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "3f3294a6b868c17c",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "settings_change",
+      "restructure",
+      "simplify"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures, this minimal change guards against missing key facts buried late in the article.",
+        "prompt_hash": "2191a08d2a2df530",
+        "prompt_chars": 1068,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9166666666666666,
+        "screen_validity": 0.9166666666666666,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Low verbosity reinforces the existing brevity rules without changing a prompt that passed every training item.",
+        "prompt_hash": "a3173a148e1ccc18",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=2, p=0.500)",
+            "slice 'numbers_heavy' drops 2.6 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 2,
+            "p_value": 0.5
+          },
+          "worst_slice_drop": -0.02564102564102566,
+          "validity": 0.99,
+          "dev_primary": 0.99,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Putting the output contract first makes the language, line count, and length limits visible before fact selection.",
+        "prompt_hash": "2ba61d6698d4f891",
+        "prompt_chars": 993,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.7833333333333333,
+        "screen_validity": 0.7833333333333333,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Two short paragraphs retain the fact and format requirements without repeating instructions.",
+        "prompt_hash": "5e9a19b2082f05bf",
+        "prompt_chars": 591,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.7833333333333333,
+        "screen_validity": 0.8,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=2, p=0.500)",
+        "slice 'numbers_heavy' drops 2.6 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 2,
+        "p_value": 0.5
+      },
+      "worst_slice_drop": -0.02564102564102566,
+      "validity": 0.99,
+      "dev_primary": 0.99,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 1.0,
+    "seconds": 41,
+    "spent_phase": 37.80112753
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "simplify",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Test medium verbosity without changing the prompt that passed every training item or repeating the rejected low setting.",
+        "prompt_hash": "bbecf4ff31420159",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "medium"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 0.9833333333333333,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Remove the digest backstory and consolidate repeated formatting rules while keeping fact selection and rendering explicit.",
+        "prompt_hash": "cd128cf7d7f86da9",
+        "prompt_chars": 596,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.8833333333333333,
+        "screen_validity": 0.8833333333333333,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures to target, resolve the conflict between verbatim dates and English output without changing the rest of the prompt.",
+        "prompt_hash": "69dd898a184ad0c5",
+        "prompt_chars": 1050,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'facts_near_end' drops 2.5 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.025000000000000022,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Organise the prompt around selecting, drafting and checking the summary rather than moving formatting rules to the top.",
+        "prompt_hash": "a8501fe013cda4c5",
+        "prompt_chars": 966,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 0.9666666666666667,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "targeted_fix",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'facts_near_end' drops 2.5 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.025000000000000022,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 1.0,
+    "seconds": 36,
+    "spent_phase": 38.38945658
+  }
+]

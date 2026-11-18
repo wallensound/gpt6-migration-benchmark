@@ -1,0 +1,44 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "With no observed failures, this minimal change guards against missing key facts buried late in the article.",
+    "reason": "screening 91.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Putting the output contract first makes the language, line count, and length limits visible before fact selection.",
+    "reason": "screening 78.3% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Two short paragraphs retain the fact and format requirements without repeating instructions.",
+    "reason": "screening 78.3% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "settings_change",
+    "rationale": "Low verbosity reinforces the existing brevity rules without changing a prompt that passed every training item.",
+    "reason": "McNemar not significant (b=0, c=2, p=0.500); slice 'numbers_heavy' drops 2.6 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Remove the digest backstory and consolidate repeated formatting rules while keeping fact selection and rendering explicit.",
+    "reason": "screening 88.3% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Organise the prompt around selecting, drafting and checking the summary rather than moving formatting rules to the top.",
+    "reason": "screening 96.7% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "targeted_fix",
+    "rationale": "With no observed failures to target, resolve the conflict between verbatim dates and English output without changing the rest of the prompt.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'facts_near_end' drops 2.5 points"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Summarise the entire news article in exactly three English bullets, even if the source is Swedish. Cover its three main points, retaining the key figure in digits at its original value, the full name of the key company, person or product, and the key date with its day, month and year. Use an English month name for Swedish dates. Skip quotes, background and passing details.\n\nReturn only three consecutive plain-text lines, each starting with \"- \" and containing 1–20 words after the marker. Count whitespace-separated tokens containing a letter or digit as words. No blank lines, preamble, closing text, extra list markers or numbering, or other Markdown or HTML.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
