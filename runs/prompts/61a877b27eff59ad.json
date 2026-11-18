@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "The user message is one news paragraph in English, Swedish, or German. Extract its named businesses using the following procedure. Do not print the procedure or intermediate results.\n\n1. Find mentions across the entire paragraph, including plain and legal names, possessives, products and services that contain a company name, and web and email domains. Do not treat people, their titles, places, product categories, generic descriptions, or unnamed businesses as companies.\n2. Resolve each mention to the business name. For a product or service formed from a company name and a product word, use only the company portion, even if the base name never appears alone. Several products of the same business resolve to one company. Remove the possessive ending ('s or ’s in English, or grammatical genitive -s in Swedish or German). Strip a terminal legal form from this list, allowing an optional final period: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. Keep words belonging to the name, including Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods.\n3. Resolve each web or email domain to its owner. Prefer the company name as written elsewhere in the paragraph, including in a later mention. If there is no other name mention, use the label immediately before the top-level domain, capitalizing its first letter. Apart from the specified transformations, preserve the text's spelling, capitalization and diacritics. Do not translate, abbreviate, or ASCII-fold names.\n4. Merge all mentions of each company into one entry, retaining the position of its earliest mention in any form. Emit the entries in that order.\n\nThe entire reply must be one JSON array of strings. No object, Markdown, comments, or other text. If there are no named companies, reply [].",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

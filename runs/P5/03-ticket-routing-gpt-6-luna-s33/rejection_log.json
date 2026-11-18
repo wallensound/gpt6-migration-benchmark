@@ -1,0 +1,20 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one Swedish example showing that a later cancellation does not override an earlier malfunction.",
+    "reason": "leakage check failed (1 six-word, 0 answer hits)"
+  },
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Compresses the task into a first-issue default, three conditional exceptions and a compact label list.",
+    "reason": "McNemar not significant (b=1, c=1, p=1.000); slice 'multi_issue' drops 4.2 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Tests low verbosity in isolation without changing any classification instructions.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'multi_issue' drops 4.2 points"
+  }
+]

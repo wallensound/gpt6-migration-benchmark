@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract every named business from the English, Swedish, or German news paragraph in the user message. Count direct names, names in possessives, company names embedded in products or services, and company web or email domains. Exclude people and titles, places, product categories, generic descriptions, and unnamed businesses.\n\nFor each company, strip a trailing legal suffix (AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V.; with or without a final period). Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods. Remove English possessive 's or ’s and Swedish or German genitive -s when it is a grammatical ending, not part of the name. For a product or service formed from a company name plus a product word, keep only the company name, even if it does not appear separately. Merge sibling products into the same company entry.\n\nFor a web or email domain, use the owner's name as written elsewhere in the paragraph if available; otherwise take the domain label immediately before the top-level domain and capitalize its first letter. Preserve the canonical name's spelling, case, and diacritics; do not translate, abbreviate, or ASCII-fold it.\n\nReturn each company once, ordered by its first mention in any form. Output only a bare JSON array of strings, with no Markdown, wrapper, comments, or prose. If none qualify, output [].",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

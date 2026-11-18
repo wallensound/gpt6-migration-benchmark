@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user message is one invoice in plain text. Extract only what the invoice states. Read English, Swedish and German labels by meaning, including when line breaks separate labels from values or OCR misspells labels. Do not repair or guess value strings.\n\nFirst identify the issuer and invoice identifiers. Set vendor to the issuer's full legal name as written, including its suffix, not the bill-to name. Set invoice_number to the invoice's own number without its label; ignore PO, order and customer identifiers. Set issue_date to the invoice date, not a delivery or order date. Set due_date only from an explicit payment deadline date. Labels can include Fakturanummer, Fakturadatum, Förfallodatum, Rechnungsnummer, Rechnungsdatum, Fällig am and Zahlbar bis.\n\nThen locate the billed totals, ignoring amounts converted for information. Set net to the stated invoice-wide amount excluding VAT after discount, not the pre-discount subtotal or an ordinary line-item amount. Set vat to the stated tax amount, never the rate; set total to the stated gross amount payable. Labels can include Nettobetrag, Moms, MwSt., Att betala and Gesamtbetrag. Set currency from the billing currency stated in a label or alongside the billed totals. Output the ISO code EUR, SEK, USD, GBP, CHF, NOK or DKK; map €, kr, $, and £ to EUR, SEK, USD and GBP respectively.\n\nNormalize dates to YYYY-MM-DD. Preserve the year-month-day order of already-ISO dates; otherwise read numeric dates day-first and expand two-digit years to 20YY. Parse written month names, abbreviations and ordinal days. Normalize amounts to strings with a dot and two decimal places, without currency or grouping. The final dot or comma immediately before the last two digits marks the decimal separator.\n\nUse JSON null for any unstated field. Never derive one field from another or calculate an amount or date. Return one bare JSON object with exactly these keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Values must be strings or null. No commentary, Markdown or review keys.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}
