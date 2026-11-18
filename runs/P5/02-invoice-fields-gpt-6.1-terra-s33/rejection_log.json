@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Separates field selection from normalization and makes the eight-key output contract explicit.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Moves the response contract to the top and places each field's exclusions and normalization next to its definition.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
