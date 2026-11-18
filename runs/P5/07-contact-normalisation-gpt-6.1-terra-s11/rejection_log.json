@@ -1,0 +1,14 @@
+[
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Merge extraction and cleanup instructions into a shorter sequence while retaining the country fallback and full suffix list.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'unicode_names' drops 2.9 points"
+  },
+  {
+    "round": 3,
+    "edit_kind": "restructure",
+    "rationale": "Moving source restrictions and the country/phone override to the top makes the global constraints visible before field-level processing.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
