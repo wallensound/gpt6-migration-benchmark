@@ -1,0 +1,786 @@
+{
+  "case": "01-entity-extraction",
+  "source": {
+    "setting": "gpt-5.6-sol / none (legacy, chat)",
+    "model": "gpt-5.6-sol",
+    "effort": "none",
+    "primary": 0.995,
+    "primary_ci": [
+      0.9722262956021069,
+      0.9991168312843989
+    ],
+    "validity": 1.0,
+    "nonanswer_rate": 0.0,
+    "error_rate": 0.0,
+    "cost_per_item": 0.0025406249999999995,
+    "cost_per_correct": 0.0025533919597989945,
+    "latency_p50_s": 1.21225,
+    "latency_p95_s": 1.649084999999999,
+    "tokens_in_mean": 1654.885,
+    "tokens_out_mean": 23.27,
+    "tokens_reasoning_mean": 0.0,
+    "failure_categories": {
+      "possessive_kept": 1
+    },
+    "per_slice": {
+      "dense": {
+        "n": 14,
+        "primary": 1.0
+      },
+      "diacritics": {
+        "n": 15,
+        "primary": 1.0
+      },
+      "distractors": {
+        "n": 15,
+        "primary": 1.0
+      },
+      "domain_forms": {
+        "n": 15,
+        "primary": 1.0
+      },
+      "german": {
+        "n": 20,
+        "primary": 1.0
+      },
+      "legal_suffix": {
+        "n": 15,
+        "primary": 1.0
+      },
+      "no_companies": {
+        "n": 15,
+        "primary": 1.0
+      },
+      "parent_absent": {
+        "n": 16,
+        "primary": 1.0
+      },
+      "parent_present": {
+        "n": 15,
+        "primary": 1.0
+      },
+      "sibling_products": {
+        "n": 19,
+        "primary": 1.0
+      },
+      "swedish": {
+        "n": 41,
+        "primary": 0.975609756097561
+      }
+    }
+  },
+  "rows": [
+    {
+      "setting": "gpt-5.6-sol / none (legacy, chat)",
+      "model": "gpt-5.6-sol",
+      "effort": "none",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0025406249999999995,
+      "cost_per_correct": 0.0025533919597989945,
+      "latency_p50_s": 1.21225,
+      "latency_p95_s": 1.649084999999999,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 23.27,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "possessive_kept": 1
+      },
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 0.975609756097561
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / low",
+      "model": "gpt-6.2-astra",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.01743965,
+      "cost_per_correct": 0.01743965,
+      "latency_p50_s": 0.9729500000000001,
+      "latency_p95_s": 1.5639349999999996,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 22.27,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / medium",
+      "model": "gpt-6.2-astra",
+      "effort": "medium",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.01744805,
+      "cost_per_correct": 0.01744805,
+      "latency_p50_s": 0.939,
+      "latency_p95_s": 1.4085299999999996,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 22.48,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / low",
+      "model": "gpt-6.2-sol",
+      "effort": "low",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0043586125,
+      "cost_per_correct": 0.004380515075376884,
+      "latency_p50_s": 0.5699500000000001,
+      "latency_p95_s": 1.0374449999999995,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 22.14,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "extra_company": 1,
+        "missing_company": 1
+      },
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 0.95
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / medium",
+      "model": "gpt-6.2-sol",
+      "effort": "medium",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0043590124999999995,
+      "cost_per_correct": 0.004380917085427136,
+      "latency_p50_s": 0.6124,
+      "latency_p95_s": 1.221305,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 22.18,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "extra_company": 1,
+        "missing_company": 1
+      },
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 0.95
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / none",
+      "model": "gpt-6.1-terra",
+      "effort": "none",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.001091021375,
+      "cost_per_correct": 0.0010965038944723616,
+      "latency_p50_s": 0.65655,
+      "latency_p95_s": 1.234125,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 24.74,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "extra_company": 1,
+        "missing_company": 1
+      },
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 0.95
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / low",
+      "model": "gpt-6.1-terra",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.001095578125,
+      "cost_per_correct": 0.001095578125,
+      "latency_p50_s": 0.6301,
+      "latency_p95_s": 1.08771,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 24.61,
+      "tokens_reasoning_mean": 0.68,
+      "failure_categories": {},
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / none",
+      "model": "gpt-6-luna",
+      "effort": "none",
+      "primary": 0.985,
+      "primary_ci": [
+        0.9568342712073097,
+        0.9948857622067417
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.00010918963750000002,
+      "cost_per_correct": 0.00011085242385786804,
+      "latency_p50_s": 0.42169999999999996,
+      "latency_p95_s": 0.5649549999999998,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 25.09,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "extra_company": 1,
+        "missing_company": 1,
+        "product_not_mapped": 1,
+        "possessive_kept": 1
+      },
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 0.9333333333333333
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 0.9375
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 0.975609756097561
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / low",
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.00012237781250000002,
+      "cost_per_correct": 0.00012237781250000002,
+      "latency_p50_s": 0.67125,
+      "latency_p95_s": 0.994245,
+      "tokens_in_mean": 1654.885,
+      "tokens_out_mean": 75.89,
+      "tokens_reasoning_mean": 49.135,
+      "failure_categories": {},
+      "per_slice": {
+        "dense": {
+          "n": 14,
+          "primary": 1.0
+        },
+        "diacritics": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "distractors": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "domain_forms": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "german": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "legal_suffix": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "no_companies": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "parent_absent": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "parent_present": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "sibling_products": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "swedish": {
+          "n": 41,
+          "primary": 1.0
+        }
+      }
+    }
+  ],
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6-luna/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    }
+  },
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "low",
+      "score_per_dollar": 57.340600298744526,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 57.340600298744526
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 57.31299486189001
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "low",
+      "score_per_dollar": 228.2836567829785,
+      "candidates": {
+        "low": {
+          "primary": 0.995,
+          "score_per_dollar": 228.2836567829785
+        },
+        "medium": {
+          "primary": 0.995,
+          "score_per_dollar": 228.26270858365285
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "low",
+      "score_per_dollar": 912.7601009740862,
+      "candidates": {
+        "none": {
+          "primary": 0.995,
+          "score_per_dollar": 911.9894649176787
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 912.7601009740862
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "none",
+      "score_per_dollar": 9021.002565376222,
+      "candidates": {
+        "none": {
+          "primary": 0.985,
+          "score_per_dollar": 9021.002565376222
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 8171.415876550333
+        }
+      }
+    }
+  },
+  "spent_phase": 33.4776421
+}

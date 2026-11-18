@@ -1,0 +1,1036 @@
+{
+  "run_id": "01-entity-extraction-sweep",
+  "phase": "P4",
+  "git_commit": "3ea9ea9",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:13:40",
+  "reference_date": "2026-11-17",
+  "case": "01-entity-extraction",
+  "kind": "sweep",
+  "dataset_version": 1,
+  "evals": [
+    {
+      "eval_id": "source",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "7b4c50e8226a4ca4",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:13:40",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 0.975609756097561
+          }
+        },
+        "cost_usd": 0.5081249999999999,
+        "cost_per_item": 0.0025406249999999995,
+        "cost_per_correct": 0.0025533919597989945,
+        "latency_p50_s": 1.21225,
+        "latency_p95_s": 1.649084999999999,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 269400,
+        "tokens_cached_mean": 1347.0,
+        "tokens_cache_write": 60977,
+        "tokens_cache_write_mean": 304.885,
+        "tokens_out": 4654,
+        "tokens_out_mean": 23.27,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "possessive_kept": 1
+        },
+        "secondary": {
+          "micro_precision": 0.9987046632124352,
+          "micro_recall": 0.9987046632124352,
+          "micro_f1": 0.9987046632124352,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "source"
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-low",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:13:51",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 3.48793,
+        "cost_per_item": 0.01743965,
+        "cost_per_correct": 0.01743965,
+        "latency_p50_s": 0.9729500000000001,
+        "latency_p95_s": 1.5639349999999996,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 330977,
+        "tokens_cache_write_mean": 1654.885,
+        "tokens_out": 4454,
+        "tokens_out_mean": 22.27,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "micro_precision": 1.0,
+          "micro_recall": 1.0,
+          "micro_f1": 1.0,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-medium",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:14:02",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 3.48961,
+        "cost_per_item": 0.01744805,
+        "cost_per_correct": 0.01744805,
+        "latency_p50_s": 0.939,
+        "latency_p95_s": 1.4085299999999996,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 330977,
+        "tokens_cache_write_mean": 1654.885,
+        "tokens_out": 4496,
+        "tokens_out_mean": 22.48,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "micro_precision": 1.0,
+          "micro_recall": 1.0,
+          "micro_f1": 1.0,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-low",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:14:09",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.8717225,
+        "cost_per_item": 0.0043586125,
+        "cost_per_correct": 0.004380515075376884,
+        "latency_p50_s": 0.5699500000000001,
+        "latency_p95_s": 1.0374449999999995,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 330977,
+        "tokens_cache_write_mean": 1654.885,
+        "tokens_out": 4428,
+        "tokens_out_mean": 22.14,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "extra_company": 1,
+          "missing_company": 1
+        },
+        "secondary": {
+          "micro_precision": 0.9987046632124352,
+          "micro_recall": 0.9987046632124352,
+          "micro_f1": 0.9987046632124352,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-medium",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:14:17",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.8718024999999999,
+        "cost_per_item": 0.0043590124999999995,
+        "cost_per_correct": 0.004380917085427136,
+        "latency_p50_s": 0.6124,
+        "latency_p95_s": 1.221305,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 330977,
+        "tokens_cache_write_mean": 1654.885,
+        "tokens_out": 4436,
+        "tokens_out_mean": 22.18,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "extra_company": 1,
+          "missing_company": 1
+        },
+        "secondary": {
+          "micro_precision": 0.9987046632124352,
+          "micro_recall": 0.9987046632124352,
+          "micro_f1": 0.9987046632124352,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-none",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:14:26",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.21820427499999998,
+        "cost_per_item": 0.001091021375,
+        "cost_per_correct": 0.0010965038944723616,
+        "latency_p50_s": 0.65655,
+        "latency_p95_s": 1.234125,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 1698,
+        "tokens_cached_mean": 8.49,
+        "tokens_cache_write": 328879,
+        "tokens_cache_write_mean": 1644.395,
+        "tokens_out": 4948,
+        "tokens_out_mean": 24.74,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "extra_company": 1,
+          "missing_company": 1
+        },
+        "secondary": {
+          "micro_precision": 0.9987046632124352,
+          "micro_recall": 0.9987046632124352,
+          "micro_f1": 0.9987046632124352,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-low",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:14:36",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.21911562499999998,
+        "cost_per_item": 0.001095578125,
+        "cost_per_correct": 0.001095578125,
+        "latency_p50_s": 0.6301,
+        "latency_p95_s": 1.08771,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 330577,
+        "tokens_cache_write_mean": 1652.885,
+        "tokens_out": 4922,
+        "tokens_out_mean": 24.61,
+        "tokens_reasoning": 136,
+        "tokens_reasoning_mean": 0.68,
+        "failure_categories": {},
+        "secondary": {
+          "micro_precision": 1.0,
+          "micro_recall": 1.0,
+          "micro_f1": 1.0,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-none",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:14:41",
+      "summary": {
+        "n": 200,
+        "passed": 197,
+        "primary": 0.985,
+        "primary_ci": [
+          0.9568342712073097,
+          0.9948857622067417
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 0.9333333333333333
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 0.9375
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 0.975609756097561
+          }
+        },
+        "cost_usd": 0.021837927500000003,
+        "cost_per_item": 0.00010918963750000002,
+        "cost_per_correct": 0.00011085242385786804,
+        "latency_p50_s": 0.42169999999999996,
+        "latency_p95_s": 0.5649549999999998,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 1698,
+        "tokens_cached_mean": 8.49,
+        "tokens_cache_write": 328879,
+        "tokens_cache_write_mean": 1644.395,
+        "tokens_out": 5018,
+        "tokens_out_mean": 25.09,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "extra_company": 1,
+          "missing_company": 1,
+          "product_not_mapped": 1,
+          "possessive_kept": 1
+        },
+        "secondary": {
+          "micro_precision": 0.9961139896373057,
+          "micro_recall": 0.9961139896373057,
+          "micro_f1": 0.9961139896373057,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-low",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "f038b0a89df341d6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:14:48",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "dense": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "diacritics": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "distractors": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "domain_forms": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "legal_suffix": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "no_companies": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "parent_absent": {
+            "n": 16,
+            "primary": 1.0
+          },
+          "parent_present": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "sibling_products": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.024475562500000003,
+        "cost_per_item": 0.00012237781250000002,
+        "cost_per_correct": 0.00012237781250000002,
+        "latency_p50_s": 0.67125,
+        "latency_p95_s": 0.994245,
+        "tokens_in": 330977,
+        "tokens_in_mean": 1654.885,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 330577,
+        "tokens_cache_write_mean": 1652.885,
+        "tokens_out": 15178,
+        "tokens_out_mean": 75.89,
+        "tokens_reasoning": 9827,
+        "tokens_reasoning_mean": 49.135,
+        "failure_categories": {},
+        "secondary": {
+          "micro_precision": 1.0,
+          "micro_recall": 1.0,
+          "micro_f1": 1.0,
+          "format_validity": 1.0,
+          "scored_items": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Unsupported parameter: 'temperature' is not supported with this model."
+      }
+    }
+  ],
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "low",
+      "score_per_dollar": 57.340600298744526,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 57.340600298744526
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 57.31299486189001
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "low",
+      "score_per_dollar": 228.2836567829785,
+      "candidates": {
+        "low": {
+          "primary": 0.995,
+          "score_per_dollar": 228.2836567829785
+        },
+        "medium": {
+          "primary": 0.995,
+          "score_per_dollar": 228.26270858365285
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "low",
+      "score_per_dollar": 912.7601009740862,
+      "candidates": {
+        "none": {
+          "primary": 0.995,
+          "score_per_dollar": 911.9894649176787
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 912.7601009740862
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "none",
+      "score_per_dollar": 9021.002565376222,
+      "candidates": {
+        "none": {
+          "primary": 0.985,
+          "score_per_dollar": 9021.002565376222
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 8171.415876550333
+        }
+      }
+    }
+  },
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6-luna/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    }
+  },
+  "finished": true
+}
