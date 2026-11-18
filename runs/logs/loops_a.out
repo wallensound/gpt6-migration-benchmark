@@ -1,0 +1,46 @@
+START loop 07 gpt-6-luna seed 11 v1
+START loop 02 gpt-6-luna seed 11 v1
+START loop 04 gpt-6-luna seed 11 v1
+START loop 03 gpt-6-luna seed 22 v1
+START loop 07 gpt-6-luna seed 22 v1
+START loop 02 gpt-6-luna seed 22 v1
+START loop 04 gpt-6-luna seed 22 v1
+START loop 03 gpt-6-luna seed 33 v1
+START loop 07 gpt-6-luna seed 33 v1
+START loop 02 gpt-6-luna seed 33 v1
+START loop 04 gpt-6-luna seed 33 v1
+START loop 03 gpt-6.1-terra seed 11 v1
+DONE loop 03 gpt-6.1-terra seed 11 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $2.58
+START loop 07 gpt-6.1-terra seed 11 v1
+DONE loop 03 gpt-6-luna seed 22 v1: port dev 0.945 -> final dev 0.945, accepted [], 2 rounds in a row with nothing accepted, P5 spent $11.48
+START loop 02 gpt-6.1-terra seed 11 v1
+DONE loop 03 gpt-6-luna seed 33 v1: port dev 0.945 -> final dev 0.945, accepted [], 2 rounds in a row with nothing accepted, P5 spent $12.01
+START loop 04 gpt-6.1-terra seed 11 v1
+DONE loop 07 gpt-6.1-terra seed 11 v1: port dev 0.555 -> final dev 0.990, accepted [1], 2 rounds in a row with nothing accepted, P5 spent $12.40
+START loop 03 gpt-6.1-terra seed 22 v1
+DONE loop 02 gpt-6-luna seed 11 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $16.60
+START loop 07 gpt-6.1-terra seed 22 v1
+DONE loop 04 gpt-6-luna seed 11 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $16.85
+START loop 02 gpt-6.1-terra seed 22 v1
+DONE loop 04 gpt-6-luna seed 22 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $16.93
+START loop 04 gpt-6.1-terra seed 22 v1
+DONE loop 02 gpt-6-luna seed 22 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $17.62
+START loop 03 gpt-6.1-terra seed 33 v1
+DONE loop 02 gpt-6-luna seed 33 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $18.70
+START loop 07 gpt-6.1-terra seed 33 v1
+DONE loop 04 gpt-6-luna seed 33 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $19.22
+START loop 02 gpt-6.1-terra seed 33 v1
+DONE loop 07 gpt-6-luna seed 22 v1: port dev 0.985 -> final dev 0.985, accepted [], 2 rounds in a row with nothing accepted, P5 spent $20.29
+START loop 04 gpt-6.1-terra seed 33 v1
+DONE loop 07 gpt-6-luna seed 33 v1: port dev 0.985 -> final dev 0.985, accepted [], 2 rounds in a row with nothing accepted, P5 spent $21.26
+DONE loop 07 gpt-6-luna seed 11 v1: port dev 0.985 -> final dev 0.985, accepted [], 2 rounds in a row with nothing accepted, P5 spent $22.21
+DONE loop 02 gpt-6.1-terra seed 11 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $22.92
+DONE loop 03 gpt-6.1-terra seed 22 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $26.34
+DONE loop 04 gpt-6.1-terra seed 11 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $30.70
+DONE loop 04 gpt-6.1-terra seed 22 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $33.50
+DONE loop 02 gpt-6.1-terra seed 22 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $34.18
+DONE loop 03 gpt-6.1-terra seed 33 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $34.45
+DONE loop 02 gpt-6.1-terra seed 33 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $35.51
+DONE loop 04 gpt-6.1-terra seed 33 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $36.44
+DONE loop 07 gpt-6.1-terra seed 22 v1: port dev 0.555 -> final dev 0.985, accepted [1], 2 rounds in a row with nothing accepted, P5 spent $36.78
+DONE loop 07 gpt-6.1-terra seed 33 v1: port dev 0.555 -> final dev 0.985, accepted [1], 2 rounds in a row with nothing accepted, P5 spent $37.07

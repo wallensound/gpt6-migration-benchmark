@@ -70,3 +70,14 @@ Append-only log. Newest entries at the bottom.
 - Limitation: the source model is at the ceiling (100%).
 - Spot-check: 3 dev items read (incl. Swedish source), labels correct.
 - **D21 Budget reallocation (2026-11-18).** After P4, measured spend was far below the brief's estimates (P2 $36 of $80, P4 $43 of $130), while the final evaluation is estimated above its cap (~$220 vs $205, driven by Astra on long shift inputs). Caps changed to P2 $45, P4 $70, P6 $300 (P2 and P4 had finished); the sum of caps stays $797 and the $800 total limit still applies. This is the "raise a cap" option from the brief's checklist, chosen over skipping Astra on the shift sets so that P6 runs exactly as PROTOCOL.md states.
+
+### 2026-11-18 P4 Sweep and port: done (all 8 cases)
+- PROTOCOL.md committed (4756990) before the first sweep call; `runs/protocol_lock.json` holds its hash.
+- Every case's legacy prompt on the source setup and all 8 target settings on dev, plus the literal-swap probe. Literal swap fails everywhere: `temperature` is rejected when reasoning is on, a 5-token cap is below the Responses minimum of 16, and `logprobs` are not supported with reasoning models.
+- Zero-shot (mechanical port, dev): only case 07 breaks substantially (Terra none 55.5%, Sol 80-84%, Luna none 79%, vs 99.5% legacy); case 08 drops slightly on Luna/Terra (95.5-97.5% vs 98.0%); cases 01-04 and 06 port at or above the legacy score.
+
+### 2026-11-18 P5 Loops: done
+- 59 runs: Luna and Terra x 8 cases x seeds 11/22/33, Sol x cases 01/03/07 x 3 seeds, dataset v2 for cases 01 and 05 (generation seeds 2001 and 2005, drop 1.1% and see stats) with one Luna seed-11 loop each. No run failed; every final prompt passed the leakage check.
+- The loop accepted candidates only in case 07 (Terra 55.5% -> 98.5-99.0% dev on all seeds; Sol 83.5% -> 97.0-100%); everywhere else the port was already at the ceiling and the loop stopped after two empty rounds, as the acceptance rule intends.
+- Sealed-data access log before P6: 20 entries, all `write(generate)` from the data builds; no reads.
+- Spend so far $141 (P2 $36, P3 $10, P4 $44, P5 $51).

@@ -1,0 +1,3 @@
+{"plan_seed": 900004011, "slice": "multi_candidate", "stage": "llm_verify", "variant": "main", "why": "“At the current exchange rate” specifies a rate date, an extra argument beyond the listed amount and currencies."}
+{"plan_seed": 900004018, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The text explicitly sets the outcome to “reached,” rather than the specified value “connected.”"}
+{"plan_seed": 900004021, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome is “reached,” not the required “connected.”"}

@@ -1,0 +1,1 @@
+{"plan_seed": 950003004, "slice": "swedish", "stage": "llm_verify", "variant": "shift", "why": "The message asks about two deliveries, a shoe delivery and a bicycle delivery, so it raises more than one shipping issue."}

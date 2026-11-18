@@ -1,0 +1,2 @@
+{"plan_seed": 900008011, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "The pouring function of the behållarens munstycke would naturally be translated as a spout, which is forbidden."}
+{"plan_seed": 900008018, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "In “Med klockan följer kontakt,” kontakt is ambiguous and could naturally mean “connector,” so “plug” is not uniquely supported."}

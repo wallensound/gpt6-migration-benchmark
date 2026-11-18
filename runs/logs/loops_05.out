@@ -1,0 +1,12 @@
+START loop 05 gpt-6-luna seed 11 v1
+START loop 05 gpt-6-luna seed 22 v1
+START loop 05 gpt-6-luna seed 33 v1
+START loop 05 gpt-6.1-terra seed 11 v1
+START loop 05 gpt-6.1-terra seed 22 v1
+START loop 05 gpt-6.1-terra seed 33 v1
+DONE loop 05 gpt-6-luna seed 11 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $38.24
+DONE loop 05 gpt-6-luna seed 22 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $38.39
+DONE loop 05 gpt-6-luna seed 33 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $38.53
+DONE loop 05 gpt-6.1-terra seed 11 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $38.85
+DONE loop 05 gpt-6.1-terra seed 33 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $39.19
+DONE loop 05 gpt-6.1-terra seed 22 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $39.19

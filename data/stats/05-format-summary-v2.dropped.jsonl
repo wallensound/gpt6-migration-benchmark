@@ -1,0 +1,25 @@
+{"plan_seed": 200500007, "slice": "numbers_heavy", "stage": "llm_verify", "variant": "main", "why": "The article’s headline news also emphasizes that the filing is a long way off, making the requested three points not the only defensible main points."}
+{"plan_seed": 200500112, "slice": "numbers_heavy", "stage": "code_verify", "variant": "main", "why": "distractor number '4,640' missing"}
+{"plan_seed": 200500196, "slice": "facts_near_end", "stage": "llm_verify", "variant": "main", "why": "The contract value is 500 million euros, not 500, so the specified answer gives an incomplete value."}
+{"plan_seed": 200500205, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "distractor name 'Hugo Flandrexberg' missing"}
+{"plan_seed": 200500405, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "distractor name 'Ebba Tulrent' missing"}
+{"plan_seed": 200500406, "slice": "facts_near_end", "stage": "llm_verify", "variant": "main", "why": "The article foregrounds that the trial met its main goal and that commercial value remains uncertain, making the positive trial result an equally defensible headline point beyond the three specified disclosures."}
+{"plan_seed": 200500596, "slice": "facts_near_end", "stage": "llm_verify", "variant": "main", "why": "The savings programme is stated as 517 million kronor, so the planned answer’s value of 517 omits the unit and is not the complete amount."}
+{"plan_seed": 200500622, "slice": "numbers_heavy", "stage": "code_verify", "variant": "main", "why": "distractor number '3,711' missing"}
+{"plan_seed": 200500631, "slice": "facts_near_end", "stage": "llm_verify", "variant": "main", "why": "The contract value is stated as 694 million euros, not 694, so the required value is not exact."}
+{"plan_seed": 200500649, "slice": "swedish_source", "stage": "code_verify", "variant": "main", "why": "distractor name 'Simon Dilexmann' missing"}
+{"plan_seed": 200500677, "slice": "numbers_heavy", "stage": "llm_verify", "variant": "main", "why": "The article explicitly says the opening date is a firmer marker of progress than the headline store count, making the opening date more important than a required main point."}
+{"plan_seed": 200500758, "slice": "long_articles", "stage": "llm_verify", "variant": "main", "why": "The article repeatedly foregrounds the launch price as the key news, making it more prominent than the product name and sale date rather than presenting the three main points as equally central."}
+{"plan_seed": 200550003, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1496 outside 1500-2000"}
+{"plan_seed": 200550006, "slice": "numbers_heavy", "stage": "code_verify", "variant": "shift", "why": "word count 1456 outside 1500-2000"}
+{"plan_seed": 200550045, "slice": "facts_near_end", "stage": "llm_verify", "variant": "shift", "why": "The contract value is stated as 655 million euros, not 655, so the required answer gives the wrong value."}
+{"plan_seed": 200550053, "slice": "facts_near_end", "stage": "code_verify", "variant": "shift", "why": "word count 1443 outside 1500-2000"}
+{"plan_seed": 200550063, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1291 outside 1500-2000"}
+{"plan_seed": 200550064, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1494 outside 1500-2000"}
+{"plan_seed": 200550074, "slice": "numbers_heavy", "stage": "code_verify", "variant": "shift", "why": "word count 1472 outside 1500-2000"}
+{"plan_seed": 200550078, "slice": "numbers_heavy", "stage": "code_verify", "variant": "shift", "why": "word count 1437 outside 1500-2000"}
+{"plan_seed": 200550120, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1486 outside 1500-2000"}
+{"plan_seed": 200550121, "slice": "facts_near_end", "stage": "code_verify", "variant": "shift", "why": "word count 1398 outside 1500-2000"}
+{"plan_seed": 200550164, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1473 outside 1500-2000"}
+{"plan_seed": 200550173, "slice": "facts_near_end", "stage": "llm_verify", "variant": "shift", "why": "The purchase price is given as 901 million euros, not 901."}
+{"plan_seed": 200550175, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1487 outside 1500-2000"}

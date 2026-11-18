@@ -16,3 +16,5 @@
 2026-11-18T01:27:25	write(generate)	01-entity-extraction-v2/shift	pid=22556	cmd=cli.py data 01 --version	BENCH_FINAL=0
 2026-11-18T01:28:03	write(generate)	05-format-summary/test	pid=10768	cmd=cli.py data 05	BENCH_FINAL=0
 2026-11-18T01:28:03	write(generate)	05-format-summary/shift	pid=10768	cmd=cli.py data 05	BENCH_FINAL=0
+2026-11-18T01:41:40	write(generate)	05-format-summary-v2/test	pid=20396	cmd=cli.py data 05 --version	BENCH_FINAL=0
+2026-11-18T01:41:40	write(generate)	05-format-summary-v2/shift	pid=20396	cmd=cli.py data 05 --version	BENCH_FINAL=0

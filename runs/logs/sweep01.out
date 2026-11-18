@@ -1,0 +1,2 @@
+START sweep 01
+DONE sweep 01: source 0.995; effort choice {"gpt-6.2-astra": "low", "gpt-6.2-sol": "low", "gpt-6.1-terra": "low", "gpt-6-luna": "none"}

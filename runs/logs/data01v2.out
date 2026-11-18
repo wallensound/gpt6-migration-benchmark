@@ -1,0 +1,89 @@
+{
+  "case": "01-entity-extraction",
+  "dataset_version": 2,
+  "gen_seed": 2001,
+  "planned": 1001,
+  "kept": 990,
+  "dropped": 11,
+  "drop_rate": 0.01098901098901099,
+  "dropped_by_stage": {
+    "code_verify": 3,
+    "llm_verify": 8
+  },
+  "exact_duplicates": 0,
+  "near_duplicates": 0,
+  "items_per_split": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "items_per_slice_and_split": {
+    "test": {
+      "dense": 24,
+      "diacritics": 23,
+      "distractors": 24,
+      "domain_forms": 23,
+      "german": 30,
+      "legal_suffix": 24,
+      "no_companies": 22,
+      "parent_absent": 23,
+      "parent_present": 22,
+      "sibling_products": 24,
+      "swedish": 61
+    },
+    "dev": {
+      "dense": 15,
+      "diacritics": 15,
+      "distractors": 15,
+      "domain_forms": 16,
+      "german": 21,
+      "legal_suffix": 15,
+      "no_companies": 15,
+      "parent_absent": 15,
+      "parent_present": 16,
+      "sibling_products": 16,
+      "swedish": 41
+    },
+    "train": {
+      "dense": 9,
+      "diacritics": 10,
+      "distractors": 9,
+      "domain_forms": 10,
+      "german": 12,
+      "legal_suffix": 9,
+      "no_companies": 10,
+      "parent_absent": 9,
+      "parent_present": 9,
+      "sibling_products": 9,
+      "swedish": 24
+    },
+    "shift": {
+      "dense": 11,
+      "diacritics": 11,
+      "distractors": 11,
+      "domain_forms": 13,
+      "german": 17,
+      "legal_suffix": 12,
+      "no_companies": 11,
+      "parent_absent": 11,
+      "parent_present": 12,
+      "sibling_products": 11,
+      "swedish": 30
+    }
+  },
+  "avg_input_chars": {
+    "test": 1472.3,
+    "dev": 1466.5,
+    "train": 1488.3166666666666,
+    "shift": 3315.48
+  },
+  "avg_input_tokens_est": {
+    "test": 368.075,
+    "dev": 366.625,
+    "train": 372.07916666666665,
+    "shift": 828.87
+  },
+  "spent_usd_phase_total": 36.36115822499998,
+  "seconds": 216
+}
