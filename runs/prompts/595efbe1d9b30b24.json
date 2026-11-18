@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Route the customer message (English, Swedish or German) to one label:\n- billing: charges, payments, invoices, receipts, prices, payment methods, charge refunds\n- technical: setup, connection, configuration or usage help for the product, app or site when nothing is reported broken\n- account_access: login, passwords, two-factor codes, locked or blocked accounts\n- shipping: order delivery, tracking, delays, delivery address, missing parcels\n- returns: sending a physical product back, return labels, exchanges, return window\n- cancellation: ending a subscription or plan, stopping auto-renewal\n- feature_request: asking for functionality the product lacks\n- bug_report: product, app or site malfunction, including crashes, errors, freezes or features that stop working\n- privacy: personal data storage, copies, deletion, sharing or GDPR requests\n- partnership: business proposals for reselling, co-marketing, integrations, sponsorship or volume deals\n- feedback: opinions, praise or complaints without a request for help or action\n- other: unrelated to the company's products and services\n\nApply pairwise overrides before choosing by order: billing wins against technical or bug_report if a payment, charge or invoice is mentioned; cancellation wins against billing or returns if the customer wants to end a subscription; privacy wins against account_access or cancellation if the customer asks about or wants deletion of their personal data. Otherwise choose the first issue mentioned (or the only issue).\n\nOutput exactly one label as written, with no punctuation, quotes, explanation or question.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

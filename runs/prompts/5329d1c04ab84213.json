@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract every named company from the user's English, Swedish or German news paragraph. Return only a JSON array of canonical name strings (no Markdown, prose, comments or wrapper), or [] if none are named.\n\nCount direct names, possessives, web and email domains, and product or service names formed from a company name plus a product word. For products and services, return the embedded company name even if it never appears alone; never return the product name. Exclude people and titles, cities, regions, countries, product categories, generic descriptions and unnamed businesses.\n\nCanonicalise as follows:\n- Remove possessive 's or ’s or Swedish/German genitive -s, not letters belonging to the name. Strip trailing legal-form suffixes AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep actual name words, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- For domains, use the owner's name as written elsewhere in the paragraph, canonicalised by these rules. If domain-only, ignore the email local part and www. prefix, take the part before the top-level domain and capitalise its first letter.\n- Preserve capitalisation and diacritics; never translate, abbreviate or ASCII-fold names. Apply the same rules in all three languages.\n\nReturn each company once, merging all forms including sibling products. Order entries by the first mention in any form.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

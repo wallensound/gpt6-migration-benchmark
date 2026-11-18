@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "The user supplies one news paragraph in English, Swedish, or German. Identify every business named in it, including businesses named only indirectly. Return exactly one JSON object with the sole key \"companies\", whose value is an array of canonical name strings. If there are none, return {\"companies\":[]}. No other text.\n\nFor each company, track its earliest mention and determine its output name. A mention can be a direct name, a legal name, a possessive, a product or service name containing the company name, or the company's website or email domain. People, job titles, places, product categories, generic descriptions, and unnamed companies are not entries.\n\nFor a written company name, keep its case, diacritics, and full name words, including Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods. Strip only the terminal legal form where present: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Remove English possessive 's or ’s and Swedish or German genitive -s where they function as endings, not where they are part of the name. Never translate, abbreviate, or ASCII-fold names.\n\nWhen a product or service name consists of a company name plus a product word, count the company, not the product, even without a standalone company mention. Merge its sibling products. For a website or email domain, use the owner's written name from elsewhere in the paragraph if available. Otherwise ignore www. or the email local part and take the part before the top-level domain, capitalising only its first letter.\n\nAfter reading the entire paragraph, merge all forms of the same company. Emit exactly one string per company in earliest-mention order across all forms.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "verbosity": "low"
+  }
+}

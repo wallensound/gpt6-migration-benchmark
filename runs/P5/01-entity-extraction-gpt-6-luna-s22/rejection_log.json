@@ -1,0 +1,44 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "Strengthens only the product rule by making explicit that a product can name a company other than the stated supplier.",
+    "reason": "screening 94.8% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Separates mention discovery from name resolution so each mention form gets checked before companies are merged.",
+    "reason": "screening 96.6% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Uses one Swedish worked example to demonstrate that a product-only company and a separately named distributor both count.",
+    "reason": "screening 96.6% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Condenses the instructions while preserving mention coverage, canonicalisation, ordering and the exact output contract.",
+    "reason": "McNemar not significant (b=1, c=9, p=0.021); slice 'dense' drops 14.3 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Makes each output string a source-backed name and adds a final check for missed product-only mentions and spelling errors.",
+    "reason": "screening 93.1% vs current 96.6%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Condenses repeated instructions while retaining a dedicated coverage check for dense paragraphs and exact spellings.",
+    "reason": "screening 89.7% vs current 96.6%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one German example that tests exact copying of a product-only parent in a list of adjacent offers.",
+    "reason": "McNemar not significant (b=3, c=4, p=1.000); slice 'diacritics' drops 13.3 points"
+  }
+]

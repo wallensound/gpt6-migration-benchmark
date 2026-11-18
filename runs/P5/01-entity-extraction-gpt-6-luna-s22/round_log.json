@@ -1,0 +1,324 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "f038b0a89df341d6",
+    "dev_primary": 0.985,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "restructure",
+      "example_swap",
+      "simplify"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "missing_company": 1
+      },
+      "by_slice": {
+        "swedish": 1
+      },
+      "patterns": [
+        {
+          "category": "missing_company",
+          "count": 1,
+          "sample_causes": [
+            "The output omitted Vebria, the company named through its product Vebria Sense."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Strengthens only the product rule by making explicit that a product can name a company other than the stated supplier.",
+        "prompt_hash": "192d59129c709ced",
+        "prompt_chars": 2573,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9482758620689655,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Separates mention discovery from name resolution so each mention form gets checked before companies are merged.",
+        "prompt_hash": "87f52ef37d26c7e0",
+        "prompt_chars": 1961,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9655172413793104,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Uses one Swedish worked example to demonstrate that a product-only company and a separately named distributor both count.",
+        "prompt_hash": "dbe37c8100a75412",
+        "prompt_chars": 2418,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9655172413793104,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Condenses the instructions while preserving mention coverage, canonicalisation, ordering and the exact output contract.",
+        "prompt_hash": "5329d1c04ab84213",
+        "prompt_chars": 1459,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=9, p=0.021)",
+            "slice 'dense' drops 14.3 points"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 9,
+            "p_value": 0.021484375
+          },
+          "worst_slice_drop": -0.1428571428571429,
+          "validity": 1.0,
+          "dev_primary": 0.945,
+          "dev_primary_current": 0.985
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=9, p=0.021)",
+        "slice 'dense' drops 14.3 points"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 9,
+        "p_value": 0.021484375
+      },
+      "worst_slice_drop": -0.1428571428571429,
+      "validity": 1.0,
+      "dev_primary": 0.945,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.985,
+    "seconds": 63,
+    "spent_phase": 3.5608543325
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "rewrite",
+      "simplify",
+      "restructure"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "other": 1,
+        "missing_company": 1
+      },
+      "by_slice": {
+        "parent_present": 1,
+        "dense": 1
+      },
+      "patterns": [
+        {
+          "category": "other",
+          "count": 1,
+          "sample_causes": [
+            "The model misspelled Ciramma as “Ciram ma,” so it did not return the canonical company name."
+          ],
+          "n_examples": 1
+        },
+        {
+          "category": "missing_company",
+          "count": 1,
+          "sample_causes": [
+            "Omitted Drëlskusmyn, which is named through its Hub smart-home controller."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.9655172413793104,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one German example that tests exact copying of a product-only parent in a list of adjacent offers.",
+        "prompt_hash": "22f165bf7b6d4227",
+        "prompt_chars": 4240,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=3, c=4, p=1.000)",
+            "slice 'diacritics' drops 13.3 points"
+          ],
+          "mcnemar": {
+            "b": 3,
+            "c": 4,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.1333333333333333,
+          "validity": 1.0,
+          "dev_primary": 0.98,
+          "dev_primary_current": 0.985
+        }
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Makes each output string a source-backed name and adds a final check for missed product-only mentions and spelling errors.",
+        "prompt_hash": "16701e808ae39f64",
+        "prompt_chars": 1893,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9310344827586207,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Condenses repeated instructions while retaining a dedicated coverage check for dense paragraphs and exact spellings.",
+        "prompt_hash": "84a71e3f5176ea25",
+        "prompt_chars": 1350,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.896551724137931,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the contract first and groups rules by mention form so each form has an explicit inclusion and rendering instruction.",
+        "prompt_hash": "219c17495f384f73",
+        "prompt_chars": 1797,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9655172413793104,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "example_swap",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=3, c=4, p=1.000)",
+        "slice 'diacritics' drops 13.3 points"
+      ],
+      "mcnemar": {
+        "b": 3,
+        "c": 4,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.1333333333333333,
+      "validity": 1.0,
+      "dev_primary": 0.98,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.985,
+    "seconds": 101,
+    "spent_phase": 9.6177209
+  }
+]

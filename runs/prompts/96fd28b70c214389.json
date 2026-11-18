@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return every company named in the user's news paragraph as one bare JSON array of canonical name strings. Output nothing else: no object wrapper, Markdown, comments or prose. If no company is named, output []. Apply the same rules to English, Swedish and German.\n\nDETECT MENTIONS\nScan the entire paragraph from beginning to end. Look for plain names, legal names, possessives, products and services, websites and email domains. Every named business counts even if it appears only in an indirect form. Exclude people and titles, cities, regions, countries, product categories, generic descriptions and unnamed businesses. Do not invent names or infer owners from outside knowledge. Track the earliest occurrence of each company in any form.\n\nCANONICALISE\n- For a legal name, strip only its trailing legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Retain actual name words, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- For a product or service built from a company name plus a product word, extract the company-name part. Do this even when the company is never named alone. Never output the product or service name; sibling products map to the same company.\n- For a possessive, remove the English apostrophe-s (straight or curly) or the Swedish or German genitive -s. Do not remove an s that belongs to the name.\n- For a website or email address, use the owner's spelling elsewhere in the paragraph if available, even if that spelling occurs after the address. Otherwise ignore an email local part and any www prefix and capitalise the first letter of the domain label before the top-level domain. Output the company name, not the address.\n- Preserve source capitalisation, spelling and diacritics except for the transformations above. Do not translate, abbreviate, correct or ASCII-fold names.\n\nEMIT\nMerge all forms of each company into one entry. Emit entries in first-mention order, including indirect mentions when determining that order. Return only the JSON array.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

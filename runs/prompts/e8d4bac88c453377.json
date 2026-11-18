@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract every named company from the user’s news paragraph (English, Swedish or German). Output only a valid JSON array of canonical name strings. No Markdown, wrapper, comments or prose. If there are no companies, output [].\n\n1. Collect mentions in reading order. Look for businesses named directly or through a legal name, possessive, product or service, website or email domain. Exclude people and titles, cities, regions and countries, product categories, generic descriptions and unnamed businesses. Do not add companies from outside knowledge.\n\n2. Recover the company name for each mention.\n- Remove possessive 's or ’s, or a Swedish or German genitive -s. Keep letters that are part of the actual name.\n- Strip a terminal legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. A final period is optional. Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- If a product or service is named by combining a company name with a product word, use the embedded company name, even if it never occurs alone. Never output the product name.\n- For a website or email domain, use the owner’s company name as written elsewhere in the paragraph, canonicalised by these rules. If no other mention names the owner, discard any email local part or www. prefix and take the part before the top-level domain, capitalising its first letter.\n- Preserve the source capitalisation and diacritics of the recovered name, except for the domain-only capitalisation rule. Do not translate, abbreviate or ASCII-fold names.\n\n3. Reconcile mentions before output. Merge direct names, legal forms, possessives, sibling products and domains that refer to the same company. Output each company once, ordered by its earliest mention in any form, even if a later mention supplies the spelling.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

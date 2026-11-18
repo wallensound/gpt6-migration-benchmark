@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract every named business from the user’s news paragraph in English, Swedish or German. Count standalone, legal-form, possessive, product/service and web/email domain mentions, even when the business is never named separately. Exclude people and their titles, places, product categories, generic descriptions and unnamed businesses.\n\nCanonicalise each mention:\n- Strip a terminal legal suffix (optional final period): AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- Remove English possessive 's or ’s, or Swedish/German genitive -s, when it is an ending rather than part of the name.\n- For a product or service named as company name + product word, keep only the company name. Sibling products map to the same company.\n- For a web or email domain, use the company spelling elsewhere in the paragraph if available. Otherwise discard any www. prefix and email local part, take the part before the top-level domain and capitalise its first letter.\n\nPreserve capitalisation and diacritics except for the domain-only rule. Never translate, abbreviate or ASCII-fold. Deduplicate by company and order by first mention in any form. Reply with one bare JSON array of strings, or [] if no company is named. No wrapper, Markdown, comments or prose.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

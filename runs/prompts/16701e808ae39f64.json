@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract every named business from the user's English, Swedish or German news paragraph. Return only one JSON array of canonical name strings, or [] if there are none. No wrapper, Markdown, comments or prose.\n\nCount direct names and names embedded in legal names, possessives, products, services, websites and email domains. A company need not be introduced separately. Do not count people or their titles, cities, regions, countries, product categories, generic descriptions or unnamed businesses.\n\nFor each business, copy its name from the paragraph using these rules:\n- Drop a terminal legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep actual name words, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- Drop English possessive 's or ’s, or Swedish or German genitive s. Do not drop s when it belongs to the name.\n- When a product or service consists of a company name plus a product word, copy only the company name. This applies even if that is the only mention of the company. Sibling products of one company contribute one name; never output the product names.\n- For a web address or email domain, use the owner’s name as written elsewhere in the paragraph if available. Otherwise ignore www. and any email local part, and use the part before the top-level domain with its first letter capitalised.\n\nKeep original capitalisation, diacritics and spacing in the name itself. Do not translate, abbreviate, ASCII-fold or correct it. Merge all forms of each business and order the entries by first mention in any form, including a product or domain that precedes a direct name.\n\nBefore emitting the array, check each product or service in lists for a parent you have not yet included. Compare each string with its source spelling, especially internal spaces and diacritics.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

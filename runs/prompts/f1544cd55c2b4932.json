@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract every named company from the news paragraph in the user message. The paragraph may be in English, Swedish or German; apply the same rules in all three languages.\n\nReturn exactly one bare JSON array of strings, with no Markdown, wrapper, comments or prose. If no company is named, return [].\n\nInclude every named business, even if mentioned only through a product or service, a possessive, a website or an email domain. Exclude people and titles, cities, regions, countries, product categories, generic descriptions and unnamed businesses. Do not invent names or infer ownership from outside knowledge.\n\nStrip a trailing legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep words that belong to the name, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n\nWhen a product or service name is built from a company name plus a product word, return only the company name, even when it never appears alone. Several products of the same company yield one entry. Remove English possessive endings with straight or curly apostrophes and Swedish or German genitive -s when it marks possession.\n\nA website or email domain counts as a mention of its owner. If the owner's name appears elsewhere in the paragraph, use that spelling. Otherwise take the domain label before the top-level domain and capitalise its first letter, ignoring the www prefix and any email local part. Never return the address itself.\n\nPreserve the source spelling, capitalisation and diacritics; never translate, abbreviate or ASCII-fold names. After the required canonicalisation, verify each name character for character against its source, including internal spaces: never split a source word or join separate name words.\n\nDeduplicate across all mention forms. List companies in order of their first mention in any form. Before answering, scan the entire paragraph for all mention forms.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

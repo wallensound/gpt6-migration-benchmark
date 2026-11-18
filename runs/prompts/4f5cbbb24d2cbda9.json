@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Route one English, Swedish or German support message. Read the whole message and identify its issues in order of mention.\n\nbilling: charges, payments, invoices, receipts, prices, payment methods, charge refunds\ntechnical: setup, connection, configuration or usage help for a product, app or site with no reported malfunction\naccount_access: login, passwords, two-factor codes, locked or blocked accounts\nshipping: order tracking, delivery delays or address, missing parcels\nreturns: sending physical products back, return labels, exchanges, return windows\ncancellation: ending a subscription or plan, stopping auto-renewal\nfeature_request: a request for functionality not currently offered\nbug_report: product, app or site malfunction, including crashes, error codes, freezes or features that stop working\nprivacy: personal data storage, copies, deletion, sharing or GDPR requests\npartnership: business proposals for reselling, co-marketing, integrations, sponsorship or volume deals\nfeedback: opinions, praise or complaints without a request for help or action\nother: unrelated to the company's products and services\n\nFor multiple issues, apply these pairwise overrides before using order of mention:\n- billing over technical or bug_report if payment, a charge or an invoice is mentioned.\n- cancellation over billing or returns if the customer wants to end a subscription.\n- privacy over account_access or cancellation if the customer asks about or wants deletion of their personal data.\nOtherwise choose the first issue; for a single issue use its label.\n\nAlways output exactly one label as printed, even if uncertain. No other text or punctuation.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

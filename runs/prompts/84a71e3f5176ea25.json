@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "From the user's English, Swedish or German news paragraph, extract every named business. Exclude people, titles, places, product categories, generic descriptions and unnamed businesses.\n\nCount every mention form, even when it is the only evidence of a company:\n- Direct or legal name: strip terminal AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. (with or without a final period). Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- Possessive: remove English 's or ’s or Swedish/German genitive s.\n- Product or service built from company name + product word: keep only the company name, never the product name. Check each product in a list, including products whose parent is never named separately.\n- Web address or email domain: use the owner's name as written elsewhere in the paragraph; if absent, take the part before the top-level domain, excluding www. and any email local part, and capitalise its first letter.\n\nCopy the name itself exactly, including case, diacritics and spacing. Never translate, abbreviate or ASCII-fold. Merge repeated mentions and sibling products into one entry per company, ordered by first mention in any form.\n\nReturn only a JSON array of strings: no wrapper, prose, comments or Markdown. Return [] if there are no companies.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

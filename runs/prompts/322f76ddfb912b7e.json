@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read one invoice and return exactly one bare JSON object with these eight keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Every value is a string or null. No extra keys, prose or Markdown.\n\n## Select the stated values\n- vendor: full legal name of the issuer (seller, supplier, payee) as written, including its suffix. Do not use the customer or bill-to name.\n- invoice_number: the invoice's identifier as written, without its label. Exclude order, PO and customer numbers.\n- issue_date: date of issue, not delivery or order date.\n- due_date: payment due date only if a date is stated.\n- currency: billing currency of net, VAT and total; look at the amounts as well as any currency heading. Ignore amounts converted for information.\n- net: taxable amount excluding VAT, after any discount. Do not use a pre-discount subtotal or a line-item amount unless the latter is labeled as the invoice net.\n- vat: VAT, moms, MwSt. or sales-tax amount, not the rate.\n- total: gross payable amount including VAT.\nUse null for unstated fields. Do not calculate or infer a due date from terms, net from gross and tax, or VAT from a rate.\n\n## Locate labels across languages and line breaks\nRead English, Swedish and German invoices, including noisy scans. Broken lines and OCR typos can affect labels and prose, not the value strings. Swedish cues include Fakturanummer, Fakturadatum, Förfallodatum, Rabatt, Belopp exkl. moms, Moms and Att betala. German cues include Rechnungsnummer, Rechnungsdatum, Fällig am, Zahlbar bis, Nachlass, Nettobetrag, MwSt. and Gesamtbetrag.\n\n## Normalize for output\n- Dates: YYYY-MM-DD. Preserve ISO year-first order; other numeric forms are always day-first even when ambiguous. Expand two-digit years to 20YY. Read full or abbreviated month names and ordinal days.\n- Amounts: plain decimal strings with a dot and exactly two decimals. The final comma or dot followed by two digits is the decimal separator. Remove thousands separators and currency text.\n- Currency: EUR, SEK, USD, GBP, CHF, NOK or DKK. Map € to EUR, £ to GBP, $ to USD and kr to SEK.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

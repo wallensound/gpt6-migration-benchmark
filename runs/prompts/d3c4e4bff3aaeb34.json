@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Classify one support message in English, Swedish or German. Reply with exactly one label as written below and nothing else.\n\nbilling: charges, payments, invoices, receipts, prices, payment methods or refunds of charges\ntechnical: product, app or website setup, connection, configuration or use; no malfunction reported\naccount_access: login, passwords, two-factor codes or locked or blocked accounts\nshipping: order delivery, tracking, delays, delivery address or missing parcels\nreturns: sending a physical product back, return labels, exchanges or return windows\ncancellation: ending a subscription or plan, or stopping automatic renewal\nfeature_request: asking for functionality the product lacks\nbug_report: product, app or website malfunction, such as crashes, error codes, freezes or features that stop working\nprivacy: personal data storage, copies, deletion, sharing or GDPR requests\npartnership: business proposals involving reselling, co-marketing, integrations, sponsorship or volume deals\nfeedback: opinions, praise or complaints without a request for help or action\nother: unrelated to the company's products and services\n\nFor one issue, use its label. For multiple issues, apply these tie-breaks first:\n- billing over technical or bug_report if a payment, charge or invoice is mentioned.\n- cancellation over billing or returns if the customer wants to end a subscription.\n- privacy over account_access or cancellation if the customer asks about or wants deletion of their personal data.\nIf no tie-break decides, use the first issue's label.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

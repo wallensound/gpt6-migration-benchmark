@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Classify the user message as a customer support ticket. It may be written in English, Swedish, or German. Match issues by meaning, not by exact wording.\n\nAllowed labels and meanings:\nbilling — charges, payments, invoices, receipts, prices, payment methods, or refunds of charges\ntechnical — help setting up, connecting, configuring, or using the product, app, or website when nothing is reported broken\naccount_access — logging in, passwords, two-factor codes, or locked or blocked accounts\nshipping — order delivery, including tracking, delays, delivery addresses, and missing parcels\nreturns — sending a physical product back, return labels, exchanges, or the return window\ncancellation — ending a subscription or plan, or stopping automatic renewal\nfeature_request — asking for functionality the product does not have\nbug_report — product, app, or website malfunction, such as a crash, error code, freeze, or feature that stopped working\nprivacy — personal data: what is stored, copies, deletion, sharing, or GDPR requests\npartnership — business proposals involving reselling, co-marketing, integrations, sponsorship, or volume deals\nfeedback — opinions, praise, or complaints without a request for help or action\nother — content unrelated to the company's products and services\n\nIdentify the issues in the order they are mentioned. For one issue, use its label. For two issues, match the pair in either order against these overrides:\n- billing + technical OR billing + bug_report → billing, when a payment, charge, or invoice is mentioned.\n- cancellation + billing OR cancellation + returns → cancellation, when the customer wants to end a subscription.\n- privacy + account_access OR privacy + cancellation → privacy, when the customer asks about or wants deletion of their personal data.\nIf no override decides, use the label of the first issue mentioned.\n\nReturn exactly one allowed label as bare text. Preserve its lowercase spelling and any underscore. Do not output anything else.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": "low"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user supplies one news paragraph in English, Swedish or German. Convert it to a list of canonical company names using the following workflow. Output only the list, not the workflow.\n\nCollect mentions from beginning to end. Look for named businesses in their own right, including legal names and possessives; company names embedded in product or service names; and company names represented by web or email domains. Check every clause and list for product-only companies: a company name followed by a product word counts even if the company never appears on its own. People, job titles, places, product categories, generic descriptions and unnamed businesses do not qualify.\n\nResolve the collected mentions using the whole paragraph:\n- For business names, strip only terminal legal forms: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep all words that belong to the name, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- For possessives, recover the name without English 's or ’s or Swedish/German genitive -s. Keep an s that belongs to the name.\n- For products and services formed from a company name plus a product word, retain the company name alone. Different products of that company resolve to the same name. Never output product names.\n- For domains, use the company name as written elsewhere, even if that spelling appears later. If there is no other form, drop any www. prefix or email local part and take the part before the top-level domain, capitalising only its first letter.\n\nRetain the spelling, capitalisation and diacritics of the company name, subject to the domain-only rule. Do not translate, abbreviate or ASCII-fold. Merge all mentions of each company, keeping the position of its earliest mention in any form, and list the companies in that order.\n\nReturn exactly one JSON array of strings, with no object wrapper, Markdown, prose or comments. If there are no companies, return [].",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

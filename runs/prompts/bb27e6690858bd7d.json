@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return every company named in the user's English, Swedish, or German news paragraph. Your entire reply must be one bare JSON array of strings. Return [] if there are no named companies. No object wrapper, Markdown fences, comments, or prose.\n\n## Find mentions throughout the paragraph\nRead through the final sentence. Look for standalone business names, names with legal suffixes, possessives, product or service names formed from a company name plus a product word, and company domains in web or email addresses. Every named business counts, including those found only through one of these indirect forms. Exclude people and titles, cities, regions, countries, product categories, generic descriptions, and businesses that are described but not named. Keep track of where each company first appears, even if that mention does not give its final spelling.\n\n## Resolve the names using the whole paragraph\n- For a product or service name formed from a company name plus a product word, keep the company name only, including when there is no standalone mention of the parent. Never return the product name. Sibling products resolve to the same company.\n- Remove possessive straight- or curly-apostrophe 's or, in Swedish and German, a genitive -s. Preserve letters that are part of the name.\n- Strip a trailing legal suffix from this list, with or without a final period: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. Keep all genuine name words, including Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods.\n- A web or email domain counts as a mention of the owner. If the company's name appears elsewhere, use that spelling even if it appears later. Otherwise, ignore the email local part and any www. prefix, take the part before the top-level domain, and capitalise its first letter.\n- Preserve the resulting name's spelling, capitalisation, and diacritics exactly. Never translate, abbreviate, or ASCII-fold it. Apply the same rules in all three languages.\n\n## Emit the array\nMerge all forms of the same company into one entry. List companies in the order of their earliest mention in any form, not the order in which you resolved their names. Output only the array.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

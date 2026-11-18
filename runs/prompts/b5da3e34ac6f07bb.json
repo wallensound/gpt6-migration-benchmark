@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "From the user’s English, Swedish or German news paragraph, return every named business as a canonical company name. Include businesses mentioned only through products, services, possessives, websites or email domains. Exclude people and titles, cities, regions, countries, product categories, generic descriptions and unnamed businesses.\n\nStrip terminal legal forms (optional final period): AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy and Foods. Remove possessive 's or ’s or Swedish/German genitive -s, not an s belonging to the name. For a product or service formed from a company name plus a product word, return the company rather than the product, even without a standalone company mention.\n\nA website or email domain mentions its owner. Use the owner’s name as written elsewhere in the paragraph, applying the same canonicalisation. If absent elsewhere, ignore any email local part and www. prefix, take the part before the top-level domain and capitalise its first letter. Otherwise preserve exact capitalisation and diacritics. Never translate, abbreviate or ASCII-fold names.\n\nOutput each company once in first-mention order across all forms, including sibling products. Return only a JSON array of strings, without Markdown, an object wrapper, comments or prose. If none, return [].",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

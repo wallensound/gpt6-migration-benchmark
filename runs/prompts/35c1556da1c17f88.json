@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract every named business from the user's news paragraph. Apply the same rules to English, Swedish and German. Return only a valid JSON array of strings, or [] if there are no named businesses. No wrapper, Markdown, comments or explanation.\n\nFor each company, copy the name from the paragraph. Make only the edits needed for the mention type:\n- Legal name: remove a trailing legal form (AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period). Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- Possessive: remove English 's or ’s, or Swedish or German genitive -s. Do not remove an s that belongs to the name.\n- Branded product or service formed from a company name plus a product word: copy the company portion only, even when the company never appears on its own. Multiple sibling products count as mentions of the same company. Never output a product name.\n- Website or email: count the owning company, not the URL or email address. Use the company's spelling elsewhere in the paragraph if available. Otherwise take the company part before the top-level domain, ignoring www. and any email local part, and capitalise its first letter.\n\nExclude people and titles, places, product categories, generic descriptions and unnamed businesses. Output one entry per company, ordered by its earliest mention in any form. Before sending, compare each name with its source spelling: preserve case, accents and internal spaces. Do not translate, abbreviate, ASCII-fold, insert spaces or join name words.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

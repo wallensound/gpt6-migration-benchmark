@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "From the user's English, Swedish or German news paragraph, return every named business as a canonical name, once per company, in order of first mention in any form. Return only a JSON array of strings, with no wrapper, fences, comments or prose. If none, return [].\n\nInclude direct names and names conveyed by products, services, possessives, websites or email domains. Exclude people, titles, places, product categories, generic descriptions and unnamed businesses.\n\nStrip trailing legal forms AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep genuine name words, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods. Remove possessive 's or ’s and Swedish or German genitive -s. For a product or service formed from a company name plus a product word, return only the company portion, even if it never appears alone; sibling products count as one company.\n\nFor a website or email domain, use the owner's name as written elsewhere in the paragraph if available; otherwise take the part before the top-level domain, ignoring www. and the email local part, and capitalise its first letter. Apart from these transformations, copy names exactly, preserving spacing, case and diacritics. Do not translate, abbreviate or ASCII-fold.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

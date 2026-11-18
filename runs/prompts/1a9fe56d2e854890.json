@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract header fields from one supplier invoice. Return exactly one JSON object with these eight keys and no other text or keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Every value is a string or null.\n\nRead the billed amount block first. Identify the payable gross amount (total), the stated tax money amount rather than its percentage (vat), and the stated taxable amount after any discount (net). Do not use the pre-discount subtotal or a line-item amount unless explicitly identified as invoice net. Ignore informational currency conversions. For currency, check the billing currency label and the codes or symbols attached to the billed net, VAT and total, even when they appear on a separate line from a heading. Return EUR, SEK, USD, GBP, CHF, NOK or DKK as stated; map € to EUR, £ to GBP, $ to USD and kr to SEK. Do not infer currency from the address or language.\n\nRead the issuer and invoice header next. Preserve the seller's full legal name as written for vendor; never use the bill-to party. Copy the invoice's own identifier without its label for invoice_number; exclude order, PO and customer identifiers. Use the invoice date for issue_date, not the delivery or order date. Use an explicitly stated payment date for due_date.\n\nRecognize English, Swedish and German labels. In particular, Fakturanummer/Rechnungsnummer indicate invoice_number; Fakturadatum/Rechnungsdatum indicate issue_date; Förfallodatum/Fällig am/Zahlbar bis indicate due_date; Nettobetrag/Belopp exkl. moms indicate net; Moms/MwSt. indicate vat; Att betala/Gesamtbetrag indicate total; Valuta/Währung indicate currency. Read across broken lines and recognize OCR-damaged labels from context without changing the value strings except for required normalization.\n\nNormalize all written dates, including month-name and ordinal forms, to YYYY-MM-DD. Preserve ISO year-first dates; interpret other numeric dates day-first even when ambiguous. Expand two-digit years to 20YY. For amounts, use the final comma or dot followed by two digits as the decimal separator. Remove grouping separators and currency markers; output a dot and exactly two decimal places. Return null for each unstated field. Never calculate or guess a value: no due date from terms, no net from gross minus tax and no VAT from a rate.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

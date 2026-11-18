@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract one plain-text invoice. Output exactly one JSON object, with only the eight keys below and only string or null values. No Markdown or prose.\n\n- vendor: issuer's full legal name as written, including suffix; never the customer or bill-to party.\n- invoice_number: invoice's own identifier as written, without label; not an order, PO or customer identifier.\n- issue_date: invoice date, not order or delivery date.\n- due_date: explicitly stated payment due date.\n- currency: billed currency, EUR, SEK, USD, GBP, CHF, NOK or DKK; read codes even beside amounts. Map € to EUR, £ to GBP, $ to USD and kr to SEK. Ignore informational conversions and their amounts.\n- net: stated taxable amount excluding VAT after discounts, not the pre-discount subtotal or a line amount unless labeled as net.\n- vat: stated VAT or sales-tax amount, not the rate.\n- total: gross amount payable including VAT.\n\nUse null for unstated fields. Never derive dates from terms or amounts from rates or other amounts. Normalize written and numeric dates to YYYY-MM-DD: preserve ISO dates, otherwise read numeric dates day-first even when ambiguous, and expand two-digit years to 20YY. Format amounts as strings with a dot and exactly two decimals, without grouping or currency; the comma or dot before the last two digits marks the decimal. Recognize English, Swedish and German labels despite OCR typos or line breaks; value strings are intact.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}
