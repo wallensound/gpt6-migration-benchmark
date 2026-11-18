@@ -1,0 +1,89 @@
+{
+  "run_id": "08-glossary-translation-calibrate-dev-7b55c35e98c0471c",
+  "phase": "P3",
+  "git_commit": "04de068",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:11:56",
+  "reference_date": "2026-11-17",
+  "case": "08-glossary-translation",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-dev-7b55c35e98c0471c",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "7b55c35e98c0471c",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:11:56",
+      "summary": {
+        "n": 200,
+        "passed": 196,
+        "primary": 0.98,
+        "primary_ci": [
+          0.9497129130941735,
+          0.9921955735836505
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "compound_words": {
+            "n": 40,
+            "primary": 1.0
+          },
+          "inflected_forms": {
+            "n": 38,
+            "primary": 0.9473684210526315
+          },
+          "plain": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "terms_in_lists": {
+            "n": 40,
+            "primary": 1.0
+          },
+          "terms_used_twice": {
+            "n": 41,
+            "primary": 0.9512195121951219
+          }
+        },
+        "cost_usd": 1.808715,
+        "cost_per_item": 0.009043575,
+        "cost_per_correct": 0.00922813775510204,
+        "latency_p50_s": 2.3515,
+        "latency_p95_s": 3.430254999999997,
+        "tokens_in": 213097,
+        "tokens_in_mean": 1065.485,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 149147,
+        "tokens_cache_write_mean": 745.735,
+        "tokens_out": 40359,
+        "tokens_out_mean": 201.795,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "missing_term": 2,
+          "forbidden_term": 1,
+          "repeat_not_kept": 1
+        },
+        "secondary": {
+          "term_recall_mean": 0.9974107142857143,
+          "items_with_forbidden": 0.005,
+          "length_ratio_mean": 1.0087994999999998
+        }
+      }
+    }
+  ]
+}

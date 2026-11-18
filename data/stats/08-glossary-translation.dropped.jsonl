@@ -1,0 +1,122 @@
+{"plan_seed": 100800007, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "“Kontakt” appears as “stickproppens kontakt,” meaning the plug’s contact rather than the plug itself, so translating it as “plug” would be wrong."}
+{"plan_seed": 100800009, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800010, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800026, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "In context, “fäste” could naturally be translated as “holder,” one of the forbidden alternatives."}
+{"plan_seed": 100800027, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "“Kontakt” also appears in “varit i kontakt med ris eller ånga,” where it means “contact,” not “plug.”"}
+{"plan_seed": 100800036, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Ljuskälla” could naturally be translated as “bulb,” one of the forbidden renderings."}
+{"plan_seed": 100800044, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800048, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "The magnetic charging-cable kontakt is naturally translated as “connector,” making the required “plug” rendering ambiguous."}
+{"plan_seed": 100800062, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "Bruksanvisning in the sentence about setup, operation, and cleaning can naturally be translated as “instructions,” one of the forbidden renderings."}
+{"plan_seed": 100800091, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Kontakter” means electrical contacts here, not plugs, so translating it as “plug” would be incorrect."}
+{"plan_seed": 100800096, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Kontakterna” can naturally mean electrical contacts here, so translating it as “plug” would not be unambiguously correct."}
+{"plan_seed": 100800103, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "Here “läge” means situation or status, not “mode,” so the required rendering is not supported."}
+{"plan_seed": 100800104, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "'läge' not used twice"}
+{"plan_seed": 100800117, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800125, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "“Den delen” could naturally be translated as “that component,” one of the forbidden renderings."}
+{"plan_seed": 100800128, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "The electrical “kontakt” could naturally be translated as “connector” in this context, which is listed as a forbidden rendering."}
+{"plan_seed": 100800132, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800145, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800152, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800170, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800171, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Skärmar” refers to the screens used during the day, so translating it as “display” is not the natural rendering."}
+{"plan_seed": 100800175, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "“I samma förpackning” would naturally be translated as “in the same package,” a rendering the item forbids."}
+{"plan_seed": 100800176, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "In “levereras i en förpackning,” “package” is a natural English translation, despite being listed as forbidden."}
+{"plan_seed": 100800178, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Kontakt” is ambiguous here and may mean a connection rather than a plug, making the required rendering “plug” questionable."}
+{"plan_seed": 100800181, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Kontakter” for the cable ends would naturally be translated as “connectors,” a forbidden rendering."}
+{"plan_seed": 100800182, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "“Vikt” means importance in “stor vikt vid,” not physical weight, so translating it as “weight” would be wrong."}
+{"plan_seed": 100800186, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "'uppladdningsbar' missing"}
+{"plan_seed": 100800188, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "The text uses “skärm” for the speaker’s screen, which would naturally translate as the forbidden “screen,” making “display” not the only defensible rendering."}
+{"plan_seed": 100800203, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "The phrase “vilka delar som finns att köpa” could naturally be translated as “which components are available to buy,” introducing the forbidden rendering “component.”"}
+{"plan_seed": 100800206, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800210, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800219, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "“Kontakt” also appears in “kommer i kontakt med gardiner,” where it means “contact,” not “plug.”"}
+{"plan_seed": 100800224, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'vikt': ['massa']"}
+{"plan_seed": 100800226, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Levereras i en förpackning” is naturally translated as “comes in a package,” making the forbidden rendering “package” defensible."}
+{"plan_seed": 100800231, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Fästena dras åt” refers naturally to fasteners being tightened, so translating “fästena” as “mount” would be questionable or wrong."}
+{"plan_seed": 100800242, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "“Delarna” refers to the appliance’s parts and could naturally be translated as “components,” a forbidden rendering."}
+{"plan_seed": 100800262, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "“Reglagen” can naturally refer to control knobs, introducing the forbidden English rendering “knob.”"}
+{"plan_seed": 100800265, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "“Magnetiska kontakt” refers to a magnetic contact, not a plug, so the required rendering of “kontakt” is not supported here."}
+{"plan_seed": 100800281, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Kontakterna på laddkabeln” would naturally translate as “the connectors” or “the contacts,” making the required rendering “plug” wrong or ambiguous."}
+{"plan_seed": 100800284, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "'skärm' not used twice"}
+{"plan_seed": 100800287, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800311, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Skötselråd” would naturally be translated as “care instructions,” using the forbidden word “instructions.”"}
+{"plan_seed": 100800315, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "“Laddkabelns kontakt” would naturally be translated as “charging cable connector,” a listed forbidden rendering rather than necessarily “plug.”"}
+{"plan_seed": 100800321, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Redskap” in this food-processor context could naturally be translated as the forbidden word “attachment.”"}
+{"plan_seed": 100800332, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "In context, “sitt fäste” could naturally be translated as “its holder,” a forbidden rendering."}
+{"plan_seed": 100800347, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "“I samma förpackning medföljer” would naturally be translated as “the package includes,” using the forbidden word “package.”"}
+{"plan_seed": 100800349, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "I sammanhanget med att hälla soppa direkt i skålarna kan «munstycke» naturligt översättas med «spout», vilket gör det angivna «nozzle» tvetydigt."}
+{"plan_seed": 100800357, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800360, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "'slitstark' missing"}
+{"plan_seed": 100800361, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800364, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "“Fäste” here would naturally be translated as “holder,” which is a forbidden rendering."}
+{"plan_seed": 100800365, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800373, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Skötselråden” would naturally be translated as “care instructions,” using the forbidden word “instructions.”"}
+{"plan_seed": 100800374, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "“Laddarens kontakt sitter på en följsam sladd” can naturally mean the charger’s connector is on a flexible cord, making “connector” a defensible translation."}
+{"plan_seed": 100800375, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "“Väggens elanslutning” would naturally be translated as “wall socket,” introducing a forbidden English rendering."}
+{"plan_seed": 100800404, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800410, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "In context, “ett fäste” for storing the hose would naturally translate as “a holder,” one of the forbidden alternatives."}
+{"plan_seed": 100800414, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "'laddare' missing"}
+{"plan_seed": 100800418, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Kontakt” on a charging cable could naturally be translated as “connector,” which is a forbidden alternative."}
+{"plan_seed": 100800453, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Läge” in the product-information list could mean “mode” or “position,” so the required rendering is ambiguous."}
+{"plan_seed": 100800456, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "'vattentät' missing"}
+{"plan_seed": 100800457, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "“Skärmstorlek” naturally translates as “screen size” here, using the forbidden rendering “screen” rather than the required “display”."}
+{"plan_seed": 100800468, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Kontakt” means contact/contact information in “uppgifter om kontakt,” not an electrical plug."}
+{"plan_seed": 100800473, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "The standalone guide heading “läge” could mean a fan’s mode or its position, so “mode” is not unambiguously required."}
+{"plan_seed": 100800476, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800485, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The hose-fixing fäste could naturally be translated as “bracket,” one of the forbidden alternatives."}
+{"plan_seed": 100800489, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800495, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The text’s other uses of “del/delar” could naturally be translated as “component/components,” a rendering the item forbids."}
+{"plan_seed": 100800498, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "In “en kabel med en passande kontakt,” kontakt naturally means a cable connector, making the required rendering “plug” ambiguous."}
+{"plan_seed": 100800512, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "The Swedish word “inställning” is used in the sense of a fan setting, but “konfiguration” is not a natural required rendering here; however, “takfläkt” also appears in a sentence that describes a ceiling fan, so “fan” remains valid."}
+{"plan_seed": 100800514, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "The phrase “hur delarna ska rengöras” could naturally be translated as “instructions for cleaning the parts,” invoking a forbidden rendering."}
+{"plan_seed": 100800526, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "In “Varje förpackning innehåller kokaren,” the natural English rendering is “Each package contains the cooker,” making the forbidden word “package” equally defensible."}
+{"plan_seed": 100800534, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800564, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "In context, “fäste” could naturally be translated as “bracket” for the part securing the pump."}
+{"plan_seed": 100800565, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "Here, “kontakt” means the cable’s connector that plugs into the tablet, so “connector” is a natural translation and the required “plug” is not."}
+{"plan_seed": 100800592, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "'munstycke' missing"}
+{"plan_seed": 100800593, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "The fine-mesh sil used to remove particles would naturally be translated as “sieve,” which is listed as a forbidden rendering."}
+{"plan_seed": 100800600, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The sentence about the kettle holding water would naturally be translated using “watertight,” one of the forbidden renderings."}
+{"plan_seed": 100800606, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800609, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800611, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "The text also uses “innermått,” which could naturally be translated as “inner measurements,” a forbidden rendering."}
+{"plan_seed": 100800626, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Kontakterna” means the pump’s electrical contacts here, so translating it as “plug” would be wrong."}
+{"plan_seed": 100800630, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "“Delarna” could naturally be translated as “components,” one of the forbidden renderings."}
+{"plan_seed": 100800632, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800640, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The magnetic contact on the charging cord would naturally be translated as a “connector,” making the required “plug” rendering ambiguous."}
+{"plan_seed": 100800641, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "“Skärmen” naturally translates as “screen” in this context, so requiring “display” while forbidding “screen” makes the answer wrong or ambiguous."}
+{"plan_seed": 100800642, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "'tålig' missing"}
+{"plan_seed": 100800650, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "In this context, “mätare” would naturally translate as “flow meter,” so requiring “gauge” makes the answer ambiguous."}
+{"plan_seed": 100800651, "slice": "inflected_forms", "stage": "llm_verify", "variant": "main", "why": "The phrase “hitta rätt del” can naturally be translated as “find the right component,” using a forbidden rendering."}
+{"plan_seed": 100800662, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800675, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "'tålig' missing"}
+{"plan_seed": 100800683, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Medlets förpackning” can naturally be translated as “the product package,” using the forbidden word “package.”"}
+{"plan_seed": 100800691, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800694, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "In context, “kontakt” could naturally be translated as “connector,” which is listed as forbidden."}
+{"plan_seed": 100800703, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Kontakt” also appears in “i kontakt med vattnet,” where it means “contact,” not “plug.”"}
+{"plan_seed": 100800727, "slice": "compound_words", "stage": "llm_verify", "variant": "main", "why": "The phrase “ett lämpligt fäste” could naturally be translated as “a suitable attachment,” using a forbidden English rendering."}
+{"plan_seed": 100800728, "slice": "terms_in_lists", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['uttag']"}
+{"plan_seed": 100800743, "slice": "terms_in_lists", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800745, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "“Väggens elanslutning” can naturally be translated as “wall socket,” a forbidden rendering."}
+{"plan_seed": 100800755, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800769, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'fäste': ['hållare']"}
+{"plan_seed": 100800771, "slice": "inflected_forms", "stage": "code_verify", "variant": "main", "why": "'mått' missing"}
+{"plan_seed": 100800789, "slice": "terms_used_twice", "stage": "code_verify", "variant": "main", "why": "avoid word for 'kontakt': ['sockel']"}
+{"plan_seed": 100800792, "slice": "compound_words", "stage": "code_verify", "variant": "main", "why": "'hölje' missing"}
+{"plan_seed": 100800799, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "main", "why": "In context, “fäste” could naturally mean “holder,” so the required rendering “mount” is ambiguous."}
+{"plan_seed": 100800803, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "main", "why": "“Läge” in the list of product-page information is ambiguous and could mean location or status rather than mode."}
+{"plan_seed": 100850005, "slice": "plain", "stage": "llm_verify", "variant": "shift", "why": "Here galler refers to a cooling rack for baked goods, so translating it as “grate” would be wrong or ambiguous."}
+{"plan_seed": 100850008, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "shift", "why": "The phrase “en liten form med rotfrukter” could naturally be translated using the forbidden word “casserole,” creating another instance of that rendering."}
+{"plan_seed": 100850017, "slice": "compound_words", "stage": "llm_verify", "variant": "shift", "why": "Here, “galler” means a cooling rack, so translating it as “grate” would be wrong in this context."}
+{"plan_seed": 100850018, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "shift", "why": "In context, “galler” is a cooling rack for buns, not a grate, so the specified rendering would be wrong."}
+{"plan_seed": 100850020, "slice": "plain", "stage": "llm_verify", "variant": "shift", "why": "“Skötselråd” would naturally be translated as “care instructions,” using the forbidden word “instructions.”"}
+{"plan_seed": 100850048, "slice": "terms_in_lists", "stage": "code_verify", "variant": "shift", "why": "'tålig' missing"}
+{"plan_seed": 100850069, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "shift", "why": "“Delarna” can naturally be translated as “the components,” using a forbidden rendering."}
+{"plan_seed": 100850072, "slice": "compound_words", "stage": "llm_verify", "variant": "shift", "why": "“Galler” means a cooling rack in this context, not a grate, so the required rendering would be wrong."}
+{"plan_seed": 100850080, "slice": "plain", "stage": "llm_verify", "variant": "shift", "why": "“Vikt” appears in the idiom “lagt stor vikt vid,” meaning importance rather than physical weight."}
+{"plan_seed": 100850094, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "shift", "why": "In this context, “galler” means a cooling rack, so translating it as “grate” would be wrong."}
+{"plan_seed": 100850104, "slice": "terms_used_twice", "stage": "llm_verify", "variant": "shift", "why": "“Galler” refers to an oven rack here, so translating it as “grate” is not the natural rendering."}
+{"plan_seed": 100850105, "slice": "plain", "stage": "llm_verify", "variant": "shift", "why": "“En liten gratäng” could naturally be translated as “a small casserole,” using a forbidden English rendering."}
+{"plan_seed": 100850123, "slice": "terms_in_lists", "stage": "llm_verify", "variant": "shift", "why": "The sentence about filling the termos with coffee would naturally be translated using the forbidden word “thermos.”"}
+{"plan_seed": 100850127, "slice": "compound_words", "stage": "code_verify", "variant": "shift", "why": "compound 'ugnsgaller' missing"}
+{"plan_seed": 100850166, "slice": "inflected_forms", "stage": "llm_verify", "variant": "shift", "why": "Here “gallret” means the cooling rack, so translating it as “grate” would be wrong."}
+{"plan_seed": 100850170, "slice": "plain", "stage": "llm_verify", "variant": "shift", "why": "In the cooling context, “galler” naturally means a cooling rack, so requiring “grate” makes the rendering ambiguous or unnatural."}

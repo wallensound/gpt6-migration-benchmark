@@ -1,6 +1,40 @@
 {
-  "generated_at": "2026-11-18T01:07:24",
+  "generated_at": "2026-11-18T01:12:09",
   "datasets": {
+    "01-entity-extraction": {
+      "case": "01-entity-extraction",
+      "dataset_version": 1,
+      "gen_seed": 1001,
+      "created_at": "2026-11-18T01:12:09",
+      "generator": {
+        "model": "gpt-6.2-sol",
+        "effort": "low"
+      },
+      "verifier": {
+        "model": "gpt-6-luna",
+        "effort": "low"
+      },
+      "generator_model_id": "global.openai.gpt-6.2-sol",
+      "verifier_model_id": "global.openai.gpt-6-luna",
+      "sdk_version": "3.45.0",
+      "git_commit": "04de068",
+      "sizes": {
+        "test": 300,
+        "dev": 200,
+        "train": 120,
+        "shift": 150
+      },
+      "sha256": {
+        "train": "d21d0e4d302a659752556033a616f899bb1b328ba0cc4617ad2f398a1b82caa0",
+        "dev": "0de1ee370319683d711a8f04565d1b4c0663babf8f839da2bdb8f722a2e9ef31",
+        "test": "805200ab4e4973aa8805f570d64b1c4df8a87c58b098c384604349ffb6b6082b",
+        "shift": "7a63debad036675bc08ab616249ceb3dc3bef4bb73d104bbbaa8fd4251a726b7"
+      },
+      "frozen_files_sha256": {
+        "spec.md": "30b0397863632c54dca5847975039d9978dfd4d100d1a448f94d44656f05062e",
+        "case.py": "f9ac9f6d1efb43955964723381eed0aea19cde490c19eaa5c9b33c005f92c598"
+      }
+    },
     "02-invoice-fields": {
       "case": "02-invoice-fields",
       "dataset_version": 1,
@@ -135,6 +169,40 @@
       "frozen_files_sha256": {
         "spec.md": "27d7526634d2b0413228b13649afd352d8938d45bafc1047d2475278d9796305",
         "case.py": "85bfbcaa991adbecf2ba5c9fbd5dbb9fd8cb3271e7998851e20aa532086ab833"
+      }
+    },
+    "08-glossary-translation": {
+      "case": "08-glossary-translation",
+      "dataset_version": 1,
+      "gen_seed": 1008,
+      "created_at": "2026-11-18T01:11:01",
+      "generator": {
+        "model": "gpt-6.2-sol",
+        "effort": "low"
+      },
+      "verifier": {
+        "model": "gpt-6-luna",
+        "effort": "low"
+      },
+      "generator_model_id": "global.openai.gpt-6.2-sol",
+      "verifier_model_id": "global.openai.gpt-6-luna",
+      "sdk_version": "3.45.0",
+      "git_commit": "04de068",
+      "sizes": {
+        "test": 300,
+        "dev": 200,
+        "train": 120,
+        "shift": 150
+      },
+      "sha256": {
+        "train": "b6715484accd4236d82e0d91f0292bf7bc4b7426f719d55372e9c7c99f479507",
+        "dev": "54b948d4e4c91d43e13a397e9c47faf515422a7b4a1c759238b4f1f9908b5660",
+        "test": "65bb58e6383bcedda560f02b89a78b61e89cdf6bb17bcf4f6af43e599e3dce9c",
+        "shift": "7b2d9898f1e1cff597c8c5fd5b36698160ccc3178d1a06c15f6045327f60a905"
+      },
+      "frozen_files_sha256": {
+        "spec.md": "fa363e6bc93f295b0da5d7585b552b1c0e0da3eeff805378c2021df9c378ebbc",
+        "case.py": "6bf2f4ade1185e7fa9d7a75a88a4bb9ca6a78eee164e0c82591bc5bbe42df09b"
       }
     }
   }

@@ -1,0 +1,10 @@
+{
+  "case": "08-glossary-translation",
+  "frozen_at": "2026-11-18T01:12:03",
+  "prompt_hash": "7b55c35e98c0471c",
+  "legacy_files_sha256": "88f6318ae7581d268e363663d2a09136e27a2047880241997443ba00b4102c25",
+  "dev_primary": 0.98,
+  "floor": 0.85,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

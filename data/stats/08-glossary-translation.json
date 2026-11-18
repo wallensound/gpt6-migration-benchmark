@@ -1,0 +1,65 @@
+{
+  "case": "08-glossary-translation",
+  "dataset_version": 1,
+  "gen_seed": 1008,
+  "planned": 1001,
+  "kept": 879,
+  "dropped": 122,
+  "drop_rate": 0.12187812187812187,
+  "dropped_by_stage": {
+    "llm_verify": 80,
+    "code_verify": 42
+  },
+  "exact_duplicates": 0,
+  "near_duplicates": 0,
+  "items_per_split": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "items_per_slice_and_split": {
+    "test": {
+      "compound_words": 60,
+      "inflected_forms": 59,
+      "plain": 60,
+      "terms_in_lists": 61,
+      "terms_used_twice": 60
+    },
+    "dev": {
+      "compound_words": 40,
+      "inflected_forms": 38,
+      "plain": 41,
+      "terms_in_lists": 40,
+      "terms_used_twice": 41
+    },
+    "train": {
+      "compound_words": 24,
+      "inflected_forms": 23,
+      "plain": 25,
+      "terms_in_lists": 24,
+      "terms_used_twice": 24
+    },
+    "shift": {
+      "compound_words": 30,
+      "inflected_forms": 31,
+      "plain": 29,
+      "terms_in_lists": 30,
+      "terms_used_twice": 30
+    }
+  },
+  "avg_input_chars": {
+    "test": 880.8566666666667,
+    "dev": 909.755,
+    "train": 873.3,
+    "shift": 875.4333333333333
+  },
+  "avg_input_tokens_est": {
+    "test": 220.21416666666667,
+    "dev": 227.43875,
+    "train": 218.325,
+    "shift": 218.85833333333332
+  },
+  "spent_usd_phase_total": 25.511621812500003,
+  "seconds": 401
+}
