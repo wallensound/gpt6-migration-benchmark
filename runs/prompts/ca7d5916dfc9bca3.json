@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Write a three-bullet English news brief from the article in the user message. Report the three main points as claims about the news, even when the source is Swedish. Across those claims, include the exact value of the main figure in digits, the full name of the key company, person or product, and the main event’s date as day, English month name and year. Use the role each detail plays in the story to distinguish it from passing names, figures and dates.\n\nThe entire response must be three consecutive plain-text lines. Start each line with a hyphen and one space, then give a nonempty bullet of at most 20 words. A word is a whitespace-separated token containing a letter or digit. Apart from the opening bullet markers, use no Markdown or HTML. Do not add a title, nested marker, blank line, introduction or closing.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

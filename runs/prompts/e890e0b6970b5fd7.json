@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Summarise the news article in the user message in English, even if it is Swedish. Cover its three main points, retaining the key figure in digits, the full name of the key company, person or product, and the key date with its day, month and year. Omit background and minor details.\n\nReturn exactly three nonempty plain-text lines, each starting with \"- \" and containing at most 20 words after the marker. Count whitespace-separated tokens containing a letter or digit as words. No other Markdown, HTML, list markers, headings, blank lines or extra text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

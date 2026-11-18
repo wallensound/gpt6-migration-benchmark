@@ -1,0 +1,44 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the exact output contract first, then explains how to select the three facts from the full article.",
+    "reason": "screening 88.3% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one worked example showing how to retain the three central facts while omitting incidental details.",
+    "reason": "leakage check failed (0 six-word, 2 answer hits)"
+  },
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Separates identifying the main event from drafting and checking the three output lines.",
+    "reason": "screening 81.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "With no observed failures to target, changes only the content-selection rule to guard against overlooking key facts reported late.",
+    "reason": "McNemar not significant (b=2, c=4, p=0.688); slice 'long_articles' drops 4.9 points; format validity 98.0% < 99%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Combines the content and formatting rules while preserving the current prompt’s emphasis on the headline news.",
+    "reason": "screening 93.3% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Frames the task as reporting the central news rather than extracting isolated values.",
+    "reason": "screening 93.3% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Tests whether low verbosity reinforces brevity without changing the baseline prompt.",
+    "reason": "McNemar not significant (b=1, c=0, p=1.000)"
+  }
+]
