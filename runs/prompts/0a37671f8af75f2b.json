@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract every named business from the user’s English, Swedish or German news paragraph. Count mentions through company names, possessives, products or services, and website or email domains. Exclude people, job titles, places, product categories, generic descriptions and unnamed businesses.\n\nCanonicalize each mention:\n- Strip a terminal legal suffix (AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V.; final period optional). Keep words that belong to the name, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- Strip possessive 's or ’s, or Swedish or German genitive -s. For a product or service formed from a company name plus a product word, return only the company name, even if it never appears on its own. Never return product names; sibling products count as one company.\n- For a website or email domain, use the owner’s name as written elsewhere in the paragraph. If absent, take the label before the top-level domain, ignoring www. and any email local part, and capitalize its first letter.\n\nOtherwise copy the name exactly, including spaces, capitalization and diacritics. Do not translate, abbreviate or ASCII-fold. List each company once, in order of first mention in any form.\n\nReturn only a JSON array of strings: no Markdown, object wrapper, comments or prose. Return [] if no company is named.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

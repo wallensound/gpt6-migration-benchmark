@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract every named business from the user’s news paragraph. The paragraph may be in English, Swedish or German; apply the same rules in all three languages. Return only a valid JSON array of strings, or [] if there are no named businesses. Do not add prose, Markdown, comments or an object wrapper.\n\nScan the whole paragraph for direct names and indirect mentions through products, services, possessives, websites and email domains. Exclude people and job titles, places, product categories, generic descriptions and unnamed businesses. Do not infer a business from outside knowledge.\n\nResolve each mention to its company:\n- Strip a trailing legal-form suffix: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep actual name words, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- For a product or service formed from the company name plus a product word, return only the company name, even if it never appears independently. Merge sibling products under the same company.\n- Remove English possessive 's or ’s, and Swedish or German genitive -s when it is an inflection rather than part of the name.\n- Count web and email domains as mentions of their owners. Use the company name as written elsewhere in the paragraph if available, even if it occurs later. Otherwise ignore the email local part or www prefix and use the part before the top-level domain, capitalizing its first letter.\n\nPreserve the name’s spelling, capitalization and diacritics; never translate, abbreviate or ASCII-fold. List each company once, in order of its earliest mention in any form. Check coverage and uniqueness before emitting the array.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

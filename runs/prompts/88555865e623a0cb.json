@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "## Deliverable\nRead the user’s English, Swedish or German news paragraph and return every named company as a canonical name. Reply with one bare JSON array of strings and nothing else: no Markdown, prose, comments or wrapper. If no company is named, reply []. Do not ask clarifying questions.\n\n## Find all mentions\nRead from beginning to end. Check direct business names, company-name-based products and services, possessives, web addresses and email domains. Include companies named only indirectly. Exclude people (including titles), cities, regions, countries, product categories, generic descriptions and unnamed companies. Do not add companies from outside knowledge.\n\n## Resolve and merge mentions\n1. Remove trailing legal forms AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. with or without a final period. Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n2. A company name followed by a product word in a product or service name names the parent company. Return the parent, never the product, even without a standalone mention. Several sibling products yield one company entry.\n3. Remove possessive 's or ’s, or the Swedish or German genitive -s, from company names.\n4. A web address or email domain names its owner. Use the company name written elsewhere in the text when available. Otherwise, discard any www prefix or email local part and capitalize the first letter of the part before the top-level domain.\n5. Preserve canonical spelling, capitalization and diacritics. Do not translate, abbreviate, correct or ASCII-fold names.\n\n## Final check\nDeduplicate across all mention forms. Order companies by their first mention in any form. Emit only the array.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

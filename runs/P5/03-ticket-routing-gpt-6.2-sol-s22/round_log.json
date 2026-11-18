@@ -1,0 +1,288 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "d258a10e8e772298",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "settings_change",
+      "restructure",
+      "simplify"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "No failures were observed; this minimal edit clarifies that the fallback uses the first issue, not the first category keyword.",
+        "prompt_hash": "260a93eb5094afff",
+        "prompt_chars": 2010,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether low verbosity helps preserve label-only output without changing the routing instructions.",
+        "prompt_hash": "407ebe3e92de7f92",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the exact output contract first and presents routing as a decision sequence with tie-breaks before the fallback.",
+        "prompt_hash": "91bc0b19d094d68b",
+        "prompt_chars": 2030,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Shortens repeated instructions while retaining all twelve definitions, the three conditional tie-breaks and the first-issue fallback.",
+        "prompt_hash": "d3c4e4bff3aaeb34",
+        "prompt_chars": 1554,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=2, p=0.500)",
+            "slice 'long' drops 4.2 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 2,
+            "p_value": 0.5
+          },
+          "worst_slice_drop": -0.04166666666666663,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 1.0
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=2, p=0.500)",
+        "slice 'long' drops 4.2 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 2,
+        "p_value": 0.5
+      },
+      "worst_slice_drop": -0.04166666666666663,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "d258a10e8e772298",
+    "dev_primary_after": 1.0,
+    "seconds": 121,
+    "spent_phase": 6.829343675
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "simplify",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity without changing the prompt that passed all training items.",
+        "prompt_hash": "407ebe3e92de7f92",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Compresses the glossary and uses a single scan-and-decide instruction that explicitly covers the entire message before routing.",
+        "prompt_hash": "4f5cbbb24d2cbda9",
+        "prompt_chars": 1650,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=4, p=0.125)",
+            "slice 'long' drops 8.3 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 4,
+            "p_value": 0.125
+          },
+          "worst_slice_drop": -0.08333333333333337,
+          "validity": 1.0,
+          "dev_primary": 0.98,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed training failures, makes one preventive change to the previously sensitive long-message decision: check the entire message before invoking the fallback.",
+        "prompt_hash": "ee495cd7e49bac0c",
+        "prompt_chars": 2032,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Front-loads the exact output contract and presents the decision procedure before the label reference.",
+        "prompt_hash": "47ffdeef15b97c87",
+        "prompt_chars": 2008,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=4, p=0.125)",
+        "slice 'long' drops 8.3 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 4,
+        "p_value": 0.125
+      },
+      "worst_slice_drop": -0.08333333333333337,
+      "validity": 1.0,
+      "dev_primary": 0.98,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "d258a10e8e772298",
+    "dev_primary_after": 1.0,
+    "seconds": 181,
+    "spent_phase": 16.1823699075
+  }
+]

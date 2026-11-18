@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Shortens repeated instructions while retaining all twelve definitions, the three conditional tie-breaks and the first-issue fallback.",
+    "reason": "McNemar not significant (b=0, c=2, p=0.500); slice 'long' drops 4.2 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Compresses the glossary and uses a single scan-and-decide instruction that explicitly covers the entire message before routing.",
+    "reason": "McNemar not significant (b=0, c=4, p=0.125); slice 'long' drops 8.3 points"
+  }
+]
