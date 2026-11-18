@@ -77,3 +77,10 @@
 2026-11-18T01:21:11 DONE loop 02 gpt-6-luna seed 33 v1: port dev 1.000 -> final dev 1.000, accepted [], 2 rounds in a row with nothing accepted, P5 spent $18.70
 2026-11-18T01:21:11 START loop 07 gpt-6.1-terra seed 33 v1
 2026-11-18T01:21:12 DONE sweep 06: source 1.000; effort choice {"gpt-6.2-astra": "medium", "gpt-6.2-sol": "low", "gpt-6.1-terra": "none", "gpt-6-luna": "none"}
+2026-11-18T01:21:14 START loop 06 gpt-6-luna seed 11 v1
+2026-11-18T01:21:15 START loop 06 gpt-6-luna seed 22 v1
+2026-11-18T01:21:15 START loop 06 gpt-6-luna seed 33 v1
+2026-11-18T01:21:15 START loop 06 gpt-6.1-terra seed 11 v1
+2026-11-18T01:21:15 START loop 06 gpt-6.1-terra seed 22 v1
+2026-11-18T01:21:15 START loop 06 gpt-6.1-terra seed 33 v1
+2026-11-18T01:21:18 DONE loop 04 gpt-6-luna seed 33 v1: port dev 0.995 -> final dev 0.995, accepted [], 2 rounds in a row with nothing accepted, P5 spent $19.22
