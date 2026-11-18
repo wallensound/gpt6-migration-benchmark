@@ -1,0 +1,314 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "ae9a36fb6855c190",
+    "dev_primary": 0.975,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "restructure",
+      "simplify",
+      "example_swap"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "missing_term": 2
+      },
+      "by_slice": {
+        "plain": 1,
+        "inflected_forms": 1
+      },
+      "patterns": [
+        {
+          "category": "missing_term",
+          "count": 2,
+          "sample_causes": [
+            "The translation rendered “låg vikt” as “lightweight,” so it omitted the required glossary term “weight.”",
+            "The translation did not include the required glossary term “wireless.”"
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Closes the loophole that lets a fluent paraphrase or fused word omit a required rendering.",
+        "prompt_hash": "c8649bb16e11c0e8",
+        "prompt_chars": 3317,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the output contract first and separates input parsing, terminology application, and the final check.",
+        "prompt_hash": "ae373708f9955588",
+        "prompt_chars": 3136,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Combines overlapping rules into a short contract and uses a compact glossary format.",
+        "prompt_hash": "eb0576b7b15a4438",
+        "prompt_chars": 2296,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=3, c=0, p=0.250)"
+          ],
+          "mcnemar": {
+            "b": 3,
+            "c": 0,
+            "p_value": 0.25
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 0.975
+        }
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one invented glossary example showing how to preserve explicit terminology across a compound and a repeated mention.",
+        "prompt_hash": "a376e570bc9c9b5b",
+        "prompt_chars": 3373,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=3, c=0, p=0.250)"
+      ],
+      "mcnemar": {
+        "b": 3,
+        "c": 0,
+        "p_value": 0.25
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 0.975
+    },
+    "accepted": false,
+    "prompt_hash_after": "ae9a36fb6855c190",
+    "dev_primary_after": 0.975,
+    "seconds": 185,
+    "spent_phase": 28.661823662499998
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "settings_change",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "missing_term": 2
+      },
+      "by_slice": {
+        "plain": 1,
+        "inflected_forms": 1
+      },
+      "patterns": [
+        {
+          "category": "missing_term",
+          "count": 2,
+          "sample_causes": [
+            "The translation rendered “låg vikt” as “lightweight,” so it omitted the required glossary term “weight.”",
+            "The translation did not include the required glossary term “wireless.”"
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "One invented example shows that the translation must retain a required term even when an idiomatic rewrite could express the same idea without it.",
+        "prompt_hash": "5d93701a6bc5bec9",
+        "prompt_chars": 3451,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Higher verbosity tests whether the model retains more explicit terminology instead of compressing meanings into idiomatic phrasing, with the prompt unchanged.",
+        "prompt_hash": "ee149ea9934476ef",
+        "prompt_chars": 3143,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "high"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "The narrow change makes explicit presence—not equivalent meaning—the test for whether every glossary occurrence survives translation.",
+        "prompt_hash": "81b828de81770968",
+        "prompt_chars": 3358,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Putting the output contract first and separating input handling from terminology rules makes both requirements easy to locate without changing the glossary.",
+        "prompt_hash": "6117b01c0c9ce451",
+        "prompt_chars": 3120,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=3, c=0, p=0.250)"
+          ],
+          "mcnemar": {
+            "b": 3,
+            "c": 0,
+            "p_value": 0.25
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 0.975
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=3, c=0, p=0.250)"
+      ],
+      "mcnemar": {
+        "b": 3,
+        "c": 0,
+        "p_value": 0.25
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 0.975
+    },
+    "accepted": false,
+    "prompt_hash_after": "ae9a36fb6855c190",
+    "dev_primary_after": 0.975,
+    "seconds": 91,
+    "spent_phase": 32.660548337499996
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return only a bare JSON object with exactly name, phone, email, company, country, each a string or null. Read only the single contact label/value block, not surrounding notes or signatures. Labels vary; separators include colon, equals and tab. Trim and collapse whitespace. Absent, empty and whole-value placeholders (-, --, n/a, na, none, unknown, ?, null, TBD; any case) are null. Never infer values from other sources, including email domains or company suffixes; only the country-from-phone exception below applies.\n\nRoute @ values to email and phone-like values to phone regardless of label. To recognize a phone, remove leading tel: and trailing extension (ext., ext, x, # or extension followed by digits); require at least seven digits and only digits, spaces and + - ( ) . /. Use the country line for country. Swap name and company if the name-line value ends in a legal suffix and the company-line value does not.\n\nName: reverse Last, First at the first comma, drop leading Dr/Mr/Mrs/Ms/Mx/Prof (any case, optional dot), and uppercase the first character and lowercase the rest of each space- or hyphen-separated part. Preserve Unicode letters and diacritics; never transliterate.\nCompany: strip a trailing legal suffix and optional preceding comma, ignoring case, then trim and uppercase the first character and lowercase the rest of each space-separated word. Suffixes: AB, GmbH, AG, Ltd, Ltd., PLC, Inc, Inc., LLC, Corp, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., S.p.A., Sp. z o.o., K.K., Pty Ltd, Ltda.\nEmail: unwrap surrounding angle brackets and remove mailto:, then lowercase throughout.\nCountry: map English/Swedish/German names, alpha-2/alpha-3 codes and common aliases case-insensitively to uppercase ISO 3166-1 alpha-2: UK/Great Britain → GB; Holland → NL; USA/U.S.A. → US; Türkiye → TR; Czech Republic → CZ.\nPhone: output E.164 (+ and digits only). After removing tel: and extension, ignore an opening parenthesis when checking for initial + or 00. For international numbers, remove (0) and all spaces, dashes, dots, slashes and parentheses; replace initial 00 with +. Keep the written calling code and any country from the country line even if they disagree. If country is missing, fill it only from an international calling code unique to one country; shared codes such as +1 and +7 leave it null. For national numbers, strip separators, drop one leading trunk 0, and prepend + and the normalized country's calling code; if country is missing, phone is null.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": "low"
+  }
+}

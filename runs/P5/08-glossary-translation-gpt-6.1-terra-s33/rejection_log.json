@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Combines overlapping rules into a short contract and uses a compact glossary format.",
+    "reason": "McNemar not significant (b=3, c=0, p=0.250)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Putting the output contract first and separating input handling from terminology rules makes both requirements easy to locate without changing the glossary.",
+    "reason": "McNemar not significant (b=3, c=0, p=0.250)"
+  }
+]

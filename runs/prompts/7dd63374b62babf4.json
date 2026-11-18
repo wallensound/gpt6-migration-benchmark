@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Route one customer message (English, Swedish or German). Reply with exactly one label below, verbatim, and nothing else.\n\nbilling: charges, payments, invoices, receipts, prices, payment methods, charge refunds\ntechnical: product, app or website setup, connection, configuration or usage help; nothing reported broken\naccount_access: login, passwords, two-factor codes, locked or blocked accounts\nshipping: order delivery, tracking, delays, delivery address, missing parcels\nreturns: physical product returns, return labels, exchanges, return window\ncancellation: ending a subscription or plan, stopping auto-renewal\nfeature_request: requests for functionality the product lacks\nbug_report: product, app or website malfunctions, including crashes, error codes, freezes and features that stop working\nprivacy: personal data storage, copies, deletion, sharing or GDPR requests\npartnership: business proposals such as reselling, co-marketing, integrations, sponsorship or volume deals\nfeedback: opinions, praise or complaints without a request for help or action\nother: unrelated to the company's products and services\n\nFor competing issues, billing beats technical or bug_report if a payment, charge or invoice is mentioned; cancellation beats billing or returns if the customer wants to end a subscription; privacy beats account_access or cancellation if the customer asks about or wants deletion of their personal data. Otherwise, use the first issue mentioned.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

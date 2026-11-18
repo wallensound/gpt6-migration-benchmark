@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return exactly one JSON object for the invoice text in the user message. The only keys are vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Every value is a string or null. No Markdown, explanations or other text. Use null when a field is not stated; never guess or calculate a missing value.\n\nParties and identifiers\n- vendor: the issuing seller, supplier or payee. Preserve its full legal name as written, including the legal suffix. Do not take the name from a customer, Bill to, Kund or Rechnungsempfänger block.\n- invoice_number: the invoice's own identifier, exactly as written without the label. Ignore customer numbers, order numbers and PO numbers. Labels include Fakturanummer / Fakturanr and Rechnungsnummer / Rechnungs-Nr.\n\nDates\n- issue_date: invoice date (Fakturadatum / Rechnungsdatum), not order or delivery date.\n- due_date: stated payment due date (Förfallodatum / Förfaller / Sista betalningsdag; Fällig am / Zahlbar bis / Fälligkeitsdatum). Do not derive it from payment terms.\n- Output YYYY-MM-DD. Keep ISO year-first dates in ISO order. Read other numeric dates day-first even when ambiguous; expand two-digit years to 20YY. Recognize English, Swedish and German month names, abbreviated forms and ordinal suffixes.\n\nBilling amounts\n- currency: the invoice's billing currency, as EUR, SEK, USD, GBP, CHF, NOK or DKK (Valuta / Währung). Map € to EUR, £ to GBP, $ to USD, kr to SEK. Ignore informational or approximate conversions.\n- net: stated taxable amount excluding VAT after discounts (Belopp exkl. moms / Summa exkl. moms / Nettobetrag / Summe netto). Do not use a subtotal before a discount, an amount that is only a line item, or total minus VAT.\n- vat: stated tax amount (VAT / Moms / MwSt. / USt. / Mehrwertsteuer / sales tax), not a rate or a value calculated from a rate.\n- total: stated gross amount payable including tax (Att betala / Totalt inkl. moms / Gesamtbetrag / Rechnungsbetrag / Bruttobetrag / Zu zahlen).\n- For all three amounts, the final comma or dot followed by two digits is the decimal separator. Remove grouping separators and currency notation; output a decimal string with a dot and exactly two decimals.\n\nRead English, Swedish or German invoice text. Broken lines and OCR typos may affect labels and prose, but value strings are intact.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}
