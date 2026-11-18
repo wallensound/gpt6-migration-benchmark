@@ -1,0 +1,68 @@
+{
+  "case": "07-contact-normalisation",
+  "dataset_version": 1,
+  "gen_seed": 1007,
+  "planned": 1001,
+  "kept": 961,
+  "dropped": 40,
+  "drop_rate": 0.03996003996003996,
+  "dropped_by_stage": {
+    "llm_verify": 40
+  },
+  "exact_duplicates": 0,
+  "near_duplicates": 0,
+  "items_per_split": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "items_per_slice_and_split": {
+    "test": {
+      "international_phone": 51,
+      "missing_fields": 47,
+      "plain": 50,
+      "precedence_conflict": 52,
+      "swapped_fields": 49,
+      "unicode_names": 51
+    },
+    "dev": {
+      "international_phone": 34,
+      "missing_fields": 32,
+      "plain": 33,
+      "precedence_conflict": 34,
+      "swapped_fields": 33,
+      "unicode_names": 34
+    },
+    "train": {
+      "international_phone": 20,
+      "missing_fields": 20,
+      "plain": 20,
+      "precedence_conflict": 20,
+      "swapped_fields": 19,
+      "unicode_names": 21
+    },
+    "shift": {
+      "international_phone": 24,
+      "missing_fields": 22,
+      "plain": 27,
+      "precedence_conflict": 26,
+      "swapped_fields": 26,
+      "unicode_names": 25
+    }
+  },
+  "avg_input_chars": {
+    "test": 476.31666666666666,
+    "dev": 475.315,
+    "train": 479.64166666666665,
+    "shift": 474.6933333333333
+  },
+  "avg_input_tokens_est": {
+    "test": 119.07916666666667,
+    "dev": 118.82875,
+    "train": 119.91041666666666,
+    "shift": 118.67333333333333
+  },
+  "spent_usd_phase_total": 7.5663255750000005,
+  "seconds": 63
+}

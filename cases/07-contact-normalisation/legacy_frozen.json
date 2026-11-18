@@ -1,0 +1,10 @@
+{
+  "case": "07-contact-normalisation",
+  "frozen_at": "2026-11-18T01:01:49",
+  "prompt_hash": "ebbe139d619e0122",
+  "legacy_files_sha256": "c8ee45553f7c8a9e2082de1a26a5e55f63d556fd1e1cf5687d1407355dafaf59",
+  "dev_primary": 0.995,
+  "floor": 0.9,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

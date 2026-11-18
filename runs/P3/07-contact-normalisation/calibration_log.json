@@ -1,0 +1,72 @@
+{
+  "rounds": [
+    {
+      "at": "2026-11-18T01:01:16",
+      "split": "train",
+      "prompt_hash": "ebbe139d619e0122",
+      "primary": 0.9916666666666667,
+      "validity": 1.0,
+      "per_slice": {
+        "international_phone": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "missing_fields": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 20,
+          "primary": 0.95
+        },
+        "precedence_conflict": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "swapped_fields": {
+          "n": 19,
+          "primary": 1.0
+        },
+        "unicode_names": {
+          "n": 21,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    },
+    {
+      "at": "2026-11-18T01:01:38",
+      "split": "dev",
+      "prompt_hash": "ebbe139d619e0122",
+      "primary": 0.995,
+      "validity": 1.0,
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 33,
+          "primary": 1.0
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 0.9696969696969697
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    }
+  ]
+}

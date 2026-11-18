@@ -1,0 +1,96 @@
+{
+  "run_id": "07-contact-normalisation-calibrate-train-ebbe139d619e0122",
+  "phase": "P3",
+  "git_commit": "69a4773",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:01:16",
+  "reference_date": "2026-11-17",
+  "case": "07-contact-normalisation",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-train-ebbe139d619e0122",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "ebbe139d619e0122",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:01:16",
+      "summary": {
+        "n": 120,
+        "passed": 119,
+        "primary": 0.9916666666666667,
+        "primary_ci": [
+          0.9543037087549505,
+          0.998527444266658
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "precedence_conflict": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 21,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.2376422,
+        "cost_per_item": 0.0019803516666666667,
+        "cost_per_correct": 0.0019969932773109245,
+        "latency_p50_s": 1.2916500000000002,
+        "latency_p95_s": 1.6815449999999998,
+        "tokens_in": 164954,
+        "tokens_in_mean": 1374.6166666666666,
+        "tokens_cached": 148393,
+        "tokens_cached_mean": 1236.6083333333333,
+        "tokens_cache_write": 16201,
+        "tokens_cache_write_mean": 135.00833333333333,
+        "tokens_out": 4792,
+        "tokens_out_mean": 39.93333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "dropped_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9983333333333333,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 0.9916666666666667,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      }
+    }
+  ]
+}

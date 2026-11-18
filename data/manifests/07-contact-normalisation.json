@@ -1,0 +1,34 @@
+{
+  "case": "07-contact-normalisation",
+  "dataset_version": 1,
+  "gen_seed": 1007,
+  "created_at": "2026-11-18T01:01:01",
+  "generator": {
+    "model": "gpt-6.2-sol",
+    "effort": "low"
+  },
+  "verifier": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "generator_model_id": "global.openai.gpt-6.2-sol",
+  "verifier_model_id": "global.openai.gpt-6-luna",
+  "sdk_version": "3.45.0",
+  "git_commit": "69a4773",
+  "sizes": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "sha256": {
+    "train": "93dd56929dc27be048d682e57bce9682a75673d71997bf4bffc849bc6e8c660c",
+    "dev": "dceca3669556a981400ceb7107686c85b46c2c881099df922db9529a0791d014",
+    "test": "0e1375f797bbbee1ef3ab8733e2da46ad04fd1866400f08e6cbd14d396cc53ee",
+    "shift": "cd5e06016c49efc6760cd2562df9dadfc0cb775cfd3e9ca5119e39a95e3bc83b"
+  },
+  "frozen_files_sha256": {
+    "spec.md": "27d7526634d2b0413228b13649afd352d8938d45bafc1047d2475278d9796305",
+    "case.py": "85bfbcaa991adbecf2ba5c9fbd5dbb9fd8cb3271e7998851e20aa532086ab833"
+  }
+}

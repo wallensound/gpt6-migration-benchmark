@@ -31,3 +31,8 @@ Append-only log. Newest entries at the bottom.
 - **D10 (case 03) shift.** The prompt is fixed, so "label definitions paraphrased" is realised as paraphrased cue wordings in the messages, plus a new product domain (e-bike subscription) and unseen brands.
 - **D11 (case 03)** a "first issue mentioned wins" fallback after the three tie-break rules gives multi-issue items a defined answer; `answer_strings` is empty (labels are part of the contract); the port raises a sub-16 output cap to 16 (Responses API minimum; only relevant at effort `none`).
 - **D12 Azure content filter.** Azure's content filter blocks a small share of source-model calls (2 of 200 case 03 dev items). They are scored as failures (`api_error`) of the source setup, as a production integration would experience them.
+
+### 2026-11-18 P2+P3 case 07 contact normalisation: sealed and frozen
+- 1001 planned, 961 kept (drop 4.0%), splits 120/200/300/150. 33 tests. Legacy train 99.2%, dev 99.5% (floor 90%), one round, hash ebbe139d619e0122.
+- **D13 (case 07)** the generator writes only the notes around a `<<RECORD>>` placeholder and code inserts the exact messy record, so the record is verbatim by construction; verify still rejects notes containing emails, URLs, long numbers, country names or names. Conflict: rule 2 / IMPORTANT block ("NEVER guess or infer") vs rule 16 (infer the country from the calling code when missing); the precedence note says rule 16 wins. +1 and +7 never set a country. Shift: 12 unseen countries and unseen phone formats in 60% of items.
+- Spot-check (agent): 8 dev items read; labels and slices correct; the single dev miss is a genuine "Last, First" reorder error.

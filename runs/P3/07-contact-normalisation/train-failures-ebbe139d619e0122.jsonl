@@ -1,0 +1,1 @@
+{"categories": ["dropped_value"], "diff": "phone: expected '+353881296508', got None", "item_id": "07-v1-00690", "raw_output": "{\"name\":\"Emma Skumgumberg\",\"phone\":null,\"email\":null,\"company\":\"Ragilgia\",\"country\":\"IE\"}", "slice": "plain"}
