@@ -1,0 +1,312 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "a6a4296c0a29f3de",
+    "dev_primary": 0.995,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "restructure",
+      "example_swap",
+      "simplify"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "false_call": 1
+      },
+      "by_slice": {
+        "no_tool": 1
+      },
+      "patterns": [
+        {
+          "category": "false_call",
+          "count": 1,
+          "sample_causes": [
+            "It called create_event for setting a phone alarm, an action not covered by the available functions."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Limits clock-time routing to supported calendar actions so a phone alarm does not become an event.",
+        "prompt_hash": "7d4ea32abe3f1b30",
+        "prompt_chars": 3682,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the response contract and supported-intent check before routing, extraction and normalization.",
+        "prompt_hash": "442f5e74cd2de7a9",
+        "prompt_chars": 3651,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one negative worked example to show that a timed device action is not a calendar event.",
+        "prompt_hash": "0141dccaaaa4b99a",
+        "prompt_chars": 3502,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Compresses the routing and extraction rules while retaining bilingual date handling and the exact call contract.",
+        "prompt_hash": "65ca0767943bc6dc",
+        "prompt_chars": 2933,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=2, p=1.000)",
+            "slice 'no_tool' drops 3.2 points"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 2,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.032258064516129004,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 0.995
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=2, p=1.000)",
+        "slice 'no_tool' drops 3.2 points"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 2,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.032258064516129004,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "a6a4296c0a29f3de",
+    "dev_primary_after": 0.995,
+    "seconds": 182,
+    "spent_phase": 8.740100715
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "targeted_fix",
+      "settings_change",
+      "simplify",
+      "example_swap"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "false_call": 1
+      },
+      "by_slice": {
+        "no_tool": 1
+      },
+      "patterns": [
+        {
+          "category": "false_call",
+          "count": 1,
+          "sample_causes": [
+            "It called create_event for setting a phone alarm, an action not covered by the available functions."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds a single scope gate so a clock time cannot turn an unsupported alarm or timer request into a calendar event.",
+        "prompt_hash": "2aaeb4d9c1223500",
+        "prompt_chars": 3586,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity without changing routing instructions, keeping the plain-text fallback brief.",
+        "prompt_hash": "300ab7e1d34dc453",
+        "prompt_chars": 3552,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Uses a closed list of supported actions before applying scheduling rules, and compresses the remaining instructions into date and argument rules.",
+        "prompt_hash": "53704c9331c84e01",
+        "prompt_chars": 2592,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9830508474576272,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked no-call example contrasting a timed device action with calendar scheduling.",
+        "prompt_hash": "b5e95b85c19c3b9b",
+        "prompt_chars": 3568,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "a6a4296c0a29f3de",
+    "dev_primary_after": 0.995,
+    "seconds": 164,
+    "spent_phase": 16.931300874999998
+  }
+]
