@@ -1,0 +1,32 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Condenses overlapping instructions while retaining all mention types, canonicalisation rules, and output requirements.",
+    "reason": "McNemar not significant (b=1, c=14, p=0.001); slice 'domain_forms' drops 26.7 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Enables schema-constrained output using the specification’s permitted companies wrapper without changing extraction policy.",
+    "reason": "screening 94.8% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "targeted_fix",
+    "rationale": "Adds a character-for-character spelling check focused on accidental spaces inside company names.",
+    "reason": "screening 94.8% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Organises the instructions into detection, canonicalisation and emission so indirect mentions are collected before deduplication.",
+    "reason": "screening 96.6% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one dense worked example that demonstrates exact name copying and recovery of a company mentioned only through a product.",
+    "reason": "McNemar not significant (b=3, c=4, p=1.000); slice 'dense' drops 7.1 points"
+  }
+]
