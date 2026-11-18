@@ -1,0 +1,582 @@
+{
+  "case": "04-tool-selection",
+  "source": {
+    "setting": "gpt-5.6-sol / none (legacy, chat)",
+    "model": "gpt-5.6-sol",
+    "effort": "none",
+    "primary": 0.99,
+    "primary_ci": [
+      0.9642782382838231,
+      0.9972533418664555
+    ],
+    "validity": 1.0,
+    "nonanswer_rate": 0.0,
+    "error_rate": 0.0,
+    "cost_per_item": 0.0017908499999999999,
+    "cost_per_correct": 0.001808939393939394,
+    "latency_p50_s": 1.3383000000000003,
+    "latency_p95_s": 2.8805549999999966,
+    "tokens_in_mean": 1665.95,
+    "tokens_out_mean": 48.335,
+    "tokens_reasoning_mean": 0.0,
+    "failure_categories": {
+      "wrong_value": 2
+    },
+    "per_slice": {
+      "lookalike_tools": {
+        "n": 34,
+        "primary": 0.9705882352941176
+      },
+      "multi_candidate": {
+        "n": 35,
+        "primary": 0.9714285714285714
+      },
+      "no_tool": {
+        "n": 31,
+        "primary": 1.0
+      },
+      "optional_omitted": {
+        "n": 34,
+        "primary": 1.0
+      },
+      "plain": {
+        "n": 34,
+        "primary": 1.0
+      },
+      "relative_dates": {
+        "n": 32,
+        "primary": 1.0
+      }
+    }
+  },
+  "rows": [
+    {
+      "setting": "gpt-5.6-sol / none (legacy, chat)",
+      "model": "gpt-5.6-sol",
+      "effort": "none",
+      "primary": 0.99,
+      "primary_ci": [
+        0.9642782382838231,
+        0.9972533418664555
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0017908499999999999,
+      "cost_per_correct": 0.001808939393939394,
+      "latency_p50_s": 1.3383000000000003,
+      "latency_p95_s": 2.8805549999999966,
+      "tokens_in_mean": 1665.95,
+      "tokens_out_mean": 48.335,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "wrong_value": 2
+      },
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 0.9714285714285714
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / low",
+      "model": "gpt-6.2-astra",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.007387974,
+      "cost_per_correct": 0.007387974,
+      "latency_p50_s": 1.09125,
+      "latency_p95_s": 2.8260199999999975,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 46.96,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 1.0
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / medium",
+      "model": "gpt-6.2-astra",
+      "effort": "medium",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.007091266000000001,
+      "cost_per_correct": 0.007126900502512563,
+      "latency_p50_s": 1.0756999999999999,
+      "latency_p95_s": 2.8709499999999997,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 46.9,
+      "tokens_reasoning_mean": 0.245,
+      "failure_categories": {
+        "wrong_value": 1
+      },
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 1.0
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / low",
+      "model": "gpt-6.2-sol",
+      "effort": "low",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0017635165,
+      "cost_per_correct": 0.001772378391959799,
+      "latency_p50_s": 0.64325,
+      "latency_p95_s": 1.3992199999999968,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 45.97,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "wrong_value": 1
+      },
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 1.0
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / medium",
+      "model": "gpt-6.2-sol",
+      "effort": "medium",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.00174195,
+      "cost_per_correct": 0.0017507035175879397,
+      "latency_p50_s": 0.6244,
+      "latency_p95_s": 1.3100499999999973,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 45.62,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "wrong_value": 1
+      },
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 1.0
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / none",
+      "model": "gpt-6.1-terra",
+      "effort": "none",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.00042264887499999994,
+      "cost_per_correct": 0.00042264887499999994,
+      "latency_p50_s": 0.7505,
+      "latency_p95_s": 1.6435799999999992,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 42.06,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 1.0
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / low",
+      "model": "gpt-6.1-terra",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.000431381125,
+      "cost_per_correct": 0.000431381125,
+      "latency_p50_s": 0.75125,
+      "latency_p95_s": 1.5998299999999992,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 41.935,
+      "tokens_reasoning_mean": 0.135,
+      "failure_categories": {},
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 1.0
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / none",
+      "model": "gpt-6-luna",
+      "effort": "none",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 4.341277500000001e-05,
+      "cost_per_correct": 4.3630929648241215e-05,
+      "latency_p50_s": 0.48410000000000003,
+      "latency_p95_s": 0.8538499999999991,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 44.815,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "wrong_tool": 1
+      },
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 0.9714285714285714
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / low",
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 4.3454525000000004e-05,
+      "cost_per_correct": 4.3672889447236184e-05,
+      "latency_p50_s": 0.49325,
+      "latency_p95_s": 0.7526899999999991,
+      "tokens_in_mean": 1584.95,
+      "tokens_out_mean": 45.005,
+      "tokens_reasoning_mean": 0.33,
+      "failure_categories": {
+        "wrong_tool": 1
+      },
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 0.9714285714285714
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      }
+    }
+  ],
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6-luna/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    }
+  },
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "medium",
+      "score_per_dollar": 140.31345037684383,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 135.35510547275882
+        },
+        "medium": {
+          "primary": 0.995,
+          "score_per_dollar": 140.31345037684383
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "medium",
+      "score_per_dollar": 571.1989437125061,
+      "candidates": {
+        "low": {
+          "primary": 0.995,
+          "score_per_dollar": 564.213603898801
+        },
+        "medium": {
+          "primary": 0.995,
+          "score_per_dollar": 571.1989437125061
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "none",
+      "score_per_dollar": 2366.030194685837,
+      "candidates": {
+        "none": {
+          "primary": 1.0,
+          "score_per_dollar": 2366.030194685837
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 2318.1357320629177
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "none",
+      "score_per_dollar": 22919.520809254875,
+      "candidates": {
+        "none": {
+          "primary": 0.995,
+          "score_per_dollar": 22919.520809254875
+        },
+        "low": {
+          "primary": 0.995,
+          "score_per_dollar": 22897.500317861028
+        }
+      }
+    }
+  },
+  "spent_phase": 11.02717841
+}
