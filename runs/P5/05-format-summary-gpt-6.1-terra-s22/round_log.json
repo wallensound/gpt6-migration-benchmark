@@ -1,0 +1,286 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "3f3294a6b868c17c",
+    "dev_primary": 0.995,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "settings_change",
+      "restructure",
+      "simplify"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "No failures were observed, so this changes only the anchor-preservation rule to permit English dates in Swedish-source summaries.",
+        "prompt_hash": "85119f8f2822b758",
+        "prompt_chars": 1078,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.8333333333333334,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Low verbosity reinforces the word cap while leaving the prompt that passed all training items unchanged.",
+        "prompt_hash": "a3173a148e1ccc18",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Putting the output contract first makes the format easy to follow, while the content section emphasizes reading through to the end.",
+        "prompt_hash": "67d82a57fc4103b4",
+        "prompt_chars": 1008,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 0.95,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "This removes the role framing and combines the content and formatting rules into two short paragraphs.",
+        "prompt_hash": "40c5d3bbcf26a049",
+        "prompt_chars": 634,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=2, p=1.000)",
+            "slice 'facts_near_end' drops 5.0 points"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 2,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.050000000000000044,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 0.995
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=2, p=1.000)",
+        "slice 'facts_near_end' drops 5.0 points"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 2,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.050000000000000044,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 0.995,
+    "seconds": 80,
+    "spent_phase": 38.4328751175
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "simplify",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Test low verbosity as a settings-only change while preserving the prompt that passed all training items.",
+        "prompt_hash": "a3173a148e1ccc18",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Keep the digest framing and separate content and format sections while removing repeated brevity and output rules.",
+        "prompt_hash": "239975eb76fb11b2",
+        "prompt_chars": 530,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 0.9833333333333333,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures to target, test a single content-rule clarification that headline importance is not the same as headline placement.",
+        "prompt_hash": "648126f13c73f83c",
+        "prompt_chars": 1033,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Move the role framing below the task and place the language and format requirements together at the end, without changing the content rules.",
+        "prompt_hash": "dba27b2cc727df91",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 0.995,
+    "seconds": 57,
+    "spent_phase": 39.1947573175
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "No failures were observed, so this changes only the anchor-preservation rule to permit English dates in Swedish-source summaries.",
+    "reason": "screening 83.3% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Putting the output contract first makes the format easy to follow, while the content section emphasizes reading through to the end.",
+    "reason": "screening 95.0% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "This removes the role framing and combines the content and formatting rules into two short paragraphs.",
+    "reason": "McNemar not significant (b=1, c=2, p=1.000); slice 'facts_near_end' drops 5.0 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Test low verbosity as a settings-only change while preserving the prompt that passed all training items.",
+    "reason": "McNemar not significant (b=1, c=0, p=1.000)"
+  }
+]
