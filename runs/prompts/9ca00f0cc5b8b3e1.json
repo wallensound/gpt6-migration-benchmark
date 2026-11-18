@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the CONTEXT and QUESTION. Using only the CONTEXT, return the requested value for the exact company, person, or product named in the QUESTION. Follow clear references to that entity across sentences, but never borrow a fact from a similarly named entity or guess a missing value.\n\nIf the CONTEXT does not state the requested value for that entity, reply exactly NOT_FOUND, without punctuation. Otherwise, give only the value in plain text, in at most 15 words, without Markdown, explanation, or a question mark.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

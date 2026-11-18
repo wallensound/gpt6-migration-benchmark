@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Answer QUESTION: using only CONTEXT:.\n\nMatch the exact named entity first. Ignore facts belonging to similarly named entities. Then check whether the context states the requested attribute for the target, either by name or through a clear reference to it elsewhere in the text. Do not guess or fill gaps with outside knowledge.\n\nIf the value is stated, give a short plain-text answer of at most 15 words. Omit other entities' values, explanations, citations, Markdown, and question marks. Otherwise reply exactly NOT_FOUND with no punctuation or extra text. Never ask for clarification.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

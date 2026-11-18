@@ -1,0 +1,316 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "89ebdb6e859e7880",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "simplify",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "lookalike_confusion": 2
+      },
+      "by_slice": {
+        "unanswerable": 1,
+        "lookalike_distractor": 1
+      },
+      "patterns": [
+        {
+          "category": "lookalike_confusion",
+          "count": 2,
+          "sample_causes": [
+            "It gave the founding year of the look-alike company Furzuskrova instead of abstaining for Furzeskrova.",
+            "Returned the look-alike entity Novera instead of the target company's flagship product, Glerha."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Changes only the entity-matching rule to require checking who owns each candidate fact.",
+        "prompt_hash": "066a15e48f58f0f9",
+        "prompt_chars": 1301,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Combines grounding and exact attribution into one rule and makes the bare value the default output.",
+        "prompt_hash": "771050117d107771",
+        "prompt_chars": 518,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.014084507042253502,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses an attribution-first procedure to handle long contexts, look-alikes, and cross-sentence answers.",
+        "prompt_hash": "6446f2b9b9dcd503",
+        "prompt_chars": 931,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity as a standalone change while keeping the production prompt intact.",
+        "prompt_hash": "c6edf674543358a3",
+        "prompt_chars": 1105,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.014084507042253502,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "89ebdb6e859e7880",
+    "dev_primary_after": 1.0,
+    "seconds": 45,
+    "spent_phase": 22.9695449375
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "rewrite",
+      "example_swap",
+      "simplify"
+    ],
+    "train_primary": 0.9833333333333333,
+    "failure_report": {
+      "counts": {
+        "lookalike_confusion": 2
+      },
+      "by_slice": {
+        "unanswerable": 1,
+        "lookalike_distractor": 1
+      },
+      "patterns": [
+        {
+          "category": "lookalike_confusion",
+          "count": 2,
+          "sample_causes": [
+            "It attributed the look-alike company Furzuskrova’s founding year to the target company Furzeskrova instead of abstaining.",
+            "It gave the conflicting look-alike entity Novera instead of the target company’s flagship product, Glerha."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether low verbosity improves output discipline without changing the grounding instructions.",
+        "prompt_hash": "c6edf674543358a3",
+        "prompt_chars": 1105,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Makes exact entity attribution a prerequisite for selecting a value while preserving clear cross-sentence references.",
+        "prompt_hash": "6414c0495d3a51c2",
+        "prompt_chars": 916,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked case showing that a stated attribute for a near-identical name cannot answer the target question.",
+        "prompt_hash": "301eb26bb5d49068",
+        "prompt_chars": 1365,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Shortens the prompt into separate checks for the entity, the supporting statement, and the output format.",
+        "prompt_hash": "fbecd52da59520a8",
+        "prompt_chars": 586,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=2, p=0.500)",
+            "slice 'unanswerable' drops 2.8 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 2,
+            "p_value": 0.5
+          },
+          "worst_slice_drop": -0.028169014084507005,
+          "validity": 1.0,
+          "dev_primary": 0.99,
+          "dev_primary_current": 1.0
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=2, p=0.500)",
+        "slice 'unanswerable' drops 2.8 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 2,
+        "p_value": 0.5
+      },
+      "worst_slice_drop": -0.028169014084507005,
+      "validity": 1.0,
+      "dev_primary": 0.99,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "89ebdb6e859e7880",
+    "dev_primary_after": 1.0,
+    "seconds": 29,
+    "spent_phase": 25.0560157125
+  }
+]

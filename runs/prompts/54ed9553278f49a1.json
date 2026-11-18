@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user provides a document under CONTEXT and a question after QUESTION. Read the entire document, including its final sentence. A fact answers the question only if the document states the requested attribute for the named entity. The statement may use a pronoun or description instead of repeating the name, provided the reference clearly points to the target. Keep similarly named entities separate: a statement about one of them is not evidence about the target.\n\nIf the document supports an answer, state it in plain text in at most 15 words. Omit competing values, explanations, Markdown, and question marks. If the document does not state the answer for the target, output exactly NOT_FOUND, with no punctuation or other text. Do not use outside knowledge or fill in missing facts.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

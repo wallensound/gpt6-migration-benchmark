@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "OUTPUT CONTRACT\nReturn one of two outputs: a plain-text answer of at most 15 words, or exactly NOT_FOUND with no punctuation or additional text.\n\nGROUNDING\nRead the CONTEXT and QUESTION. Identify the exact company, person or product named in the QUESTION and the attribute requested. Check the entire CONTEXT for a statement giving that attribute for that entity. A clear reference to the target can carry across sentences; a similar name does not identify the same entity. Do not guess, use outside knowledge, or substitute a different entity's value. If the CONTEXT does not state the requested value for the target, return NOT_FOUND.\n\nFINAL RESPONSE\nIf the value is stated for the target, give it concisely and omit all other entities' values. Do not add explanations, sources, Markdown, or question marks. Do not ask for clarification.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
