@@ -1,0 +1,1661 @@
+{
+  "run_id": "07-contact-normalisation-gpt-6.2-sol-s33",
+  "phase": "P5",
+  "git_commit": "977507b",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:15:31",
+  "reference_date": "2026-11-17",
+  "case": "07-contact-normalisation",
+  "kind": "loop",
+  "target": "gpt-6.2-sol",
+  "effort": "medium",
+  "seed": 33,
+  "dataset_version": 1,
+  "loop_params": {
+    "rounds": 5,
+    "candidates": 4,
+    "screen_items": 60,
+    "early_stop_empty_rounds": 2,
+    "screen_max_trail": 0.03,
+    "screen_min_validity": 0.98,
+    "accept_alpha": 0.05,
+    "accept_max_slice_drop": 0.02,
+    "accept_min_validity": 0.99,
+    "examples_per_pattern": 3,
+    "top_patterns": 3
+  },
+  "optimiser": {
+    "model": "gpt-6.2-sol",
+    "effort": "high"
+  },
+  "labeller": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "evals": [
+    {
+      "eval_id": "r0-dev",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "94d21e2d9e5df067",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:15:32",
+      "summary": {
+        "n": 200,
+        "passed": 167,
+        "primary": 0.835,
+        "primary_ci": [
+          0.7773421846094045,
+          0.8800314467178268
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 34,
+            "primary": 0.8529411764705882
+          },
+          "missing_fields": {
+            "n": 32,
+            "primary": 0.84375
+          },
+          "plain": {
+            "n": 33,
+            "primary": 0.8181818181818182
+          },
+          "precedence_conflict": {
+            "n": 34,
+            "primary": 0.7941176470588235
+          },
+          "swapped_fields": {
+            "n": 33,
+            "primary": 0.9393939393939394
+          },
+          "unicode_names": {
+            "n": 34,
+            "primary": 0.7647058823529411
+          }
+        },
+        "cost_usd": 0.26101610000000003,
+        "cost_per_item": 0.0013050805,
+        "cost_per_correct": 0.0015629706586826348,
+        "latency_p50_s": 0.65935,
+        "latency_p95_s": 1.2234200000000002,
+        "tokens_in": 274832,
+        "tokens_in_mean": 1374.16,
+        "tokens_cached": 221193,
+        "tokens_cached_mean": 1105.965,
+        "tokens_cache_write": 53639,
+        "tokens_cache_write_mean": 268.195,
+        "tokens_out": 8268,
+        "tokens_out_mean": 41.34,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "dropped_value": 33,
+          "name_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.963,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 0.94,
+          "phone_accuracy": 0.98,
+          "email_accuracy": 0.965,
+          "company_accuracy": 0.935,
+          "country_accuracy": 0.995
+        }
+      },
+      "round": 0,
+      "role": "port-dev"
+    },
+    {
+      "eval_id": "r1-train",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "94d21e2d9e5df067",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:16:08",
+      "summary": {
+        "n": 120,
+        "passed": 102,
+        "primary": 0.85,
+        "primary_ci": [
+          0.775324706432755,
+          0.9029618770741527
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "missing_fields": {
+            "n": 20,
+            "primary": 0.85
+          },
+          "plain": {
+            "n": 20,
+            "primary": 0.85
+          },
+          "precedence_conflict": {
+            "n": 20,
+            "primary": 0.8
+          },
+          "swapped_fields": {
+            "n": 19,
+            "primary": 0.8421052631578947
+          },
+          "unicode_names": {
+            "n": 21,
+            "primary": 0.8095238095238095
+          }
+        },
+        "cost_usd": 0.0815608,
+        "cost_per_item": 0.0006796733333333334,
+        "cost_per_correct": 0.0007996156862745098,
+        "latency_p50_s": 0.6207999999999999,
+        "latency_p95_s": 0.8907599999999999,
+        "tokens_in": 164954,
+        "tokens_in_mean": 1374.6166666666666,
+        "tokens_cached": 164954,
+        "tokens_cached_mean": 1374.6166666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 4857,
+        "tokens_out_mean": 40.475,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "dropped_value": 18
+        },
+        "secondary": {
+          "field_accuracy": 0.96,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 0.9833333333333333,
+          "phone_accuracy": 0.9333333333333333,
+          "email_accuracy": 0.975,
+          "company_accuracy": 0.95,
+          "country_accuracy": 0.9583333333333334
+        }
+      },
+      "round": 1,
+      "role": "train"
+    },
+    {
+      "eval_id": "r1-screen-simplify",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "0d679c777805f6db",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:17:01",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.131689,
+        "cost_per_item": 0.002194816666666667,
+        "cost_per_correct": 0.002194816666666667,
+        "latency_p50_s": 0.6637000000000001,
+        "latency_p95_s": 1.2151649999999998,
+        "tokens_in": 48580,
+        "tokens_in_mean": 809.6666666666666,
+        "tokens_cached": 5700,
+        "tokens_cached_mean": 95.0,
+        "tokens_cache_write": 30498,
+        "tokens_cache_write_mean": 508.3,
+        "tokens_out": 2954,
+        "tokens_out_mean": 49.233333333333334,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "simplify"
+    },
+    {
+      "eval_id": "r1-screen-settings_change",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "1d4337530573227f",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:17:17",
+      "summary": {
+        "n": 60,
+        "passed": 57,
+        "primary": 0.95,
+        "primary_ci": [
+          0.8629948352365147,
+          0.9828504978356043
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 0.7
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.1955083,
+        "cost_per_item": 0.0032584716666666665,
+        "cost_per_correct": 0.0034299701754385964,
+        "latency_p50_s": 0.7175499999999999,
+        "latency_p95_s": 1.354355,
+        "tokens_in": 86260,
+        "tokens_in_mean": 1437.6666666666667,
+        "tokens_cached": 20079,
+        "tokens_cached_mean": 334.65,
+        "tokens_cache_write": 66181,
+        "tokens_cache_write_mean": 1103.0166666666667,
+        "tokens_out": 2604,
+        "tokens_out_mean": 43.4,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "dropped_value": 3
+        },
+        "secondary": {
+          "field_accuracy": 0.98,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 0.9666666666666667,
+          "email_accuracy": 1.0,
+          "company_accuracy": 0.9666666666666667,
+          "country_accuracy": 0.9666666666666667
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "settings_change"
+    },
+    {
+      "eval_id": "r1-screen-example_swap",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "55207b0668d92027",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:17:48",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.13865149999999998,
+        "cost_per_item": 0.002310858333333333,
+        "cost_per_correct": 0.002310858333333333,
+        "latency_p50_s": 0.6494000000000001,
+        "latency_p95_s": 1.26931,
+        "tokens_in": 61660,
+        "tokens_in_mean": 1027.6666666666667,
+        "tokens_cached": 17395,
+        "tokens_cached_mean": 289.9166666666667,
+        "tokens_cache_write": 44265,
+        "tokens_cache_write_mean": 737.75,
+        "tokens_out": 2451,
+        "tokens_out_mean": 40.85,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r1-screen-targeted_fix",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "4f64d96a7170708f",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:18:11",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.16517089999999998,
+        "cost_per_item": 0.002752848333333333,
+        "cost_per_correct": 0.002752848333333333,
+        "latency_p50_s": 0.642,
+        "latency_p95_s": 1.0418150000000002,
+        "tokens_in": 74560,
+        "tokens_in_mean": 1242.6666666666667,
+        "tokens_cached": 19817,
+        "tokens_cached_mean": 330.28333333333336,
+        "tokens_cache_write": 54743,
+        "tokens_cache_write_mean": 912.3833333333333,
+        "tokens_out": 2435,
+        "tokens_out_mean": 40.583333333333336,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "targeted_fix"
+    },
+    {
+      "eval_id": "r1-dev-simplify",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "0d679c777805f6db",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:19:43",
+      "summary": {
+        "n": 200,
+        "passed": 197,
+        "primary": 0.985,
+        "primary_ci": [
+          0.9568342712073097,
+          0.9948857622067417
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          },
+          "missing_fields": {
+            "n": 32,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          },
+          "swapped_fields": {
+            "n": 33,
+            "primary": 0.9696969696969697
+          },
+          "unicode_names": {
+            "n": 34,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.335652,
+        "cost_per_item": 0.00167826,
+        "cost_per_correct": 0.0017038172588832487,
+        "latency_p50_s": 0.6712,
+        "latency_p95_s": 1.272695,
+        "tokens_in": 161232,
+        "tokens_in_mean": 806.16,
+        "tokens_cached": 63320,
+        "tokens_cached_mean": 316.6,
+        "tokens_cache_write": 50148,
+        "tokens_cache_write_mean": 250.74,
+        "tokens_out": 10209,
+        "tokens_out_mean": 51.045,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "dropped_value": 1,
+          "name_wrong": 1,
+          "email_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.997,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 0.995,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.995,
+          "company_accuracy": 1.0,
+          "country_accuracy": 0.995
+        }
+      },
+      "round": 1,
+      "role": "dev-candidate",
+      "edit_kind": "simplify"
+    },
+    {
+      "eval_id": "r2-train",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "0d679c777805f6db",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:03",
+      "summary": {
+        "n": 120,
+        "passed": 120,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9689808335812966,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 21,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.2309763,
+        "cost_per_item": 0.0019248025,
+        "cost_per_correct": 0.0019248025,
+        "latency_p50_s": 0.6773499999999999,
+        "latency_p95_s": 1.1885449999999997,
+        "tokens_in": 96794,
+        "tokens_in_mean": 806.6166666666667,
+        "tokens_cached": 25039,
+        "tokens_cached_mean": 208.65833333333333,
+        "tokens_cache_write": 43937,
+        "tokens_cache_write_mean": 366.14166666666665,
+        "tokens_out": 6049,
+        "tokens_out_mean": 50.40833333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "train"
+    },
+    {
+      "eval_id": "r2-screen-example_swap",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "d16d24934de2499d",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:59",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.035802,
+        "cost_per_item": 0.0005967,
+        "cost_per_correct": 0.0005967,
+        "latency_p50_s": 0.6810499999999999,
+        "latency_p95_s": 1.3419349999999999,
+        "tokens_in": 55160,
+        "tokens_in_mean": 919.3333333333334,
+        "tokens_cached": 55160,
+        "tokens_cached_mean": 919.3333333333334,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 2477,
+        "tokens_out_mean": 41.28333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r2-screen-rewrite",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "4668b2b31b36ff2f",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:14",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.1349327,
+        "cost_per_item": 0.0022488783333333333,
+        "cost_per_correct": 0.0022488783333333333,
+        "latency_p50_s": 0.6657000000000001,
+        "latency_p95_s": 1.2152649999999998,
+        "tokens_in": 54620,
+        "tokens_in_mean": 910.3333333333334,
+        "tokens_cached": 11751,
+        "tokens_cached_mean": 195.85,
+        "tokens_cache_write": 42869,
+        "tokens_cache_write_mean": 714.4833333333333,
+        "tokens_out": 2541,
+        "tokens_out_mean": 42.35,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "rewrite"
+    },
+    {
+      "eval_id": "r2-screen-restructure",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "3e2747013703f1cf",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:28",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.1293639,
+        "cost_per_item": 0.002156065,
+        "cost_per_correct": 0.002156065,
+        "latency_p50_s": 0.6664500000000001,
+        "latency_p95_s": 1.047045,
+        "tokens_in": 48440,
+        "tokens_in_mean": 807.3333333333334,
+        "tokens_cached": 6497,
+        "tokens_cached_mean": 108.28333333333333,
+        "tokens_cache_write": 28737,
+        "tokens_cache_write_mean": 478.95,
+        "tokens_out": 2981,
+        "tokens_out_mean": 49.68333333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r2-screen-targeted_fix",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "8010c885fc1455a6",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:34",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.1306326,
+        "cost_per_item": 0.0021772099999999997,
+        "cost_per_correct": 0.0021772099999999997,
+        "latency_p50_s": 0.6594500000000001,
+        "latency_p95_s": 1.2047249999999998,
+        "tokens_in": 49820,
+        "tokens_in_mean": 830.3333333333334,
+        "tokens_cached": 10698,
+        "tokens_cached_mean": 178.3,
+        "tokens_cache_write": 38338,
+        "tokens_cache_write_mean": 638.9666666666667,
+        "tokens_out": 3108,
+        "tokens_out_mean": 51.8,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "targeted_fix"
+    },
+    {
+      "eval_id": "r2-dev-restructure",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "3e2747013703f1cf",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:47",
+      "summary": {
+        "n": 200,
+        "passed": 198,
+        "primary": 0.99,
+        "primary_ci": [
+          0.9642782382838231,
+          0.9972533418664555
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 34,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 32,
+            "primary": 0.96875
+          },
+          "plain": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          },
+          "swapped_fields": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 34,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.3398036,
+        "cost_per_item": 0.0016990179999999998,
+        "cost_per_correct": 0.0017161797979797979,
+        "latency_p50_s": 0.6981499999999999,
+        "latency_p95_s": 1.334625,
+        "tokens_in": 161232,
+        "tokens_in_mean": 806.16,
+        "tokens_cached": 60828,
+        "tokens_cached_mean": 304.14,
+        "tokens_cache_write": 52640,
+        "tokens_cache_write_mean": 263.2,
+        "tokens_out": 10051,
+        "tokens_out_mean": 50.255,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "name_wrong": 1,
+          "email_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.998,
+          "format_validity": 0.999,
+          "json_validity": 1.0,
+          "name_accuracy": 0.995,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.995,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "dev-candidate",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r3-train",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "0d679c777805f6db",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:48",
+      "summary": {
+        "n": 120,
+        "passed": 120,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9689808335812966,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 21,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.2309763,
+        "cost_per_item": 0.0019248025,
+        "cost_per_correct": 0.0019248025,
+        "latency_p50_s": 0.6773499999999999,
+        "latency_p95_s": 1.1885449999999997,
+        "tokens_in": 96794,
+        "tokens_in_mean": 806.6166666666667,
+        "tokens_cached": 25039,
+        "tokens_cached_mean": 208.65833333333333,
+        "tokens_cache_write": 43937,
+        "tokens_cache_write_mean": 366.14166666666665,
+        "tokens_out": 6049,
+        "tokens_out_mean": 50.40833333333333,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 3,
+      "role": "train"
+    },
+    {
+      "eval_id": "r3-screen-rewrite",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "3e64f7ee61d485f7",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:18",
+      "summary": {
+        "n": 60,
+        "passed": 58,
+        "primary": 0.9666666666666667,
+        "primary_ci": [
+          0.886362257256914,
+          0.9908106807438021
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.1519133,
+        "cost_per_item": 0.0025318883333333335,
+        "cost_per_correct": 0.002619194827586207,
+        "latency_p50_s": 0.7958,
+        "latency_p95_s": 1.1031349999999995,
+        "tokens_in": 56893,
+        "tokens_in_mean": 948.2166666666667,
+        "tokens_cached": 10404,
+        "tokens_cached_mean": 173.4,
+        "tokens_cache_write": 46489,
+        "tokens_cache_write_mean": 774.8166666666667,
+        "tokens_out": 3361,
+        "tokens_out_mean": 56.016666666666666,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "dropped_value": 2
+        },
+        "secondary": {
+          "field_accuracy": 0.9933333333333333,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 0.9666666666666667
+        }
+      },
+      "round": 3,
+      "role": "screen",
+      "edit_kind": "rewrite"
+    },
+    {
+      "eval_id": "r3-screen-simplify",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "fdb6b5df13771cab",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:23",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.119766,
+        "cost_per_item": 0.0019961,
+        "cost_per_correct": 0.0019961,
+        "latency_p50_s": 0.7011000000000001,
+        "latency_p95_s": 0.9955699999999996,
+        "tokens_in": 43513,
+        "tokens_in_mean": 725.2166666666667,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 3274,
+        "tokens_out_mean": 54.56666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 3,
+      "role": "screen",
+      "edit_kind": "simplify"
+    },
+    {
+      "eval_id": "r3-screen-targeted_fix",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "d01d83f86e1f1f35",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:30",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.132918,
+        "cost_per_item": 0.0022153000000000003,
+        "cost_per_correct": 0.0022153000000000003,
+        "latency_p50_s": 0.67495,
+        "latency_p95_s": 1.281065,
+        "tokens_in": 49093,
+        "tokens_in_mean": 818.2166666666667,
+        "tokens_cached": 6600,
+        "tokens_cached_mean": 110.0,
+        "tokens_cache_write": 33124,
+        "tokens_cache_write_mean": 552.0666666666667,
+        "tokens_out": 3005,
+        "tokens_out_mean": 50.083333333333336,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 3,
+      "role": "screen",
+      "edit_kind": "targeted_fix"
+    },
+    {
+      "eval_id": "r3-screen-example_swap",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "27a26e97cfa71eb3",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:34",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0358486,
+        "cost_per_item": 0.0005974766666666666,
+        "cost_per_correct": 0.0005974766666666666,
+        "latency_p50_s": 0.6281500000000001,
+        "latency_p95_s": 1.203925,
+        "tokens_in": 54793,
+        "tokens_in_mean": 913.2166666666667,
+        "tokens_cached": 54793,
+        "tokens_cached_mean": 913.2166666666667,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 2489,
+        "tokens_out_mean": 41.483333333333334,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "field_accuracy": 1.0,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 3,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r3-dev-simplify",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "fdb6b5df13771cab",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:47",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 34,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 32,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 34,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          }
+        },
+        "cost_usd": 0.40197,
+        "cost_per_item": 0.00200985,
+        "cost_per_correct": 0.0020199497487437186,
+        "latency_p50_s": 0.7068,
+        "latency_p95_s": 1.29221,
+        "tokens_in": 145432,
+        "tokens_in_mean": 727.16,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 792,
+        "tokens_cache_write_mean": 3.96,
+        "tokens_out": 11071,
+        "tokens_out_mean": 55.355,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "name_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.999,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 0.995,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 1.0,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 3,
+      "role": "dev-candidate",
+      "edit_kind": "simplify"
+    }
+  ],
+  "finished": true,
+  "stop_reason": "2 rounds in a row with nothing accepted",
+  "final_prompt_hash": "0d679c777805f6db",
+  "final_dev_primary": 0.985,
+  "port_dev_primary": 0.835,
+  "accepted_rounds": [
+    1
+  ],
+  "final_leak_check": {
+    "ok": true,
+    "ngram_hits": 0,
+    "answer_hits": 0
+  },
+  "finished_at": "2026-11-18T01:22:47",
+  "calls_made": 1510,
+  "calls_cached": 395
+}

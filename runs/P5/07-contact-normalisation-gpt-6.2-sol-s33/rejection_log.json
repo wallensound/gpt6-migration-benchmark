@@ -1,0 +1,20 @@
+[
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Moves the output contract first and groups country and phone before the independent text normalizers.",
+    "reason": "McNemar not significant (b=3, c=2, p=1.000); slice 'missing_fields' drops 3.1 points"
+  },
+  {
+    "round": 3,
+    "edit_kind": "rewrite",
+    "rationale": "Separates field assignment from normalization so swapped values are routed before field-specific transformations.",
+    "reason": "screening 96.7% vs current 100.0%"
+  },
+  {
+    "round": 3,
+    "edit_kind": "simplify",
+    "rationale": "Condenses the rules while retaining content-based assignment, the country fallback, and the exact output contract.",
+    "reason": "McNemar not significant (b=3, c=1, p=0.625); slice 'unicode_names' drops 2.9 points"
+  }
+]
