@@ -1,0 +1,92 @@
+{
+  "run_id": "04-tool-selection-calibrate-train-df7e39915955f900",
+  "phase": "P3",
+  "git_commit": "0918864",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:04:32",
+  "reference_date": "2026-11-17",
+  "case": "04-tool-selection",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-train-df7e39915955f900",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "df7e39915955f900",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:04:32",
+      "summary": {
+        "n": 120,
+        "passed": 120,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9689808335812966,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "lookalike_tools": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "multi_candidate": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "no_tool": {
+            "n": 18,
+            "primary": 1.0
+          },
+          "optional_omitted": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "relative_dates": {
+            "n": 20,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.215008,
+        "cost_per_item": 0.0017917333333333334,
+        "cost_per_correct": 0.0017917333333333334,
+        "latency_p50_s": 1.3204500000000001,
+        "latency_p95_s": 3.0214899999999996,
+        "tokens_in": 199872,
+        "tokens_in_mean": 1665.6,
+        "tokens_cached": 195720,
+        "tokens_cached_mean": 1631.0,
+        "tokens_cache_write": 3792,
+        "tokens_cache_write_mean": 31.6,
+        "tokens_out": 5816,
+        "tokens_out_mean": 48.46666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "tool_name_accuracy": 1.0,
+          "argument_accuracy": 1.0,
+          "false_call_rate": 0.0,
+          "missed_call_rate": 0.0,
+          "n_tool_items": 102,
+          "n_no_tool_items": 18
+        }
+      }
+    }
+  ]
+}

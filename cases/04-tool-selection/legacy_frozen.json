@@ -1,0 +1,10 @@
+{
+  "case": "04-tool-selection",
+  "frozen_at": "2026-11-18T01:04:59",
+  "prompt_hash": "df7e39915955f900",
+  "legacy_files_sha256": "4f581f102b309cb7d9ab017ab79147c0454bea43796f6fc705df0be5eafabe3e",
+  "dev_primary": 0.99,
+  "floor": 0.9,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

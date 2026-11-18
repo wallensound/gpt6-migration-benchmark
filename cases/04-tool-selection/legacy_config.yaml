@@ -1,0 +1,9 @@
+model: gpt-5.6-sol        # source model (Azure; Chat Completions)
+api: chat
+effort: none
+settings:
+  temperature: 0
+  max_output_tokens: null
+  structured_outputs: false
+  logprobs: false
+# tools: Chat Completions `tools` from case.tools(item, settings), tool_choice "auto"

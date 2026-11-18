@@ -1,0 +1,72 @@
+{
+  "rounds": [
+    {
+      "at": "2026-11-18T01:04:32",
+      "split": "train",
+      "prompt_hash": "df7e39915955f900",
+      "primary": 1.0,
+      "validity": 1.0,
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "multi_candidate": {
+          "n": 21,
+          "primary": 1.0
+        },
+        "no_tool": {
+          "n": 18,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 21,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 20,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 20,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    },
+    {
+      "at": "2026-11-18T01:04:57",
+      "split": "dev",
+      "prompt_hash": "df7e39915955f900",
+      "primary": 0.99,
+      "validity": 1.0,
+      "per_slice": {
+        "lookalike_tools": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        },
+        "multi_candidate": {
+          "n": 35,
+          "primary": 0.9714285714285714
+        },
+        "no_tool": {
+          "n": 31,
+          "primary": 1.0
+        },
+        "optional_omitted": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "relative_dates": {
+          "n": 32,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    }
+  ]
+}

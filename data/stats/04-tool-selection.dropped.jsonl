@@ -1,0 +1,40 @@
+{"plan_seed": 100400020, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The request also asks for his work phone number and email address, adding unlisted contact-detail arguments."}
+{"plan_seed": 100400047, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The request specifies a forecast, an extra weather-function argument beyond location and date."}
+{"plan_seed": 100400116, "slice": "optional_omitted", "stage": "llm_verify", "variant": "main", "why": "The text specifies the outcome as “talked to,” which differs from the planned outcome “connected.”"}
+{"plan_seed": 100400149, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The requested outcome, “talked to,” differs from the planned outcome “connected.”"}
+{"plan_seed": 100400170, "slice": "optional_omitted", "stage": "llm_verify", "variant": "main", "why": "It explicitly sets the outcome to “spoke with,” rather than the required “connected.”"}
+{"plan_seed": 100400209, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the planned outcome “connected”."}
+{"plan_seed": 100400226, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "unplanned date/time word: 'ASAP'"}
+{"plan_seed": 100400229, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the specified outcome “connected.”"}
+{"plan_seed": 100400244, "slice": "optional_omitted", "stage": "llm_verify", "variant": "main", "why": "“Internal documents” specifies a document scope beyond the listed query argument."}
+{"plan_seed": 100400252, "slice": "optional_omitted", "stage": "code_verify", "variant": "main", "why": "unplanned date/time word: 'ASAP'"}
+{"plan_seed": 100400288, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “talked to” differs from the planned outcome “connected”."}
+{"plan_seed": 100400290, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The requested outcome is “talked to,” not the planned value “connected.”"}
+{"plan_seed": 100400327, "slice": "multi_candidate", "stage": "llm_verify", "variant": "main", "why": "The requested outcome is “talked to,” which differs from the specified outcome “connected.”"}
+{"plan_seed": 100400333, "slice": "no_tool", "stage": "llm_verify", "variant": "main", "why": "Setting an alarm for a specific time is a concrete request to schedule something, making create_event applicable."}
+{"plan_seed": 100400381, "slice": "plain", "stage": "code_verify", "variant": "main", "why": "unplanned date/time word: 'ASAP'"}
+{"plan_seed": 100400406, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the required outcome “connected.”"}
+{"plan_seed": 100400416, "slice": "optional_omitted", "stage": "code_verify", "variant": "main", "why": "unplanned date/time word: 'ASAP'"}
+{"plan_seed": 100400442, "slice": "multi_candidate", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the planned value “connected.”"}
+{"plan_seed": 100400453, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “talked to” differs from the expected outcome “connected.”"}
+{"plan_seed": 100400504, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the expected outcome “connected.”"}
+{"plan_seed": 100400508, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “talked to” differs from the required outcome “connected”."}
+{"plan_seed": 100400554, "slice": "optional_omitted", "stage": "llm_verify", "variant": "main", "why": "The requested outcome is “spoke with,” not the planned value “connected.”"}
+{"plan_seed": 100400587, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the required outcome “connected”."}
+{"plan_seed": 100400591, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the required outcome “connected.”"}
+{"plan_seed": 100400596, "slice": "optional_omitted", "stage": "llm_verify", "variant": "main", "why": "The request to send the search results makes send_email an additional equally suitable function."}
+{"plan_seed": 100400599, "slice": "plain", "stage": "llm_verify", "variant": "main", "why": "The requested outcome is “spoke with,” not the specified value “connected.”"}
+{"plan_seed": 100400602, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome, “talked to,” differs from the expected outcome “connected.”"}
+{"plan_seed": 100400634, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the required outcome “connected”."}
+{"plan_seed": 100400640, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome, “spoke with,” differs from the expected outcome “connected.”"}
+{"plan_seed": 100400688, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome is “talked to,” not the required “connected.”"}
+{"plan_seed": 100400706, "slice": "multi_candidate", "stage": "llm_verify", "variant": "main", "why": "“Right now” specifies a time for the weather request, adding a temporal value beyond location and units."}
+{"plan_seed": 100400728, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The text specifies the outcome as “talked to,” not the planned value “connected.”"}
+{"plan_seed": 100400731, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “talked to” differs from the expected outcome “connected.”"}
+{"plan_seed": 100400740, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The text specifies the outcome as “talked to” rather than the planned “connected”."}
+{"plan_seed": 100400782, "slice": "optional_omitted", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the expected outcome “connected”."}
+{"plan_seed": 100400798, "slice": "relative_dates", "stage": "llm_verify", "variant": "main", "why": "The stated outcome “spoke with” differs from the required outcome “connected”."}
+{"plan_seed": 100400802, "slice": "lookalike_tools", "stage": "llm_verify", "variant": "main", "why": "The requested outcome “spoke with” differs from the required outcome “connected.”"}
+{"plan_seed": 100450089, "slice": "no_tool", "stage": "llm_verify", "variant": "shift", "why": "The text asks to book a table for eight at a specific time, making create_event clearly applicable."}
+{"plan_seed": 100450119, "slice": "optional_omitted", "stage": "llm_verify", "variant": "shift", "why": "The request to search internal documents makes search_docs equally suitable."}
+{"plan_seed": 100450168, "slice": "multi_candidate", "stage": "code_verify", "variant": "shift", "why": "correction order wrong: 'NOK' -> 'amerikanska dollar'"}
