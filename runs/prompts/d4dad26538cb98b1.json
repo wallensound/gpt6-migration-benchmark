@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Answer the QUESTION using only the CONTEXT. Return the requested value in plain text, in at most 15 words, or return exactly NOT_FOUND if the context does not state it for the exact entity asked about.\n\nGrounding:\n- Identify the company, person, or product named in the QUESTION and the attribute requested.\n- Use only a value stated for that entity and attribute. Similar names identify different entities; never use their values as substitutes.\n- A following sentence can state the value without repeating the name if it clearly refers to the target. Read through the end of the context before deciding the value is missing.\n- Do not guess, fill gaps, or use outside knowledge.\n\nOutput:\n- When found, give just the value, preserving its spelling or digits as written. Do not include other entities' values, explanations, quotations, or sources.\n- When absent, give NOT_FOUND with no punctuation or other text.\n- Do not use Markdown, ask questions, request clarification, or include a question mark.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
