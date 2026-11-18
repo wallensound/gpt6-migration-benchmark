@@ -1,0 +1,20 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one Swedish worked example showing that a later issue wins when the pair is covered by a tie-break.",
+    "reason": "leakage check failed (1 six-word, 0 answer hits)"
+  },
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the exact output contract and decision order before the label reference without changing the routing logic.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Condenses the label definitions and merges redundant output instructions while preserving all six pairwise overrides.",
+    "reason": "McNemar not significant (b=0, c=3, p=0.250); slice 'long' drops 8.3 points"
+  }
+]
