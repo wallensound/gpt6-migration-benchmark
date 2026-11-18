@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Separates mention discovery, name resolution and final validation so indirect mentions are collected before canonical names are chosen.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Presents the permitted name transformations in a compact lookup format and reinforces exact transcription.",
+    "reason": "McNemar not significant (b=1, c=0, p=1.000)"
+  }
+]

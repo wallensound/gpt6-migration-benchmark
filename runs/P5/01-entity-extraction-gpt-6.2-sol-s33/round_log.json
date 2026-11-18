@@ -1,0 +1,310 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "f038b0a89df341d6",
+    "dev_primary": 0.995,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "targeted_fix",
+      "settings_change",
+      "example_swap"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "other": 1
+      },
+      "by_slice": {
+        "german": 1
+      },
+      "patterns": [
+        {
+          "category": "other",
+          "count": 1,
+          "sample_causes": [
+            "Misspelled “Kimgera” as “Kimg era,” causing the expected company to be missing and an extra name to appear."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.9827586206896551,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Separates mention discovery, name resolution and final validation so indirect mentions are collected before canonical names are chosen.",
+        "prompt_hash": "1afb203e2ac026dd",
+        "prompt_chars": 1973,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds a character-level spelling check specifically to catch spaces inserted inside source name words.",
+        "prompt_hash": "e43c905300731fa1",
+        "prompt_chars": 2318,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enables Structured Outputs for the supported object contract without assuming schema enforcement can correct spelling.",
+        "prompt_hash": "213200ed922ed0ab",
+        "prompt_chars": 2220,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Uses one fresh German worked example to demonstrate exact copying of unfamiliar names while resolving domains and sibling products.",
+        "prompt_hash": "79fb0b2f83fe53dc",
+        "prompt_chars": 2637,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.995,
+    "seconds": 157,
+    "spent_phase": 9.1087292975
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "targeted_fix",
+      "example_swap",
+      "rewrite",
+      "restructure"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "other": 1
+      },
+      "by_slice": {
+        "german": 1
+      },
+      "patterns": [
+        {
+          "category": "other",
+          "count": 1,
+          "sample_causes": [
+            "Misspelled “Kimgera” as “Kimg era,” causing the expected company to be missing and an extra name to appear."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Adds a literal-copy check to the spelling rule to catch accidental spaces inside company names.",
+        "prompt_hash": "5aa376f7402be6c3",
+        "prompt_chars": 2790,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Uses a worked German example to demonstrate exact copying of unfamiliar names amid capitalized common nouns.",
+        "prompt_hash": "6845e29e3675814b",
+        "prompt_chars": 2700,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Presents the permitted name transformations in a compact lookup format and reinforces exact transcription.",
+        "prompt_hash": "c4fe9bae7e32e9ab",
+        "prompt_chars": 1858,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Front-loads the output and exact-copy requirements, then groups rules by direct and indirect evidence.",
+        "prompt_hash": "05056816a79b6b36",
+        "prompt_chars": 1916,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "rewrite",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.995,
+    "seconds": 195,
+    "spent_phase": 19.719558714999998
+  }
+]
