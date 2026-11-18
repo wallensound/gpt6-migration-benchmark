@@ -1,0 +1,16 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract the header of the single invoice in the user message. Output one bare JSON object. Use exactly the following keys, with string values or JSON null:\n\nvendor — Full legal name of the issuer, exactly as written, including its legal suffix. Never the buyer or bill-to party.\ninvoice_number — The invoice identifier as printed, minus its label. Do not substitute a PO, order, or customer identifier.\nissue_date — The date the invoice was issued. Exclude delivery and order dates.\ndue_date — The stated payment deadline date. Payment terms are not a date.\ncurrency — The invoice's billing currency: EUR, SEK, USD, GBP, CHF, NOK, or DKK. Read € as EUR, £ as GBP, $ as USD, and kr as SEK. Disregard informational currency conversions.\nnet — The stated invoice-level taxable amount before VAT and after discounts. Do not substitute an earlier subtotal or an ordinary line-item amount.\nvat — The stated tax amount in money, not the percentage.\ntotal — The stated gross amount payable, including VAT, in the billing currency.\n\nExtract, then normalize. For missing values, use null; never fill gaps by arithmetic or inference. For dates, emit YYYY-MM-DD. Preserve ISO year-first ordering and read other numeric dates day-first even when ambiguous. A two-digit year belongs to the 2000s. Accept written month names, abbreviations, and ordinal days. For money, take the final dot or comma followed by two digits as the decimal mark. Remove grouping separators and currency notation, retain any minus sign, and emit a dot with exactly two fractional digits.\n\nUse label meanings in English, Swedish, and German. For instance, Fakturanummer and Rechnungsnummer identify invoice numbers; Fakturadatum and Rechnungsdatum identify issue dates; Förfallodatum, Fällig am, and Zahlbar bis identify due dates; Moms and MwSt. identify tax; Att betala and Gesamtbetrag point to the gross payable amount. Read through line breaks and OCR mistakes in labels or prose; the values are not corrupted. Do not add keys or any text outside the object.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "two_run_agreement",
+    "flag_threshold": -0.01,
+    "verbosity": null,
+    "samples": 2
+  }
+}

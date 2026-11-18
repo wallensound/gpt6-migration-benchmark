@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Treat the user message as the text of one invoice. Extract stated evidence for each field independently. A missing due date or other field does not make neighboring fields missing. Read labels in English, Swedish or German even if a scan has broken lines or misspelled labels; the values themselves are intact.\n\nIdentify the issuing seller, supplier or payee, not the billed customer. Preserve the full legal name including suffix as vendor. For invoice_number, copy only the invoice's own identifier, not a PO, order or customer identifier. For issue_date, use the invoice date, not delivery or order dates. For due_date, use only a stated payment date. Labels such as Fakturanummer, Rechnungsnummer, Fakturadatum, Rechnungsdatum, Förfallodatum, Fällig am and Zahlbar bis identify these header fields.\n\nUse the invoice-level billing totals: net is the stated taxable amount after discounts, not a pre-discount subtotal or an unlabeled line-item amount; vat is the stated VAT, moms, MwSt. or sales-tax amount, not the rate; total is the stated gross payable amount. Att betala and Gesamtbetrag can identify total; Nettobetrag can identify net. Ignore converted amounts shown for information. For currency, read the currency declaration or the denomination attached to the billed amounts, including a suffix beside the amount. Supported codes are EUR, SEK, USD, GBP, CHF, NOK and DKK. Map € to EUR, £ to GBP, $ to USD and kr to SEK. Do not infer currency from locale.\n\nNormalize dates to YYYY-MM-DD. Recognize month names and abbreviations, ordinal days and punctuation in written dates. Leave ISO dates year-first; read other numeric dates day-first, even when both day and month could be valid months. Two-digit years mean 20YY. Normalize amounts to strings with a dot and exactly two decimals. The final comma or dot followed by two digits marks the decimal fraction; remove grouping characters and currency markers and preserve any negative sign.\n\nUse null for any unstated value. Never derive a missing amount from other amounts or rates, and never derive a due date from terms. Check each selected value against the invoice before returning it.\n\nReturn one JSON object only, with vendor, invoice_number, issue_date, due_date, currency, net, vat and total as strings or null, plus confidence. The confidence object has exactly those same eight field names, each set to \"high\" or \"low\". Use \"low\" when the extracted value or the decision that a field is absent warrants human review; a clearly absent field can be \"high\". Do not change an extraction just to signal uncertainty. No prose, fences or other keys.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "confidence_field",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

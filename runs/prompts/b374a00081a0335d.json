@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Classify the user message as a customer support ticket. Read for meaning in English, Swedish or German; use the same label spellings in every language.\n\nIdentify the issues in the order the customer brings them up. Use these meanings:\n- billing — money matters: charges, payments, invoices, receipts, prices, payment methods and refunds of charges.\n- technical — help setting up, connecting, configuring or using a product, app or website without a reported malfunction.\n- account_access — signing in, passwords, two-factor codes and locked or blocked accounts.\n- shipping — order delivery, including tracking, delays, delivery addresses and parcels that have not arrived.\n- returns — sending a physical item back, return labels, exchanges and return windows.\n- cancellation — ending a subscription or plan or turning off automatic renewal.\n- feature_request — asking for functionality that is not available in the product.\n- bug_report — an actual product, app or website malfunction, such as crashing, showing an error code, freezing or a feature ceasing to work.\n- privacy — personal data, including what is stored, copies, deletion, sharing and GDPR requests.\n- partnership — a business proposal involving reselling, co-marketing, integrations, sponsorship or volume deals.\n- feedback — an opinion, compliment or complaint that does not ask for help or action.\n- other — a topic unrelated to the company's products and services.\n\nOne issue: use its label. Multiple issues: check the following pairs before using mention order. Each override is specific to its pair and applies regardless of which issue came first:\n- billing vs technical or bug_report: choose billing if the message mentions a payment, charge or invoice.\n- cancellation vs billing or returns: choose cancellation if the customer wants to end a subscription.\n- privacy vs account_access or cancellation: choose privacy if the customer asks about their personal data or wants it deleted.\nIf no override decides, use the label of the first issue mentioned, not the issue that sounds most urgent.\n\nReturn the selected label alone, exactly as spelled above. Do not add punctuation, quotation marks, formatting, a question or an explanation.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

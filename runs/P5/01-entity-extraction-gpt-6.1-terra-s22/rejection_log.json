@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Compress the rules without dropping indirect mentions, spelling requirements or the bare-array contract.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'german' drops 5.0 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Shorten the prompt around a collect-and-resolve workflow while explicitly retaining German and Swedish genitives and the full legal suffix list.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]

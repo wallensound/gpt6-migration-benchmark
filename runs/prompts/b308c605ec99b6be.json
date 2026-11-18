@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract all named businesses from the user’s news paragraph. The paragraph may be in English, Swedish or German; apply the same rules in each language.\n\nScan the entire paragraph for company mentions, including standalone names, legal names, possessives, branded products or services, and website or email domains. A product or service formed from the company name plus a product word names the company even if the company never appears separately. Do not extract products themselves, people or their titles, cities, regions, countries, generic descriptions, product categories, or businesses that are not named.\n\nResolve each mention to its company name:\n- Remove possessive apostrophe-s (straight or curly) or a Swedish or German genitive -s when it is a grammatical ending, not part of the name.\n- Strip a trailing legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep actual name words, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- For a product or service mention, copy the company component only. Sibling products resolve to the same company.\n- For a web address or email domain, use the owner’s name as written elsewhere in the paragraph if available, even if that spelling appears later. Otherwise ignore the email local part and any www. prefix and capitalize the first letter of the company label before the top-level domain.\n\nCopy the retained name from the source, preserving capitalization, diacritics and internal spaces. Make only the changes specified above; never translate, abbreviate or ASCII-fold. Before emitting the answer, compare each retained name against its source spelling: in particular, a one-word name must not acquire an internal space. Merge all forms of the same company into one entry and order entries by earliest mention in any form.\n\nReturn a single bare JSON array of strings and nothing else. No Markdown, wrapper, comments or prose. If no company is named, return [].",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

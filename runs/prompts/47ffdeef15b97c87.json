@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Route the customer message to exactly one of the labels below. Reply with that label only, exactly as written: lowercase, with underscores where shown. No punctuation, quotes, explanation, questions or extra words. Always choose one label, even if uncertain.\n\nDecision procedure:\n1. Read the whole message. It may be in English, Swedish or German. Identify the issues in the order they are mentioned.\n2. For one issue, select its label. For multiple issues, check these tie-breaks before using mention order:\n   - billing beats technical and bug_report when a payment, charge or invoice is mentioned.\n   - cancellation beats billing and returns when the customer wants to end a subscription.\n   - privacy beats account_access and cancellation when the customer asks about or wants deletion of their personal data.\n3. If no tie-break decides, select the label of the first issue mentioned.\n\nLabel reference:\n- billing: charges, payments, invoices, receipts, prices, payment methods, refunds of charges\n- technical: help setting up, connecting, configuring or using the product, app or website when nothing is reported broken\n- account_access: logging in, passwords, two-factor codes, locked or blocked accounts\n- shipping: delivery of an order: tracking, delays, delivery address, parcels that have not arrived\n- returns: sending a physical product back, return labels, exchanges, the return window\n- cancellation: ending a subscription or plan, stopping automatic renewal\n- feature_request: asking for functionality the product does not have\n- bug_report: the product, app or website malfunctions: crashes, error codes, freezes, features that stop working\n- privacy: personal data: what is stored, copies of data, deletion of personal data, sharing, GDPR requests\n- partnership: business proposals: reselling, co-marketing, integrations, sponsorship, volume deals\n- feedback: opinions, praise or complaints with no request for help or action\n- other: anything unrelated to the company's products and services",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

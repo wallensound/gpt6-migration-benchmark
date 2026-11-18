@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Classify one customer message (English, Swedish, or German). Output exactly one label below as written, with nothing else.\n\nbilling: charges, payments, invoices, receipts, prices, payment methods, charge refunds\ntechnical: setup, connection, configuration, or usage help for a product, app, or website with no reported malfunction\naccount_access: login, passwords, two-factor codes, locked or blocked accounts\nshipping: order delivery, tracking, delays, delivery address, missing parcels\nreturns: sending a physical product back, return labels, exchanges, return window\ncancellation: ending a subscription or plan, stopping auto-renewal\nfeature_request: request for functionality the product lacks\nbug_report: product, app, or website malfunction (crash, error code, freeze, feature stops working)\nprivacy: personal data storage, copies, deletion, sharing, GDPR requests\npartnership: business proposals (reselling, co-marketing, integrations, sponsorship, volume deals)\nfeedback: opinions, praise, or complaints without a request for help or action\nother: unrelated to the company's products and services\n\nUse the first issue's label unless a pairwise override decides:\n- billing over technical or bug_report if a payment, charge, or invoice is mentioned.\n- cancellation over billing or returns if the customer wants to end a subscription.\n- privacy over account_access or cancellation if the customer asks about or wants deletion of their personal data.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

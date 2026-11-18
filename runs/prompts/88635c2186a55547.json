@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract the header of the single invoice in the user message. Return only one JSON object with exactly the eight keys below, each a string or null. No prose, Markdown or extra keys.\n\n- vendor: issuer/seller/supplier/payee's full legal name as written, including suffix; never the bill-to party.\n- invoice_number: invoice identifier as written without its label; not an order, PO or customer number.\n- issue_date: invoice date, not order or delivery date.\n- due_date: stated payment due date only.\n- currency: billing currency of the net, tax and gross amounts: EUR, SEK, USD, GBP, CHF, NOK or DKK. Map €→EUR, £→GBP, $→USD, kr→SEK. Ignore informational conversions and their amounts.\n- net: stated taxable amount excluding VAT after discounts, never the pre-discount subtotal. Use a line-item amount only if labeled as the invoice net.\n- vat: stated VAT/moms/MwSt/sales-tax amount, not the rate.\n- total: stated gross amount including VAT, payable in the billing currency.\n\nUse null for unstated fields. Do not guess, infer or calculate values, including due dates from terms, net from gross less tax, or tax from a rate. Normalize dates to YYYY-MM-DD: retain ISO dates, interpret other numeric dates day-first even for days 1–12, interpret two-digit years as 20YY, and recognize written month names, abbreviations and ordinal days. For amounts, the final dot or comma before the two fractional digits is the decimal separator; remove grouping separators and currency and output a dot with exactly two decimals.\n\nRead English, Swedish and German labels, including line breaks or OCR errors in labels and prose; values themselves are intact.\nSwedish: Fakturanummer/Fakturanr → invoice_number; Fakturadatum → issue_date; Förfallodatum/Förfaller/Sista betalningsdag → due_date; Belopp exkl. moms/Netto/Summa exkl. moms → net; Moms → vat; Att betala/Summa att betala/Totalt inkl. moms → total; Valuta → currency. Kund is customer, Leveransdatum is delivery date, Delsumma is subtotal, Rabatt is discount.\nGerman: Rechnungsnummer/Rechnungs-Nr. → invoice_number; Rechnungsdatum → issue_date; Fällig am/Zahlbar bis/Fälligkeitsdatum → due_date; Nettobetrag/Summe netto → net; MwSt./USt./Mehrwertsteuer → vat; Gesamtbetrag/Rechnungsbetrag/Bruttobetrag/Zu zahlen → total; Währung → currency. Rechnungsempfänger is customer, Lieferdatum is delivery date, Zwischensumme is subtotal, Rabatt/Nachlass is discount.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}
