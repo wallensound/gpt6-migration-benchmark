@@ -1,0 +1,329 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "b83a0e2539222e42",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "example_swap",
+      "targeted_fix",
+      "simplify",
+      "restructure"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "missed_value": 1
+      },
+      "by_slice": {
+        "missing_field": 1
+      },
+      "patterns": [
+        {
+          "category": "missed_value",
+          "count": 1,
+          "sample_causes": [
+            "The model returned null for currency even though the invoice states DKK."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.9833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "One worked example shows that a billing code attached to the totals is stated currency even without a currency header.",
+        "prompt_hash": "e51ad1c7070e07dd",
+        "prompt_chars": 2377,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "The currency rule explicitly recognizes DKK beside billed amounts without expanding the allowed currency set.",
+        "prompt_hash": "183a4b456c5fa593",
+        "prompt_chars": 3296,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Combines identification and normalization rules while retaining the missing-value and noisy-input safeguards.",
+        "prompt_hash": "a6012d19101fe301",
+        "prompt_chars": 1448,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the JSON contract first, then separates source selection from value normalization.",
+        "prompt_hash": "322f76ddfb912b7e",
+        "prompt_chars": 2097,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "b83a0e2539222e42",
+    "dev_primary_after": 1.0,
+    "seconds": 133,
+    "spent_phase": 5.832549655
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "restructure",
+      "rewrite",
+      "targeted_fix"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "missed_value": 1
+      },
+      "by_slice": {
+        "missing_field": 1
+      },
+      "patterns": [
+        {
+          "category": "missed_value",
+          "count": 1,
+          "sample_causes": [
+            "The model returned null for currency despite the invoice explicitly stating DKK."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enable two-run agreement to flag unstable fields without changing the extraction prompt or the first run's output.",
+        "prompt_hash": "66b3cd85ea47a95e",
+        "prompt_chars": 3088,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "two_run_agreement",
+          "flag_threshold": -0.01,
+          "verbosity": null,
+          "samples": 2
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Put the exact output contract first, then separate field selection from normalization and label lookup.",
+        "prompt_hash": "6b7c6c55f9a0b2b5",
+        "prompt_chars": 2579,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Use an evidence-first extraction sequence that resolves party roles, document identifiers and billing amounts before formatting.",
+        "prompt_hash": "330cca2182d14626",
+        "prompt_chars": 2059,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=3, p=0.250)",
+            "slice 'mixed_currencies' drops 3.7 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 3,
+            "p_value": 0.25
+          },
+          "worst_slice_drop": -0.03703703703703709,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Check amount suffixes and prefixes before returning null for currency; the reported synthetic expected code is outside the specification.",
+        "prompt_hash": "1cb5758cb07a2125",
+        "prompt_chars": 3345,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "flag_method": "none",
+          "flag_threshold": -0.01,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "rewrite",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=3, p=0.250)",
+        "slice 'mixed_currencies' drops 3.7 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 3,
+        "p_value": 0.25
+      },
+      "worst_slice_drop": -0.03703703703703709,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "b83a0e2539222e42",
+    "dev_primary_after": 1.0,
+    "seconds": 206,
+    "spent_phase": 16.5990648275
+  }
+]
