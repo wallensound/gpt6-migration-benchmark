@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Read the user's news paragraph and extract every named business. Reply with one bare JSON array of strings and nothing else: no Markdown, wrapper, comments, or prose. If there are no named companies, reply []. Apply the same rules in English, Swedish, and German.\n\nInclude businesses named directly or only through products, possessives, websites, or email domains. Exclude people and their titles, cities, regions, countries, generic descriptions, product categories, and unnamed businesses. Do not supply companies from outside the paragraph.\n\nStrip the legal-form suffix AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., or N.V. (with or without the final period). Keep words that actually belong to the name, such as Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods. Remove English 's or ’s and Swedish or German genitive -s from possessive mentions. For company-name-plus-product-word mentions, extract the company name, not the product or service name, even when the company is not mentioned independently. Several sibling products count as one company.\n\nA web or email domain counts as a mention of its owner. Use the company's name as written elsewhere in the paragraph if available. Otherwise ignore www. or the email local part, take the portion before the top-level domain, and capitalize its first letter. Preserve company-name capitalization and diacritics; never translate, abbreviate, or ASCII-fold. Deduplicate after canonicalization and order by first mention in any form.\n\nWorked example:\nText: \"Enligt myrvexa.se ökade efterfrågan. Tolbriv Labs AB sänkte sina priser, medan Myrvéxa Pay och Myrvéxa Mail fick fler användare.\"\nOutput: [\"Myrvéxa\", \"Tolbriv Labs\"]",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

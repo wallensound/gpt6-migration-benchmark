@@ -1,0 +1,324 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "9174ee512a6591d1",
+    "dev_primary": 0.945,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "settings_change",
+      "rewrite",
+      "example_swap",
+      "simplify"
+    ],
+    "train_primary": 0.9416666666666667,
+    "failure_report": {
+      "counts": {
+        "wrong_label": 7
+      },
+      "by_slice": {
+        "swedish": 2,
+        "multi_issue": 4,
+        "german": 1
+      },
+      "patterns": [
+        {
+          "category": "wrong_label",
+          "count": 7,
+          "sample_causes": [
+            "It chose privacy for the second issue, but the first issue is a feature request and no tie-break rule overrides it.",
+            "It chose cancellation, but the first issue is a thermostat malfunction and no tie-break rule overrides bug_report.",
+            "It chose privacy, but the feature request appears first and no tie-break rule overrides it.",
+            "It chose privacy for the later data-copy request instead of technical for the first issue, setting up a heating schedule.",
+            "It chose shipping for the later delivery issue instead of bug_report for the first issue."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9333333333333333,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Test whether low verbosity improves exact-label output without changing the routing instructions.",
+        "prompt_hash": "e20536009487c6ad",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Make the first issue the default and limit overrides to explicitly listed pairs in all three languages.",
+        "prompt_hash": "0c9086c8fea4e171",
+        "prompt_chars": 2012,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9333333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Add one Swedish example showing that a later privacy request does not override an unlisted pair.",
+        "prompt_hash": "ee2f65bdf23050b6",
+        "prompt_chars": 2233,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": false,
+          "ngram_hits": 3,
+          "answer_hits": 0
+        },
+        "status": "rejected: leakage"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Compress the instructions while keeping the first-issue default and all six conditional overrides explicit.",
+        "prompt_hash": "6e8bdc7dc19109b4",
+        "prompt_chars": 1530,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=3, p=0.250)",
+            "slice 'multi_issue' drops 12.5 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 3,
+            "p_value": 0.25
+          },
+          "worst_slice_drop": -0.125,
+          "validity": 1.0,
+          "dev_primary": 0.93,
+          "dev_primary_current": 0.945
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=3, p=0.250)",
+        "slice 'multi_issue' drops 12.5 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 3,
+        "p_value": 0.25
+      },
+      "worst_slice_drop": -0.125,
+      "validity": 1.0,
+      "dev_primary": 0.93,
+      "dev_primary_current": 0.945
+    },
+    "accepted": false,
+    "prompt_hash_after": "9174ee512a6591d1",
+    "dev_primary_after": 0.945,
+    "seconds": 66,
+    "spent_phase": 2.13702094
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "settings_change",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 0.9416666666666667,
+    "failure_report": {
+      "counts": {
+        "wrong_label": 7
+      },
+      "by_slice": {
+        "swedish": 2,
+        "multi_issue": 4,
+        "german": 1
+      },
+      "patterns": [
+        {
+          "category": "wrong_label",
+          "count": 7,
+          "sample_causes": [
+            "It chose privacy for the second issue, but the first issue is a feature request and no tie-break rule overrides it.",
+            "It chose cancellation, but the first issue is a thermostat malfunction and no tie-break rule overrides bug_report.",
+            "It chose privacy, but the feature request appears first and no tie-break rule overrides it.",
+            "It chose privacy for the later data-copy request instead of technical for the first issue, setting up a heating schedule.",
+            "It chose shipping for the later delivery issue instead of bug_report for the first issue."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.95,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "One invented German example shows that cancellation does not override an earlier malfunction.",
+        "prompt_hash": "4df0bff204bb9578",
+        "prompt_chars": 2171,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Set verbosity to low to test the setting independently while keeping the routing instructions unchanged.",
+        "prompt_hash": "e20536009487c6ad",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'multi_issue' drops 4.2 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.04166666666666674,
+          "validity": 1.0,
+          "dev_primary": 0.94,
+          "dev_primary_current": 0.945
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Make first mention the default and require an exact pair match plus its stated condition before overriding it.",
+        "prompt_hash": "449ecb74c0ae4d80",
+        "prompt_chars": 2063,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9333333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Move the output contract and routing rules ahead of the label definitions without changing the decision criteria.",
+        "prompt_hash": "75cc5fb0f0d4bcaa",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'multi_issue' drops 4.2 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.04166666666666674,
+      "validity": 1.0,
+      "dev_primary": 0.94,
+      "dev_primary_current": 0.945
+    },
+    "accepted": false,
+    "prompt_hash_after": "9174ee512a6591d1",
+    "dev_primary_after": 0.945,
+    "seconds": 192,
+    "spent_phase": 11.4816712075
+  }
+]

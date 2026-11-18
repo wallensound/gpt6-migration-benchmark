@@ -1,0 +1,20 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Add one Swedish example showing that a later privacy request does not override an unlisted pair.",
+    "reason": "leakage check failed (3 six-word, 0 answer hits)"
+  },
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Compress the instructions while keeping the first-issue default and all six conditional overrides explicit.",
+    "reason": "McNemar not significant (b=0, c=3, p=0.250); slice 'multi_issue' drops 12.5 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Set verbosity to low to test the setting independently while keeping the routing instructions unchanged.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'multi_issue' drops 4.2 points"
+  }
+]

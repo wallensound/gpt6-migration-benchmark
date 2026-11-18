@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract every company named in the user's news paragraph. Return only a bare JSON array of canonical company-name strings, with no wrapper, Markdown, comments, or prose. If no company is named, return [].\n\nFind mentions across the entire paragraph. A named business counts whether mentioned directly, with a legal suffix, as a possessive, through a named product or service, or through its web or email domain. People and their titles, cities, regions, countries, product categories, generic descriptions, and unnamed businesses do not count. Do not add businesses from outside the text.\n\nResolve each mention to its company name:\n- Remove English possessive endings ('s or ’s) and Swedish or German genitive -s when it is a possessive ending, not part of the name.\n- Strip a trailing legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep actual name words, including Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods.\n- A product or service formed from a company name plus a product word names the parent company, even if that company is not separately named. Return the company, not the product. Sibling products name the same company.\n- A website or email domain names its owner. Use the owner's canonical spelling from elsewhere in the paragraph when available. Otherwise take the domain portion before the top-level domain, ignoring www. and any email local part, and capitalize its first letter.\n\nApply these rules unchanged to English, Swedish, and German. Preserve the name's capitalization and diacritics; do not translate, abbreviate, or ASCII-fold it. Merge all mentions of the same company and list each company once, at the position of its first mention in any form.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
