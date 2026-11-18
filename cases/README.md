@@ -113,3 +113,34 @@ All commands run from the repo root in Git Bash. `make` lives at
 - Do not commit; the coordinator commits.
 - Every model call goes through the harness commands above (no direct API calls).
 - Keep spend modest: data build ~ $8-15 per case, pilots and calibration a few dollars.
+
+## Bring your own data (no synthetic generation)
+
+If you already have real examples with known-good answers, you can skip the plan -> generate -> verify ->
+label steps entirely.
+
+1. **Make the case folder.** Copy `cases/_template-byod/` to `cases/<nn>-<name>/` (e.g. `cases/09-my-task/`).
+2. **Describe the task.** Fill in `spec.md` (what a correct answer is), paste your current production prompt
+   into `legacy_prompt.md`, and set the model and settings it runs on today in `legacy_config.yaml`.
+3. **Check the scorer.** The template's `score()` does exact text match, or JSON equality when the expected
+   answer is JSON. Edit it only if "correct" needs looser rules (case, dates, numbers), and add a few
+   fixtures to `tests/test_case.py`.
+4. **Put your examples in a file.** Use CSV with a header, or JSONL, with one example per row:
+
+   | column | required | meaning |
+   | --- | --- | --- |
+   | `input` | yes | what the model receives (the user message) |
+   | `expected` | yes | the known-good answer; JSON such as `{"total": "12.50"}` or `["Acme"]` is parsed |
+   | `slice` | no | a group name (e.g. `swedish`, `long`, `edge_case`) for per-slice scores and stratified splits |
+   | `id` | no | your own id, kept as `source_id` |
+   | anything else | no | copied onto the item; a `context` column is appended to the user message |
+
+5. **Import.** Run `make import CASE=09 FILE=my_examples.csv`. Optionally add `SHIFT=newer_examples.csv`
+   for a robustness set, such as later or harder examples the prompt was never tuned on.
+
+   The import dedupes, splits (train 120 / dev 200 / test 300 when there are enough rows, otherwise the same
+   proportions with at least ~110 rows), seals test and shift, and writes the hashes, stats and leakage index.
+
+6. **Continue as for any case.** Run `make calibrate CASE=09`, then `calibrate-dev`, `freeze`, `sweep`,
+   `loop` and `final`. The same rules apply: never read `data/sealed/`, and never edit the spec or scorer
+   after importing; a fix means a new dataset version (`VERSION=2`).

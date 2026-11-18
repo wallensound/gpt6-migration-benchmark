@@ -80,6 +80,8 @@ async def run_final(cases: str | None = None, only: str | None = None) -> dict:
             continue
         if only and only not in eid:
             continue
+        if not splits[cfg["version"]][split]:
+            continue  # imported datasets may have no shift set
         try:
             ev = await evaluate(runner, case, cfg["setup"], splits[cfg["version"]][split], repeat=rep, eval_id=eid)
         except BudgetExceeded as e:

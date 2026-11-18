@@ -1,0 +1,8 @@
+# The setup your prompt runs on today. The model name must exist in config/models.yaml.
+model: gpt-5.6-sol
+api: chat            # chat (Chat Completions) or responses
+effort: none
+settings:
+  temperature: 0
+  max_output_tokens: null
+  structured_outputs: false

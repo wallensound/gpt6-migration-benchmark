@@ -7,7 +7,7 @@ VERSION ?= 1
 N ?= 20
 CASES := 01 03 06 02 05 07 04 08
 
-.PHONY: all sweeps loops dryrun setup check-models entities test pilot pilot-eval data calibrate calibrate-dev freeze sweep loop loops final report reproduce status
+.PHONY: import all sweeps loops dryrun setup check-models entities test pilot pilot-eval data calibrate calibrate-dev freeze sweep loop loops final report reproduce status
 
 setup:            ## environment, pinned dependencies, and a check that the API keys work
 	uv sync --frozen
@@ -30,6 +30,9 @@ pilot-eval:
 
 data:             ## build, verify and seal one case
 	$(PY) -m harness.cli data $(CASE) --version $(VERSION)
+
+import:           ## bring your own examples instead of generating: make import CASE=09 FILE=my.csv [SHIFT=later.csv]
+	$(PY) -m harness.cli import $(CASE) --file $(FILE) $(if $(SHIFT),--shift-file $(SHIFT),) --version $(VERSION)
 
 calibrate:        ## one tuning round of the legacy prompt on train (source model)
 	$(PY) -m harness.cli calibrate $(CASE) --split train

@@ -58,6 +58,13 @@ and `runs/protocol_lock.json` aside first (about $200 at list prices with an emp
 
 Results: `REPORT.md` (numbers and charts), `docs/writeup.md` (the write-up).
 
+## Use it on your own task
+
+Have real examples with known-good answers? Copy `cases/_template-byod/`, paste in your prompt, and run
+`make import CASE=09 FILE=my_examples.csv` (CSV or JSONL with `input` and `expected` columns). Then run the
+usual `calibrate`, `freeze`, `sweep`, `loop` and `final` steps. See "Bring your own data" in
+`cases/README.md`.
+
 Responses are cached by a hash of model, API, request and repeat index (`runs/state.sqlite`, not committed),
 so a rerun with a warm cache costs nothing; `make reproduce` in a fresh clone starts from an empty cache.
 

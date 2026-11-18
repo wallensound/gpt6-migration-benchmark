@@ -55,6 +55,11 @@ def cmd_data(a):
     _print(asyncio.run(build(a.case, version=a.version, gen_seed=a.gen_seed, phase=a.phase)))
 
 
+def cmd_import(a):
+    from .byod import import_examples
+    _print(import_examples(a.case, a.file, shift_file=a.shift_file, version=a.version))
+
+
 def cmd_pilot_eval(a):
     """Run the legacy prompt on pilot items (never part of any split) to sanity-check spec, scorer and prompt."""
     from . import data
@@ -121,6 +126,9 @@ def main(argv=None):
     s = sub.add_parser("pilot-eval"); s.add_argument("case"); s.add_argument("--show", type=int, default=15); s.set_defaults(f=cmd_pilot_eval)
     s = sub.add_parser("data"); s.add_argument("case"); s.add_argument("--version", type=int, default=1)
     s.add_argument("--gen-seed", type=int, default=None); s.add_argument("--phase", default="P2"); s.set_defaults(f=cmd_data)
+    s = sub.add_parser("import", help="bring your own examples (CSV/JSONL) instead of generating data")
+    s.add_argument("case"); s.add_argument("--file", required=True); s.add_argument("--shift-file", default=None)
+    s.add_argument("--version", type=int, default=1); s.set_defaults(f=cmd_import)
     s = sub.add_parser("calibrate"); s.add_argument("case"); s.add_argument("--split", default="train")
     s.add_argument("--freeze", action="store_true"); s.set_defaults(f=cmd_calibrate)
     s = sub.add_parser("sweep"); s.add_argument("case"); s.set_defaults(f=cmd_sweep)
