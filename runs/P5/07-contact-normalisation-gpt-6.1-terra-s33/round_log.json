@@ -1,0 +1,462 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "94d21e2d9e5df067",
+    "dev_primary": 0.555,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "simplify",
+      "example_swap",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 0.5833333333333334,
+    "failure_report": {
+      "counts": {
+        "dropped_value": 46,
+        "phone_wrong": 2,
+        "country_wrong": 1,
+        "email_wrong": 1
+      },
+      "by_slice": {
+        "unicode_names": 11,
+        "plain": 7,
+        "swapped_fields": 7,
+        "international_phone": 7,
+        "precedence_conflict": 11,
+        "missing_fields": 7
+      },
+      "patterns": [
+        {
+          "category": "dropped_value",
+          "count": 46,
+          "sample_causes": [
+            "The model dropped the email address instead of extracting omer@gmail.com from the mailto: value.",
+            "The model returned null for the name instead of normalizing the provided name to “Jean-Luc Bréjerason”.",
+            "It omitted the country and phone instead of normalizing Austria to AT and formatting the national number as +436641356605.",
+            "The model dropped the provided phone number and company instead of normalizing them.",
+            "The model dropped the email address instead of normalizing it to lisa@proton.me."
+          ],
+          "n_examples": 0
+        },
+        {
+          "category": "phone_wrong",
+          "count": 2,
+          "sample_causes": [
+            "The model dropped the valid international phone number instead of normalizing it to +353837402047.",
+            "The model dropped the valid international phone number instead of normalizing it to +19058416468."
+          ],
+          "n_examples": 0
+        },
+        {
+          "category": "country_wrong",
+          "count": 1,
+          "sample_causes": [
+            "The model returned null for the country instead of normalizing “united states” to “US”."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 0.6,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Consolidates overlapping instructions and states the missing-country exception where the country is resolved.",
+        "prompt_hash": "94e0189b0d3e8695",
+        "prompt_chars": 3125,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing how to retain values across swapped labels, wrappers, Unicode, and a missing country.",
+        "prompt_hash": "056f50739c03b7e6",
+        "prompt_chars": 3606,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Strengthens the missing-value rule with a final check that prevents present record values from being dropped.",
+        "prompt_hash": "7676b108598a2e48",
+        "prompt_chars": 3851,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the output contract first and orders the workflow so field assignment and country resolution precede final formatting.",
+        "prompt_hash": "9c5a0da500818cf0",
+        "prompt_chars": 3569,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "accepted",
+        "dev": {
+          "accept": true,
+          "reasons": [],
+          "mcnemar": {
+            "b": 87,
+            "c": 1,
+            "p_value": 5.751490196657771e-25
+          },
+          "worst_slice_drop": 0.2727272727272727,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 0.555
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": true,
+      "reasons": [],
+      "mcnemar": {
+        "b": 87,
+        "c": 1,
+        "p_value": 5.751490196657771e-25
+      },
+      "worst_slice_drop": 0.2727272727272727,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 0.555
+    },
+    "accepted": true,
+    "prompt_hash_after": "9c5a0da500818cf0",
+    "dev_primary_after": 0.985,
+    "seconds": 210,
+    "spent_phase": 31.1897899125
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "rewrite",
+      "restructure",
+      "targeted_fix"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one synthetic example covering swapped labels, an international URI, and the missing-country override without changing the rules.",
+        "prompt_hash": "efaa00d85fbea9db",
+        "prompt_chars": 3918,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Recasts the specification as a short processing pipeline with an explicit country–phone decision table in prose.",
+        "prompt_hash": "d547d4ecaec918b7",
+        "prompt_chars": 3365,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=1, p=1.000)",
+            "slice 'precedence_conflict' drops 2.9 points"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.02941176470588236,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 0.985
+        }
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Groups assignment and formatting for name, company and email before resolving the dependent phone and country fields.",
+        "prompt_hash": "e107ab2b5a988c93",
+        "prompt_chars": 3567,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed training failures, clarifies only the international-prefix handling most exposed by the shift formats.",
+        "prompt_hash": "012e3b61be46b08b",
+        "prompt_chars": 3721,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "rewrite",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=1, p=1.000)",
+        "slice 'precedence_conflict' drops 2.9 points"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.02941176470588236,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "9c5a0da500818cf0",
+    "dev_primary_after": 0.985,
+    "seconds": 154,
+    "spent_phase": 36.570265775
+  },
+  {
+    "round": 3,
+    "kinds": [
+      "rewrite",
+      "simplify",
+      "targeted_fix",
+      "example_swap"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Organises the rules around field ownership, with separate instructions for what an international phone can change and what it must preserve.",
+        "prompt_hash": "a7348e7741c40e40",
+        "prompt_chars": 3356,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Compresses the instructions into a compact extraction rule and one normalisation bullet per field.",
+        "prompt_hash": "be34a07617bd9fb2",
+        "prompt_chars": 2780,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=2, c=0, p=0.500)"
+          ],
+          "mcnemar": {
+            "b": 2,
+            "c": 0,
+            "p_value": 0.5
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 0.985
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed training failure, makes only the international-prefix check more explicit for the documented parenthesised shift format.",
+        "prompt_hash": "06b0e6adfe2aa320",
+        "prompt_chars": 3698,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example that combines swapped labels, a parenthesised international prefix and country inference from a placeholder.",
+        "prompt_hash": "72f030ab765904d6",
+        "prompt_chars": 3963,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=2, c=0, p=0.500)"
+      ],
+      "mcnemar": {
+        "b": 2,
+        "c": 0,
+        "p_value": 0.5
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 0.985
+    },
+    "accepted": false,
+    "prompt_hash_after": "9c5a0da500818cf0",
+    "dev_primary_after": 0.985,
+    "seconds": 42,
+    "spent_phase": 37.0744843875
+  }
+]

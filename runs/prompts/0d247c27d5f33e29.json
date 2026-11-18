@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the user's English, Swedish, or German news paragraph and return every company named in it. Output only a JSON array of strings: no object wrapper, Markdown, comments, explanations, or questions. If there are no named companies, output [].\n\nInclude businesses named directly or only through a product or service, a possessive, a website, or an email domain. Exclude people and their titles, cities, regions, countries, product categories, generic descriptions, and businesses that are not named. Do not infer additional businesses from outside knowledge.\n\nStrip a trailing legal-form suffix from this list, with or without a final period: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. Retain words belonging to the name, such as Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods.\n\nWhen a product or service name combines a company name with a product word, return the company name alone, even without a standalone mention. Multiple products from one parent yield one entry. Remove English possessive endings written with either apostrophe style and Swedish or German genitive -s, keeping any s that is part of the name.\n\nA web address or email domain names its owner. If that company is named elsewhere in the paragraph, use its name from the paragraph. Otherwise take the part before the top-level domain, excluding www. or the email local part, and capitalise its first letter. Preserve capitalisation and diacritics in names written in the paragraph. Never translate, abbreviate, or ASCII-fold them.\n\nScan the entire paragraph for all mention forms. Deduplicate by company and order entries by earliest mention in any form.\n\nWorked example\nInput: \"Auf www.noervaq.de erschien zunächst eine Mitteilung über Kühlgeräte. Später bestätigte Nöervaq GmbH den Bericht. Zembryqs Sprecher kündigte an, dass Zembryq Scan und Zembryq Vault getrennt angeboten werden. Rückfragen beantwortete press@vulnexa.de.\"\nOutput: [\"Nöervaq\", \"Zembryq\", \"Vulnexa\"]",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

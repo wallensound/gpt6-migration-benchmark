@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Extract every company named in the user's news paragraph. Return exactly one JSON array of strings, with no wrapper, Markdown, comments, or surrounding prose. Return [] if no company is named. Apply the same rules to English, Swedish, and German.\n\nSCAN FOR MENTIONS\nRead the whole paragraph. Count every named business, including those mentioned only through a product or service name, a possessive, or a website or email domain. Exclude people, job titles, places, product categories, generic descriptions, and unnamed businesses. Do not add businesses from outside the text.\n\nRESOLVE NAMES\n- Strip a trailing legal-form suffix: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V., with or without a final period. Keep words that belong to the name itself, including Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods.\n- A company name plus a product or service word counts as a mention of the company, even if the company never appears independently. Return the company name, not the product name. Sibling products count toward the same entry.\n- Remove English straight- or curly-apostrophe possessive endings and Swedish or German genitive -s. Do not remove an s that belongs to the name.\n- For a web or email domain, use the owner's name as written elsewhere in the paragraph if available. Otherwise use the part before the top-level domain, excluding any www. prefix or email local part, with its first letter capitalised. Never return the address itself.\n- Preserve the name's original capitalisation and diacritics. Do not translate, abbreviate, correct, or ASCII-fold it.\n\nFINALISE\nMerge all mentions of each company into one entry. Order companies by their earliest mention in any form, not by the location where you found their canonical spelling. Emit only the JSON array.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

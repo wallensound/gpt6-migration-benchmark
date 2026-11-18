@@ -1,0 +1,14 @@
+[
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Recasts the specification as a short processing pipeline with an explicit country–phone decision table in prose.",
+    "reason": "McNemar not significant (b=1, c=1, p=1.000); slice 'precedence_conflict' drops 2.9 points"
+  },
+  {
+    "round": 3,
+    "edit_kind": "simplify",
+    "rationale": "Compresses the instructions into a compact extraction rule and one normalisation bullet per field.",
+    "reason": "McNemar not significant (b=2, c=0, p=0.500)"
+  }
+]
