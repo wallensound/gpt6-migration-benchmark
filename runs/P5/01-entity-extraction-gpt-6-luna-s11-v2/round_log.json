@@ -1,0 +1,288 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "f038b0a89df341d6",
+    "dev_primary": 0.995,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "example_swap",
+      "targeted_fix",
+      "rewrite"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Organizes extraction into a full-paragraph scan, name resolution, and final output check so early mentions are not lost when their canonical spelling appears later.",
+        "prompt_hash": "bb3d4795229976a7",
+        "prompt_chars": 1836,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9473684210526315,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example that demonstrates a domain preceding the canonical spelling, sibling products, a genitive, and a domain-only company.",
+        "prompt_hash": "0d247c27d5f33e29",
+        "prompt_chars": 2008,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9824561403508771,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=3, p=0.625)",
+            "slice 'distractors' drops 6.7 points"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 3,
+            "p_value": 0.625
+          },
+          "worst_slice_drop": -0.06666666666666665,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed training failures, clarifies only the domain-resolution rule to guard against premature fallback on longer inputs.",
+        "prompt_hash": "9b188a73257be9e1",
+        "prompt_chars": 2199,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9824561403508771,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses a compact mention-to-company procedure and enables Structured Outputs to enforce the permitted object shape.",
+        "prompt_hash": "aef6d9c37eaac29d",
+        "prompt_chars": 1793,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9473684210526315,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "example_swap",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=3, p=0.625)",
+        "slice 'distractors' drops 6.7 points"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 3,
+        "p_value": 0.625
+      },
+      "worst_slice_drop": -0.06666666666666665,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.995,
+    "seconds": 25,
+    "spent_phase": 37.0767954875
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "simplify",
+      "example_swap",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Combines related rules and removes repeated reminders while preserving the extraction and output requirements.",
+        "prompt_hash": "86b75b26864a2241",
+        "prompt_chars": 1530,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9649122807017544,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one Swedish distractor example that contrasts a permanent name word with a legal suffix while retaining equivalent baseline examples.",
+        "prompt_hash": "9f853e66be8943ae",
+        "prompt_chars": 4589,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9824561403508771,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Defines the evidence that establishes a company mention, keeping permanent name words distinct from product words and legal forms.",
+        "prompt_hash": "3ec78dc068510485",
+        "prompt_chars": 1660,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9824561403508771,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=12, p=0.000)",
+            "slice 'distractors' drops 20.0 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 12,
+            "p_value": 0.00048828125
+          },
+          "worst_slice_drop": -0.19999999999999996,
+          "validity": 1.0,
+          "dev_primary": 0.935,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enables Structured Outputs to enforce the permitted companies object while leaving the extraction behavior unchanged.",
+        "prompt_hash": "372d5117c94ca042",
+        "prompt_chars": 2610,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9824561403508771,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "rewrite",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=12, p=0.000)",
+        "slice 'distractors' drops 20.0 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 12,
+        "p_value": 0.00048828125
+      },
+      "worst_slice_drop": -0.19999999999999996,
+      "validity": 1.0,
+      "dev_primary": 0.935,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 0.995,
+    "seconds": 23,
+    "spent_phase": 37.1332163875
+  }
+]

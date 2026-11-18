@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user supplies a single English, Swedish or German news paragraph. Return the canonical names of all businesses named in it. Do not list people, titles, cities, regions, countries, product categories, generic descriptions or unnamed businesses.\n\nA company can be named in any of these forms:\n- A business name, with or without a legal form. Remove only the trailing legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. (with or without a final period). Keep all words that belong to the name itself, including Group, Systems, Labs, Partners, Works, Freight, Energy and Foods.\n- A possessive business name. Remove English 's or ’s, or the genitive -s in Swedish or German. Keep letters that belong to the name itself.\n- A product or service name formed from a company name plus a product word. Extract just the company name, even when the company appears only in product mentions. Do not list products; sibling products identify the same company.\n- A website or email domain. This names the owner. If another mention anywhere in the paragraph gives the owner's name, use that spelling after applying the rules above. Otherwise, capitalize the first letter of the domain label immediately before the top-level domain and use that label alone, excluding any www. prefix or email username.\n\nPreserve company-name capitalization and diacritics. Do not translate, abbreviate or ASCII-fold. List each company only once, at the position determined by its earliest mention in any form.\n\nReply with exactly one JSON array of strings, or [] if there are none. No object wrapper, Markdown fences, comments or other text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

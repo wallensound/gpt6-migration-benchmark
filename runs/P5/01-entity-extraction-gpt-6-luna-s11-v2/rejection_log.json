@@ -1,0 +1,32 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Organizes extraction into a full-paragraph scan, name resolution, and final output check so early mentions are not lost when their canonical spelling appears later.",
+    "reason": "screening 94.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Uses a compact mention-to-company procedure and enables Structured Outputs to enforce the permitted object shape.",
+    "reason": "screening 94.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one worked example that demonstrates a domain preceding the canonical spelling, sibling products, a genitive, and a domain-only company.",
+    "reason": "McNemar not significant (b=1, c=3, p=0.625); slice 'distractors' drops 6.7 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Combines related rules and removes repeated reminders while preserving the extraction and output requirements.",
+    "reason": "screening 96.5% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Defines the evidence that establishes a company mention, keeping permanent name words distinct from product words and legal forms.",
+    "reason": "McNemar not significant (b=0, c=12, p=0.000); slice 'distractors' drops 20.0 points"
+  }
+]
