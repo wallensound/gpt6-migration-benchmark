@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Classify the user message as a support ticket. Read the whole message and identify the issues in the order they are mentioned. Classify by meaning whether the message is in English, Swedish or German.\n\nAllowed labels:\n- billing — charges, payments, invoices, receipts, prices, payment methods or refunds of charges\n- technical — setup, connection, configuration or usage help for the product, app or website, with no reported malfunction\n- account_access — logging in, passwords, two-factor codes or locked or blocked accounts\n- shipping — order delivery, including tracking, delays, delivery addresses and parcels that have not arrived\n- returns — sending a physical product back, return labels, exchanges or the return window\n- cancellation — ending a subscription or plan, or stopping automatic renewal\n- feature_request — asking for functionality the product does not have\n- bug_report — a malfunction in the product, app or website, such as a crash, error code, freeze or feature that stops working\n- privacy — personal data storage, access to copies, deletion, sharing or GDPR requests\n- partnership — business proposals for reselling, co-marketing, integrations, sponsorship or volume deals\n- feedback — opinions, praise or complaints without a request for help or action\n- other — unrelated to the company's products and services\n\nSelection:\n1. One issue: select its label.\n2. Multiple issues: apply the relevant pair rule before using mention order. For billing paired with technical or bug_report, select billing when a payment, charge or invoice is mentioned. For cancellation paired with billing or returns, select cancellation when the customer wants to end a subscription. For privacy paired with account_access or cancellation, select privacy when the customer asks about or wants deletion of their personal data.\n3. If no pair rule decides, select the label of the first issue mentioned.\n\nReply with exactly one allowed label as written. Do not translate it or add punctuation, quotation marks, formatting, explanations or questions.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
