@@ -1,7 +1,17 @@
 {
   "currency": "USD",
   "total_limit": 800,
-  "phases": {"P0": 2, "P1": 5, "P2": 80, "P3": 50, "P4": 130, "P5": 300, "P6": 205, "P7": 25},
+  "phases": {
+    "P0": 2,
+    "P1": 5,
+    "P2": 45,
+    "P3": 50,
+    "P4": 70,
+    "P5": 300,
+    "P6": 300,
+    "P7": 25
+  },
   "stop_time": null,
-  "stop_time_note": "The brief sets 06:30 Europe/Stockholm. The owner asked for one continuous run to completion (2026-11-18), so no stop time applies; see PROGRESS.md Decisions."
+  "stop_time_note": "The brief sets 06:30 Europe/Stockholm. The owner asked for one continuous run to completion (2026-11-18), so no stop time applies; see PROGRESS.md Decisions.",
+  "reallocation_note": "2026-11-18: unused P2 and P4 slack moved to P6 so the final evaluation can run in full as PROTOCOL.md states; the sum of caps stays $797 and the $800 total limit is unchanged (PROGRESS.md D21)."
 }
