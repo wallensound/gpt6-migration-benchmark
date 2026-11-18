@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the native-call versus plain-text decision first and moves routing and value selection ahead of date conversion.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Condenses routing and extraction into a short reference while making live tool names and omitted optionals explicit.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
