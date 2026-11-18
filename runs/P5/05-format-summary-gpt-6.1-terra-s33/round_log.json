@@ -1,0 +1,284 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "3f3294a6b868c17c",
+    "dev_primary": 0.995,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "rewrite",
+      "restructure",
+      "settings_change",
+      "targeted_fix"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses the entire article to identify the three main facts and makes their required forms explicit.",
+        "prompt_hash": "b1a1e559d315e61a",
+        "prompt_chars": 885,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 0.9833333333333333,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Moves the output contract to the top while preserving the current content guidance.",
+        "prompt_hash": "358bed2d9c53e17a",
+        "prompt_chars": 993,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity in isolation without changing a prompt that passed every training item.",
+        "prompt_hash": "a3173a148e1ccc18",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures to target, clarifies that headline news can appear outside the headline or opening.",
+        "prompt_hash": "f804ef0ba0c7a3b4",
+        "prompt_chars": 1047,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 0.995,
+    "seconds": 90,
+    "spent_phase": 38.5970726925
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "restructure",
+      "settings_change",
+      "targeted_fix"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one Swedish worked example showing how to preserve the main facts while omitting a passing figure.",
+        "prompt_hash": "ac8668368d1c15dc",
+        "prompt_chars": 1409,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Reorganises the instructions into a read, select, write and check workflow rather than moving format rules to the top.",
+        "prompt_hash": "9e02676632bd959a",
+        "prompt_chars": 1020,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether low verbosity reinforces concise bullets without changing the prompt.",
+        "prompt_hash": "a3173a148e1ccc18",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=1, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 1,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 0.995
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures, tests a single safeguard against missing key facts late in the article.",
+        "prompt_hash": "6c9f0611a204b04f",
+        "prompt_chars": 1042,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=1, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 1,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 0.995
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 0.995,
+    "seconds": 47,
+    "spent_phase": 39.1938788175
+  }
+]

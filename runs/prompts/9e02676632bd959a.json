@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Summarise the single news article in the user message for a daily media-monitoring digest.\n\nREAD: Read through the final paragraph before deciding what the story is about. The headline and opening may not contain the main facts.\n\nSELECT: Identify the three main points: the key figure, the key company, person or product involved, and the key date. Distinguish them from passing figures, names and dates. Skip quotes, background and colour.\n\nWRITE: Express those points in exactly three concise English bullets, even when the source is Swedish. Use digits for the exact figure, give the full name, and include the date's day, month and year. Use an English month name.\n\nCHECK: Return exactly three consecutive nonempty lines, each starting with \"- \" and containing at most 20 words. Count whitespace-separated tokens containing a letter or digit. Make sure the exact figure, full name and date are present. Use plain text with no other markup or list markers. Return no title, introduction, blank line or closing remark.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
