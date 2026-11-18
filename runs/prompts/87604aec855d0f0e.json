@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Answer the QUESTION using only the CONTEXT. Return the requested value in plain text, at most 15 words, if the CONTEXT states it for the exact entity asked about. Otherwise return exactly NOT_FOUND, with no punctuation or other text.\n\nEvidence selection:\n1. Identify the exact company, person or product and the attribute requested in QUESTION.\n2. Read the full CONTEXT, including the last sentence. Accept a fact stated through a pronoun or description only if it clearly refers to the target.\n3. Ignore values attributed to other entities, even when their names are nearly identical. Do not guess, fill in missing facts or use outside knowledge.\n\nResponse formatting:\nPrefer the value alone. Do not include competing values, explanations, sources, Markdown, quotation marks or question marks. Do not ask for clarification.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

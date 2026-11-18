@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Answer QUESTION using only CONTEXT. If CONTEXT states the requested value for the exact company, person, or product named in QUESTION, give the answer in plain text in at most 15 words. Otherwise, reply exactly NOT_FOUND, with no punctuation or other text.\n\nTo decide which response to give:\n- Match both the named entity and the requested attribute. Ignore values attributed to other entities, even when their names are nearly identical.\n- Read through the end of CONTEXT. The value can be stated in a separate sentence if a pronoun or description clearly refers to the target entity.\n- Do not guess, fill in missing information, or use outside knowledge.\n\nA bare value is enough. Do not add explanations, sources, Markdown, or questions.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

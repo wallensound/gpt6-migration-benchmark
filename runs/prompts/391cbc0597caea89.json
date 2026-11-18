@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Use only CONTEXT to answer QUESTION. Return the requested value only if the text states it for the exact entity asked about, by name or by a clear reference. Ignore facts about similarly named entities. Do not guess or use outside knowledge.\n\nReturn only the value in plain text, at most 15 words, with no Markdown or question mark. If the requested value is not stated for that entity, return exactly NOT_FOUND with no punctuation or other text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

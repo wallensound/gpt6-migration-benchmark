@@ -1,0 +1,1183 @@
+{
+  "run_id": "07-contact-normalisation-gpt-6-luna-s11",
+  "phase": "P5",
+  "git_commit": "59acdae",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:14:59",
+  "reference_date": "2026-11-17",
+  "case": "07-contact-normalisation",
+  "kind": "loop",
+  "target": "gpt-6-luna",
+  "effort": "low",
+  "seed": 11,
+  "dataset_version": 1,
+  "loop_params": {
+    "rounds": 5,
+    "candidates": 4,
+    "screen_items": 60,
+    "early_stop_empty_rounds": 2,
+    "screen_max_trail": 0.03,
+    "screen_min_validity": 0.98,
+    "accept_alpha": 0.05,
+    "accept_max_slice_drop": 0.02,
+    "accept_min_validity": 0.99,
+    "examples_per_pattern": 3,
+    "top_patterns": 3
+  },
+  "optimiser": {
+    "model": "gpt-6.2-sol",
+    "effort": "high"
+  },
+  "labeller": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "evals": [
+    {
+      "eval_id": "r0-dev",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "94d21e2d9e5df067",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:15:02",
+      "summary": {
+        "n": 200,
+        "passed": 197,
+        "primary": 0.985,
+        "primary_ci": [
+          0.9568342712073097,
+          0.9948857622067417
+        ],
+        "validity": 0.995,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          },
+          "missing_fields": {
+            "n": 32,
+            "primary": 0.96875
+          },
+          "plain": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 34,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          }
+        },
+        "cost_usd": 0.016598515,
+        "cost_per_item": 8.2992575e-05,
+        "cost_per_correct": 8.425642131979696e-05,
+        "latency_p50_s": 0.80395,
+        "latency_p95_s": 1.1181849999999998,
+        "tokens_in": 274832,
+        "tokens_in_mean": 1374.16,
+        "tokens_cached": 101878,
+        "tokens_cached_mean": 509.39,
+        "tokens_cache_write": 172554,
+        "tokens_cache_write_mean": 862.77,
+        "tokens_out": 21138,
+        "tokens_out_mean": 105.69,
+        "tokens_reasoning": 12357,
+        "tokens_reasoning_mean": 61.785,
+        "failure_categories": {
+          "email_wrong": 2,
+          "dropped_value": 1,
+          "format": 1,
+          "name_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.995,
+          "format_validity": 0.998,
+          "json_validity": 0.995,
+          "name_accuracy": 0.995,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.99,
+          "company_accuracy": 0.995,
+          "country_accuracy": 0.995
+        }
+      },
+      "round": 0,
+      "role": "port-dev"
+    },
+    {
+      "eval_id": "r1-train",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "94d21e2d9e5df067",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:15:12",
+      "summary": {
+        "n": 120,
+        "passed": 115,
+        "primary": 0.9583333333333334,
+        "primary_ci": [
+          0.9061591476629647,
+          0.9820732831198906
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "precedence_conflict": {
+            "n": 20,
+            "primary": 0.9
+          },
+          "swapped_fields": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 21,
+            "primary": 0.9047619047619048
+          }
+        },
+        "cost_usd": 0.00518974,
+        "cost_per_item": 4.3247833333333336e-05,
+        "cost_per_correct": 4.512817391304348e-05,
+        "latency_p50_s": 0.8538499999999999,
+        "latency_p95_s": 1.9394200000000001,
+        "tokens_in": 164954,
+        "tokens_in_mean": 1374.6166666666666,
+        "tokens_cached": 144398,
+        "tokens_cached_mean": 1203.3166666666666,
+        "tokens_cache_write": 20316,
+        "tokens_cache_write_mean": 169.3,
+        "tokens_out": 12744,
+        "tokens_out_mean": 106.2,
+        "tokens_reasoning": 7588,
+        "tokens_reasoning_mean": 63.233333333333334,
+        "failure_categories": {
+          "email_wrong": 3,
+          "dropped_value": 1,
+          "phone_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9916666666666667,
+          "format_validity": 0.9983333333333333,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 0.9916666666666667,
+          "email_accuracy": 0.975,
+          "company_accuracy": 1.0,
+          "country_accuracy": 0.9916666666666667
+        }
+      },
+      "round": 1,
+      "role": "train"
+    },
+    {
+      "eval_id": "r1-screen-targeted_fix",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "c8b8bb4136528dcf",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:16:30",
+      "summary": {
+        "n": 60,
+        "passed": 56,
+        "primary": 0.9333333333333333,
+        "primary_ci": [
+          0.8407464268680283,
+          0.9737713012754938
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "plain": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 0.8
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0034653325000000004,
+        "cost_per_item": 5.775554166666667e-05,
+        "cost_per_correct": 6.18809375e-05,
+        "latency_p50_s": 0.8297,
+        "latency_p95_s": 1.053485,
+        "tokens_in": 77763,
+        "tokens_in_mean": 1296.05,
+        "tokens_cached": 51754,
+        "tokens_cached_mean": 862.5666666666667,
+        "tokens_cache_write": 25889,
+        "tokens_cache_write_mean": 431.48333333333335,
+        "tokens_out": 6330,
+        "tokens_out_mean": 105.5,
+        "tokens_reasoning": 3766,
+        "tokens_reasoning_mean": 62.766666666666666,
+        "failure_categories": {
+          "email_wrong": 2,
+          "name_wrong": 1,
+          "dropped_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9866666666666667,
+          "format_validity": 0.9966666666666667,
+          "json_validity": 1.0,
+          "name_accuracy": 0.9833333333333333,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.9666666666666667,
+          "company_accuracy": 1.0,
+          "country_accuracy": 0.9833333333333333
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "targeted_fix"
+    },
+    {
+      "eval_id": "r1-screen-example_swap",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "36eac51f818b69f2",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:16:52",
+      "summary": {
+        "n": 60,
+        "passed": 59,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.9114487027240993,
+          0.9970518402052136
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.004698025,
+        "cost_per_item": 7.830041666666666e-05,
+        "cost_per_correct": 7.962754237288135e-05,
+        "latency_p50_s": 0.8357,
+        "latency_p95_s": 1.1052449999999998,
+        "tokens_in": 59463,
+        "tokens_in_mean": 991.05,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 9310,
+        "tokens_cache_write_mean": 155.16666666666666,
+        "tokens_out": 6434,
+        "tokens_out_mean": 107.23333333333333,
+        "tokens_reasoning": 3870,
+        "tokens_reasoning_mean": 64.5,
+        "failure_categories": {
+          "email_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9966666666666667,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.9833333333333333,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r1-screen-rewrite",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "7d3d2090f4a63cb7",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:17:20",
+      "summary": {
+        "n": 60,
+        "passed": 56,
+        "primary": 0.9333333333333333,
+        "primary_ci": [
+          0.8407464268680283,
+          0.9737713012754938
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 0.8
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.004964855000000001,
+        "cost_per_item": 8.274758333333335e-05,
+        "cost_per_correct": 8.8658125e-05,
+        "latency_p50_s": 0.9819500000000001,
+        "latency_p95_s": 1.24303,
+        "tokens_in": 62403,
+        "tokens_in_mean": 1040.05,
+        "tokens_cached": 9346,
+        "tokens_cached_mean": 155.76666666666668,
+        "tokens_cache_write": 33822,
+        "tokens_cache_write_mean": 563.7,
+        "tokens_out": 7370,
+        "tokens_out_mean": 122.83333333333333,
+        "tokens_reasoning": 4624,
+        "tokens_reasoning_mean": 77.06666666666666,
+        "failure_categories": {
+          "email_wrong": 3,
+          "name_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9866666666666667,
+          "format_validity": 0.9933333333333333,
+          "json_validity": 1.0,
+          "name_accuracy": 0.9833333333333333,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.95,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "rewrite"
+    },
+    {
+      "eval_id": "r1-screen-restructure",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "2a8c0081f278aefb",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:17:47",
+      "summary": {
+        "n": 60,
+        "passed": 58,
+        "primary": 0.9666666666666667,
+        "primary_ci": [
+          0.886362257256914,
+          0.9908106807438021
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 0.8
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0046144,
+        "cost_per_item": 7.690666666666667e-05,
+        "cost_per_correct": 7.955862068965518e-05,
+        "latency_p50_s": 0.9525,
+        "latency_p95_s": 1.2178649999999998,
+        "tokens_in": 54483,
+        "tokens_in_mean": 908.05,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 7561,
+        "tokens_out_mean": 126.01666666666667,
+        "tokens_reasoning": 4993,
+        "tokens_reasoning_mean": 83.21666666666667,
+        "failure_categories": {
+          "email_wrong": 1,
+          "company_wrong": 1,
+          "name_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.99,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 0.9833333333333333,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.9833333333333333,
+          "company_accuracy": 0.9833333333333333,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r1-dev-example_swap",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "36eac51f818b69f2",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:19:54",
+      "summary": {
+        "n": 200,
+        "passed": 193,
+        "primary": 0.965,
+        "primary_ci": [
+          0.9295293884777092,
+          0.9829444579914328
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 34,
+            "primary": 0.9411764705882353
+          },
+          "missing_fields": {
+            "n": 32,
+            "primary": 0.96875
+          },
+          "plain": {
+            "n": 33,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 34,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 33,
+            "primary": 0.9090909090909091
+          },
+          "unicode_names": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          }
+        },
+        "cost_usd": 0.016132925,
+        "cost_per_item": 8.0664625e-05,
+        "cost_per_correct": 8.359028497409326e-05,
+        "latency_p50_s": 0.8375,
+        "latency_p95_s": 1.32184,
+        "tokens_in": 198232,
+        "tokens_in_mean": 991.16,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 35106,
+        "tokens_cache_write_mean": 175.53,
+        "tokens_out": 23130,
+        "tokens_out_mean": 115.65,
+        "tokens_reasoning": 14329,
+        "tokens_reasoning_mean": 71.645,
+        "failure_categories": {
+          "email_wrong": 3,
+          "name_wrong": 3,
+          "company_wrong": 2,
+          "dropped_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.991,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 0.985,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.985,
+          "company_accuracy": 0.99,
+          "country_accuracy": 0.995
+        }
+      },
+      "round": 1,
+      "role": "dev-candidate",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r2-train",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "94d21e2d9e5df067",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:19:54",
+      "summary": {
+        "n": 120,
+        "passed": 117,
+        "primary": 0.975,
+        "primary_ci": [
+          0.9290699666721339,
+          0.9914618252300978
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 20,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "precedence_conflict": {
+            "n": 20,
+            "primary": 0.95
+          },
+          "swapped_fields": {
+            "n": 19,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          }
+        },
+        "cost_usd": 0.00399057,
+        "cost_per_item": 3.3254749999999995e-05,
+        "cost_per_correct": 3.4107435897435894e-05,
+        "latency_p50_s": 0.7817999999999999,
+        "latency_p95_s": 1.1020999999999999,
+        "tokens_in": 164954,
+        "tokens_in_mean": 1374.6166666666666,
+        "tokens_cached": 164714,
+        "tokens_cached_mean": 1372.6166666666666,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 12620,
+        "tokens_out_mean": 105.16666666666667,
+        "tokens_reasoning": 7465,
+        "tokens_reasoning_mean": 62.208333333333336,
+        "failure_categories": {
+          "email_wrong": 2,
+          "dropped_value": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.995,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.9833333333333333,
+          "company_accuracy": 1.0,
+          "country_accuracy": 0.9916666666666667
+        }
+      },
+      "round": 2,
+      "role": "train"
+    },
+    {
+      "eval_id": "r2-screen-example_swap",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "5e41b99a36c97623",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:29",
+      "summary": {
+        "n": 60,
+        "passed": 57,
+        "primary": 0.95,
+        "primary_ci": [
+          0.8629948352365147,
+          0.9828504978356043
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 0.9
+          }
+        },
+        "cost_usd": 0.004798075000000001,
+        "cost_per_item": 7.996791666666667e-05,
+        "cost_per_correct": 8.417675438596493e-05,
+        "latency_p50_s": 0.8984500000000001,
+        "latency_p95_s": 1.2389400000000002,
+        "tokens_in": 58877,
+        "tokens_in_mean": 981.2833333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 3078,
+        "tokens_cache_write_mean": 51.3,
+        "tokens_out": 7263,
+        "tokens_out_mean": 121.05,
+        "tokens_reasoning": 4661,
+        "tokens_reasoning_mean": 77.68333333333334,
+        "failure_categories": {
+          "name_wrong": 2,
+          "email_wrong": 1,
+          "company_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9866666666666667,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 0.9666666666666667,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.9833333333333333,
+          "company_accuracy": 0.9833333333333333,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r2-screen-settings_change",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": true,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "c7c92b785d071925",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:33",
+      "summary": {
+        "n": 60,
+        "passed": 57,
+        "primary": 0.95,
+        "primary_ci": [
+          0.8629948352365147,
+          0.9828504978356043
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 0.7
+          }
+        },
+        "cost_usd": 0.0035596875000000004,
+        "cost_per_item": 5.932812500000001e-05,
+        "cost_per_correct": 6.245065789473684e-05,
+        "latency_p50_s": 0.85605,
+        "latency_p95_s": 1.1845649999999999,
+        "tokens_in": 72677,
+        "tokens_in_mean": 1211.2833333333333,
+        "tokens_cached": 43750,
+        "tokens_cached_mean": 729.1666666666666,
+        "tokens_cache_write": 28807,
+        "tokens_cache_write_mean": 480.1166666666667,
+        "tokens_out": 6138,
+        "tokens_out_mean": 102.3,
+        "tokens_reasoning": 3375,
+        "tokens_reasoning_mean": 56.25,
+        "failure_categories": {
+          "email_wrong": 2,
+          "phone_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.99,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 0.9833333333333333,
+          "email_accuracy": 0.9666666666666667,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "settings_change"
+    },
+    {
+      "eval_id": "r2-screen-restructure",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "bb7fc38743c982cb",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:02",
+      "summary": {
+        "n": 60,
+        "passed": 59,
+        "primary": 0.9833333333333333,
+        "primary_ci": [
+          0.9114487027240993,
+          0.9970518402052136
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 0.9
+          }
+        },
+        "cost_usd": 0.0045546,
+        "cost_per_item": 7.591e-05,
+        "cost_per_correct": 7.719661016949152e-05,
+        "latency_p50_s": 0.9221,
+        "latency_p95_s": 1.72097,
+        "tokens_in": 55397,
+        "tokens_in_mean": 923.2833333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 7139,
+        "tokens_out_mean": 118.98333333333333,
+        "tokens_reasoning": 4536,
+        "tokens_reasoning_mean": 75.6,
+        "failure_categories": {
+          "email_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.9966666666666667,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.9833333333333333,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r2-screen-targeted_fix",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "f3e7198e06cfc7f5",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:30",
+      "summary": {
+        "n": 60,
+        "passed": 58,
+        "primary": 0.9666666666666667,
+        "primary_ci": [
+          0.886362257256914,
+          0.9908106807438021
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "missing_fields": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "precedence_conflict": {
+            "n": 10,
+            "primary": 1.0
+          },
+          "swapped_fields": {
+            "n": 10,
+            "primary": 0.9
+          },
+          "unicode_names": {
+            "n": 10,
+            "primary": 0.9
+          }
+        },
+        "cost_usd": 0.002732635,
+        "cost_per_item": 4.554391666666667e-05,
+        "cost_per_correct": 4.711439655172414e-05,
+        "latency_p50_s": 0.8844500000000001,
+        "latency_p95_s": 1.1354849999999996,
+        "tokens_in": 71357,
+        "tokens_in_mean": 1189.2833333333333,
+        "tokens_cached": 58777,
+        "tokens_cached_mean": 979.6166666666667,
+        "tokens_cache_write": 12460,
+        "tokens_cache_write_mean": 207.66666666666666,
+        "tokens_out": 6616,
+        "tokens_out_mean": 110.26666666666667,
+        "tokens_reasoning": 4017,
+        "tokens_reasoning_mean": 66.95,
+        "failure_categories": {
+          "email_wrong": 2
+        },
+        "secondary": {
+          "field_accuracy": 0.9933333333333333,
+          "format_validity": 1.0,
+          "json_validity": 1.0,
+          "name_accuracy": 1.0,
+          "phone_accuracy": 1.0,
+          "email_accuracy": 0.9666666666666667,
+          "company_accuracy": 1.0,
+          "country_accuracy": 1.0
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "targeted_fix"
+    },
+    {
+      "eval_id": "r2-dev-restructure",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "bb7fc38743c982cb",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:49",
+      "summary": {
+        "n": 200,
+        "passed": 193,
+        "primary": 0.965,
+        "primary_ci": [
+          0.9295293884777092,
+          0.9829444579914328
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "international_phone": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          },
+          "missing_fields": {
+            "n": 32,
+            "primary": 0.96875
+          },
+          "plain": {
+            "n": 33,
+            "primary": 0.9696969696969697
+          },
+          "precedence_conflict": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          },
+          "swapped_fields": {
+            "n": 33,
+            "primary": 0.9393939393939394
+          },
+          "unicode_names": {
+            "n": 34,
+            "primary": 0.9705882352941176
+          }
+        },
+        "cost_usd": 0.015432600000000001,
+        "cost_per_item": 7.7163e-05,
+        "cost_per_correct": 7.996165803108809e-05,
+        "latency_p50_s": 0.90335,
+        "latency_p95_s": 1.209405,
+        "tokens_in": 183832,
+        "tokens_in_mean": 919.16,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 24964,
+        "tokens_out_mean": 124.82,
+        "tokens_reasoning": 16169,
+        "tokens_reasoning_mean": 80.845,
+        "failure_categories": {
+          "email_wrong": 3,
+          "name_wrong": 3,
+          "dropped_value": 1,
+          "company_wrong": 1
+        },
+        "secondary": {
+          "field_accuracy": 0.991,
+          "format_validity": 0.999,
+          "json_validity": 1.0,
+          "name_accuracy": 0.985,
+          "phone_accuracy": 0.995,
+          "email_accuracy": 0.985,
+          "company_accuracy": 0.995,
+          "country_accuracy": 0.995
+        }
+      },
+      "round": 2,
+      "role": "dev-candidate",
+      "edit_kind": "restructure"
+    }
+  ],
+  "finished": true,
+  "stop_reason": "2 rounds in a row with nothing accepted",
+  "final_prompt_hash": "94d21e2d9e5df067",
+  "final_dev_primary": 0.985,
+  "port_dev_primary": 0.985,
+  "accepted_rounds": [],
+  "final_leak_check": {
+    "ok": true,
+    "ngram_hits": 0,
+    "answer_hits": 0
+  },
+  "finished_at": "2026-11-18T01:21:49",
+  "calls_made": 1011,
+  "calls_cached": 327
+}

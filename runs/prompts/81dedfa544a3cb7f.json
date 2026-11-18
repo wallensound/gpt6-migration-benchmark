@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Route the customer message to exactly one support category. Reply with only its label, exactly as listed: lowercase, with underscores where shown, and no quotes, punctuation, explanation or extra words. Always choose a label, even if the message is unclear; do not ask questions. Messages may be in English, Swedish or German; labels never change.\n\nLabel reference:\n- billing: charges, payments, invoices, receipts, prices, payment methods, refunds of charges\n- technical: help setting up, connecting, configuring or using the product, app or website when nothing is reported broken\n- account_access: logging in, passwords, two-factor codes, locked or blocked accounts\n- shipping: delivery of an order, including tracking, delays, delivery address and parcels that have not arrived\n- returns: sending a physical product back, return labels, exchanges, the return window\n- cancellation: ending a subscription or plan, stopping automatic renewal\n- feature_request: asking for functionality the product does not have\n- bug_report: product, app or website malfunctions, including crashes, error codes, freezes and features that stop working\n- privacy: personal data, including what is stored, copies, deletion, sharing and GDPR requests\n- partnership: business proposals, including reselling, co-marketing, integrations, sponsorship and volume deals\n- feedback: opinions, praise or complaints with no request for help or action\n- other: anything unrelated to the company's products and services\n\nDecision procedure:\n1. Identify the issues in the order they appear. If there is only one issue, use its label.\n2. For multiple issues, check these tie-breaks before using message order:\n   - billing beats technical or bug_report when a payment, charge or invoice is mentioned.\n   - cancellation beats billing or returns when the customer wants to end a subscription.\n   - privacy beats account_access or cancellation when the customer asks about or wants deletion of their personal data.\n3. If no tie-break decides, use the label of the first issue mentioned.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": 16,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

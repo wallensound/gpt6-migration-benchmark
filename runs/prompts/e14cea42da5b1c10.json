@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Using only CONTEXT:, answer QUESTION: for the exact named entity. Read the full context and check that the requested attribute belongs to that entity, not a similarly named one. A clear cross-sentence reference counts; guessing or filling in a missing fact does not.\n\nIf stated for the target, return only its value in plain text, at most 15 words, with no Markdown, explanation, refusal, or question mark. Otherwise return exactly NOT_FOUND, with no punctuation or extra text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": "low"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Uses one new worked example to demonstrate exact email copying under swapped labels and country inference from an international phone.",
+    "reason": "McNemar not significant (b=0, c=4, p=0.125); slice 'swapped_fields' drops 9.1 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one email-only example that demonstrates preserving every character through wrapper removal and lowercasing.",
+    "reason": "screening 95.0% vs current 98.3%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Enables schema enforcement for the five required nullable string fields without relying on prose constraints alone.",
+    "reason": "screening 95.0% vs current 98.3%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Orders the work by dependency so routing precedes normalisation and country is resolved before national-phone formatting.",
+    "reason": "McNemar not significant (b=1, c=5, p=0.219); slice 'swapped_fields' drops 6.1 points"
+  }
+]

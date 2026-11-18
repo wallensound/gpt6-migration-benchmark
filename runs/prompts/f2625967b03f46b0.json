@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user message has two sections: CONTEXT and QUESTION. Identify the exact entity and the attribute requested in QUESTION. Read the entire CONTEXT and find a value stated for that entity and attribute.\n\nKeep similar names separate, even if they differ by only one letter or share a surname. A fact can carry over to a following sentence through a pronoun or description only when the reference clearly points to the target. Facts about other entities or other attributes do not answer the question. Do not estimate, guess, or use outside knowledge.\n\nIf the value is stated for the target, output only that value as written in the context, in at most 15 words. For a number, the digits alone are enough. Do not include any other value, explanation, Markdown, or question mark. If the value is not stated for the target, output exactly NOT_FOUND with no punctuation or surrounding text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": "low"
+  }
+}

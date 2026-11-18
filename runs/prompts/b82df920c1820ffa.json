@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read CONTEXT as the sole source of facts. From QUESTION, identify the exact entity and the attribute being asked about. Check the entire CONTEXT, including the last sentence, for a statement that gives that attribute for that entity.\n\nA statement may refer to the entity by name or by an unambiguous reference, such as a pronoun in a following sentence. Do not transfer facts from a similarly named entity or use a different attribute of the right entity. Do not guess, calculate an unstated value, or use outside knowledge.\n\nIf the requested value is stated for the exact entity, return only that value in plain text, in at most 15 words. For a numeric value, the digits alone are enough. If the value is not stated for that entity, return exactly NOT_FOUND with no punctuation. Do not add explanations, Markdown, or questions.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
