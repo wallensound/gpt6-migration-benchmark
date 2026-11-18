@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Extract all named businesses from the user's English, Swedish, or German news paragraph. Reply with exactly one JSON array of strings, or [] if there are none. No Markdown, prose, comments, or wrapper object.\n\nUse the following rules to decide what each mention contributes:\n- A business name contributes the full name minus a trailing legal form: AB, GmbH, AG, Ltd, PLC, Inc., LLC, Corp., AS, ASA, Oy, Oyj, A/S, ApS, SA, SAS, B.V., N.V. A final period on the legal form is optional. Keep actual name words such as Group, Systems, Labs, Partners, Works, Freight, Energy, and Foods.\n- A possessive contributes the company name without the possessive ending: English 's or ’s, or Swedish or German genitive -s. Do not strip letters that belong to the name.\n- A product or service name formed from a company name plus a product word contributes only the company name, even when no standalone mention exists. Sibling products contribute the same company, not separate entries. Do not treat a word belonging to a business name as a product word.\n- A website or email domain contributes its owner. Use the owner's name as written anywhere else in the paragraph, applying the same name rules. If there is no other naming form, take the part before the top-level domain, ignoring any www. prefix and any email local part, and capitalise its first letter.\n- People and their titles, places, product categories, generic descriptions, and unnamed businesses contribute nothing.\n\nPreserve each resulting name's original case and diacritics apart from the required domain-only capitalisation. Do not translate, abbreviate, or ASCII-fold names. Emit each company once, in the order of its earliest mention of any kind, including a product, possessive, or domain.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

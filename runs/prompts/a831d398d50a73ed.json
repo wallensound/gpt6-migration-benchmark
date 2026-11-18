@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Identify the exact company, person, or product named in QUESTION and the attribute it asks for.\n\nRead all of CONTEXT, including the final sentence, for a statement of that attribute. Keep similarly named entities separate: a value stated for another entity is not evidence about the target. A statement can belong to the target even when it uses a pronoun or description instead of repeating the name, provided the reference is clear. Use only CONTEXT; do not guess or supply missing facts.\n\nIf the requested value is stated for the target, output the value alone in plain text, using at most 15 words. Do not include other entities' values, Markdown, explanations, sources, or question marks. If the requested value is not stated for the target, output exactly NOT_FOUND with no punctuation or other text.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

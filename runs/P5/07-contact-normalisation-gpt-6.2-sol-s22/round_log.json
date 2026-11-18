@@ -1,0 +1,479 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "94d21e2d9e5df067",
+    "dev_primary": 0.835,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "rewrite",
+      "simplify",
+      "restructure",
+      "example_swap"
+    ],
+    "train_primary": 0.8833333333333333,
+    "failure_report": {
+      "counts": {
+        "dropped_value": 13,
+        "phone_wrong": 1
+      },
+      "by_slice": {
+        "plain": 2,
+        "swapped_fields": 3,
+        "unicode_names": 3,
+        "precedence_conflict": 4,
+        "international_phone": 1,
+        "missing_fields": 1
+      },
+      "patterns": [
+        {
+          "category": "dropped_value",
+          "count": 13,
+          "sample_causes": [
+            "The model set the phone to null instead of normalizing the Swedish national number to +46715240363.",
+            "The model returned null for the name instead of assigning the swapped company-line value, Anna Drilzexez, as the name.",
+            "The model dropped the provided phone number and company instead of normalizing them.",
+            "It returned null for the phone and country instead of normalizing the provided UK phone and country.",
+            "The model dropped the phone number and country value instead of extracting them from the record."
+          ],
+          "n_examples": 1
+        },
+        {
+          "category": "phone_wrong",
+          "count": 1,
+          "sample_causes": [
+            "The model dropped the valid international phone number instead of normalizing it to +353837402047."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.8833333333333333,
+    "candidates": [
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separating field assignment from normalization prevents swapped values from being dropped and makes the country fallback explicit.",
+        "prompt_hash": "f275cfde6430c0e8",
+        "prompt_chars": 3472,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "A compact specification removes repeated directives while preserving the field rules and their exception.",
+        "prompt_hash": "9d999b92c6f8095f",
+        "prompt_chars": 2681,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Putting source selection and output first, followed by a dependency-ordered procedure, makes the critical branches easier to follow.",
+        "prompt_hash": "f13af5eee8f156c5",
+        "prompt_chars": 3305,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "accepted",
+        "dev": {
+          "accept": true,
+          "reasons": [],
+          "mcnemar": {
+            "b": 32,
+            "c": 5,
+            "p_value": 7.427530363202095e-06
+          },
+          "worst_slice_drop": 0.02941176470588236,
+          "validity": 1.0,
+          "dev_primary": 0.97,
+          "dev_primary_current": 0.835
+        }
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "One integrated example demonstrates that swapped labels and a placeholder country do not justify dropping valid values.",
+        "prompt_hash": "e765a3ad670518c7",
+        "prompt_chars": 3310,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": true,
+      "reasons": [],
+      "mcnemar": {
+        "b": 32,
+        "c": 5,
+        "p_value": 7.427530363202095e-06
+      },
+      "worst_slice_drop": 0.02941176470588236,
+      "validity": 1.0,
+      "dev_primary": 0.97,
+      "dev_primary_current": 0.835
+    },
+    "accepted": true,
+    "prompt_hash_after": "f13af5eee8f156c5",
+    "dev_primary_after": 0.97,
+    "seconds": 260,
+    "spent_phase": 12.956825255
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "targeted_fix",
+      "settings_change",
+      "simplify",
+      "example_swap"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "country_wrong": 1
+      },
+      "by_slice": {
+        "precedence_conflict": 1
+      },
+      "patterns": [
+        {
+          "category": "country_wrong",
+          "count": 1,
+          "sample_causes": [
+            "It returned null for the country instead of identifying GB from the +44 phone number."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Makes the country-from-phone exception a required check before emitting a null country.",
+        "prompt_hash": "ed279121a0f0f616",
+        "prompt_chars": 3434,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enables schema-constrained output for the five required nullable string fields without changing normalization instructions.",
+        "prompt_hash": "c27d6d7b9743efa4",
+        "prompt_chars": 3305,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=3, c=1, p=0.625)",
+            "slice 'missing_fields' drops 3.1 points"
+          ],
+          "mcnemar": {
+            "b": 3,
+            "c": 1,
+            "p_value": 0.625
+          },
+          "worst_slice_drop": -0.03125,
+          "validity": 1.0,
+          "dev_primary": 0.98,
+          "dev_primary_current": 0.97
+        }
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Combines extraction, assignment, and cleanup into a shorter procedure while retaining the country precedence rule.",
+        "prompt_hash": "45fb5ecc0edf9aab",
+        "prompt_chars": 2854,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing that a placeholder country is filled from a uniquely assigned international calling code.",
+        "prompt_hash": "43edb34d41d423ad",
+        "prompt_chars": 3679,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=3, c=1, p=0.625)",
+        "slice 'missing_fields' drops 3.1 points"
+      ],
+      "mcnemar": {
+        "b": 3,
+        "c": 1,
+        "p_value": 0.625
+      },
+      "worst_slice_drop": -0.03125,
+      "validity": 1.0,
+      "dev_primary": 0.98,
+      "dev_primary_current": 0.97
+    },
+    "accepted": false,
+    "prompt_hash_after": "f13af5eee8f156c5",
+    "dev_primary_after": 0.97,
+    "seconds": 124,
+    "spent_phase": 22.551354749999998
+  },
+  {
+    "round": 3,
+    "kinds": [
+      "rewrite",
+      "settings_change",
+      "restructure",
+      "simplify"
+    ],
+    "train_primary": 0.9916666666666667,
+    "failure_report": {
+      "counts": {
+        "country_wrong": 1
+      },
+      "by_slice": {
+        "precedence_conflict": 1
+      },
+      "patterns": [
+        {
+          "category": "country_wrong",
+          "count": 1,
+          "sample_causes": [
+            "It returned null for the country instead of identifying GB from the +44 phone number."
+          ],
+          "n_examples": 1
+        }
+      ]
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separates field routing from normalization and makes missing-country resolution a required decision before output.",
+        "prompt_hash": "9ce877a07eafae67",
+        "prompt_chars": 3399,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity alone, without repeating the rejected schema-constrained setting.",
+        "prompt_hash": "0a13f6754b5a8e2a",
+        "prompt_chars": 3305,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Promotes the country precedence rule to the top and groups phone processing by international versus national format.",
+        "prompt_hash": "d237f6562585e59e",
+        "prompt_chars": 3266,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Condenses repeated instructions while retaining the full normalization rules and explicit country fallback.",
+        "prompt_hash": "c15d0d843f603169",
+        "prompt_chars": 2707,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=5, c=2, p=0.453)",
+            "slice 'missing_fields' drops 3.1 points"
+          ],
+          "mcnemar": {
+            "b": 5,
+            "c": 2,
+            "p_value": 0.453125
+          },
+          "worst_slice_drop": -0.03125,
+          "validity": 1.0,
+          "dev_primary": 0.985,
+          "dev_primary_current": 0.97
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=5, c=2, p=0.453)",
+        "slice 'missing_fields' drops 3.1 points"
+      ],
+      "mcnemar": {
+        "b": 5,
+        "c": 2,
+        "p_value": 0.453125
+      },
+      "worst_slice_drop": -0.03125,
+      "validity": 1.0,
+      "dev_primary": 0.985,
+      "dev_primary_current": 0.97
+    },
+    "accepted": false,
+    "prompt_hash_after": "f13af5eee8f156c5",
+    "dev_primary_after": 0.97,
+    "seconds": 64,
+    "spent_phase": 27.4447679875
+  }
+]

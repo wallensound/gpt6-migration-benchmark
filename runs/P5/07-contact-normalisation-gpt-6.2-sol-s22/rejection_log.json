@@ -1,0 +1,20 @@
+[
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one worked example showing that a placeholder country is filled from a uniquely assigned international calling code.",
+    "reason": "screening 96.7% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Enables schema-constrained output for the five required nullable string fields without changing normalization instructions.",
+    "reason": "McNemar not significant (b=3, c=1, p=0.625); slice 'missing_fields' drops 3.1 points"
+  },
+  {
+    "round": 3,
+    "edit_kind": "simplify",
+    "rationale": "Condenses repeated instructions while retaining the full normalization rules and explicit country fallback.",
+    "reason": "McNemar not significant (b=5, c=2, p=0.453); slice 'missing_fields' drops 3.1 points"
+  }
+]
