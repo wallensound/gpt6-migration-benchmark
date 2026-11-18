@@ -1,0 +1,1195 @@
+{
+  "run_id": "03-ticket-routing-gpt-6.1-terra-s33",
+  "phase": "P5",
+  "git_commit": "b730ca2",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:20:56",
+  "reference_date": "2026-11-17",
+  "case": "03-ticket-routing",
+  "kind": "loop",
+  "target": "gpt-6.1-terra",
+  "effort": "none",
+  "seed": 33,
+  "dataset_version": 1,
+  "loop_params": {
+    "rounds": 5,
+    "candidates": 4,
+    "screen_items": 60,
+    "early_stop_empty_rounds": 2,
+    "screen_max_trail": 0.03,
+    "screen_min_validity": 0.98,
+    "accept_alpha": 0.05,
+    "accept_max_slice_drop": 0.02,
+    "accept_min_validity": 0.99,
+    "examples_per_pattern": 3,
+    "top_patterns": 3
+  },
+  "optimiser": {
+    "model": "gpt-6.2-sol",
+    "effort": "high"
+  },
+  "labeller": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "evals": [
+    {
+      "eval_id": "r0-dev",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "9174ee512a6591d1",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:56",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 0.9565217391304348
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0507435,
+        "cost_per_item": 0.0002537175,
+        "cost_per_correct": 0.0002549924623115578,
+        "latency_p50_s": 0.5795,
+        "latency_p95_s": 1.1854950000000002,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1082,
+        "tokens_out_mean": 5.41,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 1
+        },
+        "secondary": {
+          "macro_f1": 0.994258696386356,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "round": 0,
+      "role": "port-dev"
+    },
+    {
+      "eval_id": "r1-train",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "9174ee512a6591d1",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:20:56",
+      "summary": {
+        "n": 120,
+        "passed": 120,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9689808335812966,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 12,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 11,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.030387499999999998,
+        "cost_per_item": 0.00025322916666666663,
+        "cost_per_correct": 0.00025322916666666663,
+        "latency_p50_s": 0.5225,
+        "latency_p95_s": 1.01674,
+        "tokens_in": 57580,
+        "tokens_in_mean": 479.8333333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 639,
+        "tokens_out_mean": 5.325,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 120
+        }
+      },
+      "round": 1,
+      "role": "train"
+    },
+    {
+      "eval_id": "r1-screen-rewrite",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "335df6ca9299ba34",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:26",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0143345,
+        "cost_per_item": 0.00023890833333333334,
+        "cost_per_correct": 0.00023890833333333334,
+        "latency_p50_s": 0.6096500000000001,
+        "latency_p95_s": 0.9391599999999999,
+        "tokens_in": 27089,
+        "tokens_in_mean": 451.48333333333335,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 316,
+        "tokens_out_mean": 5.266666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "rewrite"
+    },
+    {
+      "eval_id": "r1-screen-restructure",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "7c0adc5c3c0d753c",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:21:45",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.015294499999999999,
+        "cost_per_item": 0.0002549083333333333,
+        "cost_per_correct": 0.0002549083333333333,
+        "latency_p50_s": 0.756,
+        "latency_p95_s": 1.360445,
+        "tokens_in": 29009,
+        "tokens_in_mean": 483.48333333333335,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 316,
+        "tokens_out_mean": 5.266666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r1-screen-settings_change",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": "low"
+      },
+      "prompt_hash": "e20536009487c6ad",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:14",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0152045,
+        "cost_per_item": 0.0002534083333333333,
+        "cost_per_correct": 0.0002534083333333333,
+        "latency_p50_s": 0.6198499999999999,
+        "latency_p95_s": 1.2884499999999999,
+        "tokens_in": 28829,
+        "tokens_in_mean": 480.48333333333335,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 316,
+        "tokens_out_mean": 5.266666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "settings_change"
+    },
+    {
+      "eval_id": "r1-screen-targeted_fix",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "ff3747f1c9254d32",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:22:45",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 8,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0154145,
+        "cost_per_item": 0.00025690833333333335,
+        "cost_per_correct": 0.00025690833333333335,
+        "latency_p50_s": 0.5684,
+        "latency_p95_s": 1.1510349999999998,
+        "tokens_in": 29249,
+        "tokens_in_mean": 487.48333333333335,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 316,
+        "tokens_out_mean": 5.266666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 1,
+      "role": "screen",
+      "edit_kind": "targeted_fix"
+    },
+    {
+      "eval_id": "r1-dev-rewrite",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "335df6ca9299ba34",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:23:31",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 0.9565217391304348
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0478435,
+        "cost_per_item": 0.0002392175,
+        "cost_per_correct": 0.00024041959798994973,
+        "latency_p50_s": 0.5852,
+        "latency_p95_s": 1.2242049999999998,
+        "tokens_in": 90277,
+        "tokens_in_mean": 451.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1082,
+        "tokens_out_mean": 5.41,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 1
+        },
+        "secondary": {
+          "macro_f1": 0.994258696386356,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "round": 1,
+      "role": "dev-candidate",
+      "edit_kind": "rewrite"
+    },
+    {
+      "eval_id": "r2-train",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "9174ee512a6591d1",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:23:31",
+      "summary": {
+        "n": 120,
+        "passed": 120,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9689808335812966,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 12,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 14,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 15,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 11,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.030387499999999998,
+        "cost_per_item": 0.00025322916666666663,
+        "cost_per_correct": 0.00025322916666666663,
+        "latency_p50_s": 0.5225,
+        "latency_p95_s": 1.01674,
+        "tokens_in": 57580,
+        "tokens_in_mean": 479.8333333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 639,
+        "tokens_out_mean": 5.325,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 120
+        }
+      },
+      "round": 2,
+      "role": "train"
+    },
+    {
+      "eval_id": "r2-screen-example_swap",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "8d825e08e856913a",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:24:18",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0170355,
+        "cost_per_item": 0.000283925,
+        "cost_per_correct": 0.000283925,
+        "latency_p50_s": 0.5473,
+        "latency_p95_s": 1.2398699999999996,
+        "tokens_in": 32481,
+        "tokens_in_mean": 541.35,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 318,
+        "tokens_out_mean": 5.3,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "example_swap"
+    },
+    {
+      "eval_id": "r2-screen-restructure",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "5b9260744bbe40f4",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:24:56",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0152655,
+        "cost_per_item": 0.000254425,
+        "cost_per_correct": 0.000254425,
+        "latency_p50_s": 0.6005,
+        "latency_p95_s": 1.2339149999999999,
+        "tokens_in": 28941,
+        "tokens_in_mean": 482.35,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 318,
+        "tokens_out_mean": 5.3,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "restructure"
+    },
+    {
+      "eval_id": "r2-screen-simplify",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "7dd63374b62babf4",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:25:13",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0118155,
+        "cost_per_item": 0.000196925,
+        "cost_per_correct": 0.000196925,
+        "latency_p50_s": 0.64155,
+        "latency_p95_s": 1.2222849999999996,
+        "tokens_in": 22041,
+        "tokens_in_mean": 367.35,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 318,
+        "tokens_out_mean": 5.3,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "simplify"
+    },
+    {
+      "eval_id": "r2-screen-settings_change",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": "low"
+      },
+      "prompt_hash": "e20536009487c6ad",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:25:38",
+      "summary": {
+        "n": 60,
+        "passed": 60,
+        "primary": 1.0,
+        "primary_ci": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 6,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 13,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 7,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 6,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0151755,
+        "cost_per_item": 0.000252925,
+        "cost_per_correct": 0.000252925,
+        "latency_p50_s": 0.6198499999999999,
+        "latency_p95_s": 1.2726349999999997,
+        "tokens_in": 28761,
+        "tokens_in_mean": 479.35,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 318,
+        "tokens_out_mean": 5.3,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 60
+        }
+      },
+      "round": 2,
+      "role": "screen",
+      "edit_kind": "settings_change"
+    },
+    {
+      "eval_id": "r2-dev-simplify",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false,
+        "verbosity": null
+      },
+      "prompt_hash": "7dd63374b62babf4",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:26:09",
+      "summary": {
+        "n": 200,
+        "passed": 195,
+        "primary": 0.975,
+        "primary_ci": [
+          0.942821659593358,
+          0.9892752803482386
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 0.9166666666666666
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 0.875
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.039551,
+        "cost_per_item": 0.000197755,
+        "cost_per_correct": 0.00020282564102564105,
+        "latency_p50_s": 0.57505,
+        "latency_p95_s": 1.1330799999999992,
+        "tokens_in": 73677,
+        "tokens_in_mean": 368.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1085,
+        "tokens_out_mean": 5.425,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 5
+        },
+        "secondary": {
+          "macro_f1": 0.973591884699687,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "round": 2,
+      "role": "dev-candidate",
+      "edit_kind": "simplify"
+    }
+  ],
+  "finished": true,
+  "stop_reason": "2 rounds in a row with nothing accepted",
+  "final_prompt_hash": "9174ee512a6591d1",
+  "final_dev_primary": 0.995,
+  "port_dev_primary": 0.995,
+  "accepted_rounds": [],
+  "final_leak_check": {
+    "ok": true,
+    "ngram_hits": 0,
+    "answer_hits": 0
+  },
+  "finished_at": "2026-11-18T01:26:09",
+  "calls_made": 779,
+  "calls_cached": 543
+}
