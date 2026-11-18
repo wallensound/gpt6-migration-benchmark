@@ -47,7 +47,16 @@ make final                 the only command allowed to read data/sealed/
 make report                rebuild REPORT.md and the charts from runs/
 make reproduce CASE=03     clean end-to-end rerun of one case (Luna, seed 11)
 make status                spend so far, phases done, runs in progress
+make all                   end to end from the committed data and frozen prompts: tests, model check,
+                           sweeps, loops, final, report
 ```
+
+`make all` skips stages whose results already exist in `runs/`, so in a fresh clone it rebuilds the
+report from the committed runs at no cost. To rerun the API stages themselves, move `runs/P4` to `runs/P7`
+and `runs/protocol_lock.json` aside first (about $200 at list prices with an empty cache).
+`scripts/clean_rerun.sh` performs the one-case clean rerun used for the reproducibility check.
+
+Results: `REPORT.md` (numbers and charts), `docs/writeup.md` (the write-up).
 
 Responses are cached by a hash of model, API, request and repeat index (`runs/state.sqlite`, not committed),
 so a rerun with a warm cache costs nothing; `make reproduce` in a fresh clone starts from an empty cache.

@@ -1,0 +1,99 @@
+{
+  "run_id": "03-ticket-routing-reproduce-final",
+  "phase": "P7",
+  "git_commit": "24461bd",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T02:00:33",
+  "reference_date": "2026-11-17",
+  "case": "03-ticket-routing",
+  "kind": "reproduce",
+  "evals": [
+    {
+      "eval_id": "reproduce|test|r0",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "9174ee512a6591d1",
+      "repeat": 0,
+      "finished_at": "2026-11-18T02:00:33",
+      "summary": {
+        "n": 300,
+        "passed": 286,
+        "primary": 0.9533333333333334,
+        "primary_ci": [
+          0.923202639772079,
+          0.9720010663176659
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 37,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 30,
+            "primary": 0.9666666666666667
+          },
+          "long": {
+            "n": 36,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 36,
+            "primary": 0.6944444444444444
+          },
+          "off_topic": {
+            "n": 36,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 62,
+            "primary": 0.967741935483871
+          },
+          "tie_break": {
+            "n": 35,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 28,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0075973,
+        "cost_per_item": 2.5324333333333334e-05,
+        "cost_per_correct": 2.6563986013986015e-05,
+        "latency_p50_s": 0.35229999999999995,
+        "latency_p95_s": 0.5604349999999999,
+        "tokens_in": 143986,
+        "tokens_in_mean": 479.9533333333333,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1592,
+        "tokens_out_mean": 5.306666666666667,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 14
+        },
+        "secondary": {
+          "macro_f1": 0.945799796589439,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 300
+        }
+      }
+    }
+  ],
+  "finished": true
+}

@@ -7,7 +7,7 @@ VERSION ?= 1
 N ?= 20
 CASES := 01 03 06 02 05 07 04 08
 
-.PHONY: dryrun setup check-models entities test pilot pilot-eval data calibrate calibrate-dev freeze sweep loop loops final report reproduce status
+.PHONY: all sweeps loops dryrun setup check-models entities test pilot pilot-eval data calibrate calibrate-dev freeze sweep loop loops final report reproduce status
 
 setup:            ## environment, pinned dependencies, and a check that the API keys work
 	uv sync --frozen
@@ -68,3 +68,11 @@ loops:            ## P5: Luna and Terra on all cases x 3 seeds, Sol on 01/03/07,
 	$(PY) -m harness.batch loops --cases 01,03,06,02,05,07,04,08 --targets gpt-6-luna,gpt-6.1-terra --seeds 11,22,33 --parallel 12
 	$(PY) -m harness.batch loops --cases 01,03,07 --targets gpt-6.2-sol --seeds 11,22,33 --parallel 9
 	$(PY) -m harness.batch loops --cases 01,05 --targets gpt-6-luna --seeds 11 --version 2 --parallel 2
+
+all:              ## end-to-end rerun from the committed data and frozen prompts: tests, sweeps, loops, final, report
+	$(MAKE) test
+	$(MAKE) check-models
+	$(MAKE) sweeps
+	$(MAKE) loops
+	BENCH_FINAL=1 $(PY) -m harness.cli final
+	$(MAKE) report

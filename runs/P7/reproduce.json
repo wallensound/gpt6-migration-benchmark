@@ -1,0 +1,24 @@
+{
+  "case": "03-ticket-routing",
+  "target": "gpt-6-luna",
+  "seed": 11,
+  "at": "2026-11-18T02:00:33",
+  "cache_was_empty": true,
+  "tests_passed": true,
+  "tests_output": ".........................................                                [100%]\n",
+  "loop": {
+    "run_id": "03-ticket-routing-gpt-6-luna-s11",
+    "effort": "none",
+    "port_dev": 0.945,
+    "final_dev": 0.945,
+    "accepted_rounds": [],
+    "stop_reason": "2 rounds in a row with nothing accepted",
+    "spent_phase": 0.0809502
+  },
+  "rerun_test": 0.9533333333333334,
+  "reported_test": 0.9466666666666667,
+  "diff": 0.00666666666666671,
+  "pass": true,
+  "spent_P7": 0.0885475,
+  "git_commit": "24461bd"
+}

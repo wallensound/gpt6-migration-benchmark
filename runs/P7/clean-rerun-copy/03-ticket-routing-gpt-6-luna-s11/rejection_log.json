@@ -1,0 +1,38 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Makes first mention the default and limits exceptions to the listed pairs.",
+    "reason": "screening 91.7% vs current 96.7%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "settings_change",
+    "rationale": "Tests low verbosity in isolation while preserving the existing routing prompt.",
+    "reason": "screening 93.3% vs current 96.7%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "Changes only the fallback instruction to prevent pair-specific overrides from becoming global priorities.",
+    "reason": "screening 93.3% vs current 96.7%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Separates issue recognition from pair selection so later requests do not displace earlier issues by default.",
+    "reason": "McNemar not significant (b=10, c=11, p=1.000); slice 'tie_break' drops 26.1 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one Swedish example where a later privacy request does not override an earlier setup question.",
+    "reason": "leakage check failed (2 six-word, 0 answer hits)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "settings_change",
+    "rationale": "Tests medium verbosity in isolation without repeating the rejected low-verbosity trial or changing the routing instructions.",
+    "reason": "McNemar not significant (b=0, c=3, p=0.250); slice 'multi_issue' drops 12.5 points"
+  }
+]

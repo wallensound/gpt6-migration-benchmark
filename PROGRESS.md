@@ -87,3 +87,10 @@ Append-only log. Newest entries at the bottom.
 - Bug fixed in the analysis only (`final.analyse`): the stability calculation indexed dataset-v2 configurations with v1 item ids and crashed after all evaluations were stored; no evaluation was rerun.
 - **D22 Seed spread caveat.** Where the loop accepted nothing, all three seeds return the identical (ported) prompt; identical requests are served from the response cache, so their test results are identical and the seed spread is 0 by construction. Run-to-run variance of the models is measured separately by the three-repeat flip rate (stability), which the report shows next to the seed spread.
 - Headline: Partly reproducible (seed repeats pass 8/8 Luna, 7/8 Terra; data-version check passes; across-cases fails: Luna migrated in 4 of 8; main-tier fails on case 07; clean rerun pending).
+
+### 2026-11-18 P7 Report: done
+- Clean rerun (`scripts/clean_rerun.sh`): fresh clone of the repo, empty cache (`cache_was_empty: true`), `make reproduce CASE=03` on Luna seed 11: tests pass, loop accepts nothing as in the reported run, final test score 95.3% vs 94.7% reported (diff +0.7 points, threshold 2) -> pass. Cost $0.09, recorded in the clone's own ledger (not in this repo's `make status`).
+- `make report` rebuilds `runs/bench.duckdb` (1,198 evaluations, 177,285 scored responses), REPORT.md and the four charts (zero-shot drop, recovery with seed range, cost against score, loop progress per target) from `runs/`. Charts were rendered and checked by eye (title clipping, legend overlap and y-ranges fixed).
+- Overall verdict per PROTOCOL.md: **Reproducible** (seed repeats 8/8 Luna, 7/8 Terra; data version and clean rerun pass), with the across-cases check (Luna 4/8) and main-tier check (case 07) failing; caveats in REPORT_SUMMARY.md and D22.
+- Write-up `docs/writeup.md` (1,949 words), observations for OpenAI and limitations in `report/observations.md`. `make all` added for an end-to-end rerun.
+- Total spend $249.48 (+$0.09 clean rerun) of the $800 limit. 126 tests pass.

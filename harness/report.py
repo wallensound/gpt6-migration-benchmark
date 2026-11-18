@@ -115,7 +115,7 @@ def chart_zero_shot(final: dict) -> str | None:
         for j in range(len(TARGET_ORDER)):
             if np.isfinite(M[i, j]):
                 ax.text(j, i, f"{M[i, j]:+.1f}", ha="center", va="center", color=INK, fontsize=8)
-    ax.set_title("Zero-shot drop on test: mechanical port minus legacy on gpt-5.6-sol (points)", loc="left")
+    ax.set_title("Zero-shot drop on test (points)\nmechanical port minus legacy setup on gpt-5.6-sol", loc="left")
     cb = fig.colorbar(im, ax=ax, fraction=0.04, pad=0.02)
     cb.outline.set_visible(False)
     fig.tight_layout()
@@ -148,7 +148,9 @@ def chart_recovery(final: dict) -> str | None:
     ax.set_xticks(range(len(cases)), [c[:2] + " " + c[3:].split("-")[0] for c in cases])
     ax.set_ylabel("Recovery vs legacy (points)")
     ax.set_title("Recovery after the loop: mean of three seeds, line = seed range", loc="left")
-    ax.legend(loc="lower left", ncols=3)
+    lo_all = min([l for t in LOOP_TARGETS for cf in cases for l in [100 * final["cases"][cf]["targets"].get(t, {}).get("recovery_range", [0])[0]]] + [-3.5])
+    ax.set_ylim(lo_all - 1, max(3.5, ax.get_ylim()[1]))
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.08), ncols=3)
     fig.tight_layout()
     p = FIG / "recovery.png"
     fig.savefig(p, dpi=160)
@@ -223,6 +225,8 @@ def chart_loop_progress(loops: list[dict], target: str) -> str | None:
                             markeredgecolor=SURFACE if e.get("accepted") else SERIES[k])
         ax.set_title(cf, loc="left", fontsize=9)
         ax.set_xticks(range(0, 6))
+        ys_all = [y for ln in ax.get_lines() for y in ln.get_ydata()]
+        ax.set_ylim(max(0, min(ys_all + [90]) - 3), 101)
     for ax in list(axes.flat)[len(cases):]:
         ax.axis("off")
     h, lab = axes.flat[0].get_legend_handles_labels()

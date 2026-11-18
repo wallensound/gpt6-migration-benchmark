@@ -1,0 +1,324 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "9174ee512a6591d1",
+    "dev_primary": 0.945,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "simplify",
+      "rewrite",
+      "settings_change",
+      "targeted_fix"
+    ],
+    "train_primary": 0.9416666666666667,
+    "failure_report": {
+      "counts": {
+        "wrong_label": 7
+      },
+      "by_slice": {
+        "swedish": 2,
+        "multi_issue": 4,
+        "german": 1
+      },
+      "patterns": [
+        {
+          "category": "wrong_label",
+          "count": 7,
+          "sample_causes": [
+            "It chose privacy over the earlier feature request; no tie-break rule overrides the first-issue rule here.",
+            "It chose the later cancellation issue instead of the first issue, technical.",
+            "The model chose the later shipping issue instead of the first-mentioned bug report.",
+            "It chose cancellation, but the first issue is a thermostat malfunction, and cancellation does not override bug_report under the tie-break rules.",
+            "It chose privacy for the later data-copy request instead of technical for the first issue, setting up a heating schedule."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9666666666666667,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Makes first mention the default and limits exceptions to the listed pairs.",
+        "prompt_hash": "15060629167e8908",
+        "prompt_chars": 1625,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9166666666666666,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separates issue recognition from pair selection so later requests do not displace earlier issues by default.",
+        "prompt_hash": "ed35f85693cd941c",
+        "prompt_chars": 2051,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=10, c=11, p=1.000)",
+            "slice 'tie_break' drops 26.1 points"
+          ],
+          "mcnemar": {
+            "b": 10,
+            "c": 11,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.26086956521739135,
+          "validity": 1.0,
+          "dev_primary": 0.94,
+          "dev_primary_current": 0.945
+        }
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests low verbosity in isolation while preserving the existing routing prompt.",
+        "prompt_hash": "e20536009487c6ad",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9333333333333333,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "Changes only the fallback instruction to prevent pair-specific overrides from becoming global priorities.",
+        "prompt_hash": "a270321b0512ff24",
+        "prompt_chars": 2097,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9333333333333333,
+        "screen_validity": 1.0,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "rewrite",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=10, c=11, p=1.000)",
+        "slice 'tie_break' drops 26.1 points"
+      ],
+      "mcnemar": {
+        "b": 10,
+        "c": 11,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.26086956521739135,
+      "validity": 1.0,
+      "dev_primary": 0.94,
+      "dev_primary_current": 0.945
+    },
+    "accepted": false,
+    "prompt_hash_after": "9174ee512a6591d1",
+    "dev_primary_after": 0.945,
+    "seconds": 26,
+    "spent_phase": 0.04413355
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "rewrite",
+      "settings_change",
+      "restructure"
+    ],
+    "train_primary": 0.9416666666666667,
+    "failure_report": {
+      "counts": {
+        "wrong_label": 7
+      },
+      "by_slice": {
+        "swedish": 2,
+        "multi_issue": 4,
+        "german": 1
+      },
+      "patterns": [
+        {
+          "category": "wrong_label",
+          "count": 7,
+          "sample_causes": [
+            "It chose privacy over the earlier feature request; no tie-break rule overrides the first-issue rule here.",
+            "It chose the later cancellation issue instead of the first issue, technical.",
+            "The model chose the later shipping issue instead of the first-mentioned bug report.",
+            "It chose cancellation, but the first issue is a thermostat malfunction, and cancellation does not override bug_report under the tie-break rules.",
+            "It chose privacy for the later data-copy request instead of technical for the first issue, setting up a heating schedule."
+          ],
+          "n_examples": 0
+        }
+      ]
+    },
+    "screen_current": 0.9333333333333333,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one Swedish example where a later privacy request does not override an earlier setup question.",
+        "prompt_hash": "6627a1c187cd23ee",
+        "prompt_chars": 2233,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": false,
+          "ngram_hits": 2,
+          "answer_hits": 0
+        },
+        "status": "rejected: leakage"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses a closed, order-independent pair table so the model can distinguish a valid override from a later issue that merely sounds more urgent.",
+        "prompt_hash": "3273883a0b7e2c2b",
+        "prompt_chars": 2303,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests medium verbosity in isolation without repeating the rejected low-verbosity trial or changing the routing instructions.",
+        "prompt_hash": "e17e8ae974310556",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "medium"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.95,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=3, p=0.250)",
+            "slice 'multi_issue' drops 12.5 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 3,
+            "p_value": 0.25
+          },
+          "worst_slice_drop": -0.125,
+          "validity": 1.0,
+          "dev_primary": 0.93,
+          "dev_primary_current": 0.945
+        }
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Moves the output contract to the top and places the tie-break rules and first-issue fallback immediately before the label glossary.",
+        "prompt_hash": "75cc5fb0f0d4bcaa",
+        "prompt_chars": 1936,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": 16,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9333333333333333,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=3, p=0.250)",
+        "slice 'multi_issue' drops 12.5 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 3,
+        "p_value": 0.25
+      },
+      "worst_slice_drop": -0.125,
+      "validity": 1.0,
+      "dev_primary": 0.93,
+      "dev_primary_current": 0.945
+    },
+    "accepted": false,
+    "prompt_hash_after": "9174ee512a6591d1",
+    "dev_primary_after": 0.945,
+    "seconds": 19,
+    "spent_phase": 0.0809502
+  }
+]
