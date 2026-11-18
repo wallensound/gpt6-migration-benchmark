@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Replace the long glossary and repeated warnings with compact extraction and normalization rules while retaining the edge cases.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Retain a compact multilingual lookup while collapsing repeated warnings and formatting rules.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
