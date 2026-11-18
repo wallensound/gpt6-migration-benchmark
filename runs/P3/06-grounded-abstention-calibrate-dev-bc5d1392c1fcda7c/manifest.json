@@ -1,0 +1,92 @@
+{
+  "run_id": "06-grounded-abstention-calibrate-dev-bc5d1392c1fcda7c",
+  "phase": "P3",
+  "git_commit": "3494c51",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:19:24",
+  "reference_date": "2026-11-17",
+  "case": "06-grounded-abstention",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-dev-bc5d1392c1fcda7c",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "bc5d1392c1fcda7c",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:19:25",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "answer_last_sentence": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "answer_two_sentences": {
+            "n": 25,
+            "primary": 1.0
+          },
+          "lookalike_distractor": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "numeric_answer": {
+            "n": 27,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 26,
+            "primary": 1.0
+          },
+          "unanswerable": {
+            "n": 71,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.6488579999999999,
+        "cost_per_item": 0.0032442899999999995,
+        "cost_per_correct": 0.0032442899999999995,
+        "latency_p50_s": 1.1020999999999999,
+        "latency_p95_s": 1.4681699999999995,
+        "tokens_in": 153796,
+        "tokens_in_mean": 768.98,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 11834,
+        "tokens_cache_write_mean": 59.17,
+        "tokens_out": 1092,
+        "tokens_out_mean": 5.46,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "abstention_precision": 1.0,
+          "abstention_recall": 1.0,
+          "over_abstention_rate": 0.0,
+          "clarification_rate": 0.0,
+          "answerable_accuracy": 1.0,
+          "unanswerable_accuracy": 1.0
+        }
+      }
+    }
+  ]
+}

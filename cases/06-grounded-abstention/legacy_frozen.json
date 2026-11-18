@@ -1,0 +1,10 @@
+{
+  "case": "06-grounded-abstention",
+  "frozen_at": "2026-11-18T01:19:30",
+  "prompt_hash": "bc5d1392c1fcda7c",
+  "legacy_files_sha256": "7c965635b14a4cfbff6c38a0448e06ff3566c71594ffdf520b99a7fd5342f289",
+  "dev_primary": 1.0,
+  "floor": 0.9,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

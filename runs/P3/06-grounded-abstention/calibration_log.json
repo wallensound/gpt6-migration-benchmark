@@ -1,0 +1,72 @@
+{
+  "rounds": [
+    {
+      "at": "2026-11-18T01:19:06",
+      "split": "train",
+      "prompt_hash": "bc5d1392c1fcda7c",
+      "primary": 1.0,
+      "validity": 1.0,
+      "per_slice": {
+        "answer_last_sentence": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "answer_two_sentences": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "lookalike_distractor": {
+          "n": 15,
+          "primary": 1.0
+        },
+        "numeric_answer": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 16,
+          "primary": 1.0
+        },
+        "unanswerable": {
+          "n": 43,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    },
+    {
+      "at": "2026-11-18T01:19:25",
+      "split": "dev",
+      "prompt_hash": "bc5d1392c1fcda7c",
+      "primary": 1.0,
+      "validity": 1.0,
+      "per_slice": {
+        "answer_last_sentence": {
+          "n": 25,
+          "primary": 1.0
+        },
+        "answer_two_sentences": {
+          "n": 25,
+          "primary": 1.0
+        },
+        "lookalike_distractor": {
+          "n": 26,
+          "primary": 1.0
+        },
+        "numeric_answer": {
+          "n": 27,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 26,
+          "primary": 1.0
+        },
+        "unanswerable": {
+          "n": 71,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    }
+  ]
+}

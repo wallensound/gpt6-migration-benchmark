@@ -1,0 +1,4 @@
+{"plan_seed": 100600367, "slice": "answer_two_sentences", "stage": "code_verify", "variant": "main", "why": "entity not named in the preceding sentences"}
+{"plan_seed": 100650034, "slice": "unanswerable", "stage": "llm_verify", "variant": "shift", "why": "The text says Storstent was launched in 2010, which is a different attribute and does not identify its maker."}
+{"plan_seed": 100650110, "slice": "answer_two_sentences", "stage": "llm_verify", "variant": "shift", "why": "The text assigns Bakard to “Fenstermex,” not Fenstermex’s planned look-alike Fenstermex? It uses the exact queried name Fenstermex for Bakard, creating a second value."}
+{"plan_seed": 100650165, "slice": "unanswerable", "stage": "llm_verify", "variant": "shift", "why": "Texten säger att Flulgex lanserades 2009, vilket gör att tillverkaren kan härledas från en varaktighet eller tidsangivelse."}

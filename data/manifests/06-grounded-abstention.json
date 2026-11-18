@@ -1,0 +1,34 @@
+{
+  "case": "06-grounded-abstention",
+  "dataset_version": 1,
+  "gen_seed": 1006,
+  "created_at": "2026-11-18T01:18:41",
+  "generator": {
+    "model": "gpt-6.2-sol",
+    "effort": "low"
+  },
+  "verifier": {
+    "model": "gpt-6-luna",
+    "effort": "low"
+  },
+  "generator_model_id": "global.openai.gpt-6.2-sol",
+  "verifier_model_id": "global.openai.gpt-6-luna",
+  "sdk_version": "3.45.0",
+  "git_commit": "901f1a8",
+  "sizes": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "sha256": {
+    "train": "08b90a566571e4cf65969683e4384ad247d2c8ec7b4f6e04443f7425ce87bb9d",
+    "dev": "b559bece42ef28db001888074dead8c84d9915b5fb5f4bb9e3de4624a280e590",
+    "test": "b43bd40bac6e0867d06181da6d8058bc81f1342c6630d91013ed97df928181e7",
+    "shift": "382ddbe97783136f757664128d14719eeec86a97ab7f284fb132c167e30e80b0"
+  },
+  "frozen_files_sha256": {
+    "spec.md": "c02dc9bd204cece5a68aec2317e730bb4c324f4de5497b002b825966b7ccf0e5",
+    "case.py": "9d197a0ab7f51c349ca0463e5f1793d4d712fe7663d2830360fe2f9771b88d56"
+  }
+}

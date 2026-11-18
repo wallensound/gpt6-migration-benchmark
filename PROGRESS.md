@@ -57,3 +57,9 @@ Append-only log. Newest entries at the bottom.
 - 1001 planned, 984 kept (drop 1.7%), splits 120/200/300/150; shift inputs ~815 tokens vs ~366 main. 69 tests. Legacy train 99.2% (the one failure is an Azure content-filter rejection), dev 99.5% (floor 90%), one round, hash 7b4c50e8226a4ca4.
 - **D18 (case 01)** duplicates in the output fail (rule 10) even when the set is right; first-mention order (rule 11) is requested but not scored; names compare after NFC and whitespace trimming only; domain-only and product-phrase mentions are planned only for one-word names; possessives "X's" only in English items (the spec still tells the model to strip Swedish/German genitive -s); no other organisations (banks, media, agencies) may appear; shift paragraphs are 2-3x the planned main length with the unseen company pool.
 - Spot-check: 4 dev items read, labels correct; the single dev miss keeps a Swedish genitive ("Velplums").
+
+### 2026-11-18 P2+P3 case 06 grounded abstention: sealed and frozen
+- 1001 planned, 997 kept (drop 0.4%), splits 120/200/300/150 (35% unanswerable). 38 tests. Legacy train 100%, dev 100% (floor 90%), one round, hash bc5d1392c1fcda7c.
+- **D19 (case 06)** the question is a separate item field; the user message is `CONTEXT: ... QUESTION: ...` with English labels for every language; `NOT_FOUND` is case-sensitive and only surrounding whitespace and one trailing period are tolerated; answers match on diacritic-folded whole tokens (units and answer language not scored); an answer that also contains a look-alike's value fails; any `?` counts as a clarifying question. People and products have no shift pool, so only companies are unseen in the shift set; all unanswerable shift items are of the "look-alike has it" kind.
+- Limitation: the source model is at the ceiling (100%), so the case can only show regressions.
+- Spot-check: 6 dev items read (EN/SV/DE), labels and contexts correct.

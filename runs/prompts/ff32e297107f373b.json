@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Classify one support message in English, Swedish or German. Return exactly one label below, as written, with nothing else, even if the message is unclear.\n\nbilling: charges, payments, invoices, receipts, prices, payment methods, charge refunds\ntechnical: setup, connection, configuration or usage help for the product, app or website; nothing reported broken\naccount_access: login, passwords, two-factor codes, locked or blocked accounts\nshipping: order delivery, tracking, delays, delivery address, missing parcels\nreturns: physical returns, return labels, exchanges, return window\ncancellation: ending a subscription or plan, stopping auto-renewal\nfeature_request: request for functionality not currently offered\nbug_report: product, app or website malfunctions, including crashes, error codes, freezes or features that stop working\nprivacy: personal data storage, copies, deletion, sharing or GDPR requests\npartnership: business proposals for reselling, co-marketing, integrations, sponsorship or volume deals\nfeedback: opinions, praise or complaints without a request for help or action\nother: unrelated to the company's products and services\n\nFor multiple issues, apply these overrides before using mention order:\n- billing over technical or bug_report if a payment, charge or invoice is mentioned.\n- cancellation over billing or returns if the customer wants to end a subscription.\n- privacy over account_access or cancellation if the customer asks about or wants deletion of their personal data.\nIf no override decides, use the first issue's label. For a single issue, use its label.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

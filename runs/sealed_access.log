@@ -10,3 +10,5 @@
 2026-11-18T01:11:00	write(generate)	08-glossary-translation/shift	pid=11116	cmd=cli.py data 08	BENCH_FINAL=0
 2026-11-18T01:12:07	write(generate)	01-entity-extraction/test	pid=4012	cmd=cli.py data 01	BENCH_FINAL=0
 2026-11-18T01:12:07	write(generate)	01-entity-extraction/shift	pid=4012	cmd=cli.py data 01	BENCH_FINAL=0
+2026-11-18T01:18:39	write(generate)	06-grounded-abstention/test	pid=5984	cmd=cli.py data 06	BENCH_FINAL=0
+2026-11-18T01:18:39	write(generate)	06-grounded-abstention/shift	pid=5984	cmd=cli.py data 06	BENCH_FINAL=0

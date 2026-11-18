@@ -1,0 +1,69 @@
+{
+  "case": "06-grounded-abstention",
+  "dataset_version": 1,
+  "gen_seed": 1006,
+  "planned": 1001,
+  "kept": 997,
+  "dropped": 4,
+  "drop_rate": 0.003996003996003996,
+  "dropped_by_stage": {
+    "code_verify": 1,
+    "llm_verify": 3
+  },
+  "exact_duplicates": 0,
+  "near_duplicates": 0,
+  "items_per_split": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "items_per_slice_and_split": {
+    "test": {
+      "answer_last_sentence": 38,
+      "answer_two_sentences": 38,
+      "lookalike_distractor": 40,
+      "numeric_answer": 40,
+      "plain": 39,
+      "unanswerable": 105
+    },
+    "dev": {
+      "answer_last_sentence": 25,
+      "answer_two_sentences": 25,
+      "lookalike_distractor": 26,
+      "numeric_answer": 27,
+      "plain": 26,
+      "unanswerable": 71
+    },
+    "train": {
+      "answer_last_sentence": 15,
+      "answer_two_sentences": 15,
+      "lookalike_distractor": 15,
+      "numeric_answer": 16,
+      "plain": 16,
+      "unanswerable": 43
+    },
+    "shift": {
+      "answer_last_sentence": 19,
+      "answer_two_sentences": 18,
+      "lookalike_distractor": 20,
+      "numeric_answer": 20,
+      "plain": 20,
+      "unanswerable": 53
+    }
+  },
+  "avg_input_chars": {
+    "test": 2368.4566666666665,
+    "dev": 2425.845,
+    "train": 2385.233333333333,
+    "shift": 6588.013333333333
+  },
+  "avg_input_tokens_est": {
+    "test": 592.1141666666666,
+    "dev": 606.46125,
+    "train": 596.3083333333333,
+    "shift": 1647.0033333333333
+  },
+  "spent_usd_phase_total": 32.090536875,
+  "seconds": 1037
+}
