@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Uses a short entity-and-attribute lookup procedure and asks for the bare value to minimize formatting errors.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Consolidates grounding and formatting rules while making clear that references can carry facts across sentences.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]

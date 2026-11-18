@@ -1,0 +1,284 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "89ebdb6e859e7880",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "example_swap",
+      "targeted_fix",
+      "rewrite"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the two allowed output forms first, then explains how to choose between them.",
+        "prompt_hash": "d4dad26538cb98b1",
+        "prompt_chars": 1000,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing that a look-alike’s value does not fill a gap for the target.",
+        "prompt_hash": "ebd6145767d5babe",
+        "prompt_chars": 1281,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures, changes only the abstention rule to clarify that clear cross-sentence references count as evidence.",
+        "prompt_hash": "1ad92faba222b33c",
+        "prompt_chars": 1230,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses a short entity-and-attribute lookup procedure and asks for the bare value to minimize formatting errors.",
+        "prompt_hash": "f2625967b03f46b0",
+        "prompt_chars": 885,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "rewrite",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "89ebdb6e859e7880",
+    "dev_primary_after": 1.0,
+    "seconds": 50,
+    "spent_phase": 23.2129906375
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "simplify",
+      "example_swap",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Consolidates grounding and formatting rules while making clear that references can carry facts across sentences.",
+        "prompt_hash": "ae8e5159cd127c6f",
+        "prompt_chars": 452,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing that a nearby look-alike does not override a clear cross-sentence reference.",
+        "prompt_hash": "e06d00ff4f81c6b6",
+        "prompt_chars": 1343,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Frames answerability as an attribution check over the whole document rather than a same-sentence name match.",
+        "prompt_hash": "54ed9553278f49a1",
+        "prompt_chars": 788,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether low verbosity reinforces concise outputs while leaving the prompt unchanged.",
+        "prompt_hash": "c6edf674543358a3",
+        "prompt_chars": 1105,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "89ebdb6e859e7880",
+    "dev_primary_after": 1.0,
+    "seconds": 44,
+    "spent_phase": 26.6904570125
+  }
+]
