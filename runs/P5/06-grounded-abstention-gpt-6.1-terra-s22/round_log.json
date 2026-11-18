@@ -1,0 +1,284 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "89ebdb6e859e7880",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "targeted_fix",
+      "settings_change",
+      "restructure",
+      "simplify"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "No failures were observed, so this tests one small change addressing the risk of over-abstaining on clear cross-sentence references.",
+        "prompt_hash": "215b5031dacbd1b4",
+        "prompt_chars": 1222,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether low verbosity reinforces concise output while holding the prompt constant.",
+        "prompt_hash": "c6edf674543358a3",
+        "prompt_chars": 1105,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the two permitted outputs first and separates evidence selection from response formatting.",
+        "prompt_hash": "87604aec855d0f0e",
+        "prompt_chars": 824,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Condenses the prompt to the grounding decision and output contract without imposing an answer-language requirement.",
+        "prompt_hash": "391cbc0597caea89",
+        "prompt_chars": 446,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "89ebdb6e859e7880",
+    "dev_primary_after": 1.0,
+    "seconds": 44,
+    "spent_phase": 22.8828553125
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "settings_change",
+      "simplify",
+      "targeted_fix",
+      "restructure"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Test whether low verbosity reinforces concise output without changing the prompt.",
+        "prompt_hash": "c6edf674543358a3",
+        "prompt_chars": 1105,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "simplify",
+        "rationale": "Reduce the instructions to a value-only extraction rule while preserving support across sentences.",
+        "prompt_hash": "6f286ee85fbf3b3d",
+        "prompt_chars": 414,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures to target, clarify the exact-name rule to guard against abstaining on clear cross-sentence references.",
+        "prompt_hash": "b74c6dc4fa429a0d",
+        "prompt_chars": 1189,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Put the two permitted outputs first, then separate entity attribution from the final response checks.",
+        "prompt_hash": "ebfa775d8a74e5a4",
+        "prompt_chars": 839,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "simplify",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "89ebdb6e859e7880",
+    "dev_primary_after": 1.0,
+    "seconds": 40,
+    "spent_phase": 25.8017056125
+  }
+]

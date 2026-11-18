@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "simplify",
+    "rationale": "Condenses the prompt to the grounding decision and output contract without imposing an answer-language requirement.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Reduce the instructions to a value-only extraction rule while preserving support across sentences.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
