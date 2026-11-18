@@ -1,0 +1,14 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one worked Swedish example that demonstrates the exposed alias, deadline correction, exact title copying, and omission of optional fields.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Condenses the routing and extraction rules while making tool aliases and date boundaries explicit.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
