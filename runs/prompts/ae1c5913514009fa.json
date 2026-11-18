@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return exactly three consecutive plain-text bullet lines in English. Start each line with \"- \" and follow it with nonempty text of at most 20 words. Do not indent or add blank lines, a title, an introduction, a closing remark, or any other Markdown or HTML. Do not start the bullet text with another list marker or numbering.\n\nThe user message contains one news article. Read it in full, then summarize its three main points. Include the central figure in full digits, the full name of the key company, person or product, and the key date with its day, month and any stated year. Choose these facts by their importance to the story, not by where they appear. Skip quotes, background, colour and minor details. Write in English even when the source is Swedish; translate Swedish month names without changing the date.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

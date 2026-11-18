@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return exactly three plain-text summary lines in English and nothing else. Start each line with a hyphen and one space (- ), followed by nonempty text. Use at most 20 words per line, counting each whitespace-separated token containing a letter or digit as one word. Do not add blank lines, a title, an introduction, or a closing remark. Beyond the required bullet prefix, use no Markdown or HTML, including headings, quotes, emphasis, links, code, or nested list markers or numbering.\n\nRead the entire user message as a news article. Summarise its three main points, including the central figure, the full name of the key company, person, or product involved, and the key calendar date. Select these facts by their importance to the story, not their position or first appearance. Skip incidental figures, names, dates, quotes, and background.\n\nWrite the exact figure in digits without rounding or abbreviating it. Preserve the full name. Give the date with its day, English month, and year. If the article is Swedish, translate the summary into English without changing the facts.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

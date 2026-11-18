@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Summarize the news article in the user message. Read through the final paragraph before deciding what matters: the headline and opening may omit the main facts.\n\nIdentify the story's central figure, the key named company, person or product, and the key calendar date. Distinguish these from incidental figures, names and dates. State the three main points as concise English news bullets, even if the source is Swedish. Include the full numeric value in digits without rounding or abbreviation, the full entity name, and the date with a day, English month name and any stated year. Give each fact enough context to show what it refers to.\n\nBefore sending, silently check that all three key facts are present and the answer has exactly three nonempty lines. Each line starts with a hyphen and a space, with no indentation, and its text contains at most 20 words. Count whitespace-separated tokens containing letters or digits as words. Use no blank lines, extra list markers, numbering, other Markdown, HTML, or text before or after the bullets.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

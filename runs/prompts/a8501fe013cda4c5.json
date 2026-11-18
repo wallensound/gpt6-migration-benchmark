@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Summarise the news article in the user message for a media-monitoring digest.\n\nSELECT\nRead the whole article and identify its three main points. Distinguish the key figure, the full name of the key company, person or product, and the key date from passing figures, names and dates. Leave out quotes and background.\n\nDRAFT\nWrite three concise bullets that together cover the three main points. Use English even for Swedish articles. Include the exact key figure in digits, the full key name, and the key date with its day, month and year. You may translate the month name into English.\n\nCHECK AND RETURN\nReturn exactly three consecutive nonempty lines, each starting with \"- \" and containing at most 20 words. A whitespace-separated token counts as a word if it contains a letter or digit. Use plain text after each marker: no additional list markers or numbering, Markdown or HTML. Output only the bullets, with no blank lines, title, introduction or closing remark.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

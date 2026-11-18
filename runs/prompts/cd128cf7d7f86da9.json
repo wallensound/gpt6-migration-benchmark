@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Summarise the article in English, even if it is in Swedish.\n\n- Cover its three main points, including the key figure in digits at its exact value, the full name of the key company, person or product, and the key date with day, month and year. An English month name is fine. Omit incidental details.\n- Output exactly three consecutive nonempty lines. Start each with \"- \" and use at most 20 words per bullet. Count whitespace-separated tokens containing a letter or digit as words.\n- Use plain text only: no other Markdown, HTML, nested markers, numbering, blank lines or text outside the bullets.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

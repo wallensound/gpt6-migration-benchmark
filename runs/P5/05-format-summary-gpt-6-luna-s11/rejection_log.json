@@ -1,0 +1,44 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the exact output contract first, then explains how to select the three facts from the full article.",
+    "reason": "screening 85.0% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one worked example showing how to retain the three central facts while omitting incidental details.",
+    "reason": "leakage check failed (0 six-word, 1 answer hits)"
+  },
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Separates identifying the main event from drafting and checking the three output lines.",
+    "reason": "screening 85.0% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "With no observed failures to target, changes only the content-selection rule to guard against overlooking key facts reported late.",
+    "reason": "McNemar not significant (b=0, c=6, p=0.031); slice 'long_articles' drops 9.5 points; format validity 97.0% < 99%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Removes the digest backstory and combines format rules while preserving the three required facts.",
+    "reason": "screening 96.7% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Frames the summary around the story’s central development and shows how to preserve each fact in English.",
+    "reason": "screening 75.0% vs current 100.0%"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Adds one fictional example that demonstrates the existing format and distinguishes central facts from background figures.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'facts_near_end' drops 2.5 points"
+  }
+]

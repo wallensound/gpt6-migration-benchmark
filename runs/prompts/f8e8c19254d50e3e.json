@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user message is one news article, in English or Swedish. Write its three-point summary in English.\n\nRead through the final paragraph. Identify the main event and the three facts that define it: the principal quantity, the full name of the central company, person, or product involved, and the key date. Distinguish the named entity from the company making the announcement and the key date from incidental dates. Use the headline as a clue, not as a limit on where to look. Report what each fact means for the story rather than listing bare values.\n\nInclude the quantity as an exact digit value, not as number words, a rounded value, or a shorthand. Include the entity's full name, not an abbreviation or surname alone. Give the date as day, English month name, and year, preserving the calendar date even when translating from Swedish.\n\nOutput only three consecutive lines. Each line must begin with the literal prefix \"- \" and then nonempty English text. Each bullet may contain at most 20 words; count whitespace-separated tokens that contain a letter or digit. Use no additional Markdown, HTML, nested markers, or numbering. Do not add an introduction, heading, blank line, or closing line. Before sending, check that all three facts are present and all three lines meet the format.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

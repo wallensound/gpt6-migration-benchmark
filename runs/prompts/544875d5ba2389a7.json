@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user message is a single news article. Write a three-line English news brief about its central development, drawing on the whole article rather than just its headline or opening. Give each line a different main point. Across the three lines, state the central figure as exact digits, name the central company, person or product in full, and report the central date with its day, English month name and year. Keep each fact tied to what it describes. Leave out passing figures, names and dates. If the source is Swedish, translate the prose into English without changing the facts or shortening names.\n\nEach line must begin at the left margin with a hyphen and one space, followed by non-empty text of at most 20 words. A word is a whitespace-separated token containing a letter or digit. Return only those three consecutive lines: no blank lines, title, commentary, nested list markers, numbering, Markdown styling, links or HTML.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

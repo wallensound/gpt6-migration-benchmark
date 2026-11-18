@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "OUTPUT CONTRACT\nSummarise the article in the user message in English, even if the source is Swedish. Return exactly three consecutive, non-empty plain-text bullet lines and nothing else. Start each line with \"- \" (hyphen and space), without indentation. Use at most 20 words per bullet; count whitespace-separated tokens containing a letter or digit. Do not add blank lines, a title, an introduction, or a closing remark. Apart from the required bullet markers, use no Markdown, HTML, or nested list markers.\n\nSELECT THE MAIN POINTS\nRead the full article, including the ending. Cover its three main points, including the key figure, the full name of the key company, person or product, and the key date. Choose facts by their importance to the story, not by their position. Leave out incidental figures, names and dates.\n\nWRITE THE SUMMARY\nPreserve the exact numeric value in digits and the full entity name. Give the date with its day, English month name and year, preserving the source date.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

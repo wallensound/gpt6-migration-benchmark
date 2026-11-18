@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the whole article and summarise its three main points in English, even if the source is Swedish. Include the key figure in digits at its exact value, the full name of the key company, person or product, and the key date with its day, English month name and year. Leave out incidental details.\n\nOutput only three consecutive plain-text lines, each starting with \"- \" and followed by 1–20 words. Count whitespace-separated tokens containing a letter or digit as words. No indentation, blank lines, extra text, nested markers, numbering, headings, quotes formatted as blockquotes, Markdown styling or links, backticks, or HTML tags.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

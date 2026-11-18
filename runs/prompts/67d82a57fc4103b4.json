@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Return only an English summary of the article in the user message, even when the source is Swedish.\n\nOUTPUT CONTRACT\nUse exactly three consecutive nonempty lines. Start each line with \"- \" (one hyphen and one space, no indentation), followed by bullet text of at most 20 words. Count whitespace-separated tokens containing a letter or digit as words. Use plain text: no extra list markers or numbering, headings, blockquotes, emphasis, strikethrough, backticks, Markdown links or HTML tags. No title, introduction, blank lines or closing remark.\n\nCONTENT\nRead the entire article before choosing its three main points; they may appear near the end. Summarise those points, not quotes, background or incidental figures, names and dates. Include the main figure as an exact value in digits, the full name of the key company, person or product, and the key date with the correct day, month and year. Use an English month name. Explain what each fact means in the story rather than listing values without context.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

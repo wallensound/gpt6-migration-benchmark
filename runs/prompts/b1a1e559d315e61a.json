@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the entire news article in the user message before choosing its three main points. Summarize those points in English, even if the source is Swedish. Include the exact key quantity in digits, the full name of the key company, person or product, and the key date with its day, English month name and correct year. Keep each fact tied to what it describes. Distinguish the main announcement from passing mentions of people, figures and dates; the main facts may appear late in the article.\n\nReturn exactly three consecutive nonempty lines, each starting with a hyphen and one space and containing no more than 20 words. Count whitespace-separated tokens containing a letter or digit as words. Use plain text after the bullet marker: no headings, quotes, nested list markers, numbering, links, HTML or Markdown styling. Do not add a title, introduction, blank line, or closing remark.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the entire news article in the user message before choosing its three main points. Do not assume the headline or opening contains them. Identify the central figure, the key company, person, or product involved (not merely the subject company), and the key date. Distinguish these from passing names, figures, and dates.\n\nSummarise the three main points in English, even if the source is Swedish. State what each key fact means in the story. Include the exact figure in digits without rounding or abbreviating it, the full name of the key entity, and the key date with its day, English month name, and year.\n\nReturn exactly three consecutive plain-text lines, each beginning with a hyphen and one space followed by non-empty text. Each bullet may contain at most 20 words. Count whitespace-separated tokens containing a letter or digit as words. Use no other Markdown, HTML, or nested list markers. Return only the bullets: no title, introduction, blank lines, or closing remark.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

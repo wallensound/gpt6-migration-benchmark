@@ -1,0 +1,288 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "3f3294a6b868c17c",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "example_swap",
+      "targeted_fix",
+      "rewrite"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the exact output contract first, then explains how to select the three facts from the full article.",
+        "prompt_hash": "b4c489bee5b2833a",
+        "prompt_chars": 1080,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.85,
+        "screen_validity": 0.85,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing how to retain the three central facts while omitting incidental details.",
+        "prompt_hash": "59f2006e0a18ab5f",
+        "prompt_chars": 1524,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": false,
+          "ngram_hits": 0,
+          "answer_hits": 1
+        },
+        "status": "rejected: leakage"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures to target, changes only the content-selection rule to guard against overlooking key facts reported late.",
+        "prompt_hash": "2f7f22900c4fb0da",
+        "prompt_chars": 1078,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 0.9833333333333333,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=6, p=0.031)",
+            "slice 'long_articles' drops 9.5 points",
+            "format validity 97.0% < 99%"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 6,
+            "p_value": 0.03125
+          },
+          "worst_slice_drop": -0.09523809523809523,
+          "validity": 0.97,
+          "dev_primary": 0.97,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separates identifying the main event from drafting and checking the three output lines.",
+        "prompt_hash": "f8e8c19254d50e3e",
+        "prompt_chars": 1290,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.85,
+        "screen_validity": 0.95,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "targeted_fix",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=6, p=0.031)",
+        "slice 'long_articles' drops 9.5 points",
+        "format validity 97.0% < 99%"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 6,
+        "p_value": 0.03125
+      },
+      "worst_slice_drop": -0.09523809523809523,
+      "validity": 0.97,
+      "dev_primary": 0.97,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 1.0,
+    "seconds": 33,
+    "spent_phase": 37.65162003
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "simplify",
+      "example_swap",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Removes the digest backstory and combines format rules while preserving the three required facts.",
+        "prompt_hash": "959b6aa39d21dd95",
+        "prompt_chars": 542,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 0.9666666666666667,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one fictional example that demonstrates the existing format and distinguishes central facts from background figures.",
+        "prompt_hash": "c62e5a2d796d604a",
+        "prompt_chars": 1486,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'facts_near_end' drops 2.5 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.025000000000000022,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Frames the summary around the story’s central development and shows how to preserve each fact in English.",
+        "prompt_hash": "544875d5ba2389a7",
+        "prompt_chars": 934,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.75,
+        "screen_validity": 0.75,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether low verbosity improves concision without changing the prompt that passed every training item.",
+        "prompt_hash": "a3173a148e1ccc18",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9833333333333333,
+        "screen_validity": 0.9833333333333333,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "example_swap",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'facts_near_end' drops 2.5 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.025000000000000022,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 1.0,
+    "seconds": 35,
+    "spent_phase": 38.2351013425
+  }
+]

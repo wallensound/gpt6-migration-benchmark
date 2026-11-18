@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6-luna",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the whole article and summarise its three main points in English, even if the source is Swedish. Include the main figure in digits at its exact value, the full name of the key company, person or product, and the key date with day, English month name and year. Focus on central facts, not passing details.\n\nReturn only three consecutive non-empty plain-text lines, each starting with \"- \" and containing at most 20 words (whitespace-separated tokens with a letter or digit). No indentation, blank lines, extra text, Markdown beyond the required markers, HTML, or additional list markers.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
