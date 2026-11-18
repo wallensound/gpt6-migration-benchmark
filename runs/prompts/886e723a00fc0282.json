@@ -1,0 +1,15 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "Read the user message as the text of one supplier invoice. Return only one JSON object with exactly these keys: vendor, invoice_number, issue_date, due_date, currency, net, vat, total. Every value must be a string or null. No Markdown, prose, or additional keys.\n\nSelect the stated values:\n- vendor: the issuer, seller, supplier, or payee, never the customer or bill-to party. Preserve the full legal name as written, including the suffix.\n- invoice_number: the invoice's own identifier as written, without the label. Exclude order, PO, and customer numbers.\n- issue_date: the invoice date, not an order or delivery date.\n- due_date: the payment due date, only if a date is written.\n- currency: the billing currency of the invoice amounts. Ignore informational or approximate conversions into another currency.\n- net: the stated taxable amount excluding VAT, after any discount. Do not use the pre-discount subtotal or a line-item amount unless the invoice identifies that amount as the invoice net.\n- vat: the stated VAT, moms, MwSt., or sales-tax amount, not the rate.\n- total: the stated gross amount including tax, payable in the billing currency.\n\nUse null for any field not stated. Never calculate an amount or derive a due date from payment terms.\n\nNormalize dates to YYYY-MM-DD. Preserve year-first ISO dates; otherwise read numeric dates day-first, even when both day and month are at most 12. Expand a two-digit year to 20YY. Recognize written month names, abbreviations, and ordinals. Normalize amounts to strings with a dot and exactly two decimal digits, without grouping separators or currency. The final comma or dot followed by two digits is the decimal separator. Use EUR, SEK, USD, GBP, CHF, NOK, or DKK for currency. Map € to EUR, £ to GBP, $ to USD, and kr to SEK.\n\nRecognize English, Swedish, and German labels. Swedish cues include Fakturanummer, Fakturadatum, Förfallodatum, Summa exkl. moms, Moms, and Att betala. German cues include Rechnungsnummer, Rechnungsdatum, Fällig am, Zahlbar bis, Nettobetrag, MwSt., and Gesamtbetrag. Tolerate broken lines and OCR typos in labels and prose; the values themselves are intact.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": true,
+    "logprobs": false,
+    "flag_method": "none",
+    "flag_threshold": -0.01,
+    "verbosity": null
+  }
+}

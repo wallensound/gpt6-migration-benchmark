@@ -1,0 +1,288 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "f038b0a89df341d6",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "restructure",
+      "example_swap",
+      "targeted_fix",
+      "rewrite"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "restructure",
+        "rationale": "Puts the output contract first and separates finding mentions, resolving names, and assembling the result.",
+        "prompt_hash": "df11d3738fb0f8f2",
+        "prompt_chars": 1781,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one Swedish example showing domain-first ordering, later spelling recovery, sibling products, and a retained name word.",
+        "prompt_hash": "447b3426c64557b5",
+        "prompt_chars": 1731,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'german' drops 5.0 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.050000000000000044,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures, makes one preventive clarification: check the entire paragraph for the owner's written name before using a domain fallback.",
+        "prompt_hash": "56bce46f9fbafdfc",
+        "prompt_chars": 1859,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Uses a compact mention-to-name procedure and the specified Structured Outputs wrapper to enforce the response shape.",
+        "prompt_hash": "4b88166b726537dd",
+        "prompt_chars": 1754,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "example_swap",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'german' drops 5.0 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.050000000000000044,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 1.0,
+    "seconds": 53,
+    "spent_phase": 11.26901857
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "simplify",
+      "example_swap",
+      "rewrite",
+      "settings_change"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "simplify",
+        "rationale": "Consolidates repeated instructions while preserving all mention types, normalization rules, and output constraints.",
+        "prompt_hash": "3cce8a9589ea2425",
+        "prompt_chars": 1416,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Replaces the first worked example with a German case that distinguishes a grammatical genitive from a name word and includes a domain-only company.",
+        "prompt_hash": "0c1e8b4caf3f2557",
+        "prompt_chars": 4077,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Separates mention discovery from name resolution so an early alias can keep its position while a later mention supplies the spelling.",
+        "prompt_hash": "61a877b27eff59ad",
+        "prompt_chars": 1814,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9827586206896551,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Enables a strict object schema to enforce the response shape without relying on text formatting alone.",
+        "prompt_hash": "eb9728c8b93b3bfd",
+        "prompt_chars": 2069,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": true,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'german' drops 5.0 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.050000000000000044,
+          "validity": 1.0,
+          "dev_primary": 0.995,
+          "dev_primary_current": 1.0
+        }
+      }
+    ],
+    "decision": {
+      "edit_kind": "settings_change",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'german' drops 5.0 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.050000000000000044,
+      "validity": 1.0,
+      "dev_primary": 0.995,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "f038b0a89df341d6",
+    "dev_primary_after": 1.0,
+    "seconds": 37,
+    "spent_phase": 12.6841981975
+  }
+]

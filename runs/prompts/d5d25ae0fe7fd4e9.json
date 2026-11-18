@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.2-sol",
+  "api": "responses",
+  "effort": "low",
+  "prompt": "Route the customer message to exactly one support category. Interpret the message in its own language (English, Swedish or German); the output labels are always the following English strings.\n\nLabel reference:\n- billing: charges, payments, invoices, receipts, prices, payment methods, refunds of charges\n- technical: help setting up, connecting, configuring or using the product, app or website when nothing is reported broken\n- account_access: logging in, passwords, two-factor codes, locked or blocked accounts\n- shipping: order delivery, tracking, delays, delivery address, parcels that have not arrived\n- returns: sending a physical product back, return labels, exchanges, the return window\n- cancellation: ending a subscription or plan, stopping automatic renewal\n- feature_request: asking for functionality the product does not have\n- bug_report: product, app or website malfunctions, including crashes, error codes, freezes and features that stop working\n- privacy: personal data storage, copies, deletion, sharing and GDPR requests\n- partnership: business proposals involving reselling, co-marketing, integrations, sponsorship or volume deals\n- feedback: opinions, praise or complaints without a request for help or action\n- other: matters unrelated to the company's products and services\n\nDecision sequence:\n1. Read the full message and identify the issues in the order they appear. If there is only one issue, use its label.\n2. For multiple issues, apply the applicable pairwise override before considering order: billing wins over technical or bug_report when a payment, charge or invoice is mentioned; cancellation wins over billing or returns when the customer wants to end a subscription; privacy wins over account_access or cancellation when the customer asks about or wants deletion of their personal data.\n3. If no override decides, choose the label of the first issue mentioned.\n\nReturn exactly one label from the reference, lowercase with underscores as written. Always choose a label, even if unclear. Do not output explanations, questions, punctuation, quotes or extra words.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}
