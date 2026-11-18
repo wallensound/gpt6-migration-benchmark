@@ -1,0 +1,530 @@
+{
+  "case": "05-format-summary",
+  "source": {
+    "setting": "gpt-5.6-sol / none (legacy, chat)",
+    "model": "gpt-5.6-sol",
+    "effort": "none",
+    "primary": 1.0,
+    "primary_ci": [
+      0.9811546736227335,
+      1.0
+    ],
+    "validity": 1.0,
+    "nonanswer_rate": 0.0,
+    "error_rate": 0.0,
+    "cost_per_item": 0.005568055,
+    "cost_per_correct": 0.005568055,
+    "latency_p50_s": 1.3665999999999998,
+    "latency_p95_s": 1.8242949999999996,
+    "tokens_in_mean": 1003.19,
+    "tokens_out_mean": 54.315,
+    "tokens_reasoning_mean": 0.0,
+    "failure_categories": {},
+    "per_slice": {
+      "facts_near_end": {
+        "n": 40,
+        "primary": 1.0
+      },
+      "long_articles": {
+        "n": 42,
+        "primary": 1.0
+      },
+      "numbers_heavy": {
+        "n": 39,
+        "primary": 1.0
+      },
+      "plain": {
+        "n": 40,
+        "primary": 1.0
+      },
+      "swedish_source": {
+        "n": 39,
+        "primary": 1.0
+      }
+    }
+  },
+  "rows": [
+    {
+      "setting": "gpt-5.6-sol / none (legacy, chat)",
+      "model": "gpt-5.6-sol",
+      "effort": "none",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.005568055,
+      "cost_per_correct": 0.005568055,
+      "latency_p50_s": 1.3665999999999998,
+      "latency_p95_s": 1.8242949999999996,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 54.315,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / low",
+      "model": "gpt-6.2-astra",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.012025699999999999,
+      "cost_per_correct": 0.012025699999999999,
+      "latency_p50_s": 1.1354499999999998,
+      "latency_p95_s": 1.604135,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 49.845,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / medium",
+      "model": "gpt-6.2-astra",
+      "effort": "medium",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0120317,
+      "cost_per_correct": 0.0120317,
+      "latency_p50_s": 1.06245,
+      "latency_p95_s": 1.6873549999999997,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 49.995,
+      "tokens_reasoning_mean": 0.085,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / low",
+      "model": "gpt-6.2-sol",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.003001125,
+      "cost_per_correct": 0.003001125,
+      "latency_p50_s": 0.6558999999999999,
+      "latency_p95_s": 1.22747,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 49.315,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / medium",
+      "model": "gpt-6.2-sol",
+      "effort": "medium",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.002996225,
+      "cost_per_correct": 0.002996225,
+      "latency_p50_s": 0.6802999999999999,
+      "latency_p95_s": 1.2429799999999998,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 48.825,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / none",
+      "model": "gpt-6.1-terra",
+      "effort": "none",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 0.995,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.000688932625,
+      "cost_per_correct": 0.0006923945979899497,
+      "latency_p50_s": 0.9448,
+      "latency_p95_s": 1.5918249999999998,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 52.745,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "format_too_long": 1
+      },
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 0.9743589743589743
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / low",
+      "model": "gpt-6.1-terra",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0006925950000000001,
+      "cost_per_correct": 0.0006925950000000001,
+      "latency_p50_s": 0.8623,
+      "latency_p95_s": 1.4000049999999997,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 52.93,
+      "tokens_reasoning_mean": 0.42,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / none",
+      "model": "gpt-6-luna",
+      "effort": "none",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 6.918576250000001e-05,
+      "cost_per_correct": 6.918576250000001e-05,
+      "latency_p50_s": 0.55135,
+      "latency_p95_s": 0.6700899999999996,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 53.915,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / low",
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "primary": 1.0,
+      "primary_ci": [
+        0.9811546736227335,
+        1.0
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 8.30445e-05,
+      "cost_per_correct": 8.30445e-05,
+      "latency_p50_s": 0.7592000000000001,
+      "latency_p95_s": 1.3063899999999997,
+      "tokens_in_mean": 1003.19,
+      "tokens_out_mean": 108.07,
+      "tokens_reasoning_mean": 53.575,
+      "failure_categories": {},
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      }
+    }
+  ],
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6-luna/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    }
+  },
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "low",
+      "score_per_dollar": 83.15524252226483,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 83.15524252226483
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 83.11377444583891
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "medium",
+      "score_per_dollar": 333.75330624368996,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 333.20838019076183
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 333.75330624368996
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "none",
+      "score_per_dollar": 1444.2631454708653,
+      "candidates": {
+        "none": {
+          "primary": 0.995,
+          "score_per_dollar": 1444.2631454708653
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 1443.845248666248
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "none",
+      "score_per_dollar": 14453.840846229017,
+      "candidates": {
+        "none": {
+          "primary": 1.0,
+          "score_per_dollar": 14453.840846229017
+        },
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 12041.736659261
+        }
+      }
+    }
+  },
+  "spent_phase": 43.68333057
+}
