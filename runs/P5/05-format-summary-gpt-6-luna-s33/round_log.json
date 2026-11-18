@@ -1,0 +1,286 @@
+[
+  {
+    "round": 0,
+    "prompt_hash": "3f3294a6b868c17c",
+    "dev_primary": 1.0,
+    "note": "mechanical port (starting prompt)"
+  },
+  {
+    "round": 1,
+    "kinds": [
+      "rewrite",
+      "restructure",
+      "settings_change",
+      "targeted_fix"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "rewrite",
+        "rationale": "Makes full-article fact selection explicit and gives Swedish dates a clear English rendering.",
+        "prompt_hash": "a7cd31610c744791",
+        "prompt_chars": 983,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.7166666666666667,
+        "screen_validity": 0.7166666666666667,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Moves the output contract to the top while preserving the current prompt’s content guidance.",
+        "prompt_hash": "95f4464e772227c3",
+        "prompt_chars": 999,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=1, p=1.000)",
+            "slice 'facts_near_end' drops 2.5 points"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 1,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": -0.025000000000000022,
+          "validity": 0.995,
+          "dev_primary": 0.995,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests whether low verbosity adds protection against overlong bullets without changing the validated prompt.",
+        "prompt_hash": "a3173a148e1ccc18",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "low"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.9666666666666667,
+        "screen_validity": 0.9666666666666667,
+        "status": "rejected: screening (trails current)"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures, makes one preventive clarification for articles whose main facts appear late.",
+        "prompt_hash": "9dcc0f3ece04b18e",
+        "prompt_chars": 1054,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 0.85,
+        "screen_validity": 0.85,
+        "status": "rejected: screening (trails current)"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=1, p=1.000)",
+        "slice 'facts_near_end' drops 2.5 points"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 1,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": -0.025000000000000022,
+      "validity": 0.995,
+      "dev_primary": 0.995,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 1.0,
+    "seconds": 52,
+    "spent_phase": 37.96953808
+  },
+  {
+    "round": 2,
+    "kinds": [
+      "example_swap",
+      "restructure",
+      "settings_change",
+      "targeted_fix"
+    ],
+    "train_primary": 1.0,
+    "failure_report": {
+      "counts": {},
+      "by_slice": {},
+      "patterns": []
+    },
+    "screen_current": 1.0,
+    "candidates": [
+      {
+        "edit_kind": "example_swap",
+        "rationale": "Adds one worked example showing how to preserve a figure, a full name and a date while leaving out a minor detail.",
+        "prompt_hash": "701cae341d2a9c83",
+        "prompt_chars": 1470,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "restructure",
+        "rationale": "Keeps the tested wording and section order while placing the output-only reminder directly after the task.",
+        "prompt_hash": "6177632d3bd2f742",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "rejected: dev decision",
+        "dev": {
+          "accept": false,
+          "reasons": [
+            "McNemar not significant (b=0, c=0, p=1.000)"
+          ],
+          "mcnemar": {
+            "b": 0,
+            "c": 0,
+            "p_value": 1.0
+          },
+          "worst_slice_drop": 0.0,
+          "validity": 1.0,
+          "dev_primary": 1.0,
+          "dev_primary_current": 1.0
+        }
+      },
+      {
+        "edit_kind": "settings_change",
+        "rationale": "Tests explicit medium verbosity while holding the validated prompt constant, without repeating the rejected low setting.",
+        "prompt_hash": "bbecf4ff31420159",
+        "prompt_chars": 1002,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": "medium"
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      },
+      {
+        "edit_kind": "targeted_fix",
+        "rationale": "With no observed failures, clarifies only how the scorer counts words near the 20-word limit.",
+        "prompt_hash": "b64e3974ab7231d7",
+        "prompt_chars": 1082,
+        "settings": {
+          "temperature": null,
+          "max_output_tokens": null,
+          "structured_outputs": false,
+          "logprobs": false,
+          "verbosity": null
+        },
+        "leak_check": {
+          "ok": true,
+          "ngram_hits": 0,
+          "answer_hits": 0
+        },
+        "screen_primary": 1.0,
+        "screen_validity": 1.0,
+        "status": "survived screening"
+      }
+    ],
+    "decision": {
+      "edit_kind": "restructure",
+      "accept": false,
+      "reasons": [
+        "McNemar not significant (b=0, c=0, p=1.000)"
+      ],
+      "mcnemar": {
+        "b": 0,
+        "c": 0,
+        "p_value": 1.0
+      },
+      "worst_slice_drop": 0.0,
+      "validity": 1.0,
+      "dev_primary": 1.0,
+      "dev_primary_current": 1.0
+    },
+    "accepted": false,
+    "prompt_hash_after": "3f3294a6b868c17c",
+    "dev_primary_after": 1.0,
+    "seconds": 34,
+    "spent_phase": 38.5297723175
+  }
+]

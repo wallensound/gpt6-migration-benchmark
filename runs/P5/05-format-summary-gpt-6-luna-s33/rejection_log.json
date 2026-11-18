@@ -1,0 +1,32 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Makes full-article fact selection explicit and gives Swedish dates a clear English rendering.",
+    "reason": "screening 71.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "settings_change",
+    "rationale": "Tests whether low verbosity adds protection against overlong bullets without changing the validated prompt.",
+    "reason": "screening 96.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "With no observed failures, makes one preventive clarification for articles whose main facts appear late.",
+    "reason": "screening 85.0% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Moves the output contract to the top while preserving the current prompt’s content guidance.",
+    "reason": "McNemar not significant (b=0, c=1, p=1.000); slice 'facts_near_end' drops 2.5 points"
+  },
+  {
+    "round": 2,
+    "edit_kind": "restructure",
+    "rationale": "Keeps the tested wording and section order while placing the output-only reminder directly after the task.",
+    "reason": "McNemar not significant (b=0, c=0, p=1.000)"
+  }
+]
