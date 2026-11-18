@@ -1,0 +1,914 @@
+{
+  "run_id": "03-ticket-routing-sweep",
+  "phase": "P4",
+  "git_commit": "69a4773",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:00:14",
+  "reference_date": "2026-11-17",
+  "case": "03-ticket-routing",
+  "kind": "sweep",
+  "dataset_version": 1,
+  "evals": [
+    {
+      "eval_id": "source",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 5,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "c48d9074a9274e6a",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:00:14",
+      "summary": {
+        "n": 200,
+        "passed": 189,
+        "primary": 0.945,
+        "primary_ci": [
+          0.9042130012276914,
+          0.9690146582965411
+        ],
+        "validity": 0.99,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.01,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 0.9583333333333334
+          },
+          "german": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 0.6666666666666666
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 0.9565217391304348
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.398212,
+        "cost_per_item": 0.0019910600000000002,
+        "cost_per_correct": 0.002106941798941799,
+        "latency_p50_s": 0.85445,
+        "latency_p95_s": 1.4131099999999994,
+        "tokens_in": 95188,
+        "tokens_in_mean": 475.94,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 873,
+        "tokens_out_mean": 4.365,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 9,
+          "api_error": 2
+        },
+        "secondary": {
+          "macro_f1": 0.9557140865507701,
+          "nonanswer_rate": 0.0,
+          "validity": 0.99,
+          "rows_scored_for_f1": 198
+        }
+      },
+      "role": "source"
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-low",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "d258a10e8e772298",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:00:25",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.812296,
+        "cost_per_item": 0.00406148,
+        "cost_per_correct": 0.00406148,
+        "latency_p50_s": 0.8647999999999999,
+        "latency_p95_s": 1.3756299999999997,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1092,
+        "tokens_out_mean": 5.46,
+        "tokens_reasoning": 9,
+        "tokens_reasoning_mean": 0.045,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-astra-medium",
+      "model": "gpt-6.2-astra",
+      "model_id": "global.openai.gpt-6.2-astra",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "d258a10e8e772298",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:00:34",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.815616,
+        "cost_per_item": 0.00407808,
+        "cost_per_correct": 0.00407808,
+        "latency_p50_s": 0.8088500000000001,
+        "latency_p95_s": 1.3717799999999998,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1175,
+        "tokens_out_mean": 5.875,
+        "tokens_reasoning": 90,
+        "tokens_reasoning_mean": 0.45,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-low",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "d258a10e8e772298",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:00:41",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.20296399999999998,
+        "cost_per_item": 0.0010148199999999998,
+        "cost_per_correct": 0.0010148199999999998,
+        "latency_p50_s": 0.50015,
+        "latency_p95_s": 1.0411399999999997,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1081,
+        "tokens_out_mean": 5.405,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.2-sol-medium",
+      "model": "gpt-6.2-sol",
+      "model_id": "global.openai.gpt-6.2-sol",
+      "api": "responses",
+      "effort": "medium",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "d258a10e8e772298",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:00:48",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.20296399999999998,
+        "cost_per_item": 0.0010148199999999998,
+        "cost_per_correct": 0.0010148199999999998,
+        "latency_p50_s": 0.5006499999999999,
+        "latency_p95_s": 1.167085,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1081,
+        "tokens_out_mean": 5.405,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "macro_f1": 1.0,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-none",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "9174ee512a6591d1",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:00:55",
+      "summary": {
+        "n": 200,
+        "passed": 199,
+        "primary": 0.995,
+        "primary_ci": [
+          0.9722262956021069,
+          0.9991168312843989
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 0.9565217391304348
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0507435,
+        "cost_per_item": 0.0002537175,
+        "cost_per_correct": 0.0002549924623115578,
+        "latency_p50_s": 0.5795,
+        "latency_p95_s": 1.1854950000000002,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1082,
+        "tokens_out_mean": 5.41,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 1
+        },
+        "secondary": {
+          "macro_f1": 0.994258696386356,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6.1-terra-low",
+      "model": "gpt-6.1-terra",
+      "model_id": "global.openai.gpt-6.1-terra",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "d258a10e8e772298",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:01:08",
+      "summary": {
+        "n": 200,
+        "passed": 198,
+        "primary": 0.99,
+        "primary_ci": [
+          0.9642782382838231,
+          0.9972533418664555
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 0.9583333333333334
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 0.9565217391304348
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.0524185,
+        "cost_per_item": 0.0002620925,
+        "cost_per_correct": 0.00026473989898989896,
+        "latency_p50_s": 0.5905,
+        "latency_p95_s": 1.15044,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1752,
+        "tokens_out_mean": 8.76,
+        "tokens_reasoning": 609,
+        "tokens_reasoning_mean": 3.045,
+        "failure_categories": {
+          "wrong_label": 2
+        },
+        "secondary": {
+          "macro_f1": 0.9888010540184453,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-none",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "none",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": 16,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "9174ee512a6591d1",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:01:16",
+      "summary": {
+        "n": 200,
+        "passed": 189,
+        "primary": 0.945,
+        "primary_ci": [
+          0.9042130012276914,
+          0.9690146582965411
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 0.9523809523809523
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 0.7083333333333334
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 0.926829268292683
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.00507435,
+        "cost_per_item": 2.537175e-05,
+        "cost_per_correct": 2.68484126984127e-05,
+        "latency_p50_s": 0.3565,
+        "latency_p95_s": 0.51682,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 1082,
+        "tokens_out_mean": 5.41,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {
+          "wrong_label": 11
+        },
+        "secondary": {
+          "macro_f1": 0.9423100973016482,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    },
+    {
+      "eval_id": "port-gpt-6-luna-low",
+      "model": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "api": "responses",
+      "effort": "low",
+      "settings": {
+        "temperature": null,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "d258a10e8e772298",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:01:21",
+      "summary": {
+        "n": 200,
+        "passed": 197,
+        "primary": 0.985,
+        "primary_ci": [
+          0.9568342712073097,
+          0.9948857622067417
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "clear": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "german": {
+            "n": 21,
+            "primary": 1.0
+          },
+          "long": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "multi_issue": {
+            "n": 24,
+            "primary": 0.875
+          },
+          "off_topic": {
+            "n": 24,
+            "primary": 1.0
+          },
+          "swedish": {
+            "n": 41,
+            "primary": 1.0
+          },
+          "tie_break": {
+            "n": 23,
+            "primary": 1.0
+          },
+          "very_short": {
+            "n": 19,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 0.006080100000000001,
+        "cost_per_item": 3.04005e-05,
+        "cost_per_correct": 3.086345177664975e-05,
+        "latency_p50_s": 0.45575,
+        "latency_p95_s": 0.61065,
+        "tokens_in": 96077,
+        "tokens_in_mean": 480.385,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 0,
+        "tokens_cache_write_mean": 0.0,
+        "tokens_out": 5105,
+        "tokens_out_mean": 25.525,
+        "tokens_reasoning": 3643,
+        "tokens_reasoning_mean": 18.215,
+        "failure_categories": {
+          "wrong_label": 3
+        },
+        "secondary": {
+          "macro_f1": 0.9865777052751338,
+          "nonanswer_rate": 0.0,
+          "validity": 1.0,
+          "rows_scored_for_f1": 200
+        }
+      },
+      "role": "port",
+      "literal_swap": {
+        "accepted": false,
+        "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+      }
+    }
+  ],
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "low",
+      "score_per_dollar": 246.2156652254843,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 246.2156652254843
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 245.2134337727558
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "low",
+      "score_per_dollar": 985.3964249817703,
+      "candidates": {
+        "low": {
+          "primary": 1.0,
+          "score_per_dollar": 985.3964249817703
+        },
+        "medium": {
+          "primary": 1.0,
+          "score_per_dollar": 985.3964249817703
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "none",
+      "score_per_dollar": 3921.6845507306357,
+      "candidates": {
+        "none": {
+          "primary": 0.995,
+          "score_per_dollar": 3921.6845507306357
+        },
+        "low": {
+          "primary": 0.99,
+          "score_per_dollar": 3777.292368152465
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "none",
+      "score_per_dollar": 37246.14975317036,
+      "candidates": {
+        "none": {
+          "primary": 0.945,
+          "score_per_dollar": 37246.14975317036
+        },
+        "low": {
+          "primary": 0.985,
+          "score_per_dollar": 32400.782881860494
+        }
+      }
+    }
+  },
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    },
+    "gpt-6-luna/none": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 5 instead."
+    }
+  },
+  "finished": true
+}

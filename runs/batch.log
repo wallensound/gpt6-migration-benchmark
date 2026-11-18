@@ -1,0 +1,2 @@
+2026-11-18T01:00:14 START sweep 03
+2026-11-18T01:01:21 DONE sweep 03: source 0.945; effort choice {"gpt-6.2-astra": "low", "gpt-6.2-sol": "low", "gpt-6.1-terra": "none", "gpt-6-luna": "none"}
