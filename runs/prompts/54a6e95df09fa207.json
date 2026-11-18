@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-terra",
+  "api": "responses",
+  "effort": "none",
+  "prompt": "The user supplies one news article: a headline followed by paragraphs. Write an English news brief in three bullets, including when the article is in Swedish.\n\nBuild the brief around the central event. Report the figure that describes its scale or outcome, identify the key company, person or product involved by its full name, and state the date that matters to the event. The key name is not just the subject company's name. Select these facts from the entire article: a prominent opening or a nearby figure is not necessarily one of the main points. Give enough context to say what each fact means. Write the figure in digits without rounding or scaling, and render the date with its day, English month name and year.\n\nThe entire answer is exactly three nonempty bullet lines. Begin each at the left margin with a hyphen and one space. Use at most 20 words per bullet, counting each whitespace-separated token containing a letter or digit as one word. Do not put a second list marker or numbering after the bullet prefix. No blank lines, labels, introductions, sign-offs, headings, quotes formatted as blockquotes, Markdown styling, links or HTML.",
+  "settings": {
+    "temperature": null,
+    "max_output_tokens": null,
+    "structured_outputs": false,
+    "logprobs": false,
+    "verbosity": null
+  }
+}

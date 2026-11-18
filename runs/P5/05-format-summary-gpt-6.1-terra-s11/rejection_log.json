@@ -1,0 +1,38 @@
+[
+  {
+    "round": 1,
+    "edit_kind": "restructure",
+    "rationale": "Puts the strict output contract first and separates it from the instructions for selecting facts.",
+    "reason": "screening 86.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "rewrite",
+    "rationale": "Uses a short read–select–check workflow to protect both fact coverage and formatting.",
+    "reason": "screening 56.7% vs current 100.0%"
+  },
+  {
+    "round": 1,
+    "edit_kind": "targeted_fix",
+    "rationale": "With no observed failures to target, changes only the exact-copy rule to clarify how to handle Swedish dates.",
+    "reason": "McNemar not significant (b=1, c=0, p=1.000)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "example_swap",
+    "rationale": "Keeps the proven instructions and adds one worked example showing how a passing figure is left out.",
+    "reason": "leakage check failed (0 six-word, 1 answer hits)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "rewrite",
+    "rationale": "Uses the central event to distinguish the three newsworthy details from nearby names, figures and dates.",
+    "reason": "leakage check failed (1 six-word, 0 answer hits)"
+  },
+  {
+    "round": 2,
+    "edit_kind": "simplify",
+    "rationale": "Combines overlapping rules while making clear that the main facts can appear anywhere in the article.",
+    "reason": "McNemar not significant (b=1, c=0, p=1.000)"
+  }
+]
