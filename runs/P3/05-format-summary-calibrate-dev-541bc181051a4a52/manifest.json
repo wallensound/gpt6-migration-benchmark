@@ -1,0 +1,90 @@
+{
+  "run_id": "05-format-summary-calibrate-dev-541bc181051a4a52",
+  "phase": "P3",
+  "git_commit": "0d63045",
+  "sdk_version": "3.45.0",
+  "started_at": "2026-11-18T01:28:54",
+  "reference_date": "2026-11-17",
+  "case": "05-format-summary",
+  "kind": "calibrate",
+  "dataset_version": 1,
+  "seed": null,
+  "evals": [
+    {
+      "eval_id": "calibrate-dev-541bc181051a4a52",
+      "model": "gpt-5.6-sol",
+      "model_id": "gpt-5.6",
+      "api": "chat",
+      "effort": "none",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": null,
+        "structured_outputs": false,
+        "logprobs": false
+      },
+      "prompt_hash": "541bc181051a4a52",
+      "repeat": 0,
+      "finished_at": "2026-11-18T01:28:54",
+      "summary": {
+        "n": 200,
+        "passed": 200,
+        "primary": 1.0,
+        "primary_ci": [
+          0.9811546736227335,
+          1.0
+        ],
+        "validity": 1.0,
+        "nonanswer_rate": 0.0,
+        "error_rate": 0.0,
+        "per_slice": {
+          "facts_near_end": {
+            "n": 40,
+            "primary": 1.0
+          },
+          "long_articles": {
+            "n": 42,
+            "primary": 1.0
+          },
+          "numbers_heavy": {
+            "n": 39,
+            "primary": 1.0
+          },
+          "plain": {
+            "n": 40,
+            "primary": 1.0
+          },
+          "swedish_source": {
+            "n": 39,
+            "primary": 1.0
+          }
+        },
+        "cost_usd": 1.113611,
+        "cost_per_item": 0.005568055,
+        "cost_per_correct": 0.005568055,
+        "latency_p50_s": 1.3665999999999998,
+        "latency_p95_s": 1.8242949999999996,
+        "tokens_in": 200638,
+        "tokens_in_mean": 1003.19,
+        "tokens_cached": 0,
+        "tokens_cached_mean": 0.0,
+        "tokens_cache_write": 93799,
+        "tokens_cache_write_mean": 468.995,
+        "tokens_out": 10863,
+        "tokens_out_mean": 54.315,
+        "tokens_reasoning": 0,
+        "tokens_reasoning_mean": 0.0,
+        "failure_categories": {},
+        "secondary": {
+          "format_ok": 1.0,
+          "facts_covered": 3.0,
+          "total_words": 32.41,
+          "number_covered": 1.0,
+          "entity_covered": 1.0,
+          "date_covered": 1.0,
+          "over_20_words_rate": 0.0,
+          "line_count_ok_rate": 1.0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "rounds": [
+    {
+      "at": "2026-11-18T01:28:29",
+      "split": "train",
+      "prompt_hash": "541bc181051a4a52",
+      "primary": 0.9916666666666667,
+      "validity": 0.9916666666666667,
+      "per_slice": {
+        "facts_near_end": {
+          "n": 23,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 25,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 23,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 25,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 24,
+          "primary": 0.9583333333333334
+        }
+      },
+      "markers_missing": []
+    },
+    {
+      "at": "2026-11-18T01:28:54",
+      "split": "dev",
+      "prompt_hash": "541bc181051a4a52",
+      "primary": 1.0,
+      "validity": 1.0,
+      "per_slice": {
+        "facts_near_end": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "long_articles": {
+          "n": 42,
+          "primary": 1.0
+        },
+        "numbers_heavy": {
+          "n": 39,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 40,
+          "primary": 1.0
+        },
+        "swedish_source": {
+          "n": 39,
+          "primary": 1.0
+        }
+      },
+      "markers_missing": []
+    }
+  ]
+}

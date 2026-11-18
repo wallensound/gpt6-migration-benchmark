@@ -1,0 +1,10 @@
+{
+  "case": "05-format-summary",
+  "frozen_at": "2026-11-18T01:28:59",
+  "prompt_hash": "541bc181051a4a52",
+  "legacy_files_sha256": "ec9413713484f9ed2d08e0f42dcedeb28d66c0ee99c0cc739ef89dcda2ac315f",
+  "dev_primary": 1.0,
+  "floor": 0.85,
+  "train_rounds": 1,
+  "source_model_id": "gpt-5.6"
+}

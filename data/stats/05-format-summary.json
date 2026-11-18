@@ -1,0 +1,64 @@
+{
+  "case": "05-format-summary",
+  "dataset_version": 1,
+  "gen_seed": 1005,
+  "planned": 1001,
+  "kept": 974,
+  "dropped": 27,
+  "drop_rate": 0.026973026973026972,
+  "dropped_by_stage": {
+    "llm_verify": 7,
+    "code_verify": 20
+  },
+  "exact_duplicates": 0,
+  "near_duplicates": 0,
+  "items_per_split": {
+    "test": 300,
+    "dev": 200,
+    "train": 120,
+    "shift": 150
+  },
+  "items_per_slice_and_split": {
+    "test": {
+      "facts_near_end": 61,
+      "long_articles": 60,
+      "numbers_heavy": 59,
+      "plain": 61,
+      "swedish_source": 59
+    },
+    "dev": {
+      "facts_near_end": 40,
+      "long_articles": 42,
+      "numbers_heavy": 39,
+      "plain": 40,
+      "swedish_source": 39
+    },
+    "train": {
+      "facts_near_end": 23,
+      "long_articles": 25,
+      "numbers_heavy": 23,
+      "plain": 25,
+      "swedish_source": 24
+    },
+    "shift": {
+      "facts_near_end": 40,
+      "numbers_heavy": 39,
+      "plain": 37,
+      "swedish_source": 34
+    }
+  },
+  "avg_input_chars": {
+    "test": 3669.1466666666665,
+    "dev": 3717.055,
+    "train": 3715.9,
+    "shift": 10224.666666666666
+  },
+  "avg_input_tokens_est": {
+    "test": 917.2866666666666,
+    "dev": 929.26375,
+    "train": 928.975,
+    "shift": 2556.1666666666665
+  },
+  "spent_usd_phase_total": 36.03331261250001,
+  "seconds": 1699
+}

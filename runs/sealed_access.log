@@ -12,3 +12,7 @@
 2026-11-18T01:12:07	write(generate)	01-entity-extraction/shift	pid=4012	cmd=cli.py data 01	BENCH_FINAL=0
 2026-11-18T01:18:39	write(generate)	06-grounded-abstention/test	pid=5984	cmd=cli.py data 06	BENCH_FINAL=0
 2026-11-18T01:18:39	write(generate)	06-grounded-abstention/shift	pid=5984	cmd=cli.py data 06	BENCH_FINAL=0
+2026-11-18T01:27:25	write(generate)	01-entity-extraction-v2/test	pid=22556	cmd=cli.py data 01 --version	BENCH_FINAL=0
+2026-11-18T01:27:25	write(generate)	01-entity-extraction-v2/shift	pid=22556	cmd=cli.py data 01 --version	BENCH_FINAL=0
+2026-11-18T01:28:03	write(generate)	05-format-summary/test	pid=10768	cmd=cli.py data 05	BENCH_FINAL=0
+2026-11-18T01:28:03	write(generate)	05-format-summary/shift	pid=10768	cmd=cli.py data 05	BENCH_FINAL=0

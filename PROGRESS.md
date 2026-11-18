@@ -63,3 +63,9 @@ Append-only log. Newest entries at the bottom.
 - **D19 (case 06)** the question is a separate item field; the user message is `CONTEXT: ... QUESTION: ...` with English labels for every language; `NOT_FOUND` is case-sensitive and only surrounding whitespace and one trailing period are tolerated; answers match on diacritic-folded whole tokens (units and answer language not scored); an answer that also contains a look-alike's value fails; any `?` counts as a clarifying question. People and products have no shift pool, so only companies are unseen in the shift set; all unanswerable shift items are of the "look-alike has it" kind.
 - Limitation: the source model is at the ceiling (100%), so the case can only show regressions.
 - Spot-check: 6 dev items read (EN/SV/DE), labels and contexts correct.
+
+### 2026-11-18 P2+P3 case 05 format summary: sealed and frozen
+- 1001 planned, 974 kept (drop 2.7%), splits 120/200/300/150; inputs ~920 tokens main, ~2,560 shift. 34 tests. Legacy train 99.2% (the one failure is an Azure content-filter rejection), dev 100% (floor 85%), one round, hash 541bc181051a4a52.
+- **D20 (case 05)** key numbers are integers 40-85,000 outside 2000-2100; key dates are days 1-28 between Dec 2026 and Jun 2028; numbers match by value ignoring thousands separators; dates match day and month (plus year if given) in English, Swedish or ISO form; names need the full name (case and diacritics folded); exactly three lines (blank lines fail); a summary with two or more Swedish function words fails as `wrong_language`; the shift set omits `long_articles` (every shift article is long); `make_input` normalises non-breaking spaces and strips Markdown from generated articles.
+- Limitation: the source model is at the ceiling (100%).
+- Spot-check: 3 dev items read (incl. Swedish source), labels correct.

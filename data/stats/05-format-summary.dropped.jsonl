@@ -1,0 +1,27 @@
+{"plan_seed": 100500034, "slice": "swedish_source", "stage": "llm_verify", "variant": "main", "why": "The article presents recruitment and the distinction between promised jobs and actual hiring as its main news, rather than the three specified facts."}
+{"plan_seed": 100500093, "slice": "long_articles", "stage": "llm_verify", "variant": "main", "why": "The text calls the product “Trugopleo” once, creating a conflicting product name alongside “Trugora.”"}
+{"plan_seed": 100500172, "slice": "numbers_heavy", "stage": "llm_verify", "variant": "main", "why": "The article’s headline result is that patients reported less itching than those receiving a placebo, which could make that outcome a main point alongside the three specified details."}
+{"plan_seed": 100500382, "slice": "numbers_heavy", "stage": "llm_verify", "variant": "main", "why": "The article’s central focus is insurance exposure and preparations for the bus fleet, not the three specified facts, which are mainly framing details."}
+{"plan_seed": 100500386, "slice": "facts_near_end", "stage": "code_verify", "variant": "main", "why": "near_end: key date in first half"}
+{"plan_seed": 100500396, "slice": "facts_near_end", "stage": "llm_verify", "variant": "main", "why": "The article’s headline news is a product recall and refund offer, but it does not state any reason or safety concern for the recall, leaving the key news incomplete and ambiguous."}
+{"plan_seed": 100500616, "slice": "facts_near_end", "stage": "llm_verify", "variant": "main", "why": "The headline and most of the article frame the news as Baflora’s after-sales operations challenge, making that the article’s main point rather than the three recall terms."}
+{"plan_seed": 100500769, "slice": "swedish_source", "stage": "code_verify", "variant": "main", "why": "distractor name 'Omar Monyn' missing"}
+{"plan_seed": 100550002, "slice": "numbers_heavy", "stage": "llm_verify", "variant": "shift", "why": "The article presents the delivery date as the immediate operational story and repeatedly frames it as the contract’s central milestone, making it more important than the contract value and customer."}
+{"plan_seed": 100550023, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1462 outside 1500-2000"}
+{"plan_seed": 100550030, "slice": "numbers_heavy", "stage": "code_verify", "variant": "shift", "why": "word count 1415 outside 1500-2000"}
+{"plan_seed": 100550045, "slice": "facts_near_end", "stage": "code_verify", "variant": "shift", "why": "word count 1454 outside 1500-2000"}
+{"plan_seed": 100550048, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1494 outside 1500-2000"}
+{"plan_seed": 100550058, "slice": "numbers_heavy", "stage": "code_verify", "variant": "shift", "why": "word count 1374 outside 1500-2000"}
+{"plan_seed": 100550067, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1403 outside 1500-2000"}
+{"plan_seed": 100550079, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1403 outside 1500-2000"}
+{"plan_seed": 100550091, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1435 outside 1500-2000"}
+{"plan_seed": 100550096, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1493 outside 1500-2000"}
+{"plan_seed": 100550111, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1492 outside 1500-2000"}
+{"plan_seed": 100550113, "slice": "facts_near_end", "stage": "code_verify", "variant": "shift", "why": "word count 1492 outside 1500-2000"}
+{"plan_seed": 100550119, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1399 outside 1500-2000"}
+{"plan_seed": 100550132, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1478 outside 1500-2000"}
+{"plan_seed": 100550143, "slice": "swedish_source", "stage": "code_verify", "variant": "shift", "why": "word count 1453 outside 1500-2000"}
+{"plan_seed": 100550152, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1481 outside 1500-2000"}
+{"plan_seed": 100550166, "slice": "numbers_heavy", "stage": "code_verify", "variant": "shift", "why": "word count 1477 outside 1500-2000"}
+{"plan_seed": 100550176, "slice": "plain", "stage": "code_verify", "variant": "shift", "why": "word count 1455 outside 1500-2000"}
+{"plan_seed": 100550182, "slice": "numbers_heavy", "stage": "code_verify", "variant": "shift", "why": "word count 1442 outside 1500-2000"}
