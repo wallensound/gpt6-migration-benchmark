@@ -1,0 +1,599 @@
+{
+  "case": "07-contact-normalisation",
+  "source": {
+    "setting": "gpt-5.6-sol / none (legacy, chat)",
+    "model": "gpt-5.6-sol",
+    "effort": "none",
+    "primary": 0.995,
+    "primary_ci": [
+      0.9722262956021069,
+      0.9991168312843989
+    ],
+    "validity": 1.0,
+    "nonanswer_rate": 0.0,
+    "error_rate": 0.0,
+    "cost_per_item": 0.0019516,
+    "cost_per_correct": 0.0019614070351758792,
+    "latency_p50_s": 1.29535,
+    "latency_p95_s": 1.8424399999999999,
+    "tokens_in_mean": 1374.16,
+    "tokens_out_mean": 41.0,
+    "tokens_reasoning_mean": 0.0,
+    "failure_categories": {
+      "name_wrong": 1
+    },
+    "per_slice": {
+      "international_phone": {
+        "n": 34,
+        "primary": 1.0
+      },
+      "missing_fields": {
+        "n": 32,
+        "primary": 1.0
+      },
+      "plain": {
+        "n": 33,
+        "primary": 1.0
+      },
+      "precedence_conflict": {
+        "n": 34,
+        "primary": 1.0
+      },
+      "swapped_fields": {
+        "n": 33,
+        "primary": 0.9696969696969697
+      },
+      "unicode_names": {
+        "n": 34,
+        "primary": 1.0
+      }
+    }
+  },
+  "rows": [
+    {
+      "setting": "gpt-5.6-sol / none (legacy, chat)",
+      "model": "gpt-5.6-sol",
+      "effort": "none",
+      "primary": 0.995,
+      "primary_ci": [
+        0.9722262956021069,
+        0.9991168312843989
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0019516,
+      "cost_per_correct": 0.0019614070351758792,
+      "latency_p50_s": 1.29535,
+      "latency_p95_s": 1.8424399999999999,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 41.0,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "name_wrong": 1
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 1.0
+        },
+        "plain": {
+          "n": 33,
+          "primary": 1.0
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 0.9696969696969697
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / low",
+      "model": "gpt-6.2-astra",
+      "effort": "low",
+      "primary": 0.99,
+      "primary_ci": [
+        0.9642782382838231,
+        0.9972533418664555
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.010817315999999999,
+      "cost_per_correct": 0.010926581818181817,
+      "latency_p50_s": 1.0032,
+      "latency_p95_s": 1.5879099999999997,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 42.645,
+      "tokens_reasoning_mean": 0.665,
+      "failure_categories": {
+        "dropped_value": 2
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.96875
+        },
+        "plain": {
+          "n": 33,
+          "primary": 1.0
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 1.0
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-astra / medium",
+      "model": "gpt-6.2-astra",
+      "effort": "medium",
+      "primary": 0.99,
+      "primary_ci": [
+        0.9642782382838231,
+        0.9972533418664555
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.010952854000000001,
+      "cost_per_correct": 0.01106348888888889,
+      "latency_p50_s": 0.9697,
+      "latency_p95_s": 1.6807349999999992,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 46.03,
+      "tokens_reasoning_mean": 3.995,
+      "failure_categories": {
+        "dropped_value": 2
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.96875
+        },
+        "plain": {
+          "n": 33,
+          "primary": 0.9696969696969697
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 1.0
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 1.0
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / low",
+      "model": "gpt-6.2-sol",
+      "effort": "low",
+      "primary": 0.8,
+      "primary_ci": [
+        0.7391448134346212,
+        0.8495479907390189
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0014315515,
+      "cost_per_correct": 0.0017894393750000001,
+      "latency_p50_s": 0.66555,
+      "latency_p95_s": 1.2285599999999997,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 41.16,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "dropped_value": 39,
+        "name_wrong": 1
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 0.7941176470588235
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.84375
+        },
+        "plain": {
+          "n": 33,
+          "primary": 0.8181818181818182
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 0.7647058823529411
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 0.8787878787878788
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 0.7058823529411765
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.2-sol / medium",
+      "model": "gpt-6.2-sol",
+      "effort": "medium",
+      "primary": 0.835,
+      "primary_ci": [
+        0.7773421846094045,
+        0.8800314467178268
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.0013050805,
+      "cost_per_correct": 0.0015629706586826348,
+      "latency_p50_s": 0.65935,
+      "latency_p95_s": 1.2234200000000002,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 41.34,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "dropped_value": 33,
+        "name_wrong": 1
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 0.8529411764705882
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.84375
+        },
+        "plain": {
+          "n": 33,
+          "primary": 0.8181818181818182
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 0.7941176470588235
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 0.9393939393939394
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 0.7647058823529411
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / none",
+      "model": "gpt-6.1-terra",
+      "effort": "none",
+      "primary": 0.555,
+      "primary_ci": [
+        0.4857330241280342,
+        0.6221939899704665
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.000346949375,
+      "cost_per_correct": 0.000625134009009009,
+      "latency_p50_s": 0.80155,
+      "latency_p95_s": 1.27481,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 39.525,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "dropped_value": 88,
+        "name_wrong": 2
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 0.5882352941176471
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.59375
+        },
+        "plain": {
+          "n": 33,
+          "primary": 0.6363636363636364
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 0.4411764705882353
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 0.7272727272727273
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 0.35294117647058826
+        }
+      }
+    },
+    {
+      "setting": "gpt-6.1-terra / low",
+      "model": "gpt-6.1-terra",
+      "effort": "low",
+      "primary": 0.71,
+      "primary_ci": [
+        0.6436252189922268,
+        0.7684597439293211
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 0.00045465387500000004,
+      "cost_per_correct": 0.0006403575704225352,
+      "latency_p50_s": 1.17735,
+      "latency_p95_s": 2.2926349999999993,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 76.935,
+      "tokens_reasoning_mean": 35.235,
+      "failure_categories": {
+        "dropped_value": 58,
+        "name_wrong": 1
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 0.5882352941176471
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.6875
+        },
+        "plain": {
+          "n": 33,
+          "primary": 0.8787878787878788
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 0.6764705882352942
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 0.8484848484848485
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 0.5882352941176471
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / none",
+      "model": "gpt-6-luna",
+      "effort": "none",
+      "primary": 0.79,
+      "primary_ci": [
+        0.7283538314009754,
+        0.8407158793002101
+      ],
+      "validity": 1.0,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 6.703186250000001e-05,
+      "cost_per_correct": 8.48504588607595e-05,
+      "latency_p50_s": 0.5063,
+      "latency_p95_s": 0.64285,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 41.8,
+      "tokens_reasoning_mean": 0.0,
+      "failure_categories": {
+        "dropped_value": 26,
+        "name_wrong": 11,
+        "company_wrong": 8,
+        "phone_wrong": 3,
+        "email_wrong": 2
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 0.9411764705882353
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.90625
+        },
+        "plain": {
+          "n": 33,
+          "primary": 0.8787878787878788
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 0.47058823529411764
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 0.6363636363636364
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 0.9117647058823529
+        }
+      }
+    },
+    {
+      "setting": "gpt-6-luna / low",
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "primary": 0.985,
+      "primary_ci": [
+        0.9568342712073097,
+        0.9948857622067417
+      ],
+      "validity": 0.995,
+      "nonanswer_rate": 0.0,
+      "error_rate": 0.0,
+      "cost_per_item": 8.2992575e-05,
+      "cost_per_correct": 8.425642131979696e-05,
+      "latency_p50_s": 0.80395,
+      "latency_p95_s": 1.1181849999999998,
+      "tokens_in_mean": 1374.16,
+      "tokens_out_mean": 105.69,
+      "tokens_reasoning_mean": 61.785,
+      "failure_categories": {
+        "email_wrong": 2,
+        "dropped_value": 1,
+        "format": 1,
+        "name_wrong": 1
+      },
+      "per_slice": {
+        "international_phone": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        },
+        "missing_fields": {
+          "n": 32,
+          "primary": 0.96875
+        },
+        "plain": {
+          "n": 33,
+          "primary": 1.0
+        },
+        "precedence_conflict": {
+          "n": 34,
+          "primary": 1.0
+        },
+        "swapped_fields": {
+          "n": 33,
+          "primary": 1.0
+        },
+        "unicode_names": {
+          "n": 34,
+          "primary": 0.9705882352941176
+        }
+      }
+    }
+  ],
+  "literal_swap": {
+    "gpt-6.2-astra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-astra/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.2-sol/medium": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6.1-terra/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6.1-terra/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    },
+    "gpt-6-luna/none": {
+      "accepted": true,
+      "error": ""
+    },
+    "gpt-6-luna/low": {
+      "accepted": false,
+      "error": "Unsupported parameter: 'temperature' is not supported with this model."
+    }
+  },
+  "effort_choice": {
+    "gpt-6.2-astra": {
+      "effort": "low",
+      "score_per_dollar": 91.519929712694,
+      "candidates": {
+        "low": {
+          "primary": 0.99,
+          "score_per_dollar": 91.519929712694
+        },
+        "medium": {
+          "primary": 0.99,
+          "score_per_dollar": 90.38740039810627
+        }
+      }
+    },
+    "gpt-6.2-sol": {
+      "effort": "medium",
+      "score_per_dollar": 639.807276256139,
+      "candidates": {
+        "low": {
+          "primary": 0.8,
+          "score_per_dollar": 558.8342438256675
+        },
+        "medium": {
+          "primary": 0.835,
+          "score_per_dollar": 639.807276256139
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "effort": "none",
+      "score_per_dollar": 1599.6570104788343,
+      "candidates": {
+        "none": {
+          "primary": 0.555,
+          "score_per_dollar": 1599.6570104788343
+        },
+        "low": {
+          "primary": 0.71,
+          "score_per_dollar": 1561.6275127975098
+        }
+      }
+    },
+    "gpt-6-luna": {
+      "effort": "low",
+      "score_per_dollar": 11868.531612617153,
+      "candidates": {
+        "none": {
+          "primary": 0.79,
+          "score_per_dollar": 11785.440095745511
+        },
+        "low": {
+          "primary": 0.985,
+          "score_per_dollar": 11868.531612617153
+        }
+      }
+    }
+  },
+  "spent_phase": 7.240887112499999
+}
