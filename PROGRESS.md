@@ -94,3 +94,8 @@ Append-only log. Newest entries at the bottom.
 - Overall verdict per PROTOCOL.md: **Reproducible** (seed repeats 8/8 Luna, 7/8 Terra; data version and clean rerun pass), with the across-cases check (Luna 4/8) and main-tier check (case 07) failing; caveats in REPORT_SUMMARY.md and D22.
 - Write-up `docs/writeup.md` (1,949 words), observations for OpenAI and limitations in `report/observations.md`. `make all` added for an end-to-end rerun.
 - Total spend $249.48 (+$0.09 clean rerun) of the $800 limit. 126 tests pass.
+
+### 2026-11-23 Publication preparation
+- **D23 Provider-agnostic configuration.** Providers and model IDs now come from the environment (`.env`, see `.env.example`): OpenAI's API by default, or Azure OpenAI, AWS Bedrock or any OpenAI-compatible gateway, per model if needed. Model IDs for this study's setup are unchanged, so every cached response and result still applies.
+- **D24 Added after the protocol:** `make import` (bring your own examples instead of generating them, `cases/_template-byod/`) and `make recommend` (per case, the cheapest setup that is non-inferior to the legacy setup on dev, confirmed once on test, with a fallback when the dev pick fails on test). Neither changes a PROTOCOL.md verdict. Smoke-tested end to end in a fresh clone on 320 imported tickets ($4.95).
+- **D25 History rewritten once before publication.** Private planning notes were removed from the brief (PLAN.md now holds the cleaned design brief) and from every earlier commit, and an account-specific endpoint name was replaced. Short hashes cited in run manifests and in this log refer to the pre-rewrite commits; `docs/commit-map.txt` maps them to the published ones (e.g. the PROTOCOL.md commit 4756990).
