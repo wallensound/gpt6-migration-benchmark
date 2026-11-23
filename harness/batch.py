@@ -29,8 +29,7 @@ async def commit(paths: list[str], msg: str):
     async with _git_lock:
         def go():
             subprocess.run(["git", "add", "--", *paths], cwd=config.ROOT, capture_output=True)
-            subprocess.run(["git", "commit", "-q", "-m", msg + "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
-                           cwd=config.ROOT, capture_output=True)
+            subprocess.run(["git", "commit", "-q", "-m", msg], cwd=config.ROOT, capture_output=True)
         await asyncio.to_thread(go)
 
 
