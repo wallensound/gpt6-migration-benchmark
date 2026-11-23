@@ -47,7 +47,7 @@ You need:
 **1. Install and add your key**
 
 ```bash
-git clone https://github.com/<you>/gpt6-migration-benchmark && cd gpt6-migration-benchmark
+git clone https://github.com/wallensound/gpt6-migration-benchmark && cd gpt6-migration-benchmark
 cp .env.example .env          # put OPENAI_API_KEY=... in it (Azure, AWS Bedrock or any
                               # OpenAI-compatible gateway also work; see .env.example)
 make setup                    # installs dependencies and shows which provider each model will use
