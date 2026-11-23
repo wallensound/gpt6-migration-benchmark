@@ -137,7 +137,8 @@ async def calibrate(case_id: str, split: str = "train", freeze: bool = False, ve
         if missing:
             raise RuntimeError(f"legacy markers missing: {missing}")
         if score < floor:
-            raise RuntimeError(f"dev score {score:.3f} below floor {floor:.2f}; the case does not count")
+            raise RuntimeError(f"dev score {score:.3f} below floor {floor:.2f}; the case does not count. To compare models "
+                               f"anyway, add '{case.id}': 0.0 under calibration_floor in config/sizes.yaml")
         info = {"case": case.folder, "frozen_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "prompt_hash": h,
                 "legacy_files_sha256": legacy_files_hash(case), "dev_primary": score, "floor": floor,
                 "train_rounds": len({r["prompt_hash"] for r in log["rounds"] if r["split"] == "train"}),
