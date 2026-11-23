@@ -1,75 +1,151 @@
-# Is prompt migration to GPT-6 reproducible?
+# GPT-6 migration benchmark
 
-Eight synthetic legacy prompts, four GPT-6 models, three seeds each.
+**Find out which GPT-6 model your prompt can move to, what breaks on the way, and how much you save.**
 
-This repository builds eight self-contained test cases where a prompt tuned on `gpt-5.6-sol` is likely to
-break on GPT-6, runs the same automated migration loop on each case three times with different seeds, and
-measures whether the fix reproduces. Everything is synthetic: all data, prompts, run logs and results are
-in the repository, and every number in `REPORT.md` is rebuilt from `runs/` by `make report`.
+This repository does two things:
 
-- `PLAN.md`: the brief this benchmark implements.
-- `PROTOCOL.md`: thresholds and decision rules, committed before the first sweep call and never edited.
-- `REPORT.md`: results (regenerated); charts in `report/`.
-- `PROGRESS.md`: the build log, including every decision taken where the brief was ambiguous.
+1. **A published study.** Eight realistic GPT-5.6-era prompts were moved to four GPT-6 models, repaired
+   by an automated optimisation loop, and checked for reproducibility with three seeds each. Everything is
+   in the repo: data, prompts, logs and results.
+2. **A tool you can point at your own prompt.** Give it your current prompt and a file of examples with
+   known-good answers. It tells you, per GPT-6 model, how much accuracy you keep, whether an automated
+   rewrite fixes what broke, and which model is the cheapest one that holds up.
+
+## What we found
+
+| Question | Answer (see [REPORT.md](REPORT.md) and the [write-up](docs/writeup.md)) |
+| --- | --- |
+| How much breaks? | Usually little. In 7 of 8 tasks the old prompt lost at most 3.3 points after the API-forced changes. One task with piled-up, conflicting rules lost **42 points** on gpt-6.1-terra. |
+| Does an automated loop fix it? | Yes, where something broke: 55% -> 99% on that task. Where nothing broke it changes nothing. |
+| Is it reproducible? | Yes by the pre-registered checks (seeds, a regenerated dataset, a clean rerun), with caveats in the report. |
+| What does it save? | The cheapest model that holds accuracy is **2-100x cheaper per correct answer** than the old setup. |
+
+Which model each task should move to (cheapest setup that is no worse than the old one, chosen on dev
+and confirmed once on held-out test data; from `make recommend`):
+
+| Task | Move to | Test accuracy (old setup) | Cheaper by |
+| --- | --- | --- | --- |
+| Entity extraction | gpt-6.1-terra, prompt ported as is | 99.0% (100.0%) | 2.3x |
+| Invoice fields | gpt-6-luna, prompt ported as is | 100.0% (100.0%) | 105x |
+| Ticket routing | gpt-6.1-terra, prompt ported as is | 97.7% (96.3%) | 8.0x |
+| Tool calling | gpt-6-luna, prompt ported as is | 99.7% (99.0%) | 52x |
+| Format-constrained summary | gpt-6-luna, prompt ported as is | 100.0% (100.0%) | 80x |
+| Grounded answers | gpt-6-luna, prompt ported as is | 98.3% (99.7%) | 78x |
+| Contact normalisation (conflicting rules) | gpt-6.1-terra, **loop-rewritten prompt** | 98.3% (99.3%) | 4.2x |
+| Glossary translation | gpt-6.1-terra, prompt ported as is | 97.0% (96.7%) | 8.0x |
+
+Costs use OpenAI list prices (November 2026).
+
+## Use it on your own prompt
+
+You need:
+- Python 3.12, [uv](https://docs.astral.sh/uv/) and `make`. On Windows, use Git Bash and
+  `winget install ezwinports.make`.
+- An API key.
+- **About 150-800 examples** of your task, each with its correct answer.
+
+**1. Install and add your key**
+
+```bash
+git clone https://github.com/<you>/gpt6-migration-benchmark && cd gpt6-migration-benchmark
+cp .env.example .env          # put OPENAI_API_KEY=... in it (Azure, AWS Bedrock or any
+                              # OpenAI-compatible gateway also work; see .env.example)
+make setup                    # installs dependencies and shows which provider each model will use
+make check-models             # confirms every model ID and its reasoning efforts on your account
+```
+
+**2. Describe your task.** Copy the template and fill in three short files:
+
+```bash
+cp -r cases/_template-byod cases/09-my-task
+```
+
+- `spec.md`: what a correct answer is.
+- `legacy_prompt.md`: your current production prompt, unchanged.
+- `legacy_config.yaml`: the model and settings it runs on today.
+
+The built-in scorer handles exact text answers (labels, short answers) and JSON answers (extraction). Edit
+`score()` in `case.py` only if "correct" needs looser rules.
+
+**3. Add your examples** as a CSV or JSONL file with an `input` and an `expected` column. An optional
+`slice` column (e.g. `swedish`, `edge_case`) gives per-group scores.
+
+```bash
+make import CASE=09 FILE=my_examples.csv     # dedupes, splits, and locks away the test set
+```
+
+**4. Run it**
+
+```bash
+make calibrate CASE=09 && make calibrate-dev CASE=09 && make freeze CASE=09   # baseline on your current model
+make sweep CASE=09                                       # your prompt on every GPT-6 model and effort
+make loop CASE=09 TARGET=gpt-6-luna SEED=11              # automated repair, per model you care about
+make loop CASE=09 TARGET=gpt-6.1-terra SEED=11
+make final CASE=09                                       # one-time check on the locked test set
+make recommend                                           # which model to move to, and the saving
+make report                                              # full report with charts in REPORT.md
+```
+
+`freeze` expects your current prompt to score at least 90% on your examples. If it scores lower and you
+still want the comparison, set its floor in `config/sizes.yaml` (e.g. `'09': 0.0`).
+
+**What you get:**
+- a table of accuracy and cost per correct answer for every model and effort;
+- an improved prompt per model, where the loop found a provable fix, with its reasoning logged;
+- a recommendation such as "move to gpt-6-luna; accuracy 99.7% vs 99.0%; 52x cheaper".
+
+Every API call is cached, so reruns are free. A budget guard (`budget.json`) stops anything that would
+exceed its cap.
+
+## How it works
+
+- **Locked test data.** Examples are split into train (used to repair the prompt), dev (used to accept
+  changes) and test (opened once, at the end). Nothing tuned on test can leak into the result.
+- **The repair loop.** It runs your prompt, groups the failures, and asks a strong model for four
+  different kinds of rewrite. It keeps a rewrite only if it is significantly better on dev and no group of
+  examples gets worse.
+- **Rules fixed in advance.** Thresholds live in [PROTOCOL.md](PROTOCOL.md) and are locked by hash before
+  any results exist.
+- **Honest cost.** Every call's tokens (including reasoning and cached tokens) are priced from
+  `config/models.yaml`.
+
+Details:
+- [cases/README.md](cases/README.md): writing or importing a case.
+- [PLAN.md](PLAN.md): the full design.
+- [PROGRESS.md](PROGRESS.md): every decision taken while building it.
+
+## Reproduce this study
+
+```bash
+make test                 # unit tests, no API calls
+make reproduce CASE=03    # clean rerun of one task on gpt-6-luna, compared with the reported number
+make report               # rebuild REPORT.md and the charts from runs/
+```
+
+The study ran the GPT-6 models on AWS Bedrock and the legacy model on Azure OpenAI. To rerun everything
+on your own account, move `runs/P4` to `runs/P7` and `runs/protocol_lock.json` aside, then run `make all`
+(about $250 at list prices).
 
 ## Layout
 
 ```text
-cases/<nn-name>/   spec.md, legacy_prompt.md, legacy_config.yaml, case.py, tests/   (see cases/README.md)
-harness/           runner (the one path to the API), requests, generate, evaluate, loop, optimiser,
-                   stats, final, report, reproduce, batch, cli
-config/            models.yaml (IDs, efforts, prices, probe results), sizes.yaml (splits, loop parameters)
-data/              entities/, open/<case>/{train,dev}.jsonl, sealed/<case>/{test,shift}.jsonl,
-                   MANIFEST.json (versions and SHA-256), stats/, leak/ (hashed leakage index)
-runs/              P0..P7 run folders (manifest.json, results.jsonl.gz, round and rejection logs),
-                   prompts/ (every prompt and setting by hash), sealed_access.log
+cases/        eight study tasks, plus _template-byod/ for your own
+harness/      runner (API calls, cache, retries, cost, budget), loop, optimiser, statistics, report
+config/       models.yaml (model IDs per provider, prices), sizes.yaml (split sizes, loop settings)
+data/         examples (test and shift sets in data/sealed/), MANIFEST.json with SHA-256 hashes
+runs/         every run: manifests, results, round logs, prompts
+report/       charts and observations; REPORT.md is rebuilt by `make report`
 ```
 
-## Models and providers
+## Limitations
 
-GPT-6 targets (`gpt-6.2-astra`, `gpt-6.2-sol`, `gpt-6.1-terra`, `gpt-6-luna`), the data generator, verifier,
-failure labeller and optimiser run on AWS Bedrock's OpenAI-compatible endpoint. The legacy source model
-`gpt-5.6-sol` runs on Azure OpenAI, because Bedrock does not return `logprobs` (case 2 needs them).
-Credentials come from the environment: `AWS_BEARER_TOKEN_BEDROCK` and `AZURE_OPENAI_API_KEY` (or a
-git-ignored `.env`). Endpoints are in `config/models.yaml`; point them at your own deployments to rerun.
+- **Synthetic study data.** The study's examples were written by an OpenAI model and judged on OpenAI
+  models, and the old prompts started near 100% accuracy. Your own data is the real test.
+- **Strict loop.** It accepts only rewrites it can prove are better. With about 200 dev examples it misses
+  gains smaller than roughly 6 points.
+- **Checkable tasks only.** Scoring is code, so the tool suits tasks with a right answer (extraction,
+  classification, routing, tool calls, formatted output), not open-ended writing.
 
-## Commands
+## License
 
-```text
-make setup                 environment (uv, pinned deps) and an API-key check
-make check-models          probe every model ID and its supported efforts; writes config/models.yaml
-make test                  unit tests (harness and every case's scorer/labeller fixtures)
-make data CASE=01          build, verify and seal one case
-make calibrate CASE=01     one legacy tuning round on train; calibrate-dev; freeze
-make sweep CASE=01         legacy prompt on the source setup and every target setting, plus the port
-make loop CASE=01 TARGET=gpt-6-luna SEED=11
-make final                 the only command allowed to read data/sealed/
-make report                rebuild REPORT.md and the charts from runs/
-make reproduce CASE=03     clean end-to-end rerun of one case (Luna, seed 11)
-make status                spend so far, phases done, runs in progress
-make all                   end to end from the committed data and frozen prompts: tests, model check,
-                           sweeps, loops, final, report
-```
-
-`make all` skips stages whose results already exist in `runs/`, so in a fresh clone it rebuilds the
-report from the committed runs at no cost. To rerun the API stages themselves, move `runs/P4` to `runs/P7`
-and `runs/protocol_lock.json` aside first (about $200 at list prices with an empty cache).
-`scripts/clean_rerun.sh` performs the one-case clean rerun used for the reproducibility check.
-
-Results: `REPORT.md` (numbers and charts), `docs/writeup.md` (the write-up).
-
-## Use it on your own task
-
-Have real examples with known-good answers? Copy `cases/_template-byod/`, paste in your prompt, and run
-`make import CASE=09 FILE=my_examples.csv` (CSV or JSONL with `input` and `expected` columns). Then run the
-usual `calibrate`, `freeze`, `sweep`, `loop` and `final` steps. See "Bring your own data" in
-`cases/README.md`.
-
-Responses are cached by a hash of model, API, request and repeat index (`runs/state.sqlite`, not committed),
-so a rerun with a warm cache costs nothing; `make reproduce` in a fresh clone starts from an empty cache.
-
-## Disclosed limitations
-
-The inputs are written by an OpenAI model (`gpt-6.2-sol`) and judged on OpenAI models; the shift sets with
-unseen entities, templates and longer inputs are the main check against that. Scores are deterministic code
-checks; fluency (case 8) is not scored. Costs are computed from list prices, not from the providers' invoices.
+MIT, see [LICENSE](LICENSE).

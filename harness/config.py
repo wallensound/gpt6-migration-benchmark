@@ -45,11 +45,40 @@ def budget() -> dict:
     return json.loads((ROOT / "budget.json").read_text(encoding="utf-8"))
 
 
+def _env_key(name: str) -> str:
+    return name.upper().replace("-", "_").replace(".", "_")
+
+
+def model_provider(name: str) -> str:
+    """BENCH_PROVIDER_<MODEL>, else BENCH_PROVIDER, else openai."""
+    load_dotenv()
+    sel = models().get("provider_selection") or {}
+    default = os.environ.get(sel.get("default_env", "BENCH_PROVIDER")) or sel.get("default", "openai")
+    return os.environ.get(f"BENCH_PROVIDER_{_env_key(name)}") or default
+
+
 def model_cfg(name: str) -> dict:
+    """The model's config with `provider` and `model_id` resolved from the environment."""
     m = models()["models"].get(name)
     if m is None:
         raise KeyError(f"unknown model {name!r}; see config/models.yaml")
-    return m
+    provider = model_provider(name)
+    if provider not in models()["providers"]:
+        raise KeyError(f"unknown provider {provider!r} for {name}; choose one of {list(models()['providers'])}")
+    ids = m.get("ids") or {}
+    model_id = os.environ.get(f"BENCH_MODEL_ID_{_env_key(name)}") or ids.get(provider) or ids.get("openai") or name
+    return {**m, "provider": provider, "model_id": model_id}
+
+
+def provider_cfg(provider: str) -> dict:
+    """The provider's base URL (env override first) and key variable."""
+    load_dotenv()
+    p = dict(models()["providers"][provider])
+    url = os.environ.get(p.get("base_url_env") or "") or p.get("base_url")
+    if not url:
+        raise RuntimeError(f"provider {provider!r} needs a base URL: set {p.get('base_url_env')} (see .env.example)")
+    p["base_url"] = url.rstrip("/")
+    return p
 
 
 def role(name: str) -> dict:

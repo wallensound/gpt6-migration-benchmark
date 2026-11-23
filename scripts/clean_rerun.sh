@@ -9,7 +9,6 @@ cp "$SRC/.env" "$DEST/.env" 2>/dev/null || true      # credentials only; never c
 cd "$DEST"
 test ! -e runs/state.sqlite || { echo "cache not empty"; exit 1; }
 uv sync --frozen -q
-export PATH="$LOCALAPPDATA/Microsoft/WinGet/Packages/ezwinports.make_Microsoft.Winget.Source_8wekyb3d8bbwe/bin:$PATH"
 make reproduce CASE=${CASE:-03} TARGET=${TARGET:-gpt-6-luna} SEED=${SEED:-11}
 mkdir -p "$SRC/runs/P7"
 cp runs/P7/reproduce.json "$SRC/runs/P7/reproduce.json"

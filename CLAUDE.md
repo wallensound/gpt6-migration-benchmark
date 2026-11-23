@@ -15,5 +15,5 @@ This repository is the GPT-6 migration benchmark described in PLAN.md. Read PLAN
 ## Practical notes
 
 - Python 3.12 via uv: `uv run python -m harness.cli <command>`; the Makefile wraps every command.
-- On this Windows machine GNU make is `make` from ezwinports (WinGet Links); uv is `python -m uv` if `uv` is not on PATH.
-- GPT-6 models run on AWS Bedrock's OpenAI-compatible endpoint (`global.openai.*` inference profiles). The legacy source model `gpt-5.6-sol` runs on Azure OpenAI, because Bedrock silently drops `logprobs`.
+- On Windows, run the Makefile from Git Bash with GNU make installed (e.g. `winget install ezwinports.make`).
+- Providers and model IDs come from the environment (`.env`, see `.env.example`), never from code. This study ran the GPT-6 models on AWS Bedrock and the legacy `gpt-5.6-sol` on Azure OpenAI, because Bedrock does not return `logprobs`.

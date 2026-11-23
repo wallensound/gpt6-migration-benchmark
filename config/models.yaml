@@ -1,23 +1,45 @@
+# Model names, per-provider model IDs, efforts, prices and concurrency caps.
+# Which provider each model uses comes from the environment (see .env.example), never from this file.
+# `make check-models` probes every model and rewrites the `probed` blocks.
 reference_date: '2026-11-17'
 providers:
-  bedrock:
-    base_url: https://bedrock-runtime.eu-north-1.amazonaws.com/openai/v1
-    key_env: AWS_BEARER_TOKEN_BEDROCK
+  openai:
+    base_url_env: OPENAI_BASE_URL
+    base_url: https://api.openai.com/v1
+    key_env: OPENAI_API_KEY
     auth: bearer
+    note: Default. OpenAI API; only OPENAI_API_KEY is needed.
   azure:
-    base_url: https://your-azure-resource.openai.azure.com/openai/v1
+    base_url_env: AZURE_OPENAI_BASE_URL
+    base_url: null
     key_env: AZURE_OPENAI_API_KEY
     auth: api-key
+    note: Azure OpenAI v1 endpoint, e.g. https://<your-resource>.openai.azure.com/openai/v1. Model IDs are your
+      deployment names (override with BENCH_MODEL_ID_<MODEL>).
+  bedrock:
+    base_url_env: BEDROCK_OPENAI_BASE_URL
+    base_url: https://bedrock-runtime.us-east-1.amazonaws.com/openai/v1
+    key_env: AWS_BEARER_TOKEN_BEDROCK
+    auth: bearer
+    note: AWS Bedrock OpenAI-compatible endpoint with a Bedrock API key. Does not return logprobs.
+  compatible:
+    base_url_env: COMPATIBLE_BASE_URL
+    base_url: null
+    key_env: COMPATIBLE_API_KEY
+    auth: bearer
+    note: Any other OpenAI-compatible gateway (LiteLLM, OpenRouter, a proxy).
 pricing:
   cached_input_multiplier: 0.1
   cache_write_multiplier: 1.25
-  note: Prices per 1M tokens from the brief's table (OpenAI list prices). Calls actually
-    run on AWS Bedrock and Azure OpenAI, whose billing may differ.
+  note: Prices per 1M tokens (OpenAI list prices on 2026-11-17; Flex for Terra and Luna). Your provider may bill
+    differently.
 models:
   gpt-5.6-sol:
     role: source
-    provider: azure
-    model_id: gpt-5.6
+    ids:
+      openai: gpt-5.6-sol
+      azure: gpt-5.6-sol
+      bedrock: global.openai.gpt-5.6-sol
     api: chat
     efforts:
     - none
@@ -34,12 +56,10 @@ models:
       - high
       - xhigh
       rejected_efforts:
-        minimal: 'Unsupported value: ''reasoning_effort'' does not support ''minimal''
-          with this model. Supported values are: ''none'', ''low'', ''medium'', ''high'',
-          and ''xhigh''.'
-        max: 'Unsupported value: ''reasoning_effort'' does not support ''max'' with
-          this model. Supported values are: ''none'', ''low'', ''medium'', ''high'',
-          and ''xhigh''.'
+        minimal: 'Unsupported value: ''reasoning_effort'' does not support ''minimal'' with this model. Supported
+          values are: ''none'', ''low'', ''medium'', ''high'', and ''xhigh''.'
+        max: 'Unsupported value: ''reasoning_effort'' does not support ''max'' with this model. Supported values
+          are: ''none'', ''low'', ''medium'', ''high'', and ''xhigh''.'
       resolved_model: gpt-5.6-sol-2026-07-09
       temperature_0: true
       logprobs_returned: true
@@ -47,8 +67,10 @@ models:
       brief_efforts_missing: []
   gpt-6.2-astra:
     role: target
-    provider: bedrock
-    model_id: global.openai.gpt-6.2-astra
+    ids:
+      openai: gpt-6.2-astra
+      azure: gpt-6.2-astra
+      bedrock: global.openai.gpt-6.2-astra
     api: responses
     efforts:
     - low
@@ -66,21 +88,16 @@ models:
       - xhigh
       - max
       rejected_efforts:
-        none: 'Unsupported value: ''none'' is not supported with the ''global.openai.gpt-6.2-astra''
-          model. Supported values are: ''low'', ''medium'', ''high'', ''xhigh'', and
-          ''max''.'
-        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.2-astra''
-          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
-          and '
+        none: 'Unsupported value: ''none'' is not supported with the ''global.openai.gpt-6.2-astra'' model. Supported
+          values are: ''low'', ''medium'', ''high'', ''xhigh'', and ''max''.'
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.2-astra'' model.
+          Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'', and '
       resolved_model: global.openai.gpt-6.2-astra
       temperature_0_at_lowest: false
       errors:
-        temperature_0_at_lowest: 'Unsupported parameter: ''temperature'' is not supported
-          with this model.'
-        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
-          with this model.'
-        service_tier_flex: The server had an error while processing your request.
-          Sorry about that!
+        temperature_0_at_lowest: 'Unsupported parameter: ''temperature'' is not supported with this model.'
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported with this model.'
+        service_tier_flex: The server had an error while processing your request. Sorry about that!
         logprobs: logprobs are not supported with reasoning models.
       temperature_0_at_low: false
       text_format_json_schema: true
@@ -91,8 +108,10 @@ models:
       brief_efforts_missing: []
   gpt-6.2-sol:
     role: target
-    provider: bedrock
-    model_id: global.openai.gpt-6.2-sol
+    ids:
+      openai: gpt-6.2-sol
+      azure: gpt-6.2-sol
+      bedrock: global.openai.gpt-6.2-sol
     api: responses
     efforts:
     - low
@@ -111,18 +130,14 @@ models:
       - max
       rejected_efforts:
         none: GPT-6.2 Sol does not support reasoning effort 'none'.
-        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.2-sol''
-          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
-          and ''m'
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.2-sol'' model.
+          Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'', and ''m'
       resolved_model: global.openai.gpt-6.2-sol
       temperature_0_at_lowest: false
       errors:
-        temperature_0_at_lowest: 'Unsupported parameter: ''temperature'' is not supported
-          with this model.'
-        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
-          with this model.'
-        service_tier_flex: The server had an error while processing your request.
-          Sorry about that!
+        temperature_0_at_lowest: 'Unsupported parameter: ''temperature'' is not supported with this model.'
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported with this model.'
+        service_tier_flex: The server had an error while processing your request. Sorry about that!
         logprobs: logprobs are not supported with reasoning models.
       temperature_0_at_low: false
       text_format_json_schema: true
@@ -133,8 +148,10 @@ models:
       brief_efforts_missing: []
   gpt-6.1-terra:
     role: target
-    provider: bedrock
-    model_id: global.openai.gpt-6.1-terra
+    ids:
+      openai: gpt-6.1-terra
+      azure: gpt-6.1-terra
+      bedrock: global.openai.gpt-6.1-terra
     api: responses
     efforts:
     - none
@@ -153,17 +170,14 @@ models:
       - xhigh
       - max
       rejected_efforts:
-        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.1-terra''
-          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
-          and '
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6.1-terra'' model.
+          Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'', and '
       resolved_model: global.openai.gpt-6.1-terra
       temperature_0_at_lowest: true
       temperature_0_at_low: false
       errors:
-        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
-          with this model.'
-        service_tier_flex: '''flex'' is not supported for ''service_tier'' on this
-          model'
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported with this model.'
+        service_tier_flex: '''flex'' is not supported for ''service_tier'' on this model'
       text_format_json_schema: true
       text_verbosity_low: true
       prompt_cache_options: true
@@ -172,8 +186,10 @@ models:
       brief_efforts_missing: []
   gpt-6-luna:
     role: target
-    provider: bedrock
-    model_id: global.openai.gpt-6-luna
+    ids:
+      openai: gpt-6-luna
+      azure: gpt-6-luna
+      bedrock: global.openai.gpt-6-luna
     api: responses
     efforts:
     - none
@@ -192,17 +208,14 @@ models:
       - xhigh
       - max
       rejected_efforts:
-        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6-luna''
-          model. Supported values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'',
-          and ''ma'
+        minimal: 'Unsupported value: ''minimal'' is not supported with the ''global.openai.gpt-6-luna'' model. Supported
+          values are: ''none'', ''low'', ''medium'', ''high'', ''xhigh'', and ''ma'
       resolved_model: global.openai.gpt-6-luna
       temperature_0_at_lowest: true
       temperature_0_at_low: false
       errors:
-        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported
-          with this model.'
-        service_tier_flex: '''flex'' is not supported for ''service_tier'' on this
-          model'
+        temperature_0_at_low: 'Unsupported parameter: ''temperature'' is not supported with this model.'
+        service_tier_flex: '''flex'' is not supported for ''service_tier'' on this model'
       text_format_json_schema: true
       text_verbosity_low: true
       prompt_cache_options: true
@@ -222,3 +235,8 @@ roles:
   optimiser:
     model: gpt-6.2-sol
     effort: high
+provider_selection:
+  default_env: BENCH_PROVIDER
+  default: openai
+  note: Every model uses BENCH_PROVIDER (default openai). Override one model with BENCH_PROVIDER_<MODEL>, e.g. BENCH_PROVIDER_GPT_5_6_SOL=azure,
+    and its ID with BENCH_MODEL_ID_<MODEL>. <MODEL> is the model name upper-cased with - and . replaced by _.

@@ -15,13 +15,27 @@ def _print(obj):
 
 
 def cmd_setup(a):
+    """Show which provider each model resolves to, check the keys, and ping two models."""
     config.load_dotenv()
     from .runner import Runner
-    missing = [p["key_env"] for p in config.models()["providers"].values() if not os.environ.get(p["key_env"])]
+    rows, missing = [], set()
+    for name in config.models()["models"]:
+        m = config.model_cfg(name)
+        p = config.models()["providers"][m["provider"]]
+        if not os.environ.get(p["key_env"]):
+            missing.add(p["key_env"])
+        try:
+            url = config.provider_cfg(m["provider"])["base_url"]
+        except RuntimeError as e:
+            url = f"MISSING ({e})"
+        rows.append(f"  {name:14s} -> {m['provider']:10s} {m['model_id']:30s} {url}")
+    print("Models and providers (from the environment / .env):")
+    print("\n".join(rows))
     if missing:
-        print(f"missing credentials: {missing}. Set them in the environment or .env (see README).")
+        print(f"\nmissing credentials: {sorted(missing)}. Copy .env.example to .env and fill it in.")
         sys.exit(1)
     r = Runner(phase="P0", purpose="setup")
+
     async def ping():
         out = {}
         for name in ("gpt-5.6-sol", "gpt-6-luna"):
@@ -29,9 +43,9 @@ def cmd_setup(a):
             body = ({"messages": [{"role": "user", "content": "Reply OK"}], "reasoning_effort": "none"} if m["api"] == "chat"
                     else {"input": "Reply OK", "reasoning": {"effort": "none"}})
             res = await r.call(name, m["api"], body)
-            out[name] = "ok" if res["raw"] else f"error {res['error_code']}"
+            out[name] = "ok" if res["raw"] else f"error {res['error_code']}: {res.get('error_message')}"
         return out
-    _print({"sdk": config.sdk_version(), "keys": "present", "ping": asyncio.run(ping())})
+    _print({"sdk": config.sdk_version(), "ping": asyncio.run(ping())})
 
 
 def cmd_check_models(a):
@@ -111,6 +125,12 @@ def cmd_reproduce(a):
     _print(asyncio.run(reproduce(a.case, a.target, a.seed)))
 
 
+def cmd_recommend(a):
+    from .recommend import recommend, table
+    print(table(recommend()))
+    print("\nDetails: runs/recommend.json. Chosen on dev, confirmed once on test (see harness/recommend.py).")
+
+
 def cmd_status(a):
     from .status import status
     print(status())
@@ -139,6 +159,7 @@ def main(argv=None):
     s = sub.add_parser("reproduce"); s.add_argument("case"); s.add_argument("--target", default="gpt-6-luna")
     s.add_argument("--seed", type=int, default=11); s.set_defaults(f=cmd_reproduce)
     sub.add_parser("status").set_defaults(f=cmd_status)
+    sub.add_parser("recommend", help="which model should each task move to").set_defaults(f=cmd_recommend)
     a = p.parse_args(argv)
     a.f(a)
 

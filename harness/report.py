@@ -270,9 +270,14 @@ def build_report() -> str:
     # ---- setup
     L.append("## Setup\n")
     mcfg = config.models()["models"]
-    L.append("| Model | Role | Provider / model ID | Resolved model | Efforts used | Price in/out per 1M |\n|---|---|---|---|---|---|")
+    used: dict[str, set] = {}
+    for man in config.RUNS.glob("P[3-6]/*/manifest.json"):  # the model IDs this study actually called
+        for e in json.loads(man.read_text(encoding="utf-8")).get("evals", []):
+            used.setdefault(e["model"], set()).add(e["model_id"])
+    L.append("| Model | Role | Model ID used in this study | Resolved model | Efforts tested | Price in/out per 1M |\n|---|---|---|---|---|---|")
     for n, m in mcfg.items():
-        L.append(f"| {n} | {m['role']} | {m['provider']} `{m['model_id']}` | {(m.get('probed') or {}).get('resolved_model', '')} | "
+        ids = ", ".join(f"`{i}`" for i in sorted(used.get(n, []))) or "–"
+        L.append(f"| {n} | {m['role']} | {ids} | {(m.get('probed') or {}).get('resolved_model', '')} | "
                  f"{', '.join(m['efforts'])} | ${m['price_in']} / ${m['price_out']} ({m['tier']}) |")
     L.append(f"\nSDK `openai=={config.sdk_version()}`; reference date {config.REFERENCE_DATE}; models checked "
              f"{(mcfg['gpt-6-luna'].get('probed') or {}).get('checked_at', '?')}. Costs use the price table above "
@@ -381,6 +386,17 @@ def build_report() -> str:
                 v = [o["cost_per_correct"] for o in c["opt"].values() if o["target"] == t and o["cost_per_correct"]]
                 row.append(money(sum(v) / len(v)) if v else "–")
             L.append(f"| {cf} | " + " | ".join(row) + " |")
+        L.append("")
+    # ---- recommendation (added after the protocol)
+    if final:
+        from .recommend import recommend, table
+        rec = recommend()
+        L.append("## Which model should you move to?\n")
+        L.append("_Added after the pre-registered protocol (it does not change any verdict above). Per case: the "
+                 "cheapest setup that is non-inferior to the legacy setup on **dev** (lower bound above -3 points), "
+                 "then confirmed once on **test**; if the dev pick fails on test, the next cheapest dev-passing setup "
+                 "that holds on test is shown as a fallback. Rebuild with `make recommend`._\n")
+        L.append(table(rec))
         L.append("")
     # ---- loops
     if loops:

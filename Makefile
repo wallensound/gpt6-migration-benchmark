@@ -7,7 +7,7 @@ VERSION ?= 1
 N ?= 20
 CASES := 01 03 06 02 05 07 04 08
 
-.PHONY: import all sweeps loops dryrun setup check-models entities test pilot pilot-eval data calibrate calibrate-dev freeze sweep loop loops final report reproduce status
+.PHONY: recommend import all sweeps loops dryrun setup check-models entities test pilot pilot-eval data calibrate calibrate-dev freeze sweep loop loops final report reproduce status
 
 setup:            ## environment, pinned dependencies, and a check that the API keys work
 	uv sync --frozen
@@ -49,14 +49,17 @@ sweep:            ## legacy prompt across the source setup and every target sett
 loop:             ## one loop run
 	$(PY) -m harness.cli loop $(CASE) --target $(TARGET) --seed $(SEED) --version $(VERSION)
 
-final:            ## the only command allowed to read data/sealed/
-	BENCH_FINAL=1 $(PY) -m harness.cli final
+final:            ## the only command allowed to read data/sealed/ (all cases, or one: make final CASE=09)
+	BENCH_FINAL=1 $(PY) -m harness.cli final $(if $(filter command line,$(origin CASE)),--case $(CASE),)
 
 report:           ## rebuild REPORT.md and the charts from runs/
 	$(PY) -m harness.cli report
 
 reproduce:        ## clean end-to-end rerun of one case (Luna, seed 11) against the reported numbers
 	BENCH_FINAL=1 $(PY) -m harness.cli reproduce $(CASE) --target $(TARGET) --seed $(SEED)
+
+recommend:        ## which model each task should move to: cheapest non-inferior on dev, confirmed on test
+	$(PY) -m harness.cli recommend
 
 status:           ## spend so far, phases done, runs in progress
 	$(PY) -m harness.cli status

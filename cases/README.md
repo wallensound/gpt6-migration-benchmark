@@ -87,18 +87,17 @@ Rules that apply to every case:
 
 ## Workflow and commands
 
-All commands run from the repo root in Git Bash. `make` lives at
-`$LOCALAPPDATA/Microsoft/WinGet/Packages/ezwinports.make_Microsoft.Winget.Source_8wekyb3d8bbwe/bin`
-(prepend it to PATH), or call `.venv/Scripts/python -m harness.cli <cmd>` directly.
+All commands run from the repo root. Use the `make` targets, or call `uv run python -m harness.cli <cmd>`
+directly (the examples below use the direct form).
 
-1. Write spec, case.py, tests. `.venv/Scripts/python -m pytest cases/<nn-name> -q` must pass (no API calls).
+1. Write spec, case.py, tests. `uv run python -m pytest cases/<nn-name> -q` must pass (no API calls).
 2. **Pilot** (cheap, throwaway; never part of any split):
-   `.venv/Scripts/python -m harness.cli pilot <nn> --n 24` then read `data/pilot/<folder>/items.jsonl` and
+   `uv run python -m harness.cli pilot <nn> --n 24` then read `data/pilot/<folder>/items.jsonl` and
    `dropped.jsonl`. Check inputs look natural, contain the planned strings and labels are right.
-   `.venv/Scripts/python -m harness.cli pilot-eval <nn>` runs the legacy prompt on the pilot items.
+   `uv run python -m harness.cli pilot-eval <nn>` runs the legacy prompt on the pilot items.
    Iterate on generator, verify, spec and scorer until the pilot drop rate is well under 20% and the legacy
    prompt is near its floor. Repeat pilots are cheap (cached) only when nothing changed; keep it to a few.
-3. **Build and seal**: `.venv/Scripts/python -m harness.cli data <nn>`. After this, `spec.md`, `label`, `score`,
+3. **Build and seal**: `uv run python -m harness.cli data <nn>`. After this, `spec.md`, `label`, `score`,
    `parse` and their helpers are frozen (a fix means a new dataset version). It refuses if the drop rate > 20%.
 4. **Calibrate** on the source model, at most four tuning rounds on train:
    `... calibrate <nn> --split train` -> read `runs/P3/<folder>/train-failures-<hash>.jsonl`, adjust

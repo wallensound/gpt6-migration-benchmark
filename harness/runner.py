@@ -245,7 +245,7 @@ class Runner:
         if provider in self._clients:
             return self._clients[provider]
         from openai import AsyncOpenAI
-        p = config.models()["providers"][provider]
+        p = config.provider_cfg(provider)
         key = os.environ.get(p["key_env"])
         if not key:
             raise AuthError(f"environment variable {p['key_env']} is not set")
